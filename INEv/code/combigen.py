@@ -532,7 +532,6 @@ def main():
 
     #plotCombi(mycombi) # plot combination graph
     
-    
     for pro in curcombi.keys():
         print(str(pro) + " " + str(list(map(lambda x: str(x), curcombi[pro]))))
     print("time: " + str(end_time - start_time))   

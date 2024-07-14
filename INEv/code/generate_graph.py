@@ -8,7 +8,7 @@ Created on Fri Sep 24 17:12:21 2021
 import networkx as nx 
 import pickle
 #from networkx.algorithms.components import is_connected
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import sys
 import random
 

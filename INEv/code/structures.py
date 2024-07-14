@@ -16,7 +16,7 @@ from helper import *
 from parse_network import *
 from network import *
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import networkx as nx 
 from networkx.algorithms.approximation import steiner_tree
 from networkx.algorithms.components import is_connected
