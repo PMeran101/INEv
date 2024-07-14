@@ -241,6 +241,8 @@ def main():
         print(nw[i])
     print("\n")
     
+    nw[0].visualize_tree(nw[0])
+    
     
         
 if __name__ == "__main__":
