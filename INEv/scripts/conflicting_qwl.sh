@@ -1,11 +1,11 @@
 #!/bin/sh
 
 cd ../code
-	
-   for k in 5 10 20 # qwl size
-	do 
-	for h in 6 10 15 20 25 #num event types
-		do
+echo "Conflicting_QWL" 
+  # for k in 5 10 20 # qwl size
+	#do 
+	#for h in 6 10 15 20 25 #num event types
+	#	do
 		python3.8 generate_network.py 20 0.5 1.3 $h
 		python3.8 generate_graph.py
 		python3.8 allPairs.py
@@ -22,7 +22,7 @@ cd ../code
 				a=`expr $a + 1`
 				done
 	
-			done
-		done
+	#		done
+	#	done
 	
 

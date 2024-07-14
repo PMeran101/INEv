@@ -1,7 +1,10 @@
 #!/bin/sh
 cd ../code
-for j in  1.1  1.3  1.5  1.7  1.9 
-do
+
+echo "Negated"
+
+#for j in  1.1  1.3  1.5  1.7  1.9 
+#do
 		a=0
 		while [ $a -lt 50 ]
 		do
@@ -32,4 +35,4 @@ do
 		done
 		a=`expr $a + 1`
 		done
-done
+#done

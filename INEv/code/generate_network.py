@@ -8,6 +8,7 @@ import pickle
 import numpy as np
 import string
 import random
+from Node import Node
 
 """ Experiment network rates 
 
@@ -37,7 +38,8 @@ def generate_eventrates(eventskew,numb_eventtypes):
     eventrates = np.random.zipf(eventskew,numb_eventtypes)
     return eventrates
 
-
+# At one Node show in Array the Events which are generated at each node
+# Looping through all Eventrates 
 def generate_events(eventrates, n_e_r):
     myevents = []
     for i in range(len(eventrates)):
@@ -170,14 +172,20 @@ def main():
     
     nw = []    
     for node in range(nwsize):
-        nw.append(generate_events(eventrates, node_event_ratio))
+        no = Node(node, 0, 0, generate_events(eventrates, node_event_ratio))
+        nw.append(no)
         
     print(nw)     
-    while not allEvents(nw):
-        nw = []    
+    
+    """
+    TODO Rebuild the check for allEvents again
+    """
+    # print(allEvents(nw))
+    # while not allEvents(nw):
+    #     nw = []    
 
-        for node in range(nwsize):
-            nw.append(generate_events(eventrates, node_event_ratio))
+    #     for node in range(nwsize):
+    #         nw.append(generate_events(eventrates, node_event_ratio))
 
 
     ## INSERT NETWORK HERE
@@ -196,7 +204,7 @@ def main():
     print("NETWORK")  
     print("--------") 
     for i in range(len(nw)):
-      print("Node " + str(i) + " " + str(nw[i])) 
+        print(nw[i])
     print("\n")
     
     

@@ -1,16 +1,17 @@
 #!/bin/sh
 cd ../code
+echo "EventNode_QWL"
 
 python3.8 generate_network.py 20 0.5 1.3 25
 python3.8 generate_graph.py
 python3.8 allPairs.py
 
-for k in 5 10 20  
-do 
+#for k in 5 10 20  
+#do 
 	python3.8 generate_qwls.py 6 $k
 	python3.8 generate_selectivity.py 
-	for j in  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
-	do
+#	for j in  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+#	do
 			a=0
 			while [ $a -lt 75 ]
 			do
@@ -24,5 +25,5 @@ do
 			python3.8 computePlanCosts_aug.py eventNode_qwl+"$k"
 			a=`expr $a + 1`
 			done
-	done
-done
+#	done
+#done

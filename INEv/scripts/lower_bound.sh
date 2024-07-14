@@ -1,18 +1,20 @@
 #!/bin/sh
 cd ../code
 
-for z in 1 2 3 4
-do
+echo "Lower Bound"
+
+#for z in 1 2 3 4
+#do
 python3.8 generate_network.py 20 0.5 1.1 7
 python3.8 generate_qwls.py 7 1
 python3.8 generate_graph.py
 python3.8 allPairs.py
 
-for s in 0.01 0.001
-do
+#for s in 0.01 0.001
+#do
 python3.8 generate_selectivity.py $s
-for j in  1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 
-do
+#for j in  1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 
+#do
 		a=0
 		while [ $a -lt 50 ]
 		do
@@ -24,6 +26,6 @@ do
 		python3.8 computePlanCosts_aug.py lower+"$s"
 		a=`expr $a + 1`
 		done
-done
-done
-done
+#done
+#done
+#done

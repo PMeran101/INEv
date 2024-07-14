@@ -1,7 +1,8 @@
 #!/bin/sh
 cd ../code
-for j in 4 5 6 7 8
-do
+echo "Computation Time"
+#for j in 4 5 6 7 8
+#do
 		a=0
 		while [ $a -lt 60 ]
 		do		
@@ -17,4 +18,4 @@ do
 		python3.8 computePlanCosts_aug.py computationTime
 		a=`expr $a + 1`
 		done
-done
+#done
