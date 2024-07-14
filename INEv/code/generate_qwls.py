@@ -22,7 +22,7 @@ import pickle
 with open('network',  'rb') as  nw_file:
         nw = pickle.load(nw_file)
     
-PrimitiveEvents = list(string.ascii_uppercase[:len(nw[0])])
+PrimitiveEvents = list(string.ascii_uppercase[:len(nw[0].eventrates)])
  
 Prim  = {}
 for i in range(len(PrimitiveEvents)):

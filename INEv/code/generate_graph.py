@@ -8,7 +8,7 @@ Created on Fri Sep 24 17:12:21 2021
 import networkx as nx 
 import pickle
 #from networkx.algorithms.components import is_connected
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import sys
 import random
 
@@ -16,7 +16,7 @@ def main():
     
    with open('network', 'rb') as network_file:
             nw = pickle.load(network_file) 
-            
+            print(nw)
   # percentage = 50
    outdegree = 3
    experiment = 'None'

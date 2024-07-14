@@ -169,11 +169,45 @@ def main():
     ##eventrates = [0.3, 4, 0.6, 91, 666, 166, 0.3, 20, 40] # citibike 30
 
     #eventrates = [2,20,30,6,10,1,2, 2, 40] 
+    def create_random_tree(nwsize, eventrates, node_event_ratio):
+        if nwsize <= 0:
+            return None
+
+        # Initialize the list to store all nodes
+        nw = []
+
+        # Create the root node
+        root = Node(id=0, compute_power=random.randint(1, 100), memore=random.randint(1, 100), eventrate=generate_events(eventrates, node_event_ratio))
+        nw.append(root)
+
+        # Create remaining nodes and build the tree
+        for node_id in range(1, nwsize):
+            new_node = Node(id=node_id, compute_power=random.randint(1, 100), memore=random.randint(1, 100), eventrate=generate_events(eventrates, node_event_ratio))
+
+            # Randomly choose a parent node from the existing nodes
+            parent_node = random.choice(nw)
+
+            # Randomly decide whether to add the new node as a child or a sibling
+            if parent_node.Child is None:
+                parent_node.Child = new_node
+            else:
+                # Traverse to the last sibling
+                current = parent_node.Child
+                while current.Sibling is not None:
+                    current = current.Sibling
+                current.Sibling = new_node
+
+            # Set the new node's parent
+            new_node.Parent = parent_node
+            nw.append(new_node)
+
+        return root, nw
     
-    nw = []    
-    for node in range(nwsize):
-        no = Node(node, 0, 0, generate_events(eventrates, node_event_ratio))
-        nw.append(no)
+    nw = []
+    root, nw = create_random_tree(nwsize, eventrates, node_event_ratio)
+    # for node in range(nwsize):
+    #     no = Node(node, 0, 0, generate_events(eventrates, node_event_ratio))
+    #     nw.append(no)
         
     print(nw)     
     

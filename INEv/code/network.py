@@ -11,13 +11,13 @@ primEvents = []
 ind = 0
 for node in nw:
     network[ind] = []
-    for eventtype in range(len(node)):
-        if node[eventtype] > 0:
+    for eventtype in range(len(node.eventrates)):
+        if node.eventrates[eventtype] > 0:
             network[ind].append(string.ascii_uppercase[eventtype])
             if not string.ascii_uppercase[eventtype] in primEvents:
                 primEvents.append(string.ascii_uppercase[eventtype])
             if not string.ascii_uppercase[eventtype] in rates.keys():
-                rates[string.ascii_uppercase[eventtype]] = float(node[eventtype])
+                rates[string.ascii_uppercase[eventtype]] = float(node.eventrates[eventtype])
     ind+=1        
             
 
