@@ -12,8 +12,8 @@ LOG_FILE="output_INEv_fog.txt"
 		python3.8 generate_graph.py
 		python3.8 allPairs.py
 			a=0
-			while [ $a -lt 50 ]
-				do	
+			# while [ $a -lt 50 ]
+			# 	do	
 				python3.8 generate_qwls.py 6  $k	
 	                        python3.8 generate_selectivity.py 
 				python3.8 write_config_single.py
@@ -21,8 +21,8 @@ LOG_FILE="output_INEv_fog.txt"
 				python3.8 generate_projections.py
 				python3.8 combigen.py
 				python3.8 computePlanCosts_aug.py "QWL"+"$k"
-				a=`expr $a + 1`
-				done
+#				a=`expr $a + 1`
+#				done
 	
 #			done
 #		done
