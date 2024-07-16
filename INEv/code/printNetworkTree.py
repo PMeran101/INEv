@@ -10,6 +10,8 @@ def print_network_tree():
     
     print(root)
     
+    root.visualize_tree(root)
+    
     
 
 print_network_tree()

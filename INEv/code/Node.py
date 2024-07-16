@@ -9,11 +9,11 @@ class Node():
     eventrates = [] 
     
     
-    def __init__(self, id:int ,compute_power: int, memore: int, eventrate: list):
+    def __init__(self, id:int ,compute_power: int, memore: int):
         self.id = id
         self.computational_power = compute_power
         self.memory = memore
-        self.eventrates = eventrate
+        self.eventrates = []
         self.Parent = None
         self.Child = None
         self.Sibling = None
@@ -63,18 +63,5 @@ class Node():
     def visualize_tree(self,root):
         dot = self.add_nodes_edges(root)
         dot.render('tree', format='png', view=False)  # Save and view the tree as a PNG image
-
-        
-    # def print_tree(self,root):
-    #     stack = [(root, 0)]  # Stack to hold nodes along with their level
-    #     while stack:
-    #         node, level = stack.pop()
-    #         if node is not None:
-    #             print(' ' * level * 4 + str(node))
-    #             # Push siblings first so that children are processed first
-    #             if node.Sibling is not None:
-    #                 stack.append((node.Sibling, level))
-    #             if node.Child is not None:
-    #                 stack.append((node.Child, level + 1))
         
         

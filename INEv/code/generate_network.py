@@ -107,7 +107,7 @@ def main():
     
     #default values for simulation 
     nwsize = 10
-    node_event_ratio = 1.0
+    node_event_ratio = 0.5
     num_eventtypes = 20
     eventskew = 1.3
     toFile = False
@@ -177,12 +177,12 @@ def main():
         nw = []
 
         # Create the root node
-        root = Node(id=0, compute_power=random.randint(1, 100), memore=random.randint(1, 100), eventrate=generate_events(eventrates, node_event_ratio))
+        root = Node(id=0, compute_power=random.randint(1, 100), memore=random.randint(1, 100) )#, eventrate=generate_events(eventrates, node_event_ratio))
         nw.append(root)
 
         # Create remaining nodes and build the tree
         for node_id in range(1, nwsize):
-            new_node = Node(id=node_id, compute_power=random.randint(1, 100), memore=random.randint(1, 100), eventrate=generate_events(eventrates, node_event_ratio))
+            new_node = Node(id=node_id, compute_power=random.randint(1, 100), memore=random.randint(1, 100))#, eventrate=generate_events(eventrates, node_event_ratio))
 
             # Randomly choose a parent node from the existing nodes
             parent_node = random.choice(nw)
@@ -200,6 +200,18 @@ def main():
             # Set the new node's parent
             new_node.Parent = parent_node
             nw.append(new_node)
+            
+        for node in nw:
+            if node.Child is None:
+                print(f"adding eventrate for: {node.id}")
+                evtrate = generate_events(eventrates, node_event_ratio)
+                print(f"My evt rate {evtrate}")
+                with open('PrimitiveEvents','wb') as f:
+                    pickle.dump(evtrate, f)
+                node.eventrates = evtrate
+            else:
+                node.eventrates = [0] * len(eventrates)
+
 
         return root, nw
     

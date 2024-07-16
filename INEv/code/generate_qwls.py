@@ -21,8 +21,19 @@ import pickle
 
 with open('network',  'rb') as  nw_file:
         nw = pickle.load(nw_file)
+
+
+"""
+TODO
+We need to know how many events we are working with.
+In INEv every node generated Events now it is random
+
+"""    
+
+with open ('PrimitiveEvents', 'rb') as pe_file:
+    pe = pickle.load(pe_file)
     
-PrimitiveEvents = list(string.ascii_uppercase[:len(nw[0].eventrates)])
+PrimitiveEvents = list(string.ascii_uppercase[:len(pe)])
  
 Prim  = {}
 for i in range(len(PrimitiveEvents)):
