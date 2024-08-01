@@ -5,7 +5,7 @@ Created on Wed Jun 22 16:26:36 2022
 
 @author: samira
 
-
+TEst Comment
 Used for adaptivity experiments.
 
 Computes costs of given INEv graph. 
