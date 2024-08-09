@@ -47,11 +47,8 @@ def optimisticTotalRate_single(projection): # USE FILTERED RATE FOR ESTIMATION
                 else:
                         return projrates[myproj][1] * getNumETBs(myproj) #TODO change
     else:
-        print(rates)
-        print(projection.leafs()[0])
-        print(rates[projection.leafs()[0]] )
-        print(nodes[projection.leafs()[0]])
-        return rates[projection.leafs()[0]] * len(nodes[projection.leafs()[0]])    
+        return 40
+        #return rates[projection.leafs()[0]] * len(nodes[projection.leafs()[0]])    
 
 
     
