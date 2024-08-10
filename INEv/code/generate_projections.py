@@ -346,7 +346,9 @@ def generate_projections(query):
     selectivity =  return_selectivity(query.leafs())
     rate = outrate * selectivity                            
     projrates[query] = (selectivity, rate) 
-
+    print("printing")
+    print(projections)
+    print(projrates)
     return projections, projrates
 
 def returnSubProjections(proj, projlist):
@@ -368,9 +370,10 @@ projlist = []
 projrates = {}
 
 for query in wl:
-    #print(query)
+    print(query)
     query = query.stripKL_simple()
     result = generate_projections(query)
+    print(result)
     #projsPerQuery[query] = result[0]
     for i in result[0]:        
         if not i in projlist:
@@ -381,7 +384,7 @@ for query in wl:
             for mykey in sharedProjectionsDict.keys():
                 if mykey == i:
                     sharedProjectionsDict[mykey].append(query)
-
+#print(projrates)
 for query in wl:
     query = query.stripKL_simple()
     projsPerQuery[query] = [x for x in projlist if query.can_be_used(x)]

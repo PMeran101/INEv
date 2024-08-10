@@ -435,12 +435,18 @@ def costsAt(eventtype, node):
     return mycosts
 
 def NEWcomputeCentralCosts(workload):
+    #Adding all Eventtypes (simple events) to the list
     eventtypes = []
     for i in workload:
         myevents = i.leafs()
+        print(myevents)
         for e in myevents:
+            print(e)
+            print("Eventtypes")
+            print(eventtypes)
             if not e in eventtypes:
                 eventtypes.append(e)
+    print(eventtypes)
     costs = np.inf
     node = 0
     for destination in range(len(allPairs)):

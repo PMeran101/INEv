@@ -31,7 +31,7 @@ def main():
    #G = nx.connected_watts_strogatz_graph(len(nw),outdegree,0.2)   
           
    print(G.edges)
-   print(nx.adjacency_matrix(G))
+   #print(nx.adjacency_matrix(G))
 
  
    with open('graph', 'wb') as graph_file:

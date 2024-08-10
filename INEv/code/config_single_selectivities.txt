@@ -1,161 +1,81 @@
 network
 Node 0 Node 0
-Computational Power: 73
-Memory: 39
+Computational Power: 20
+Memory: 57
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Parent: None
 Child: 1
 Sibling: None
 
 Node 1 Node 1
-Computational Power: 81
-Memory: 6
+Computational Power: 60
+Memory: 19
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Parent: 0
 Child: 4
 Sibling: 2
 
 Node 2 Node 2
-Computational Power: 70
-Memory: 22
-Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Computational Power: 76
+Memory: 42
+Eventrates: [154, 0, 0, 22, 0, 0, 4, 1, 0, 421, 1, 0, 4, 340, 29, 99071, 0, 0, 0, 11]
 Parent: 0
-Child: 10
+Child: None
 Sibling: 3
 
 Node 3 Node 3
-Computational Power: 45
-Memory: 21
+Computational Power: 56
+Memory: 72
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Parent: 0
-Child: 13
-Sibling: 6
+Child: 5
+Sibling: 7
 
 Node 4 Node 4
-Computational Power: 94
-Memory: 87
-Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Computational Power: 24
+Memory: 24
+Eventrates: [154, 0, 9, 22, 0, 11, 4, 1, 0, 0, 1, 4, 4, 0, 29, 99071, 0, 0, 17, 11]
 Parent: 1
-Child: 5
-Sibling: 11
+Child: None
+Sibling: 6
 
 Node 5 Node 5
-Computational Power: 70
-Memory: 44
-Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parent: 4
-Child: 8
+Computational Power: 52
+Memory: 99
+Eventrates: [0, 7, 0, 0, 73, 11, 4, 0, 0, 0, 0, 0, 0, 0, 0, 99071, 0, 66, 17, 11]
+Parent: 3
+Child: None
 Sibling: None
 
 Node 6 Node 6
-Computational Power: 48
-Memory: 17
-Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parent: 0
-Child: 7
-Sibling: 19
-
-Node 7 Node 7
-Computational Power: 1
-Memory: 84
-Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parent: 6
-Child: 9
-Sibling: None
-
-Node 8 Node 8
-Computational Power: 36
-Memory: 98
-Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parent: 5
-Child: 14
-Sibling: 12
-
-Node 9 Node 9
-Computational Power: 13
-Memory: 30
-Eventrates: [1, 1, 1, 0, 4, 51, 58, 0, 0, 0, 2, 0, 37, 0, 1, 0, 5, 0, 6, 0]
-Parent: 7
-Child: None
-Sibling: None
-
-Node 10 Node 10
-Computational Power: 71
-Memory: 70
-Eventrates: [1, 0, 0, 10, 4, 51, 0, 15, 0, 0, 0, 4, 37, 27, 1, 0, 5, 0, 0, 1]
-Parent: 2
-Child: None
-Sibling: None
-
-Node 11 Node 11
-Computational Power: 66
-Memory: 55
-Eventrates: [1, 1, 1, 0, 4, 51, 0, 0, 1408, 0, 0, 4, 0, 27, 1, 24, 5, 0, 0, 0]
+Computational Power: 37
+Memory: 89
+Eventrates: [0, 7, 0, 22, 73, 11, 4, 1, 2, 0, 1, 4, 0, 340, 0, 99071, 6, 0, 0, 11]
 Parent: 1
 Child: None
 Sibling: None
 
-Node 12 Node 12
-Computational Power: 58
-Memory: 60
-Eventrates: [1, 0, 1, 0, 4, 0, 0, 0, 1408, 0, 2, 0, 0, 0, 1, 24, 5, 211, 0, 1]
-Parent: 5
-Child: None
-Sibling: 15
-
-Node 13 Node 13
-Computational Power: 47
-Memory: 67
+Node 7 Node 7
+Computational Power: 40
+Memory: 52
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parent: 3
-Child: 16
-Sibling: None
-
-Node 14 Node 14
-Computational Power: 74
-Memory: 94
-Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parent: 8
-Child: 18
-Sibling: 17
-
-Node 15 Node 15
-Computational Power: 89
-Memory: 9
-Eventrates: [1, 1, 0, 10, 0, 51, 0, 15, 0, 2, 0, 4, 37, 27, 0, 0, 5, 0, 6, 1]
-Parent: 5
-Child: None
-Sibling: None
-
-Node 16 Node 16
-Computational Power: 94
-Memory: 71
-Eventrates: [1, 0, 0, 0, 4, 0, 0, 15, 0, 0, 2, 0, 0, 27, 1, 0, 0, 211, 6, 1]
-Parent: 13
-Child: None
-Sibling: None
-
-Node 17 Node 17
-Computational Power: 25
-Memory: 73
-Eventrates: [1, 1, 0, 0, 4, 0, 58, 15, 1408, 2, 0, 0, 0, 27, 1, 24, 0, 211, 0, 0]
-Parent: 8
-Child: None
-Sibling: None
-
-Node 18 Node 18
-Computational Power: 74
-Memory: 33
-Eventrates: [1, 0, 1, 0, 0, 0, 58, 0, 1408, 0, 2, 0, 37, 27, 0, 24, 0, 0, 6, 0]
-Parent: 14
-Child: None
-Sibling: None
-
-Node 19 Node 19
-Computational Power: 84
-Memory: 70
-Eventrates: [1, 0, 0, 10, 0, 0, 58, 0, 1408, 0, 0, 4, 37, 0, 0, 0, 0, 211, 6, 1]
 Parent: 0
+Child: 9
+Sibling: 8
+
+Node 8 Node 8
+Computational Power: 8
+Memory: 54
+Eventrates: [0, 7, 9, 0, 0, 11, 4, 0, 0, 0, 0, 4, 4, 0, 29, 99071, 0, 0, 17, 11]
+Parent: 0
+Child: None
+Sibling: None
+
+Node 9 Node 9
+Computational Power: 17
+Memory: 81
+Eventrates: [154, 0, 9, 22, 73, 11, 0, 0, 0, 0, 0, 4, 0, 0, 29, 99071, 6, 0, 0, 0]
+Parent: 7
 Child: None
 Sibling: None
 
