@@ -346,9 +346,9 @@ def generate_projections(query):
     selectivity =  return_selectivity(query.leafs())
     rate = outrate * selectivity                            
     projrates[query] = (selectivity, rate) 
-    print("printing")
-    print(projections)
-    print(projrates)
+    # print("printing")
+    # print(projections)
+    # print(projrates)
     return projections, projrates
 
 def returnSubProjections(proj, projlist):
