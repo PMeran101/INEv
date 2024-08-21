@@ -31,9 +31,9 @@ with open('lower+0.01.csv') as csvfile:
                  continue
              else:
                  if not First:
-    		             newrow = row
-    		             newrow[1] = newrow[17]
-    		             myRows.append(newrow)               
+                            newrow = row
+                            newrow[1] = newrow[17]
+                            myRows.append(newrow)               
                  if First:
                      myRows.append(row)
                      First = False
@@ -57,9 +57,9 @@ with open('lower+0.001.csv') as csvfile:
                  continue
              else:
                  if not First:
-    		             newrow = row
-    		             newrow[1] = newrow[17]
-    		             myRows.append(newrow)               
+                        newrow = row
+                        newrow[1] = newrow[17]
+                        myRows.append(newrow)               
                  if First:
                      myRows.append(row)
                      First = False                  
