@@ -172,26 +172,42 @@ def main():
     def create_random_tree(nwsize, eventrates, node_event_ratio):
         if nwsize <= 0:
             return None
-
+        import math
         # Initialize the list to store all nodes
         nw = []
 
+        levels = math.ceil(math.log2(nwsize))
+        print(levels)
         # Create the root node
-        root = Node(id=0, compute_power=random.randint(1, 100), memore=random.randint(1, 100) )#, eventrate=generate_events(eventrates, node_event_ratio))
+        root = Node(id=0, compute_power=math.inf, memore=math.inf )#, eventrate=generate_events(eventrates, node_event_ratio))
         nw.append(root)
+
+        # Track nodes by level to manage the structure and prevent imbalance
+        level_nodes = {0: [root]}
 
         # Create remaining nodes and build the tree
         for node_id in range(1, nwsize):
-            new_node = Node(id=node_id, compute_power=random.randint(1, 100), memore=random.randint(1, 100))#, eventrate=generate_events(eventrates, node_event_ratio))
+            # Determine the level for the new node
+            level = min(levels - 1, node_id // (nwsize // levels) + 1)
+            
+            # Compute power and memory decrease as the level increases
+            compute_power = levels - level
+            memore = levels - level
 
-            # Randomly choose a parent node from the existing nodes
-            parent_node = random.choice(nw)
+            # Create the new node
+            new_node = Node(id=node_id, compute_power=compute_power, memore=memore)
 
-            # Randomly decide whether to add the new node as a child or a sibling
+            # Ensure level-specific nodes exist in the dictionary
+            if level not in level_nodes:
+                level_nodes[level] = []
+
+            # Randomly choose a parent from the previous level
+            parent_node = random.choice(level_nodes[level - 1])
+
+            # Add the new node as a child or sibling
             if parent_node.Child is None:
                 parent_node.Child = new_node
             else:
-                # Traverse to the last sibling
                 current = parent_node.Child
                 while current.Sibling is not None:
                     current = current.Sibling
@@ -199,19 +215,22 @@ def main():
 
             # Set the new node's parent
             new_node.Parent = parent_node
+
+            # Add new node to the list and to the level-specific tracking
             nw.append(new_node)
-            
+            level_nodes[level].append(new_node)
+
+        # Assign event rates to leaf nodes and initialize non-leaf nodes with empty event rates
         for node in nw:
             if node.Child is None:
-                print(f"adding eventrate for: {node.id}")
+   
                 evtrate = generate_events(eventrates, node_event_ratio)
-                print(f"My evt rate {evtrate}")
-                with open('PrimitiveEvents','wb') as f:
+
+                with open('PrimitiveEvents', 'wb') as f:
                     pickle.dump(evtrate, f)
                 node.eventrates = evtrate
             else:
                 node.eventrates = [0] * len(eventrates)
-
 
         return root, nw
     
@@ -221,7 +240,7 @@ def main():
     #     no = Node(node, 0, 0, generate_events(eventrates, node_event_ratio))
     #     nw.append(no)
         
-    print(nw)     
+    #print(nw)     
     
     """
     TODO Rebuild the check for allEvents again
