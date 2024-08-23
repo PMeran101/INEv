@@ -174,10 +174,11 @@ def networkText():
     #myTypes = list(set(sum([x.leafs() for x in wl], [])))
     myTypes = query.leafs()
     mystr = ""
-    for i in nw:        
-        for j in range(len(i)):
+    for i in nw:       
+        mystr += "node" + str(i.id) + " " 
+        for j in range(len(i.eventrates)):
            if string.ascii_uppercase[j] in myTypes:
-              mystr += str(i[j]) + " "
+              mystr += str(i.eventrates[j]) + " "
               #mystr += str(1) + " "
            else:
                 mystr += "0" + " "   

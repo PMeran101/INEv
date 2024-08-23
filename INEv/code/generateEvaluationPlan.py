@@ -386,10 +386,11 @@ def networkText():
     myTypes = list(set(sum([x.leafs() for x in wl], [])))
     #mystr = "network \n"
     mystr = ""
-    for i in nw:        
-        for j in range(len(i)):
+    for i in nw:  
+        mystr+= "ID: " + str(i.id) + " "
+        for j in range(len(i.eventrates)):
            if string.ascii_uppercase[j] in myTypes:
-              mystr += str(i[j]) + " "
+              mystr += str(i.eventrates[j]) + " "
               #mystr += str(1) + " "
            else:
                 mystr += "0" + " "   
@@ -453,7 +454,6 @@ def filterUsed():
 if filterUsed() or not filterUsed():
     
     f = open("../plans/" + str(ID) + filterUsed() +"_INEv.txt", "w")   
-   
     f.write(generatePlan()) 
     f.close()
         
