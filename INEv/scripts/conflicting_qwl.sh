@@ -2,26 +2,22 @@
 
 cd ../code
 	
-LOG_FILE="output_INEv_fog.txt"
-
-# Start capturing all output
-{
   echo "Script started at: $(date)"
 
-#   for k in 5 10 20 # qwl size
-#   do 
-#       for h in 6 10 15 20 25 # num event types
-#       do
-#           echo "Starting outer loop with k=$k and h=$h at: $(date)"
-        $h=6
-          # Generate network and graph files
+  for k in 5 10 20 # qwl size
+  do 
+      for h in 6 10 15 20 25 # num event types
+      do
+          echo "Starting outer loop with k=$k and h=$h at: $(date)"
+
+          Generate network and graph files
           python3 generate_network.py 20 0.5 1.3 "$h"
           python3 generate_graph.py
           python3 allPairs.py
-        $k=5          
-        #   a=1
-        #   while [ "$a" -lt 50 ]
-        #   do
+     
+          a=1
+          while [ "$a" -lt 50 ]
+          do
               echo "  Starting inner loop iteration $a with k=$k at: $(date)"
               
               python3 generate_qwls.py 6 "$k"	
@@ -33,13 +29,13 @@ LOG_FILE="output_INEv_fog.txt"
               python3 computePlanCosts_aug.py "QWL$k"
               
               echo "  Completed inner loop iteration $a with k=$k at: $(date)"
-        #       a=$((a + 1))
-        #   done
+              a=$((a + 1))
+          done
           
           echo "Completed outer loop with k=$k and h=$h at: $(date)"
-#       done
-#   done
+      done
+  done
   
   echo "Script completed at: $(date)"
   
-} > "$LOG_FILE" 2>&1
+
