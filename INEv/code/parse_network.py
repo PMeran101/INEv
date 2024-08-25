@@ -25,6 +25,7 @@ for node in nw:
 def events(node):
     return network[node]
 
+#Adding a dictionary with primitve events as keys and the nodes that produce them as values
 nodes = {}
 for i in network.keys():
     for event in network[i]:

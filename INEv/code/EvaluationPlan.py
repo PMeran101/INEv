@@ -40,6 +40,8 @@ class EvaluationPlan():
                 newInstance = Instance(name[0], name, [InstanceDict[name]], {})
                 self.instances.append(newInstance)
         
+    def __str__(self):
+        return f"<EvaluationPlan(projections={self.projections}, instances={self.instances})>"
 class Projection():
 # projections have names and combinations which are also lists of projections, sink nodes (depending on placement style), and sources which encapsulate routing inforation for each etb of etype in combination
     def __init__ (self, name, combination, sinks, spawnedInstances, Filters):

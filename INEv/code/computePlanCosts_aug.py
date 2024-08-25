@@ -69,12 +69,15 @@ def main():
     
     hopLatency = {}
     
-       
-    EventNodes = initEventNodes()[0]
-    IndexEventNodes = initEventNodes()[1]    
+    #Reduce calls of initEventNodes
+    init_eventNodes = initEventNodes()   
+    EventNodes = init_eventNodes[0]
+    IndexEventNodes = init_eventNodes[1]    
     
     myPlan = EvaluationPlan([], [])
     
+    #transforming indexeventnodes into EvaluationPLan object with all entries as a instance
+    #jede instance ist eine node ein event (nodes * events die produziert werden pro node)
     myPlan.initInstances(IndexEventNodes) # init with instances for primitive event types
     
     #mycombi = removeSisChains()
@@ -106,7 +109,7 @@ def main():
                 for newin in result[2].spawnedInstances: # add new spawned instances
                     myPlan.addInstances(projection, newin) 
       
-               
+               #adding routing keys
                 myPlan.updateInstances(result[3]) #! update instances
             
                 

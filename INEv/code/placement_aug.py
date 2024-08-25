@@ -121,7 +121,7 @@ def NEWcomputeMSplacementCosts(projection, sourcetypes, destinationtypes, noFilt
                     node = findBestSource(getNodes(etb), MydestinationNodes) #best source is node closest to a node of destinationNodes
                     treenodes = copy.deepcopy(MydestinationNodes) 
                     treenodes.append(node)
-                                        
+                    
                     mytree = steiner_tree(G, treenodes)
                     
                     myInstance = Instance(etype, etb, [node], {projection: list(mytree.edges)}) #! #append routing tree information for instance/etb                    

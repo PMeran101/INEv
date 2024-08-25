@@ -36,15 +36,22 @@ eventNodeDict =  {} # {0: ["B1", "A3", "E0"], 1: ["A1B2", "A1B3", "B1"]} which i
 
 
 def initEventNodes():  #matrice: comlumn indices are node ids, row indices correspond to etbs, for a given etb use IndexEventNodes to get row ID for given ETB
+    #Storign all nodes producing a given event type with a 1 in the corresponding list
+    # Node generating event type A would have: [1,0,0,0,...]
     myEventNodes = []
+    #Storing a dictionary with the event type and node id as key and the index in the myEventNodes type for the list.
     myIndexEventNodes = {}
     offset = 0
     index = 0 
+    #For each primitve event
     for etype in nodes.keys():
         myetbs = []
+        #each node producting the event type
         for node in nodes[etype]:
-            
+
+            #creating a list of zeros with the length of the network
             mylist = [0 for x in range(len(network.keys()))]
+            #Adding a 1 at the position of the node producing the event
             mylist[node] = 1
             myEventNodes.append(mylist)
             myIndexEventNodes[etype+str(node)] = index
@@ -53,9 +60,10 @@ def initEventNodes():  #matrice: comlumn indices are node ids, row indices corre
         myIndexEventNodes[etype] = myetbs
         offset = index
     return(myEventNodes, myIndexEventNodes)
-        
-EventNodes = initEventNodes()[0]
-IndexEventNodes = initEventNodes()[1]
+
+init_EventNodes = initEventNodes()        
+EventNodes = init_EventNodes[0]
+IndexEventNodes = init_EventNodes[1]
 projFilterDict = {}
 
 

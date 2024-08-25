@@ -114,12 +114,19 @@ for i in myplan.projections:
     for filterTuple in myproj.Filters:
         filterDict[filterTuple[0]] = filterTuple[1]     
     for node in myproj.sinks:
-            evaluationDict[node].append(str(myproj.name))
+        """Adding Queries from Eval plan at their sinks
+        e.g = a query has a sink array [1,4,8] and respectively in this dict the nodes 1,4 and 8 get the query appended
+        """
+        evaluationDict[node].append(str(myproj.name))
                   
-    
+    """Adding the combination keys (Primitive Evens such as H and K to the combinationDict 
+        at its respective tree Object (string representation))"""
     combinationDict[str(myproj.name)] = list(map(lambda x: str(x), myproj.combination.keys()))    # remove events used as filters
+    """
+    Ge the selectionRate of the Query
+    """
     selectionRate[str(myproj.name)] = getSelectionRate(myproj.name, myproj.combination.keys())
-    
+
     for instancelist in myproj.combination.keys():
         for instance in myproj.combination[instancelist]: 
                 if not instance.projname in forwardingDict.keys():
@@ -212,22 +219,38 @@ def listStr(mylist):
     return text[:-1]
 
 
+
+
 def forwardingRule(i):
+    """
+    Generates a text description for a ndoe i of the forwarding rules. Check which other nodes in the network should
+    send data to this node and which nodes this node should send data to, based on rules in the dictionaries.
+    :param i: node
+    """
     text = "Forward rules:\n"
+    
+    #Store the node object as current node
+    current_node = nw[i]
+
+    #Iterating over all projections
     for projection in forwardingDict.keys():
+        #Iterating over all instance Keys under the current projection.
         for instance in forwardingDict[projection].keys():  
-            post = []
+            post = [] #List to store all nodes that the current instance forwards to node 'i'
             instanceText = ""
+            #Check if current projection has entry in filterDict
             if str(projection) in filterDict.keys():
                     instanceText += listStr((filterDict[str(projection)][1]))+"|"+str(projection) + " - [ETB:" + toETB(instance) + " FROM:"
             else:    
                     instanceText += str(projection) + " - [ETB:" + toETB(instance) + " FROM:"
-            for node in forwardingDict[projection][instance].values():    
-                     pre = [p for p in forwardingDict[projection][instance].keys() if i in forwardingDict[projection][instance][p]]
-                     if i in forwardingDict[projection][instance].keys():                        
-                         post = forwardingDict[projection][instance][i]  
-                     else:
-                         post = []
+            for node in forwardingDict[projection][instance].values(): 
+                #test_node = forwardingDict[node]
+                #List of nodes that send data to node 'i'   
+                pre = [p for p in forwardingDict[projection][instance].keys() if i in forwardingDict[projection][instance][p]]
+                if i in forwardingDict[projection][instance].keys():                        
+                    post = forwardingDict[projection][instance][i]  
+                else:
+                    post = []
                          
             if post:
                 if not pre:
@@ -387,13 +410,13 @@ def networkText():
     #mystr = "network \n"
     mystr = ""
     for i in nw:  
-        mystr+= "ID: " + str(i.id) + " "
-        for j in range(len(i.eventrates)):
-           if string.ascii_uppercase[j] in myTypes:
-              mystr += str(i.eventrates[j]) + " "
-              #mystr += str(1) + " "
-           else:
-                mystr += "0" + " "   
+        mystr+= str(i)
+        # for j in range(len(i.eventrates)):
+        #    if string.ascii_uppercase[j] in myTypes:
+        #       mystr += str(i.eventrates[j]) + " "
+        #       #mystr += str(1) + " "
+        #    else:
+        #         mystr += "0" + " "   
         mystr +="\n"
     return mystr[:-1]
 
