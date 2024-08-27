@@ -22,6 +22,7 @@ do
 		        python3 determine_all_single_selectivities.py
 			for neg in 0 1
 				do
+				echo "Executing Time: $(date) Var: j=$j , a=$a, param=$param, neg=$neg"
 				python3 generate_qwls.py 10 5 $neg
 				python3 generate_projections.py
 				python3 combigen.py

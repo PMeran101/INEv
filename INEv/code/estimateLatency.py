@@ -95,11 +95,11 @@ def getFilterLatency(proj): # this is for the upstream projection proj and compu
     
     for i in [x for x in mycombi[proj] if x in projFilterDict.keys() and len(list(projFilterDict[x].keys()))>1]: #input x of combi of proj has filter
         myfilters = list(getMaximalFilter(projFilterDict, i))  
-        print(myfilters) 
+        #print(myfilters) 
         myRates = {x: totalRate(x) for x in myfilters} # Problem: not Totalrates anymore for determining costs -> add cost Dict for Diamonds
         myRates.update({x: totalRate(x) * singleSelectivities[getKeySingleSelect(x, i)] for x in [x for x in i.leafs() if not str(x) in myfilters]})      
         localcombi = i.leafs()
-        print(localcombi)
+        #print(localcombi)
         # choose minimum, add to latency
         myMin = [x for x in localcombi if myRates[x] == min(myRates.values())][0]
         myState = myMin        

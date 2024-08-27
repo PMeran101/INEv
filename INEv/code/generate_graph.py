@@ -18,7 +18,7 @@ def main():
     
    with open('network', 'rb') as network_file:
             nw = pickle.load(network_file) 
-            print(nw)
+            #print(nw)
   # percentage = 50
    outdegree = 3
    experiment = 'None'
@@ -30,7 +30,7 @@ def main():
    G = create_fog_graph(nw[0], G)
    #G = nx.connected_watts_strogatz_graph(len(nw),outdegree,0.2)   
           
-   print(len(G.edges))
+   #print(len(G.edges))
    #print(nx.adjacency_matrix(G))
 
  

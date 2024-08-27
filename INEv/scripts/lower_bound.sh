@@ -18,6 +18,7 @@ do
 		a=0
 		while [ $a -lt 50 ]
 		do
+		echo "Executing Time: $(date) Var: s=$s, j=$j , a=$a"
 		python3 generate_network.py 20 0.5 $j 7
 		python3 write_config_single.py
 		python3 determine_all_single_selectivities.py

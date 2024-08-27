@@ -484,9 +484,9 @@ def main():
     combigenTime = round(end_time - start_time,2)
      
     globalMSTypes   = set(sum([allMSTypes(x.stripKL_simple()) for x in wl],[]))
-    print("potentialMSTypes:  "  + str(globalMSTypes))
+    #print("potentialMSTypes:  "  + str(globalMSTypes))
     globalSiSTypes  = set(sum([allSiSEvents(x.stripKL_simple()) for x in wl],[]))
-    print("globalSiSTypes:  "  + str(globalSiSTypes))
+    # print("globalSiSTypes:  "  + str(globalSiSTypes))
     criticalMSTypes = list(set(globalMSTypes).intersection(set(globalSiSTypes)))
     
  #   criticalMSTypes += globalPartitioningOK(wl[0], wl) # add parttypes to ciritcalMSTypes that exceed global threshold

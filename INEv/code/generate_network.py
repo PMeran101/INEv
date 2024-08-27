@@ -266,11 +266,11 @@ def main():
          
     
    
-    print("NETWORK")  
-    print("--------") 
-    for i in range(len(nw)):
-        print(nw[i])
-    print("\n")
+    # print("NETWORK")  
+    # print("--------") 
+    # for i in range(len(nw)):
+    #     print(nw[i])
+    # print("\n")
     
     nw[0].visualize_tree(nw[0])
     

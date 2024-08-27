@@ -370,10 +370,10 @@ projlist = []
 projrates = {}
 
 for query in wl:
-    print(query)
+    #print(query)
     query = query.stripKL_simple()
     result = generate_projections(query)
-    print(result)
+    #print(result)
     #projsPerQuery[query] = result[0]
     for i in result[0]:        
         if not i in projlist:

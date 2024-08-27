@@ -40,7 +40,7 @@ for i in result:
 end = time.time()
 
 
-print("All Pairs " + str(end-start))
+#print("All Pairs " + str(end-start))
 
 
 with open('allPairs', 'wb') as allPairs_file:

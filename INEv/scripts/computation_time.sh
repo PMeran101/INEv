@@ -6,6 +6,7 @@ do
 		a=0
 		while [ $a -lt 60 ]
 		do		
+		echo "Executing Time: $(date) Var: j=$j , a=$a"
 		python3 generate_network.py 20 0.5 1.4 $j
 		python3 generate_qwls.py $j 1
 		python3 generate_selectivity.py 		
