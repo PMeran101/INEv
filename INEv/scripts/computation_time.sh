@@ -3,6 +3,9 @@ cd ../code
 echo "Computation Time"
 for j in 4 5 6 7 8
 do
+    log_file="./logs/compute-time+${j}.log"
+    echo "Logging to $log_file"
+    echo "Execution Time: $(date)" >> $log_file
 		a=0
 		while [ $a -lt 60 ]
 		do		

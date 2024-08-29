@@ -7,7 +7,7 @@ python3 generate_network.py 20 0.5 1.3 25
 python3 generate_graph.py
 python3 allPairs.py
 
-for k in 5  
+for k in 10 20  
 do 
 
 	python3 generate_qwls.py 6 $k

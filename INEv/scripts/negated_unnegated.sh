@@ -5,6 +5,9 @@ echo "Negated"
 
 for j in  1.1  1.3  1.5  1.7  1.9 
 do
+    log_file="./logs/negated_un+${j}.log"
+    echo "Logging to $log_file"
+    echo "Execution Time: $(date)" >> $log_file
 		a=0
 		while [ $a -lt 50 ]
 		do

@@ -12,6 +12,9 @@ python3 allPairs.py
 
 for s in 0.01 0.001
 do
+    log_file="./logs/lower_bounds+${s}.log"
+    echo "Logging to $log_file"
+    echo "Execution Time: $(date)" >> $log_file
 python3 generate_selectivity.py $s
 for j in  1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 
 do

@@ -8,6 +8,10 @@ python3 allPairs.py
 #5
 for k in 10 20  
 do 
+    log_file="./logs/eventNode_qwl_k${k}.log"
+    echo "Logging to $log_file"
+    echo "Execution Time: $(date)" >> $log_file
+
 	python3 generate_qwls.py 6 $k
 	python3 generate_selectivity.py 
 	for j in  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
