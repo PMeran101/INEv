@@ -82,8 +82,8 @@ def main():
     
     #mycombi = removeSisChains()
     unfolded = mycombi
-    print(unfolded)
-    print(projFilterDict.keys())
+    # print(unfolded)
+    # print(projFilterDict.keys())
     sharedDict = getSharedMSinput(unfolded, projFilterDict)    
     dependencies = compute_dependencies(unfolded)
     processingOrder = sorted(compute_dependencies(unfolded).keys(), key = lambda x : dependencies[x] ) # unfolded enthält kombi   

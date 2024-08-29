@@ -70,7 +70,8 @@ def main():
     myX = range(0, len(myX_o)) # counting of x ticks
     
     for i in range(len(mydata)):
-        plt.plot(myX, mydata[i].groupby(X_Column)[Y_Column].median(),marker="x",  label = labels[i])
+        y_data = mydata[i].groupby(X_Column)[Y_Column].median().to_numpy()
+        plt.plot(myX, y_data, marker="x", label=labels[i])
         #plt.plot(myX,mydata[i].groupby(X_Column)[Y_Column].mean(),marker="o", label = labels[i])
     plt.legend()
     
