@@ -92,6 +92,10 @@ def getFilters(projection, partType): # move to filter file eventually
 
 def NEWcomputeMSplacementCosts(projection, sourcetypes, destinationtypes, noFilter): #we need tuples, (C, [E,A]) C should be sent to all e and a nodes ([D,E], [A]) d and e should be sent to all a nodes etc
     #print(projection, sourcetypes)
+    """
+    TODO getNodes(etb) wird zu oft aufgerufen
+    """
+    
     costs = 0
     destinationNodes = []     
 

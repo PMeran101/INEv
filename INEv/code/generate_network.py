@@ -169,6 +169,23 @@ def main():
     ##eventrates = [0.3, 4, 0.6, 91, 666, 166, 0.3, 20, 40] # citibike 30
 
     #eventrates = [2,20,30,6,10,1,2, 2, 40] 
+    def post_order_sum_events(node):
+        if not node:
+            return
+
+        # Initialize the event rates sum as empty or zeros
+        if node.Child is not None:
+            node.eventrates = [0] * len(node.eventrates)
+
+        # Traverse the child nodes first
+        child = node.Child
+        while child is not None:
+            post_order_sum_events(child)
+            # Sum the child event rates into the parent node
+            node.eventrates = [sum(x) for x in zip(node.eventrates, child.eventrates)]
+            child = child.Sibling
+    
+    
     def create_random_tree(nwsize, eventrates, node_event_ratio):
         if nwsize <= 0:
             return None
@@ -232,6 +249,7 @@ def main():
             else:
                 node.eventrates = [0] * len(eventrates)
 
+        post_order_sum_events(root)
         return root, nw
     
     nw = []
