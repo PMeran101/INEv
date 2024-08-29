@@ -1,7 +1,7 @@
 import os
 
 # Define the suffix you want to add
-suffix = "_fog"  # Replace with your desired suffix
+suffix = "_normal"  # Replace with your desired suffix
 
 # Get the current directory
 current_directory = os.getcwd()
