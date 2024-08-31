@@ -5,17 +5,19 @@ Created on Thu Aug 19 11:45:00 2021
 
 @author: samira
 """
-from util import *
+from util import column,column1s,reverseDict
 
-from network import *
-import copy
+# from network import *
+
 import numpy as np
 import pickle
-from tree import *
+from tree import Tree,AND,SEQ,PrimEvent,NSEQ,KL
 from helper import *
 from parse_network import *
-from network import *
+from network import get_network,get_nodes
 
+network = get_network()
+nodes = get_nodes()
 #import matplotlib.pyplot as plt
 import networkx as nx 
 from networkx.algorithms.approximation import steiner_tree
@@ -35,35 +37,43 @@ placementTreeDict = {} # {("D", "A1"): (5,[2,3,4], steinerTree(5234)} show stein
 eventNodeDict =  {} # {0: ["B1", "A3", "E0"], 1: ["A1B2", "A1B3", "B1"]} which instances of events/projections are generated or sent to/via node x -> maybe reuse network dict, but atm used for other stuff
 
 
-def initEventNodes():  #matrice: comlumn indices are node ids, row indices correspond to etbs, for a given etb use IndexEventNodes to get row ID for given ETB
-    #Storign all nodes producing a given event type with a 1 in the corresponding list
-    # Node generating event type A would have: [1,0,0,0,...]
+# Module-level variables
+EventNodes = None
+IndexEventNodes = None
+
+def initEventNodes():
+    """Initialize EventNodes and IndexEventNodes."""
+    global EventNodes, IndexEventNodes
+    
     myEventNodes = []
-    #Storing a dictionary with the event type and node id as key and the index in the myEventNodes type for the list.
     myIndexEventNodes = {}
-    offset = 0
-    index = 0 
-    #For each primitve event
+    index = 0
+
     for etype in nodes.keys():
         myetbs = []
-        #each node producting the event type
         for node in nodes[etype]:
-
-            #creating a list of zeros with the length of the network
-            mylist = [0 for x in range(len(network.keys()))]
-            #Adding a 1 at the position of the node producing the event
+            mylist = [0 for _ in range(len(network.keys()))]
             mylist[node] = 1
             myEventNodes.append(mylist)
-            myIndexEventNodes[etype+str(node)] = index
+            myIndexEventNodes[etype + str(node)] = index
             index += 1
-            myetbs.append(etype+str(node))
+            myetbs.append(etype + str(node))
         myIndexEventNodes[etype] = myetbs
-        offset = index
-    return(myEventNodes, myIndexEventNodes)
 
-init_EventNodes = initEventNodes()        
-EventNodes = init_EventNodes[0]
-IndexEventNodes = init_EventNodes[1]
+    EventNodes = myEventNodes
+    IndexEventNodes = myIndexEventNodes
+
+def get_EventNodes():
+    """Return EventNodes, initializing if necessary."""
+    if EventNodes is None:
+        initEventNodes()
+    return EventNodes
+
+def get_IndexEventNodes():
+    """Return IndexEventNodes, initializing if necessary."""
+    if IndexEventNodes is None:
+        initEventNodes()
+    return IndexEventNodes
 projFilterDict = {}
 
 

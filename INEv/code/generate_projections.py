@@ -24,6 +24,10 @@ with open('selectivities', 'rb') as selectivity_file:
 MSTrees  = {}
 DistMatrices =  {}
 
+from structures import get_IndexEventNodes, get_EventNodes
+
+EventNodes = get_EventNodes()
+IndexEventNodes = get_IndexEventNodes()  
 
 def optimisticTotalRate(projection): # USE FILTERED RATE FOR ESTIMATION 
     if projection in projlist: # is complex event        

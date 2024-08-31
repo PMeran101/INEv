@@ -111,6 +111,8 @@ def getparttype(projection):
         
 
 def getMultiNodeRoutes(projection):
+    from structures import get_IndexEventNodes
+    index_event_nodes = get_IndexEventNodes()
     mydict = {}
     parttype = getparttype(myplan.getProjection(projection).name)
     for inputproj in mycombi[projection]:
@@ -122,7 +124,7 @@ def getMultiNodeRoutes(projection):
                         if isinstance(route[0], tuple):
                             mydict[etb] = getSubgraph(route, parttype)
         else:
-            for etb in IndexEventNodes[inputproj]:
+            for etb in index_event_nodes[inputproj]:
                 etbDict = myplan.getByName(etb).routingDict
                 for route in list(etbDict.values()):
                     if len(route) > 1:

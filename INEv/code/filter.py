@@ -8,6 +8,14 @@ Created on Fri Aug 20 13:03:07 2021
 Output selector related methods.
 """
 from structures import *
+from network import get_rates
+
+rates = get_rates()
+
+from structures import get_IndexEventNodes, get_EventNodes
+
+EventNodes = get_EventNodes()
+IndexEventNodes = get_IndexEventNodes()  
 
 with open('singleSelectivities',  'rb') as  singleSelectivities_file:
     singleSelectivities = pickle.load(singleSelectivities_file)
@@ -50,6 +58,8 @@ def getDecomposed(primEvents, projection):
 
 def getDecomposedTotal(primEvents, projection): 
     mysum = 0
+    from network import get_instances
+    instances = get_instances()
     for event in [x for x in projection.leafs() if not x in primEvents]:    # implement for list of primEvents, to use during placement    
             myKey = getKeySingleSelect(event, projection)
             mysum += singleSelectivities[myKey] * rates[event] * instances[event]

@@ -9,6 +9,10 @@ import multiprocessing
 from processCombination import *
 from functools import partial
 
+from structures import get_IndexEventNodes, get_EventNodes
+
+EventNodes = get_EventNodes()
+IndexEventNodes = get_IndexEventNodes()  
 
 def computeMSplacementCosts(projection, combination, partType, sharedDict, noFilter):
     costs = 0

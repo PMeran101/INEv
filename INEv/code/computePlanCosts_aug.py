@@ -68,11 +68,10 @@ def main():
     start_time = time.time()
     
     hopLatency = {}
-    
-    #Reduce calls of initEventNodes
-    init_eventNodes = initEventNodes()   
-    EventNodes = init_eventNodes[0]
-    IndexEventNodes = init_eventNodes[1]    
+    from structures import get_IndexEventNodes, get_EventNodes
+  
+    EventNodes = get_EventNodes()
+    IndexEventNodes = get_IndexEventNodes()   
     
     myPlan = EvaluationPlan([], [])
     
