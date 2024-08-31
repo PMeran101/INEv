@@ -3,92 +3,48 @@ digraph {
 	1 [label=1]
 	0 -> 1
 	1 [label=1]
-	5 [label=5]
-	1 -> 5
-	5 [label=5]
-<<<<<<< HEAD
-	10 [label=10]
-	5 -> 10
-	10 [label=10]
-	17 [label=17]
-	10 -> 17
-	17 [label=17]
-	6 [label=6]
-	1 -> 6
-=======
-	6 [label=6]
-	1 -> 6
-	8 [label=8]
-	6 -> 8
-	8 [label=8]
-	13 [label=13]
-	8 -> 13
-	13 [label=13]
-	14 [label=14]
-	8 -> 14
-	10 [label=10]
-	6 -> 10
-	12 [label=12]
-	10 -> 12
-	12 [label=12]
-	15 [label=15]
-	10 -> 15
-	18 [label=18]
-	10 -> 18
-	19 [label=19]
-	10 -> 19
->>>>>>> testing/fog_cloud_topology_1
+	7 [label=7]
+	1 -> 7
+	7 [label=7]
 	2 [label=2]
 	0 -> 2
+	6 [label=6]
+	2 -> 6
+	6 [label=6]
+	3 [label=3]
+	0 -> 3
 	4 [label=4]
-	2 -> 4
+	3 -> 4
 	4 [label=4]
-<<<<<<< HEAD
+	5 [label=5]
+	3 -> 5
 	8 [label=8]
-	4 -> 8
+	5 -> 8
 	8 [label=8]
-	12 [label=12]
-	8 -> 12
-	12 [label=12]
-	13 [label=13]
-	8 -> 13
+	18 [label=18]
+	8 -> 18
+	18 [label=18]
 	19 [label=19]
 	8 -> 19
 	9 [label=9]
-	4 -> 9
-	14 [label=14]
-	9 -> 14
-	14 [label=14]
-=======
-	11 [label=11]
-	4 -> 11
-	11 [label=11]
-	17 [label=17]
-	11 -> 17
-	17 [label=17]
->>>>>>> testing/fog_cloud_topology_1
-	3 [label=3]
-	0 -> 3
-	7 [label=7]
-	3 -> 7
-	7 [label=7]
-<<<<<<< HEAD
-	11 [label=11]
-	7 -> 11
-	11 [label=11]
+	5 -> 9
+	12 [label=12]
+	9 -> 12
+	12 [label=12]
 	15 [label=15]
-	11 -> 15
-	15 [label=15]
-	16 [label=16]
-	11 -> 16
-	18 [label=18]
-	11 -> 18
-=======
-	9 [label=9]
-	7 -> 9
-	9 [label=9]
+	9 -> 15
 	16 [label=16]
 	9 -> 16
-	16 [label=16]
->>>>>>> testing/fog_cloud_topology_1
+	10 [label=10]
+	5 -> 10
+	17 [label=17]
+	10 -> 17
+	17 [label=17]
+	11 [label=11]
+	5 -> 11
+	13 [label=13]
+	11 -> 13
+	13 [label=13]
+	14 [label=14]
+	11 -> 14
 }
