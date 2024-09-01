@@ -3,14 +3,11 @@ cd ../code
 echo "Computation Time"
 for j in 4 5 6 7 8
 do
-    log_file="./logs/compute-time+${j}.log"
-    echo "Logging to $log_file"
-    echo "Execution Time: $(date)" >> $log_file
 		a=0
 		while [ $a -lt 60 ]
 		do		
 		echo "Executing Time: $(date) Var: j=$j , a=$a"
-		python3 generate_network.py 20 0.5 1.4 $j
+		python3 generate_network.py 100 0.5 1.4 $j
 		python3 generate_qwls.py $j 1
 		python3 generate_selectivity.py 		
 		python3 generate_graph.py

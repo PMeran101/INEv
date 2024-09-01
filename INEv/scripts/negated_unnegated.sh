@@ -5,13 +5,10 @@ echo "Negated"
 
 for j in  1.1  1.3  1.5  1.7  1.9 
 do
-    log_file="./logs/negated_un+${j}.log"
-    echo "Logging to $log_file"
-    echo "Execution Time: $(date)" >> $log_file
 		a=0
 		while [ $a -lt 50 ]
 		do
-		python3 generate_network.py 20 0.5 $j # generate rates
+		python3 generate_network.py 100 0.5 $j # generate rates
                 # start with min
 		# q nseq
 		# q seq
@@ -19,7 +16,7 @@ do
 		# q nseq
 		for param in 'max' 'min'
                         do
-			python3 generate_network.py 20 0.5 $j 10 10 'A' $param
+			python3 generate_network.py 100 0.5 $j 10 10 'A' $param
 			python3 generate_qwls.py 10 5 0
 			python3 write_config_single.py
 		        python3 determine_all_single_selectivities.py

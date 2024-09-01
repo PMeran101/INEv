@@ -3,7 +3,7 @@ cd ../code
 
 echo "Event_SKew_QWL PLAN"
 
-python3 generate_network.py 20 0.5 1.3 25
+python3 generate_network.py 100 0.5 1.3 25
 python3 generate_graph.py
 python3 allPairs.py
 
@@ -17,7 +17,7 @@ do
 			a=0
 			while [ $a -lt 40 ]
 			do
-			python3 generate_network.py 20 0.5 $j 25 
+			python3 generate_network.py 100 0.5 $j 25 
 			python3 generate_graph.py
 			python3 allPairs.py
 			python3 write_config_single.py
