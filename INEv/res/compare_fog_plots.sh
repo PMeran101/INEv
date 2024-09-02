@@ -9,15 +9,15 @@ python3.8 plot_generic.py -i QWL5_normal.csv QWL5_fog.csv -x EventTypes -y Trans
 python3.8 plot_generic.py -i QWL10_normal.csv QWL10_fog.csv -x EventTypes -y TransmissionRatio -l QWL10_INEv QWL10_Fog -o Fig_6a_overlap_QWL10_new.pdf # OVERLAP
 python3.8 plot_generic.py -i QWL20_normal.csv QWL20_fog.csv -x EventTypes -y TransmissionRatio -l QWL20_INEv QWL20_Fog -o Fig_6a_overlap_QWL20_new.pdf # OVERLAP
 
-# python3 plot_generic.py -i eventSkew_qwl+5_normal.csv eventSkew_qwl+5_fog.csv -x EventSkew -y TransmissionRatio -l QWL5_INEv QWL5_Fog -o Fig_6b_eventSkew_QWL5.pdf # eventSkew
-# python3 plot_generic.py -i eventSkew_qwl+10_normal.csv eventSkew_qwl+10_fog.csv -x EventSkew -y TransmissionRatio -l QWL10_INEv QWL10_Fog -o Fig_6b_eventSkew_QWL10.pdf # eventSkew
-# python3 plot_generic.py -i eventSkew_qwl+20_normal.csv eventSkew_qwl+20_fog.csv -x EventSkew -y TransmissionRatio -l QWL20_INEv QWL20_Fog -o Fig_6b_eventSkew_QWL20.pdf # eventSkew
+python3 plot_generic.py -i eventSkew_qwl+5_normal.csv eventSkew_qwl+5_fog.csv -x EventSkew -y TransmissionRatio -l QWL5_INEv QWL5_Fog -o Fig_6b_eventSkew_QWL5.pdf # eventSkew
+python3 plot_generic.py -i eventSkew_qwl+10_normal.csv eventSkew_qwl+10_fog.csv -x EventSkew -y TransmissionRatio -l QWL10_INEv QWL10_Fog -o Fig_6b_eventSkew_QWL10.pdf # eventSkew
+python3 plot_generic.py -i eventSkew_qwl+20_normal.csv eventSkew_qwl+20_fog.csv -x EventSkew -y TransmissionRatio -l QWL20_INEv QWL20_Fog -o Fig_6b_eventSkew_QWL20.pdf # eventSkew
 
-# python3 plot_generic.py -i eventNode_qwl+10_normal.csv eventNode_qwl+10_fog.csv -x EventNodeRatio -y TransmissionRatio -l QWL10_INEv QWL10_normal -o Fig_6d_eventNodeRatio_QWL10.pdf #eventNodeRatio
-# python3 plot_generic.py -i eventNode_qwl+20_normal.csv eventNode_qwl+20_fog.csv -x EventNodeRatio -y TransmissionRatio -l QWL20_INEv QWL20_normal -o Fig_6d_eventNodeRatio_QWL20.pdf #eventNodeRatio
+python3 plot_generic.py -i eventNode_qwl+10_normal.csv eventNode_qwl+10_fog.csv -x EventNodeRatio -y TransmissionRatio -l QWL10_INEv QWL10_normal -o Fig_6d_eventNodeRatio_QWL10.pdf #eventNodeRatio
+python3 plot_generic.py -i eventNode_qwl+20_normal.csv eventNode_qwl+20_fog.csv -x EventNodeRatio -y TransmissionRatio -l QWL20_INEv QWL20_normal -o Fig_6d_eventNodeRatio_QWL20.pdf #eventNodeRatio
 
-# python3 plot_generic.py -i nwSize_qwl+10_normal.csv nwSize_qwl+10_fog.csv -x Nodes -y TransmissionRatio -l QWL10_INEv QWL10_Fog -o Fig_6c_Nodes_QWL10.pdf #NWSize
-# python3 plot_generic.py -i nwSize_qwl+20_normal.csv nwSize_qwl+20_fog.csv -x Nodes -y TransmissionRatio -l QWL20_INEv QWL20_Fog -o Fig_6c_Nodes_QWL20.pdf #NWSize
+python3 plot_generic.py -i nwSize_qwl+10_normal.csv nwSize_qwl+10_fog.csv -x Nodes -y TransmissionRatio -l QWL10_INEv QWL10_Fog -o Fig_6c_Nodes_QWL10.pdf #NWSize
+python3 plot_generic.py -i nwSize_qwl+20_normal.csv nwSize_qwl+20_fog.csv -x Nodes -y TransmissionRatio -l QWL20_INEv QWL20_Fog -o Fig_6c_Nodes_QWL20.pdf #NWSize
 
 ### KLEENE & NSEQ -> maybe use other line types
 
