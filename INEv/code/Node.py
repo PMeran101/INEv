@@ -1,5 +1,5 @@
 
-from graphviz import Digraph
+from graphviz import Graph
 
 class Node():
     
@@ -14,49 +14,61 @@ class Node():
         self.computational_power = compute_power
         self.memory = memore
         self.eventrates = []
-        self.Parent = None
-        self.Child = None
-        self.Sibling = None
+        self.Parent = []
+        self.Child = []
+        self.Sibling = []
         
     
 
     def __str__(self):
-        parent_id = self.Parent.id if self.Parent else None
-        child_id = self.Child.id if self.Child else None
-        sibling_id = self.Sibling.id if self.Sibling else None
+        parent_ids = [parent.id for parent in self.Parent] if self.Parent else None
+        child_ids = [child.id for child in self.Child] if self.Child else None
+        sibling_ids = [sibling.id for sibling in self.Sibling] if self.Sibling else None
+
         return (f"Node {self.id}\n"
                 f"Computational Power: {self.computational_power}\n"
                 f"Memory: {self.memory}\n"
                 f"Eventrates: {self.eventrates}\n"
-                f"Parent: {parent_id}\n"
-                f"Child: {child_id}\n"
-                f"Sibling: {sibling_id}\n")
-
-    def add_nodes_edges(self,node, dot=None, nodes=set(), edges=set()):
+                f"Parents: {parent_ids}\n"
+                f"Child: {child_ids}\n"
+                f"Siblings: {sibling_ids}\n")
+    def add_nodes_edges(self, node, dot=None, nodes=set(), edges=set()):
         if dot is None:
-            dot = Digraph()
+            dot = Graph()
 
+        # Add the current node if not already added
         if node.id not in nodes:
             dot.node(name=str(node.id), label=str(node.id))
             nodes.add(node.id)
 
-        if node.Child is not None:
-            if (node.id, node.Child.id) not in edges:
-                dot.node(name=str(node.Child.id), label=str(node.Child.id))
-                dot.edge(str(node.id), str(node.Child.id))
-                edges.add((node.id, node.Child.id))
-            self.add_nodes_edges(node.Child, dot, nodes, edges)
-        
-        sibling = node.Sibling
-        while sibling is not None:
+        # Process each child node
+        for child in node.Child:
+            if child.id not in nodes:
+                dot.node(name=str(child.id), label=str(child.id))
+                nodes.add(child.id)
+
+            # Add an edge between the current node and its child
+            if (node.id, child.id) not in edges:
+                dot.edge(str(node.id), str(child.id))
+                edges.add((node.id, child.id))
+
+            # Recursively add nodes and edges for the child
+            self.add_nodes_edges(child, dot, nodes, edges)
+
+        # Process each sibling node
+        for sibling in node.Sibling:
             if sibling.id not in nodes:
                 dot.node(name=str(sibling.id), label=str(sibling.id))
                 nodes.add(sibling.id)
-            if (node.Parent.id, sibling.id) not in edges:
-                dot.edge(str(node.Parent.id), str(sibling.id))
-                edges.add((node.Parent.id, sibling.id))
+
+            # Add an edge between the parent and the sibling
+            for parent in node.Parent:
+                if (parent.id, sibling.id) not in edges:
+                    dot.edge(str(parent.id), str(sibling.id))
+                    edges.add((parent.id, sibling.id))
+
+            # Recursively add nodes and edges for the sibling
             self.add_nodes_edges(sibling, dot, nodes, edges)
-            sibling = sibling.Sibling
 
         return dot
 
