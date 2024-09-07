@@ -16,7 +16,7 @@ cd ../code
           python3 allPairs.py
      
           a=1
-          while [ "$a" -lt 50 ]
+          while [ "$a" -lt 3 ]
           do
               echo "  Starting inner loop iteration $a with k=$k at: $(date)"
               
