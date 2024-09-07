@@ -11,7 +11,7 @@ cd ../code
           echo "Starting outer loop with k=$k and h=$h at: $(date)"
 
           Generate network and graph files
-          python3 generate_network.py 20 0.5 1.3 "$h"
+          python3 generate_network.py -nw 20 -ner 0.5 -es 1.3 -ne "$h"
           python3 generate_graph.py
           python3 allPairs.py
      

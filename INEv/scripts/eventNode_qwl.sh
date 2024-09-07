@@ -2,7 +2,7 @@
 cd ../code
 echo "EventNode_QWL"
 
-python3 generate_network.py 20 0.5 1.3 25
+python3 generate_network.py -nw 20 -ner 0.5 -es 1.3 -ne 25
 python3 generate_graph.py
 python3 allPairs.py
 #5
@@ -16,7 +16,7 @@ do
 			while [ $a -lt 75 ]
 			do
 			echo "Executing Time: $(date) Var: k=$k, j=$j , a=$a"
-			python3 generate_network.py 20 $j 1.3 25
+			python3 generate_network.py -nw 20 -ner $j -es 1.3 -ne 25
 			python3 generate_graph.py
 			python3 allPairs.py
 			python3 write_config_single.py

@@ -236,7 +236,7 @@ def main():
 
         # Assign event rates to leaf nodes and initialize non-leaf nodes with empty event rates
         for node in nw:
-            if node.Child is []:
+            if len(node.Child) == 0:
    
                 evtrate = generate_events(eventrates, node_event_ratio)
 
