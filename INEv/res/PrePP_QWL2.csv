@@ -1,0 +1,5 @@
+ID,TransmissionRatio,FilterUsed,Nodes,EventSkew,EventNodeRatio,WorkloadSize,NumberProjections,MinimalSelectivity,MedianSelectivity,CombigenComputationTime,Efficiency,PlacementComputationTime,HopCount,Depth,ProcessingLatencyRatio,CentralTransmission,LowerBound,EventTypes
+628127,1.0019259850512,[],20,1.3,0.5,2,10,0.1,0.07645135776147324,0.03,3.9000000000000004,0.02,0,2.5,0,20569.0,0.0,20
+2210734,1.029881861586793,[],20,1.3,0.5,2,8,0.1,0.07806313003039203,0.02,3.9000000000000004,0.01,0,1.0,0,101.0,0.0,20
+9855124,0.9995680177988884,[],7,1.3,0.5,2,52,0.1,0.08759040531579285,5.88,1.5714285714285714,0.02,0,3.0,0,6326136.0,0.0,20
+7843021,1.0,"[(<tree.SEQ object at 0x7fcca8a40190>, 'J'), (<tree.SEQ object at 0x7fcca8a3db50>, 'J')]",10,1.3,0.5,2,35,0.1,0.06917976586207555,0.64,2.3,0.03,0,3.0,0,1299595508.0,0.0,20
