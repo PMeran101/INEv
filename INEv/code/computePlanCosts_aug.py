@@ -97,7 +97,7 @@ def main():
 
           
             partType = returnPartitioning(projection, unfolded[projection], criticalMSTypes)
-            if partType : 
+            if False : 
                 MSPlacements[projection] = partType
                 result = computeMSplacementCosts(projection, unfolded[projection], partType, sharedDict, noFilter)
                 additional = result[0]
