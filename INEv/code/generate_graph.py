@@ -6,7 +6,7 @@ Created on Fri Sep 24 17:12:21 2021
 @author: samira
 """
 import networkx as nx
-from networkx import Graph as gp
+from networkx import DiGraph as gp
 import Node
 import pickle
 from collections import deque
@@ -38,7 +38,7 @@ def main():
 
 def create_fog_graph(root, graph=None, nodes=set(), edges=set()):
     if graph is None:
-        graph = nx.Graph()
+        graph = nx.DiGraph()
 
     nodes = set()
     edges = set()
@@ -60,9 +60,9 @@ def create_fog_graph(root, graph=None, nodes=set(), edges=set()):
                 if child.id not in nodes:
                     graph.add_node(child.id, label=str(child.id))
                     nodes.add(child.id)
-                if (current_node.id, child.id) not in edges:
-                    graph.add_edge(current_node.id, child.id)
-                    edges.add((current_node.id, child.id))
+                if (child.id, current_node.id) not in edges:
+                        graph.add_edge(child.id, current_node.id)  # Edge from child to parent
+                        edges.add((child.id, current_node.id))
                 # Add the child to the queue for further processing
                 queue.append(child)
 
@@ -73,9 +73,8 @@ def create_fog_graph(root, graph=None, nodes=set(), edges=set()):
                     graph.add_node(sibling.id, label=str(sibling.id))
                     nodes.add(sibling.id)
                 if current_node.Parent and (current_node.Parent.id, sibling.id) not in edges:
-                    graph.add_edge(current_node.Parent.id, sibling.id)
-                    edges.add((current_node.Parent.id, sibling.id))
-                # Add the sibling to the queue for further processing
+                    graph.add_edge(child.id, current_node.id)  # Edge only from child to parent
+                    edges.add((child.id, current_node.id))
                 queue.append(sibling)
 
     return graph
