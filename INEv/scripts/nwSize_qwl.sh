@@ -3,7 +3,7 @@ cd ../code
 
 echo "nwSize_SQL"
 
-python3 generate_network.py 20 0.5 1.3 25
+python3 generate_network.py -nw 20 -ner 0.5 -es 1.3 -ne 25
 python3 generate_graph.py
 python3 allPairs.py
 
@@ -17,7 +17,7 @@ do
 			a=0
 			while [ $a -lt 60 ]
 			do
-			python3 generate_network.py $j 0.5 1.3 25
+			python3 generate_network.py -nw $j -ner 0.5 -es 1.3 -ne 25
 			python3 generate_graph.py
 			python3 allPairs.py
 			python3 write_config_single.py
