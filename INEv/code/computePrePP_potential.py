@@ -105,6 +105,29 @@ def calculate_dynamic_push_pull_transmissions(rates_ev, rates_per_node, paths, s
     saved_transmissions = total_transmissions_no_optimization - total_transmissions_with_push_pull
     print(f"Saved transmissions using push-pull: {saved_transmissions}")
 
+def extract_primitive_events(projection_events):
+    """
+    Extract all primitive events from the projection, ignoring operators like AND, SEQ.
+    
+    Parameters:
+    - projection_events: List of events or nested operators (e.g., ['M', 'K', 'AND(P, R, S)'])
+    
+    Returns:
+    - flat_events: A flat list of primitive events (e.g., ['M', 'K', 'P', 'R', 'S'])
+    """
+    flat_events = []
+    
+    for event in projection_events:
+        if "AND" in event or "SEQ" in event:
+            # Extract inner events from AND/SEQ (e.g., 'AND(P, R, S)' -> ['P', 'R', 'S'])
+            inner_events = event.replace("AND(", "").replace("SEQ(", "").replace(")", "").split(", ")
+            flat_events.extend(inner_events)
+        else:
+            # If it's a simple event, add it directly
+            flat_events.append(event)
+    
+    return flat_events
+
 
 def main():
     """Main function to calculate the potential of push-pull communication dynamically."""
@@ -116,6 +139,7 @@ def main():
     selectivities = load_pickle('selectivities')
     single_select = load_pickle('singleSelectivities')
 
+    print(nodes_dict)
     # Iterate over the EvaluationPlan object
     for i in eval_plan:
         if isinstance(i, EvaluationPlan):
@@ -126,6 +150,10 @@ def main():
                 projection_events = [str(x) for x in myProj.children]
                 print(f"Processing projection: {projection_events}")
 
+                # Flatten the events, removing AND/SEQ operators
+                flat_events = extract_primitive_events(projection_events)
+                print(f"Flattened events: {flat_events}")
+
                 # Collect source nodes and paths for the projection
                 source_nodes = []
                 paths = {}
@@ -135,13 +163,13 @@ def main():
                         source_nodes.append(instance.name)
                         for _, path in instance.routingDict.items():
                             paths[instance.name] = path
-
+                print(source_nodes)
                 # Calculate event rates for the projection
                 rates_ev, rates_per_node = calculate_event_rates(source_nodes, nodes_dict)
                 print(f"Event rates: {rates_ev}")
 
-                # Calculate total transmissions with push-pull optimization for dynamic events
-                calculate_dynamic_push_pull_transmissions(rates_ev, rates_per_node, paths, single_select, projection_events)
+                # Apply push-pull strategy on the flattened list of events
+                calculate_dynamic_push_pull_transmissions(rates_ev, rates_per_node, paths, single_select, flat_events)
 
 if __name__ == "__main__":
     main()
