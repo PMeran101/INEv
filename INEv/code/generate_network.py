@@ -9,8 +9,8 @@ import numpy as np
 import string
 import random
 from Node import Node
-
 import argparse
+
 from binary_helper import save_file, load_file
 
 
@@ -18,7 +18,6 @@ from binary_helper import save_file, load_file
 res = load_file('rates')
 event_rates_file = res[0]
 event_node_assignment = res[1]
-        
 
 def generate_eventrates(eventskew,numb_eventtypes):
     eventrates = np.random.zipf(eventskew,numb_eventtypes)
@@ -88,9 +87,51 @@ def generate_assignment(nw, eventtypes):
 def generateFromAssignment(assignment, rates, nwsize):
     return [[rates[eventtype]  if x in assignment[eventtype] else 0 for eventtype in assignment.keys()] for x in range(nwsize)]
 
-def main():
 
-    
+def parse_arguments():
+    # Create the argument parser
+    parser = argparse.ArgumentParser(description="Simulation parameters")
+
+    # Add arguments with default values
+    parser.add_argument('--nwsize', '-nw', type=int, default=10, help='Network size (default: 10)')
+    parser.add_argument('--node_event_ratio', '-ner', type=float, default=0.5, help='Node event ratio (default: 0.5)')
+    parser.add_argument('--num_eventtypes', '-ne', type=int, default=20, help='Number of event types (default: 20)')
+    parser.add_argument('--eventskew', '-es', type=float, default=1.3, help='Event skew (default: 1.3)')
+    parser.add_argument('--swaps', '-sw', type=int, default=0, help='Number of swaps (default: 0)')
+    parser.add_argument('--toFile', '-tf', action='store_true', help='Write event types to file')
+    parser.add_argument('--max_parents', '-mp', type=int, default=1, help='Maximum number of parents per node (default: 1)')
+    parser.add_argument('--eventtype', '-et', type=str, default=None, help='Event type for experiments')
+    parser.add_argument('--param', '-p', type=str, default=None, help='Parameter for event type (max/min) in experiments')
+
+    # Parse the arguments
+    args = parser.parse_args()
+
+    # Return parsed arguments as a dictionary for convenience
+    return vars(args)
+
+def main():
+        # Parse command-line arguments
+    args = parse_arguments()
+
+    # Now you can access the parsed arguments from the dictionary
+    nwsize = args['nwsize']
+    node_event_ratio = args['node_event_ratio']
+    num_eventtypes = args['num_eventtypes']
+    eventskew = args['eventskew']
+    toFile = args['toFile']
+    swaps = args['swaps']
+    max_parents = args['max_parents']
+    eventtype = args['eventtype']
+    param = args['param']
+
+    # The rest of your simulation logic goes here
+    print(f"Max parents for nodes: {max_parents}")
+    print(f"Network size: {nwsize}, Node event ratio: {node_event_ratio}, Event skew: {eventskew}")
+    print(f"Number of event types: {num_eventtypes}, Swaps: {swaps}, To file: {toFile}")
+    print(f"Event type: {eventtype}, Param: {param}")
+
+
+    """
     #default values for simulation 
     nwsize = 10
     node_event_ratio = 0.5
@@ -98,7 +139,7 @@ def main():
     eventskew = 1.3
     toFile = False
     swaps = 0   
-    max_parents = 3
+
       
     if len(sys.argv) > 1: #network size
         nwsize =int(sys.argv[1])
@@ -124,55 +165,12 @@ def main():
         param = str(sys.argv[7])
         eventrates = swapRatesMax(eventtype, eventrates, param)   
     
-    
+    """
     #eventrates = sorted(generate_eventrates(eventskew,num_eventtypes))
     eventrates =  generate_eventrates(eventskew,num_eventtypes)
     
-        
-    #if toFile:
-    #    eventrates = sorted(generate_eventrates(eventskew,num_eventtypes))
-    #    nw= []
-    #    for node in range(nwsize):
-    #        nw.append(generate_events(eventrates, node_event_ratio))
-    #    
-    #    nodeassignment = generate_assignment(nw, num_eventtypes)
-    #    with open('rates', 'wb') as rates_file:
-    #          pickle.dump((eventrates, nodeassignment), rates_file) 
-                
     
-    #if not toFile:
-    #   nw= generateFromAssignment(nodeassignment, eventrates,  nwsize)
-
-    #random.shuffle(eventrates)
-    
-    #eventrates = sorted(generate_eventrates(eventskew,num_eventtypes))
-    #eventrates =  [990,666,107,200,320,152, 0.6, 0.6,13.3] #google 30
-    #eventrates  =  [1485,1000, 161, 300, 480, 229, 1, 1,20] #google 20
-    #eventrates = [2970, 2000, 322, 600, 960, 458,2, 2, 40] # google 10
-    
-    #eventrates =  [0.5, 6, 1, 136, 1000, 250, 0.5, 30, 60] # citibike 20
-    #eventrates = [1,12,2,272, 2000, 500, 1, 60, 120] # citibike 10
-    ##eventrates = [0.3, 4, 0.6, 91, 666, 166, 0.3, 20, 40] # citibike 30
-
-    #eventrates = [2,20,30,6,10,1,2, 2, 40] 
-    # def post_order_sum_events(node):
-    #     if not node:
-    #         return
-
-    #     # Initialize the event rates sum as empty or zeros
-    #     if node.Child is not None:
-    #         node.eventrates = [0] * len(node.eventrates)
-
-    #     # Traverse the child nodes first
-    #     child = node.Child
-    #     while child is not None:
-    #         post_order_sum_events(child)
-    #         # Sum the child event rates into the parent node
-    #         node.eventrates = [sum(x) for x in zip(node.eventrates, child.eventrates)]
-    #         child = child.Sibling
-    
-    
-    def create_random_tree(nwsize, eventrates, node_event_ratio):
+    def create_random_tree(nwsize, eventrates, node_event_ratio, max_parents: int = 1):
         if nwsize <= 0:
             return None
         import math
@@ -203,21 +201,18 @@ def main():
             # Ensure level-specific nodes exist in the dictionary
             if level not in level_nodes:
                 level_nodes[level] = []
+            
+            # Randomly choose the number of parents between 1 and max_parents
+            num_parents = random.randint(1,max_parents)
+                
+            # Randomly choose parents from the previous level
+            parent_nodes = random.sample(level_nodes[level - 1], min(len(level_nodes[level - 1]), num_parents))
 
-            # Randomly choose a parent from the previous level
-            parent_node = random.choice(level_nodes[level - 1])
+            # Set parents and add the new node to each parent's list of children
+            for parent_node in parent_nodes:
+                new_node.Parent.append(parent_node)
+                parent_node.Child.append(new_node)
 
-            # Add the new node as a child or sibling
-            if parent_node.Child is None:
-                parent_node.Child = new_node
-            else:
-                current = parent_node.Child
-                while current.Sibling is not None:
-                    current = current.Sibling
-                current.Sibling = new_node
-
-            # Set the new node's parent
-            new_node.Parent = parent_node
 
             # Add new node to the list and to the level-specific tracking
             nw.append(new_node)
@@ -225,10 +220,12 @@ def main():
 
         # Assign event rates to leaf nodes and initialize non-leaf nodes with empty event rates
         for node in nw:
-            if node.Child is None:
+            if len(node.Child) == 0:
    
                 evtrate = generate_events(eventrates, node_event_ratio)
-                save_file('PrimitiveEvents', evtrate)
+
+                with open('PrimitiveEvents', 'wb') as f:
+                    pickle.dump(evtrate, f)
                 node.eventrates = evtrate
             else:
                 node.eventrates = [0] * len(eventrates)
@@ -237,7 +234,7 @@ def main():
         return root, nw
     
     nw = []
-    root, nw = create_random_tree(nwsize, eventrates, node_event_ratio)
+    root, nw = create_random_tree(nwsize, eventrates, node_event_ratio, max_parents)
     # for node in range(nwsize):
     #     no = Node(node, 0, 0, generate_events(eventrates, node_event_ratio))
     #     nw.append(no)
@@ -258,24 +255,19 @@ def main():
     ## INSERT NETWORK HERE
     #nw = [[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40]]
 
-    root, nw = create_random_tree(nwsize, eventrates, node_event_ratio, max_parents)
-  
     networkExperimentData = [eventskew, num_eventtypes, node_event_ratio, nwsize, min(eventrates)/max(eventrates)]
-    
-    # save_file('networkExperimentData', networkExperimentData)
     with open('networkExperimentData', 'wb') as networkExperimentDataFile:
         pickle.dump(networkExperimentData, networkExperimentDataFile)
-    
+        
     save_file('network', nw)
-
          
     
    
-    # print("NETWORK")  
-    # print("--------") 
-    # for i in range(len(nw)):
-    #     print(nw[i])
-    # print("\n")
+    print("NETWORK")  
+    print("--------") 
+    for i in range(len(nw)):
+        print(nw[i])
+    print("\n")
     
     nw[0].visualize_tree(nw[0])
     
