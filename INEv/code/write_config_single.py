@@ -10,16 +10,20 @@ Single selectivities are used for estimating the costs of different output selec
 """
 import pickle
 from tree import *
+from binary_helper import save_file, load_file
 
-with open('network',  'rb') as  nw_file:
-        nw = pickle.load(nw_file)
 
-with open('current_wl',  'rb') as  wl_file:
-    wl = pickle.load(wl_file)
+# with open('network',  'rb') as  nw_file:
+#         nw = pickle.load(nw_file)
 
-with open('selectivities', 'rb') as selectivity_file:
-    selectivities = pickle.load(selectivity_file)             
-        
+nw = load_file('network')
+# with open('current_wl',  'rb') as  wl_file:
+#     wl = pickle.load(wl_file)
+wl = load_file('current_wl')
+# with open('selectivities', 'rb') as selectivity_file:
+#     selectivities = pickle.load(selectivity_file)             
+selectivities = load_file('selectivities')
+
 f = open("config_single_selectivities.txt", "w")
 f.write("network\n")
 for i in range(len(nw)):

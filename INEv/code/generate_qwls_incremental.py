@@ -7,12 +7,12 @@ from tree import *
 import random as rd
 import sys
 import pickle
+from binary_helper import save_file, load_file
 
 
-
-
-with open('network',  'rb') as  nw_file:
-        nw = pickle.load(nw_file)
+nw = load_file('network')
+# with open('network',  'rb') as  nw_file:
+#         nw = pickle.load(nw_file)
         
 
     
@@ -353,13 +353,13 @@ def main():
         incremental_wl = []
         
 
-    
-    with open('current_wl', 'wb') as wl_file:
-        pickle.dump(wl, wl_file)
+    save_file('current_wl', wl)
+    # with open('current_wl', 'wb') as wl_file:
+    #     pickle.dump(wl, wl_file)
      
-    
-    with open('incremental_wl', 'wb') as incremental_wl_file:
-        pickle.dump(incremental_wl, incremental_wl_file)    
+    save_file('incremental_wl', incremental_wl)
+    # with open('incremental_wl', 'wb') as incremental_wl_file:
+    #     pickle.dump(incremental_wl, incremental_wl_file)    
 
     print("QUERY WORKLOAD")
     print("---------------") 

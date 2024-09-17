@@ -9,28 +9,10 @@ import numpy as np
 import string
 import random
 from Node import Node
-<<<<<<< Updated upstream
 
-=======
 import argparse
 from binary_helper import save_file, load_file
->>>>>>> Stashed changes
-""" Experiment network rates 
 
-average event rates for google cluster data set first 12h, timewindow 30 min, 20 nodes
-#ev = [[0,855, 212, 24, 400, 129, 0, 0.005,0.05]]
-    
-event rates push-pull comparison:
-small:
-ev_PP = [[0.2994830154521548 , 0.14354286459134916 , 0.009297964702092328 , 0.2568894819120937 , 0.0771288310049754 ,  0.009297964702092328, 0.2994830154521548 , 0.26592179047984055 ]]    
-big: 
-ev =  [[1, 6, 1, 1, 1, 7, 8777, 1, 542, 72, 39, 1, 1, 318, 3, 1, 17, 2, 12, 2]]
-
-
-#ev =  [[1485,1000, 161, 300, 480, 229, 1, 1,20]] # average rates google cluster experiment
-#ev =  [[0.5, 6, 1, 136, 1000, 250, 0.5, 30, 60]] # average rates citibike experiment
-
-"""    
 
 
 res = load_file('rates')
@@ -108,7 +90,6 @@ def generateFromAssignment(assignment, rates, nwsize):
 
 def main():
 
-<<<<<<< Updated upstream
     
     #default values for simulation 
     nwsize = 10
@@ -117,7 +98,7 @@ def main():
     eventskew = 1.3
     toFile = False
     swaps = 0   
-    
+    max_parents = 3
       
     if len(sys.argv) > 1: #network size
         nwsize =int(sys.argv[1])
@@ -144,8 +125,6 @@ def main():
         eventrates = swapRatesMax(eventtype, eventrates, param)   
     
     
-=======
->>>>>>> Stashed changes
     #eventrates = sorted(generate_eventrates(eventskew,num_eventtypes))
     eventrates =  generate_eventrates(eventskew,num_eventtypes)
     
@@ -258,7 +237,6 @@ def main():
         return root, nw
     
     nw = []
-<<<<<<< Updated upstream
     root, nw = create_random_tree(nwsize, eventrates, node_event_ratio)
     # for node in range(nwsize):
     #     no = Node(node, 0, 0, generate_events(eventrates, node_event_ratio))
@@ -280,10 +258,8 @@ def main():
     ## INSERT NETWORK HERE
     #nw = [[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40]]
 
-=======
     root, nw = create_random_tree(nwsize, eventrates, node_event_ratio, max_parents)
   
->>>>>>> Stashed changes
     networkExperimentData = [eventskew, num_eventtypes, node_event_ratio, nwsize, min(eventrates)/max(eventrates)]
     
     # save_file('networkExperimentData', networkExperimentData)
