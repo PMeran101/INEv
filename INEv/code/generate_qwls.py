@@ -1,26 +1,15 @@
 """
 Generate query workload with given number of queries (number), maximal query length (size).    
-
-Queries for Case Studies:
-    #wl = [AND(PrimEvent('E'), PrimEvent('F'), PrimEvent('G'),PrimEvent('H'))] # final 1 bikecity
-    #wl =  [SEQ(PrimEvent('C'), PrimEvent('D'), PrimEvent('E'),PrimEvent('I'))]  # final 2 bikecity
-    #wl = [AND(PrimEvent('A'), SEQ(PrimEvent('D'), PrimEvent('I')),PrimEvent('F'))] #final 3 bikecity
-    #wl = [SEQ(PrimEvent('A'), AND(PrimEvent('B'), PrimEvent('I')),PrimEvent('E')), AND(PrimEvent('E'), PrimEvent('F'), PrimEvent('C'),PrimEvent('H'))] #final 4 bikecity
-
-    #wl = [SEQ(PrimEvent('A'), PrimEvent('C'), PrimEvent('I'), PrimEvent('E')), AND(PrimEvent('F'), SEQ(PrimEvent('C'), PrimEvent('I')), PrimEvent('G'))]
-    
-    #wl = [SEQ(PrimEvent('A'), PrimEvent('B'), PrimEvent('G'), PrimEvent('F'), PrimEvent('I'))] # Google: jobLost
-    #wl= [SEQ(PrimEvent('B'), PrimEvent('C'), PrimEvent('F'), PrimEvent('H'))] # Google: unlucky user
 """    
 
 from tree import *
 import random as rd
 import sys
 import pickle
+from binary_helper import save_file, load_file
 
+nw = load_file('network')
 
-with open('network',  'rb') as  nw_file:
-        nw = pickle.load(nw_file)
 
 
 """
@@ -30,8 +19,8 @@ In INEv every node generated Events now it is random
 
 """    
 
-with open ('PrimitiveEvents', 'rb') as pe_file:
-    pe = pickle.load(pe_file)
+pe = load_file('PrimitiveEvents')
+
     
 PrimitiveEvents = list(string.ascii_uppercase[:len(pe)])
  
@@ -359,8 +348,7 @@ def main():
 
     #wl = [SEQ(PrimEvent('E'),PrimEvent('A'), PrimEvent('B'), PrimEvent('C'),PrimEvent('D'),PrimEvent('F'), PrimEvent('G'), PrimEvent('H'), PrimEvent('I'))]
     
-    with open('current_wl', 'wb') as wl_file:
-        pickle.dump(wl, wl_file)
+    save_file('current_wl',wl)
 
     print("QUERY WORKLOAD")
     print("---------------") 

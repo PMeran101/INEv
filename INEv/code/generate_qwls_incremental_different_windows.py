@@ -7,13 +7,10 @@ from tree import *
 import random as rd
 import sys
 import pickle
+from binary_helper import save_file, load_file
 
 
-
-
-with open('network',  'rb') as  nw_file:
-        nw = pickle.load(nw_file)
-        
+nw = load_file('network') 
 
     
 PrimitiveEvents = list(string.ascii_uppercase[:len(nw[0])])
@@ -365,31 +362,21 @@ def main():
     #    incremental_wl = []
         
 
-    
-    with open('current_wl', 'wb') as wl_file:
-        pickle.dump(wl, wl_file)
-        
-    with open('original_wl', 'wb') as wl_file:
-        pickle.dump(wl, wl_file)    
-     
-    with open('wl_windows', 'wb') as wl_windows_file:
-        pickle.dump(wl_windows, wl_windows_file)   
-        
-    #with open('incremental_wl', 'wb') as incremental_wl_file:
-    #    pickle.dump(incremental_wl, incremental_wl_file)    
-        
-    
+    save_file('current_wl',wl)
+    save_file('original_wl',wl)
+    save_file('wl_windows',wl_windows)
+
     # overwrite rates!
     # SCALE RATES with current windows
     
-    with open('original_network', 'wb') as original_network_file:
-        pickle.dump(nw, original_network_file)  
-        
+    save_file('original_network',nw)
+     
     for i in range(len(nw)):  
         for rate in range(len(nw[i])):
             nw[i][rate] = window * nw[i][rate]
-    with open('network', 'wb') as network_file:
-        pickle.dump(nw, network_file)    
+        
+    save_file('network',nw)
+  
 
     print("QUERY WORKLOAD")
     print("---------------") 

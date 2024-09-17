@@ -1,8 +1,9 @@
 import string
 import pickle
+from binary_helper import save_file, load_file
 
-with open('network',  'rb') as  nw_file:
-    nw = pickle.load(nw_file)
+nw = load_file('network')
+
 
 network = {}
 rates = {}

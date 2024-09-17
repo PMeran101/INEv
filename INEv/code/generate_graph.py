@@ -13,29 +13,25 @@ import pickle
 #import matplotlib.pyplot as plt
 import sys
 import random
+from binary_helper import save_file, load_file
 
 def main():
+    nw = load_file('network')
+    outdegree = 3
+    experiment = 'None'
     
-   with open('network', 'rb') as network_file:
-            nw = pickle.load(network_file) 
-            #print(nw)
-  # percentage = 50
-   outdegree = 3
-   experiment = 'None'
-   
-     
-   if len(sys.argv) > 1: 
-      outdegree = int(sys.argv[1])      
-   G = nx.Graph()
-   G = create_fog_graph(nw[0], G)
-   #G = nx.connected_watts_strogatz_graph(len(nw),outdegree,0.2)   
-          
-   #print(len(G.edges))
-   #print(nx.adjacency_matrix(G))
+        
+    if len(sys.argv) > 1: 
+        outdegree = int(sys.argv[1])      
+    G = nx.Graph()
+    G = create_fog_graph(nw[0], G)
+    #G = nx.connected_watts_strogatz_graph(len(nw),outdegree,0.2)   
+            
+    #print(len(G.edges))
+    #print(nx.adjacency_matrix(G))
 
- 
-   with open('graph', 'wb') as graph_file:
-         pickle.dump(G,graph_file)     
+    save_file('graph',G)
+
 
 
 

@@ -18,9 +18,7 @@ selectivities = {'HF':0.05, 'FH':0.05,'IF':0.05,'FI':0.05,'IE':0.05,'EI':0.05,'H
 
 """
 nw = load_file('network')
-# with open('network',  'rb') as  nw_file:
-#         nw = pickle.load(nw_file)
-    
+
 PrimitiveEvents = list(string.ascii_uppercase[:len(nw[0].eventrates)])
 
 def initialize_selectivities(primEvents,x,y): 

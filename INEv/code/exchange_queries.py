@@ -10,20 +10,16 @@ from tree import *
 import random as rd
 import sys
 import pickle
-
+from binary_helper import save_file, load_file
 
 
 def main():
     
-    with open('original_network', 'rb') as original_network_file:
-       nw = pickle.load(original_network_file)  
+    nw = load_file('original_network')
 
+    wl_windows = load_file('wl_windows')
 
-    with open('wl_windows', 'rb') as wl_windows_file:
-        wl_windows = pickle.load(wl_windows_file)                   
-
-    with open('original_wl',  'rb') as  wl_file: # change to ORIGINAL WL
-        wl = pickle.load(wl_file)    
+    wl = load_file('original_wl')
         
         
     query_index = 1
@@ -40,11 +36,11 @@ def main():
     wl = [wl[query_index]] # original_wl
         
     print(wl)
-    with open('network', 'wb') as network_file:
-        pickle.dump(nw, network_file)  
-        
-    with open('current_wl', 'wb') as wl_file:
-        pickle.dump(wl, wl_file)    
+    
+    save_file('network', nw)
+
+    save_file('current_wl',wl) 
+
 
 if __name__ == "__main__":
     main()        

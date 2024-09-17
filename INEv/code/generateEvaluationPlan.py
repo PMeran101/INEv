@@ -14,22 +14,16 @@ import string
 import subsets as sbs 
 import math
 from processCombination import *
+from binary_helper import save_file, load_file
 
 
+nw = load_file('network')
 
+selectivities = load_file('selectivities')
 
+myplan = load_file('EvaluationPlan')
 
-with open('network',  'rb') as  nw_file:
-        nw = pickle.load(nw_file)
-
-with open('selectivities', 'rb') as selectivity_file:
-    selectivities = pickle.load(selectivity_file) 
-    
-with open('EvaluationPlan', 'rb') as EvaluationPlan_file: 
-          myplan = pickle.load(EvaluationPlan_file)
-          
-with open('CentralEvaluationPlan', 'rb') as CentralEvaluationPlan_file: 
-          centralPlan = pickle.load(CentralEvaluationPlan_file)
+centralPlan = load_file('CentralEvaluationPlan')
 
 ID = myplan[1]
 MSPlacements = myplan[2]
@@ -483,47 +477,3 @@ if filterUsed() or not filterUsed():
     f = open("../plans/" + str(ID) +"_Centralized.txt", "w")   
     f.write(generateCentralPlan()) 
     f.close()
-
-    # print(networkText())
-    # print("-----------")
-    # print("Randomized Rate-Based Primitive Event Generation")
-    # print("-----------")
-    # print(singleSelecText())
-    # print("-----------")
-    # for node in evaluationDict.keys():
-    #     print("~~")
-    #     print("node" + str(node))
-    #     print("--")
-    #     print(forwardingRule(node))
-    #     print("--")
-    #     print(processingRules(node))
-        
-# def generateCentralPlan():
-#     print(networkText())
-#     print("-----------")
-#     print("Randomized Rate-Based Primitive Event Generation")
-#     print("-----------")
-#     print(singleSelecText())
-#     print("-----------")
-#     myforwardingDict = adjustRoutingCentral(cdict,csource)
-#     for node in evaluationDict.keys():
-#         print("~~")
-#         print("node" + str(node))
-#         print("--")
-#         print(forwardingRuleCentral(node,myforwardingDict))
-#         print("--")
-#         print(processingRulesCentral(node))
-
-
-
-#print(forwardingDict)
-#print(generatePlan())
-#generateCentralPlan()
-#print(generateCentralPlan())
-
-
-
-# specifiy additional projections because of filters in delay compuataion 
-# debug/check plans with high latencies
-
-
