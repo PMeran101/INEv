@@ -131,42 +131,6 @@ def main():
     print(f"Event type: {eventtype}, Param: {param}")
 
 
-    """
-    #default values for simulation 
-    nwsize = 10
-    node_event_ratio = 0.5
-    num_eventtypes = 20
-    eventskew = 1.3
-    toFile = False
-    swaps = 0   
-
-      
-    if len(sys.argv) > 1: #network size
-        nwsize =int(sys.argv[1])
-    if len(sys.argv) > 2:
-        node_event_ratio = float(sys.argv[2]) # event node ratio
-    if len(sys.argv) > 3: # event skew
-        eventskew = float(sys.argv[3]) 
-    if len(sys.argv) > 4: # size event universe        
-        num_eventtypes = int(sys.argv[4])
-    if len(sys.argv) > 4 and len(sys.argv) < 7 :   #write event types to file  
-        #eventrates = generate_eventrates(eventskew,num_eventtypes)   
-        toFile = False
-    if len(sys.argv) > 5:     # generate event types from file and apply given number of swaps
-        eventrates = event_rates_file # get event rates for event types
-        nodeassignment = event_node_assignment  # get node assignment, which node generates which event types
-        swaps = int(sys.argv[5]) # number of swaps
-        toFile = False # do not save generated rates to file
-        
-    if len(sys.argv) > 6:        # for setting event types to min/max rates (kleene, nseq experiments)
-        eventtype = str(sys.argv[6]) 
-    
-    if len(sys.argv) > 7: # set eventtype to param=max/min rate (kleene, nseq experiments)
-        param = str(sys.argv[7])
-        eventrates = swapRatesMax(eventtype, eventrates, param)   
-    
-    """
-    #eventrates = sorted(generate_eventrates(eventskew,num_eventtypes))
     eventrates =  generate_eventrates(eventskew,num_eventtypes)
     
     
