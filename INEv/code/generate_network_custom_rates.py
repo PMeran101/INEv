@@ -9,18 +9,12 @@ import numpy as np
 import string
 import random
 import argparse
-""" Experiment network rates 
+from binary_helper import save_file, load_file
 
 
-#ev =  [[0.5, 6, 1, 136, 1000, 250, 0.5, 30, 60]] # average rates citibike experiment
-
-"""    
-
-
-with open('rates',  'rb') as  rates_file:
-        res = pickle.load(rates_file)
-        event_rates_file = res[0]
-        event_node_assignment = res[1]
+res = load_file('rates')
+event_rates_file = res[0]
+event_node_assignment = res[1]
         
 
 def generate_eventrates(eventskew,numb_eventtypes):
@@ -133,10 +127,8 @@ def main():
     with open('networkExperimentData', 'wb') as networkExperimentDataFile:
         pickle.dump(networkExperimentData, networkExperimentDataFile)
     
-    with open('network', 'wb') as network_file:
-          pickle.dump(nw, network_file)      
-          
-         
+    save_file('network', nw)
+
     
    
     print("NETWORK")  

@@ -9,7 +9,12 @@ import numpy as np
 import string
 import random
 from Node import Node
+<<<<<<< Updated upstream
 
+=======
+import argparse
+from binary_helper import save_file, load_file
+>>>>>>> Stashed changes
 """ Experiment network rates 
 
 average event rates for google cluster data set first 12h, timewindow 30 min, 20 nodes
@@ -28,10 +33,9 @@ ev =  [[1, 6, 1, 1, 1, 7, 8777, 1, 542, 72, 39, 1, 1, 318, 3, 1, 17, 2, 12, 2]]
 """    
 
 
-with open('rates',  'rb') as  rates_file:
-        res = pickle.load(rates_file)
-        event_rates_file = res[0]
-        event_node_assignment = res[1]
+res = load_file('rates')
+event_rates_file = res[0]
+event_node_assignment = res[1]
         
 
 def generate_eventrates(eventskew,numb_eventtypes):
@@ -104,6 +108,7 @@ def generateFromAssignment(assignment, rates, nwsize):
 
 def main():
 
+<<<<<<< Updated upstream
     
     #default values for simulation 
     nwsize = 10
@@ -139,6 +144,8 @@ def main():
         eventrates = swapRatesMax(eventtype, eventrates, param)   
     
     
+=======
+>>>>>>> Stashed changes
     #eventrates = sorted(generate_eventrates(eventskew,num_eventtypes))
     eventrates =  generate_eventrates(eventskew,num_eventtypes)
     
@@ -242,9 +249,7 @@ def main():
             if node.Child is None:
    
                 evtrate = generate_events(eventrates, node_event_ratio)
-
-                with open('PrimitiveEvents', 'wb') as f:
-                    pickle.dump(evtrate, f)
+                save_file('PrimitiveEvents', evtrate)
                 node.eventrates = evtrate
             else:
                 node.eventrates = [0] * len(eventrates)
@@ -253,6 +258,7 @@ def main():
         return root, nw
     
     nw = []
+<<<<<<< Updated upstream
     root, nw = create_random_tree(nwsize, eventrates, node_event_ratio)
     # for node in range(nwsize):
     #     no = Node(node, 0, 0, generate_events(eventrates, node_event_ratio))
@@ -274,13 +280,18 @@ def main():
     ## INSERT NETWORK HERE
     #nw = [[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40],[2970, 2000, 322, 600, 960, 458, 2, 2, 40]]
 
+=======
+    root, nw = create_random_tree(nwsize, eventrates, node_event_ratio, max_parents)
+  
+>>>>>>> Stashed changes
     networkExperimentData = [eventskew, num_eventtypes, node_event_ratio, nwsize, min(eventrates)/max(eventrates)]
+    
+    # save_file('networkExperimentData', networkExperimentData)
     with open('networkExperimentData', 'wb') as networkExperimentDataFile:
         pickle.dump(networkExperimentData, networkExperimentDataFile)
     
-    with open('network', 'wb') as network_file:
-          pickle.dump(nw, network_file)      
-          
+    save_file('network', nw)
+
          
     
    
