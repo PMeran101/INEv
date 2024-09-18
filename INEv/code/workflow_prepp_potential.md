@@ -137,5 +137,3 @@ This script calculates the potential transmission savings when using a push-pull
 ## Conclusion
 This script provides a dynamic method to calculate the potential transmission savings in a CEP system by applying a push-pull communication strategy. By accurately calculating event rates and applying selectivities, it determines the optimal events to push and adjusts the transmissions accordingly, leading to optimized network communication.
 
-
-Test
