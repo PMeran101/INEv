@@ -174,14 +174,20 @@ def main():
                       
     ID = int(np.random.uniform(0,10000000))
     hopfactor = processingLatencyParams[2]
-  
+    with open('EvaluationPlan',  'wb') as EvaluationPlan_file:
+        pickle.dump([myPlan, ID, MSPlacements], EvaluationPlan_file)
     
     
-   
+    from computePrePP_potential import calculate_transmission_savings,calculate_complete_transmission_savings
+    
+    res = calculate_transmission_savings()
+    total_no_optimization,total_with_push_pull = calculate_complete_transmission_savings(res)
+    print("Total no optimization: ",total_no_optimization)
+    print("Total with push pull: ",total_with_push_pull)
     hoplatency = 0    
     totalLatencyRatio = 0
-    myResult = [ID, mycosts,  Filters, networkParams[3], networkParams[0], networkParams[2], len(wl), combigenParams[3], selectivityParams[0], selectivityParams[1], combigenParams[1], longestPath, totaltime, hoplatency, float(max(list(dependencies.values()))/2), totalLatencyRatio, ccosts[0], lowerBound / ccosts[0], networkParams[1]]
-    schema = ["ID", "TransmissionRatio", "FilterUsed", "Nodes", "EventSkew", "EventNodeRatio", "WorkloadSize", "NumberProjections", "MinimalSelectivity", "MedianSelectivity","CombigenComputationTime", "Efficiency", "PlacementComputationTime", "HopCount", "Depth", "ProcessingLatencyRatio", "CentralTransmission", "LowerBound", "EventTypes"] 
+    myResult = [ID, mycosts, total_no_optimization,total_with_push_pull, costs ,Filters, networkParams[3], networkParams[0], networkParams[2], len(wl), combigenParams[3], selectivityParams[0], selectivityParams[1], combigenParams[1], longestPath, totaltime, hoplatency, float(max(list(dependencies.values()))/2), totalLatencyRatio, ccosts[0], lowerBound / ccosts[0], networkParams[1]]
+    schema = ["ID", "TransmissionRatio","Total Transmissions" ,"Total Savings" , "Total Transmission INEv", "FilterUsed", "Nodes", "EventSkew", "EventNodeRatio", "WorkloadSize", "NumberProjections", "MinimalSelectivity", "MedianSelectivity","CombigenComputationTime", "Efficiency", "PlacementComputationTime", "HopCount", "Depth", "ProcessingLatencyRatio", "CentralTransmission", "LowerBound", "EventTypes"] 
     
  
     new = False
@@ -196,8 +202,8 @@ def main():
            writer.writerow(schema)              
        writer.writerow(myResult)
       
-    with open('EvaluationPlan',  'wb') as EvaluationPlan_file:
-        pickle.dump([myPlan, ID, MSPlacements], EvaluationPlan_file)
+    # with open('EvaluationPlan',  'wb') as EvaluationPlan_file:
+    #     pickle.dump([myPlan, ID, MSPlacements], EvaluationPlan_file)
     
     with open('CentralEvaluationPlan',  'wb') as CentralEvaluationPlan_file:
         pickle.dump([ccosts[1],ccosts[3], wl], CentralEvaluationPlan_file)

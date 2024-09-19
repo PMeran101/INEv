@@ -185,6 +185,8 @@ def calculate_dynamic_push_pull_transmissions(event_rates, rates_per_node, paths
     saved_transmissions = total_transmissions_no_optimization - total_transmissions_with_push_pull
     print(f"Saved transmissions using push-pull: {saved_transmissions}")
 
+    return total_transmissions_no_optimization,total_transmissions_with_push_pull
+    
 def extract_primitive_events(projection_events):
     """
     Extract all primitive events from the projection, ignoring operators like AND, SEQ.
@@ -280,5 +282,118 @@ def main():
                     event_rates, rates_per_node, paths, single_select, selectivities, projection_structure, projection_events
                 )
 
+def calculate_transmission_savings():
+    """
+    Calculates the total transmissions with and without optimization for all projections.
+
+    Returns:
+    - results (list of dicts): Each dict contains:
+        - 'projection': Name of the projection
+        - 'total_transmissions_no_optimization': Total transmissions without optimization
+        - 'total_transmissions_with_push_pull': Total transmissions with push-pull optimization
+        - 'savings_percentage': Percentage of savings
+    """
+    results = []
+
+    # Load necessary files
+    eval_plan = load_pickle('EvaluationPlan')
+    nodes_dict = {node.id: node for node in load_pickle('network')}
+    selectivities = load_pickle('selectivities')
+    single_select = load_pickle('singleSelectivities')
+
+    # Iterate over the EvaluationPlan object
+    for item in eval_plan:
+        if isinstance(item, EvaluationPlan):
+            for proj in item.projections:
+                # Extract projection name and events
+                evaluation = proj
+                projection_name = evaluation.name.name
+                projection_events = [str(x) for x in projection_name.children]
+
+                # Parse the events, including operators
+                projection_structure = extract_events_with_operators(projection_events)
+
+                # Collect source nodes and paths for the projection
+                source_node_names = []
+                paths = {}
+                gen_nodes = evaluation.name.combination
+                for x in gen_nodes:
+                    for instance in gen_nodes[x]:
+                        # Check if the instance corresponds to a primitive event
+                        if len(instance.name) > 1 and instance.name[1:].isdigit():
+                            source_node_names.append(instance.name)
+                            for _, path in instance.routingDict.items():
+                                paths[instance.name] = path
+                        else:
+                            pass  # Skipping composite event instance
+
+                # Calculate event rates for the projection
+                event_rates, rates_per_node = calculate_event_rates(source_node_names, nodes_dict)
+
+                # Apply push-pull strategy on the structured events
+                total_transmissions_no_optimization, total_transmissions_with_push_pull = calculate_dynamic_push_pull_transmissions(
+                    event_rates, rates_per_node, paths, single_select, selectivities, projection_structure, projection_events
+                )
+
+                # Calculate savings percentage
+                savings = total_transmissions_no_optimization - total_transmissions_with_push_pull
+                if total_transmissions_no_optimization > 0:
+                    savings_percentage = (savings / total_transmissions_no_optimization) * 100
+                else:
+                    savings_percentage = 0.0
+
+                # Collect results
+                result = {
+                    'projection': ''.join(projection_events),
+                    'total_transmissions_no_optimization': total_transmissions_no_optimization,
+                    'total_transmissions_with_push_pull': total_transmissions_with_push_pull,
+                    'savings_percentage': savings_percentage
+                }
+                results.append(result)
+
+    return results
+
+
+def calculate_complete_transmission_savings(results):
+    """
+    Calculates the total transmissions with and without optimization for all projections.
+
+    Returns:
+    - results (list of dicts): Each dict contains:
+        - 'projection': Name of the projection
+        - 'total_transmissions_no_optimization': Total transmissions without optimization
+        - 'total_transmissions_with_push_pull': Total transmissions with push-pull optimization
+    """
+    # Initialize totals
+    total_no_optimization = 0
+    total_with_push_pull = 0
+
+    # Iterate over results to print and sum the totals
+    for res in results:
+        total_no_optimization += res['total_transmissions_no_optimization']
+        total_with_push_pull += res['total_transmissions_with_push_pull']
+    
+    return total_no_optimization, total_with_push_pull
+
 if __name__ == "__main__":
-    main()
+    # For testing purposes, call the function and print results
+    results = calculate_transmission_savings()
+
+    # Initialize totals
+    total_no_optimization = 0
+    total_with_push_pull = 0
+
+    # Iterate over results to print and sum the totals
+    for res in results:
+        total_no_optimization += res['total_transmissions_no_optimization']
+        total_with_push_pull += res['total_transmissions_with_push_pull']
+        
+        print(f"Projection: {res['projection']}")
+        print(f"Total transmissions without optimization: {res['total_transmissions_no_optimization']}")
+        print(f"Total transmissions with push-pull: {res['total_transmissions_with_push_pull']}")
+        print(f"Savings percentage: {res['savings_percentage']:.2f}%")
+        print()
+    
+    # Print the overall totals
+    print(f"Overall total transmissions without optimization: {total_no_optimization}")
+    print(f"Overall total transmissions with push-pull: {total_with_push_pull}")
