@@ -8,9 +8,12 @@ Created on Tue Aug 10 13:16:11 2021
 import multiprocessing
 from processCombination_aug import *
 from functools import partial
-
+from parse_network import get_network,get_nodes,get_rates,get_instances
 
 def computeMSplacementCosts(projection, combination, partType, sharedDict, noFilter):
+    "Loading Data from parse_network"
+    nodes = get_nodes()
+        
     costs = 0
     Filters  = []
     
@@ -96,6 +99,9 @@ def NEWcomputeMSplacementCosts(projection, sourcetypes, destinationtypes, noFilt
     TODO getNodes(etb) wird zu oft aufgerufen
     """
     
+    "Load Data from Parse Network"
+    rates = get_rates()
+    
     costs = 0
     destinationNodes = []     
 
@@ -165,6 +171,9 @@ def NEWcomputeMSplacementCosts(projection, sourcetypes, destinationtypes, noFilt
 
 
 def NEWcomputeMSplacementCosts_Path(projection, sourcetypes, destinationtypes, noFilter): #for PathVariant - fix generate EvalPlan
+    "Loading Data from Parse Network"
+    rates = get_rates()
+    
     costs = 0
     destinationNodes = []     
 
@@ -247,7 +256,10 @@ def NEWcomputeMSplacementCosts_par(projection, sourcetypes, destinationtypes): #
                 
     return costs, pathLength, newInstances
 
-def placeMS(destinationNodes, etype, etb):
+def placeMS(destinationNodes, etype, etb,noFilter):
+    
+    "Loading Data from Parse Network"
+    rates = get_rates()
     
     mycosts = 0
     myPathLength = 0
@@ -278,7 +290,10 @@ def placeMS(destinationNodes, etype, etb):
           
     return (mycosts, myPathLength, myInstance, (mytree.nodes, etb))    
 
-def alternative_NEWcomputeMSplacementCosts(sourcetypes, destinationtypes): #we need tuples, (C, [E,A]) C should be sent to all e and a nodes ([D,E], [A]) d and e should be sent to all a nodes etc
+def alternative_NEWcomputeMSplacementCosts(sourcetypes, destinationtypes,noFilter): #we need tuples, (C, [E,A]) C should be sent to all e and a nodes ([D,E], [A]) d and e should be sent to all a nodes etc
+    "Loading Data from Parse Network"
+    rates = get_rates()
+    
     costs = 0
     destinationNodes = []
     pathLength = 0
@@ -349,6 +364,10 @@ def getDestinationsUpstream(projection):
         return  range(len(allPairs))      
         
 def ComputeSingleSinkPlacement(projection, combination, noFilter):
+    "Load Data from parse network"
+    rates = get_rates()
+    network = get_network()
+    
     costs = np.inf
     node = 0
     Filters  = []    
@@ -428,6 +447,9 @@ def ComputeSingleSinkPlacement(projection, combination, noFilter):
     return costs, node, longestPath, myProjection, newInstances, Filters
 
 def costsAt(eventtype, node):
+    "Load Data from parse network"
+    rates = get_rates()
+    
     mycosts = 0
     for etb in IndexEventNodes[eventtype]:
                 possibleSources = getNodes(etb)
@@ -440,6 +462,8 @@ def costsAt(eventtype, node):
 
 def NEWcomputeCentralCosts(workload):
     #Adding all Eventtypes (simple events) to the list
+    "Load Data from parse network"
+    rates = get_rates()
     eventtypes = []
     for i in workload:
         myevents = i.leafs()

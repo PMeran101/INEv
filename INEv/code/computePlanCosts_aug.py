@@ -9,11 +9,13 @@ from placement_aug import *
 import time
 import csv
 import sys
-
+from parse_network import get_rates
 
 maxDist = max([max(x) for x in allPairs])
 
 def getLowerBound(query): # lower bound -> for multiple projections, keep track of events sent as single sink and do not add up
+    "Load Data from parse network"
+    rates = get_rates()
     MS = []
     for e in query.leafs():        
         myprojs= [p for p in list(set(projsPerQuery[query]).difference(set([query]))) if totalRate(p)<rates[e] and not e in p.leafs()]
