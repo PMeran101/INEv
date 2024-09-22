@@ -5,11 +5,11 @@
 # python3 plot_generic.py -i lower+0.01_normal.csv lower+0.01.csv -x EventSkew -y TransmissionRatio -l INEv0.1 lower0.1 INEv0.01 lower0.01 -o Fig_4e_lowerbound_0.01
 # python3 plot_generic.py -i lower+0.001_normal.csv lower+0.001.csv -x EventSkew -y TransmissionRatio -l INEv0.1 lower0.1 INEv0.01 lower0.01 -o Fig_4e_lowerbound_0.001
 
-python3 plot_generic.py -i QWL5_normal.csv QWL5.csv -x EventTypes -y TransmissionRatio -l QWL5_INEv QWL5_Fog -o Fig_6a_overlap_QWL5.pdf # OVERLAP
+python3 plot_generic.py -i QWL5_normal.csv QWL5_Fog.csv -x EventTypes -y TransmissionRatio -l QWL5_INEv QWL5_Fog -o Fig_6a_overlap_QWL5.pdf # OVERLAP
 echo "Finished QWL 5"
-python3 plot_generic.py -i QWL10_normal.csv QWL10.csv -x EventTypes -y TransmissionRatio -l QWL10_INEv QWL10_Fog -o Fig_6a_overlap_QWL10.pdf # OVERLAP
+python3 plot_generic.py -i QWL10_normal.csv QWL10_Fog.csv -x EventTypes -y TransmissionRatio -l QWL10_INEv QWL10_Fog -o Fig_6a_overlap_QWL10.pdf # OVERLAP
 echo "Finished QWL 10"
-python3 plot_generic.py -i QWL20_normal.csv QWL20.csv -x EventTypes -y TransmissionRatio -l QWL20_INEv QWL20_Fog -o Fig_6a_overlap_QWL20.pdf # OVERLAP
+python3 plot_generic.py -i QWL20_normal.csv QWL20_Fog.csv -x EventTypes -y TransmissionRatio -l QWL20_INEv QWL20_Fog -o Fig_6a_overlap_QWL20.pdf # OVERLAP
 
 # python3 plot_generic.py -i eventSkew_qwl+5_normal.csv eventSkew_qwl+5.csv -x EventSkew -y TransmissionRatio -l QWL5_INEv QWL5_Fog -o Fig_6b_eventSkew_QWL5normal.pdf # eventSkew
 # python3 plot_generic.py -i eventSkew_qwl+10_normal.csv eventSkew_qwl+10.csv -x EventSkew -y TransmissionRatio -l QWL10_INEv QWL10_Fog -o Fig_6b_eventSkew_QWL10normal.pdf # eventSkew
