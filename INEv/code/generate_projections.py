@@ -10,22 +10,26 @@ Generate beneficial projections for given query workload.
 """
 import subsets as sbs 
 import multiprocessing
+from binary_helper import save_file, load_file
+
 #from processCombination import *
 from filter import *
 
-with open('current_wl',  'rb') as  wl_file:
-    wl = pickle.load(wl_file)
-    
-#wl = [wl[0]]   
-with open('selectivities', 'rb') as selectivity_file:
-    selectivities = pickle.load(selectivity_file) 
+wl = load_file('current_wl')
+selectivities = load_file('selectivities')
+
 
 # structures for speedup in partInput function
 MSTrees  = {}
 DistMatrices =  {}
 
+from parse_network import get_nodes, get_network, get_rates, get_instances
 
-def optimisticTotalRate(projection): # USE FILTERED RATE FOR ESTIMATION 
+def optimisticTotalRate(projection): # USE FILTERED RATE FOR ESTIMATION
+    "Getting Values from Parse Network"
+    rates = get_rates()
+    nodes = get_nodes()
+    
     if projection in projlist: # is complex event        
         for i in projFilterDict.keys():
             if i  == projection: 
@@ -38,7 +42,12 @@ def optimisticTotalRate(projection): # USE FILTERED RATE FOR ESTIMATION
         return rates[projection.leafs()[0]] * len(nodes[projection.leafs()[0]])
     
     
-def optimisticTotalRate_single(projection): # USE FILTERED RATE FOR ESTIMATION 
+def optimisticTotalRate_single(projection): # USE FILTERED RATE FOR ESTIMATION
+    
+    "Getting Values from Parse Network"
+    rates = get_rates()         
+    nodes = get_nodes()
+    
     for i in projFilterDict.keys():
             if i  == projection: 
                 myproj = i
@@ -55,6 +64,8 @@ def optimisticTotalRate_single(projection): # USE FILTERED RATE FOR ESTIMATION
 def returnPartitioning(proj, combi, *args):
     
     ''' returns list containing partitioning input type of proj generated with combi, args contains critical eventtypes, if potential eventtype in critical events, return False '''
+    "Getting Values from Parse Network"
+    rates = get_rates()
     myevents = [x for x in combi if len(x) == 1]
     myevents = sorted(myevents, key = lambda x: rates[x], reverse = True)
     if args:
@@ -71,170 +82,189 @@ def returnPartitioning(proj, combi, *args):
     return []
 
 def isPartitioning(element, combi, proj):
-       ''' returns true if element partitioning input of proj generated with combi '''
+    ''' returns true if element partitioning input of proj generated with combi '''
 
-       mysum =  0    
-       for i in combi:   
-           
-           if i in rates.keys():        
-              additional = rates[i] * instances[i]              
-              mysum += additional
-              
-           else:
-               additional = projrates[i][1] * getNumETBs(i)              
-               mysum += additional #  len(returnETBs(projection, network))
-              
-       mysum -= rates[element] * instances[element]
-       mysum += projrates[proj][1] * getNumETBs(proj) # additional constraint about ratio of partitioning event type and outputrate of projection
-       if rates[element] > mysum : 
-           return True
+    "Getting Values from Parse Network"
+    rates = get_rates()
+    instances = get_instances()
+    
+    mysum =  0    
+    for i in combi:   
+        
+        if i in rates.keys():        
+            additional = rates[i] * instances[i]              
+            mysum += additional
+            
+        else:
+            additional = projrates[i][1] * getNumETBs(i)              
+            mysum += additional #  len(returnETBs(projection, network))
+            
+    mysum -= rates[element] * instances[element]
+    mysum += projrates[proj][1] * getNumETBs(proj) # additional constraint about ratio of partitioning event type and outputrate of projection
+    if rates[element] > mysum : 
+        return True
 
-       else: 
-           return False   
+    else: 
+        return False   
        
 def isPartitioning_customRates(element, combi, proj, myrates):
-       ''' returns true if element partitioning input of proj generated with combi '''
+    ''' returns true if element partitioning input of proj generated with combi '''
+    "Getting Values from Parse Network"
+    rates = get_rates()
+    instances = get_instances()
+    
+    mysum =  0    
+    for i in combi:   
+        
+        if i in rates.keys():        
+            additional = rates[i] * instances[i]              
+            mysum += additional
+            
+        else:
+            additional = myrates[i] * getNumETBs(i)              
+            mysum += additional #  len(returnETBs(projection, network))
+    mysum -= rates[element] * instances[element]
+    mysum += myrates[proj] * getNumETBs(proj) # additional constraint about ratio of partitioning event type and outputrate of projection
+    if rates[element] > mysum : 
+        return True
 
-       mysum =  0    
-       for i in combi:   
-           
-           if i in rates.keys():        
-              additional = rates[i] * instances[i]              
-              mysum += additional
-              
-           else:
-               additional = myrates[i] * getNumETBs(i)              
-               mysum += additional #  len(returnETBs(projection, network))
-       mysum -= rates[element] * instances[element]
-       mysum += myrates[proj] * getNumETBs(proj) # additional constraint about ratio of partitioning event type and outputrate of projection
-       if rates[element] > mysum : 
-           return True
-
-       else: 
-           return False          
+    else: 
+        return False          
 
 
 def NEW_isPartitioning_customRates(element, combi, proj, myrates):
-       ''' returns true if element partitioning input of proj generated with combi '''
-       
-       etbs = IndexEventNodes[element]
-       myNodes = [getNodes(x)[0] for x in etbs]   
-       if not element in MSTrees.keys():
-           myTree = steiner_tree(G, myNodes)
-           MSTrees[element] = myTree
-       else:
-           myTree =  MSTrees[element]
-       
-       if not myTree in DistMatrices.keys():           
-           myAllPairs = fillMyDistMatrice(myTree)
-           DistMatrices[myTree] = myAllPairs
-       else:
-           myAllPairs = DistMatrices[myTree]       
-       
-       #bestNodeValue = min([sum(x) for x in myAllPairs if myAllPairs and x])           
-       costs = len(myTree.edges())                
-       
-       mysum =  0    
-       for i in [x for x in combi if not x == element]:            
-           if i in rates.keys():        
-              additional = rates[i] * len(nodes[i])              
-              mysum += additional              
-           else:
-               additional = myrates[i] * getNumETBs(i)
-               mysum += additional
+    ''' returns true if element partitioning input of proj generated with combi '''
+    
+    "Getting Values from Parse Network"
+    rates = get_rates()
+    nodes = get_nodes()
+    
+    etbs = IndexEventNodes[element]
+    myNodes = [getNodes(x)[0] for x in etbs]   
+    if not element in MSTrees.keys():
+        myTree = steiner_tree(G, myNodes)
+        MSTrees[element] = myTree
+    else:
+        myTree =  MSTrees[element]
+    
+    if not myTree in DistMatrices.keys():           
+        myAllPairs = fillMyDistMatrice(myTree)
+        DistMatrices[myTree] = myAllPairs
+    else:
+        myAllPairs = DistMatrices[myTree]       
+    
+    #bestNodeValue = min([sum(x) for x in myAllPairs if myAllPairs and x])           
+    costs = len(myTree.edges())                
+    
+    mysum =  0    
+    for i in [x for x in combi if not x == element]:            
+        if i in rates.keys():        
+            additional = rates[i] * len(nodes[i])              
+            mysum += additional              
+        else:
+            additional = myrates[i] * getNumETBs(i)
+            mysum += additional
 
-       myproj  = 0 #costs for outputrates
-       if not proj.get_original(wl) in wl:
-           myproj =   myrates[proj] * (getNumETBs(proj)) # additional constraint about ratio of partitioning event type and outputrate of projection
+    myproj  = 0 #costs for outputrates
+    if not proj.get_original(wl) in wl:
+        myproj =   myrates[proj] * (getNumETBs(proj)) # additional constraint about ratio of partitioning event type and outputrate of projection
 
-       if totalRate(element) * longestPath > (mysum * costs) + myproj * longestPath :  
-           
-           return [costs]
+    if totalRate(element) * longestPath > (mysum * costs) + myproj * longestPath :  
+        
+        return [costs]
 
-       else: 
-           return False 
+    else: 
+        return False 
        
 
 def NEW_isPartitioning(element, combi, proj):
-       ''' returns true if element partitioning input of proj generated with combi '''
-       
-       etbs = IndexEventNodes[element]
-       myNodes = [getNodes(x)[0] for x in etbs]   
-       if not element in MSTrees.keys():
-           myTree = steiner_tree(G, myNodes)
-           MSTrees[element] = myTree
-       else:
-           myTree =  MSTrees[element]
-       
-       if not myTree in DistMatrices.keys():           
-           myAllPairs = fillMyDistMatrice(myTree)
-           DistMatrices[myTree] = myAllPairs
-       else:
-           myAllPairs = DistMatrices[myTree]       
-       
-       #bestNodeValue = min([sum(x) for x in myAllPairs if myAllPairs and x])           
-       costs = len(myTree.edges())                
-       
-       mysum =  0    
-       for i in [x for x in combi if not x == element]:            
-           if i in rates.keys():        
-              additional = rates[i] * len(nodes[i])              
-              mysum += additional              
-           else:
-               additional = projrates[i][1] * getNumETBs(i)             
-               mysum += additional
+    ''' returns true if element partitioning input of proj generated with combi '''
+    
+    "Getting Values from Parse Network"
+    rates = get_rates()
+    nodes = get_nodes()
+    
+    etbs = IndexEventNodes[element]
+    myNodes = [getNodes(x)[0] for x in etbs]   
+    if not element in MSTrees.keys():
+        myTree = steiner_tree(G, myNodes)
+        MSTrees[element] = myTree
+    else:
+        myTree =  MSTrees[element]
+    
+    if not myTree in DistMatrices.keys():           
+        myAllPairs = fillMyDistMatrice(myTree)
+        DistMatrices[myTree] = myAllPairs
+    else:
+        myAllPairs = DistMatrices[myTree]       
+    
+    #bestNodeValue = min([sum(x) for x in myAllPairs if myAllPairs and x])           
+    costs = len(myTree.edges())                
+    
+    mysum =  0    
+    for i in [x for x in combi if not x == element]:            
+        if i in rates.keys():        
+            additional = rates[i] * len(nodes[i])              
+            mysum += additional              
+        else:
+            additional = projrates[i][1] * getNumETBs(i)             
+            mysum += additional
 
-       myproj  = 0 #costs for outputrates
-       if not proj.get_original(wl) in wl:
-           myproj =  projrates[proj][1] * (getNumETBs(proj)) # additional constraint about ratio of partitioning event type and outputrate of projection
+    myproj  = 0 #costs for outputrates
+    if not proj.get_original(wl) in wl:
+        myproj =  projrates[proj][1] * (getNumETBs(proj)) # additional constraint about ratio of partitioning event type and outputrate of projection
 
-       if totalRate(element) * longestPath > (mysum * costs) + myproj * longestPath :  
-           
-           return [costs]
+    if totalRate(element) * longestPath > (mysum * costs) + myproj * longestPath :  
+        
+        return [costs]
 
-       else: 
-           return False 
+    else: 
+        return False 
        
         
 def NEW_isPartitioning_alt(element, combi, proj, myprojFilterDict):
-       ''' returns true if element partitioning input of proj generated with combi '''
-       
-       etbs = IndexEventNodes[element]
-       myNodes = [getNodes(x)[0] for x in etbs]   
-       if not element in MSTrees.keys():
-           myTree = steiner_tree(G, myNodes)
-           MSTrees[element] = myTree
-       else:
-           myTree =  MSTrees[element]
-       
-       if not myTree in DistMatrices.keys():           
-           myAllPairs = fillMyDistMatrice(myTree)
-           DistMatrices[myTree] = myAllPairs
-       else:
-           myAllPairs = DistMatrices[myTree]       
-       
-       #bestNodeValue = min([sum(x) for x in myAllPairs if myAllPairs and x])           
-       costs = len(myTree.edges())                
-       
-       mysum =  0    
-       for i in [x for x in combi if not x == element]:            
-           if i in rates.keys():        
-              additional = rates[i] * len(nodes[i])              
-              mysum += additional              
-           else:
-               additional = getDecomposedTotal(getMaximalFilter(myprojFilterDict, i), i)          
-               mysum += additional
-       
-       myproj  = 0 #costs for outputrates
-       if not proj in wl:
-           myproj =  getDecomposedTotal(getMaximalFilter(myprojFilterDict, proj), proj)  # additional constraint about ratio of partitioning event type and outputrate of projection
-       #if rates[element] * bestNodeValue > mysum * costs : 
-       #if rates[element] * bestNodeValue > mysum * costs :     #falsch mit bestNodeValue -> was kostetet alle partypes an einen Knoten zuschicken
-       if totalRate(element) * longestPath > (mysum * costs) + myproj * longestPath :  
-           return [costs]
+    ''' returns true if element partitioning input of proj generated with combi '''
+    
+    "Getting Values from Parse Network"
+    nodes = get_nodes()
+    rates = get_rates()
+    
+    etbs = IndexEventNodes[element]
+    myNodes = [getNodes(x)[0] for x in etbs]   
+    if not element in MSTrees.keys():
+        myTree = steiner_tree(G, myNodes)
+        MSTrees[element] = myTree
+    else:
+        myTree =  MSTrees[element]
+    
+    if not myTree in DistMatrices.keys():           
+        myAllPairs = fillMyDistMatrice(myTree)
+        DistMatrices[myTree] = myAllPairs
+    else:
+        myAllPairs = DistMatrices[myTree]       
+    
+    #bestNodeValue = min([sum(x) for x in myAllPairs if myAllPairs and x])           
+    costs = len(myTree.edges())                
+    
+    mysum =  0    
+    for i in [x for x in combi if not x == element]:            
+        if i in rates.keys():        
+            additional = rates[i] * len(nodes[i])              
+            mysum += additional              
+        else:
+            additional = getDecomposedTotal(getMaximalFilter(myprojFilterDict, i), i)          
+            mysum += additional
+    
+    myproj  = 0 #costs for outputrates
+    if not proj in wl:
+        myproj =  getDecomposedTotal(getMaximalFilter(myprojFilterDict, proj), proj)  # additional constraint about ratio of partitioning event type and outputrate of projection
+    #if rates[element] * bestNodeValue > mysum * costs : 
+    #if rates[element] * bestNodeValue > mysum * costs :     #falsch mit bestNodeValue -> was kostetet alle partypes an einen Knoten zuschicken
+    if totalRate(element) * longestPath > (mysum * costs) + myproj * longestPath :  
+        return [costs]
 
-       else: 
-           return False        
+    else: 
+        return False        
        
 
 def fillMyMatrice(myNodes, myEdges, me):  
@@ -281,6 +311,11 @@ def settoproj(evlist,query):
 
 def isBeneficial(projection, rate):
     """ determines for a projection based on the if it is beneficial """
+    
+    "Getting Values from Parse Network"
+    rates = get_rates()
+    nodes = get_nodes()
+    
     totalProjrate = rate * getNumETBs(projection)
     sumrates = sum(map(lambda x: rates[x] * float(len(nodes[x])), projection.leafs()))
     if sumrates > totalProjrate:
@@ -289,6 +324,11 @@ def isBeneficial(projection, rate):
         return False
 
 def totalRate(projection):
+    
+    "Getting Values from Parse Network"
+    rates = get_rates()
+    nodes = get_nodes()
+    
     if projection in projrates.keys(): # is complex event
        # print(projection, projrates[projection][1], getNumETBs(projection))
         return projrates[projection][1] * getNumETBs(projection)
@@ -393,11 +433,10 @@ for projection in sharedProjectionsDict.keys():
     if len(sharedProjectionsDict[projection]) > 1:
         sharedProjectionsList.append(projection) 
 
-#PP_Projs = [totalRate(settoproj(['A','B','C'], wl[0])), totalRate(settoproj(['D','E','F'], wl[0])), 0, totalRate(settoproj(['D','E','F'], wl[0])),0]
-#print(totalRate(settoproj(['A','B','C'], wl[0])))
-#print(totalRate(settoproj(['D','E','F'], wl[0])))
+
 for q in wl:
-        print(q, optimisticTotalRate_single(q))      
-with open('projrates',  'wb') as projratesfile:
-    pickle.dump(projrates, projratesfile)
+        print(q, optimisticTotalRate_single(q))   
+           
+           
+save_file('sharedProjectionsDict', projrates)
 

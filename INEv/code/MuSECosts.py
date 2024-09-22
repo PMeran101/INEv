@@ -11,23 +11,12 @@ from EvaluationPlan import *
 from generate_projections import *
 import pickle
 import math 
+from binary_helper import load_file,save_file
 
-
-#with open('EvaluationPlan', 'rb') as EvaluationPlan_file: 
-#         myplan = pickle.load(EvaluationPlan_file)[0]
-  
-with open("allPairs", "rb") as allPairs_file:
-    allPairs = pickle.load(allPairs_file)
-
-with open('graph',  'rb') as graph_file:
-    G = pickle.load(graph_file)    
-
-    
-with open('ExperimentResults',  'rb') as result_file:
-    results = pickle.load(result_file)    
-    
-with open('musegraph',  'rb') as muse_file:
-    musegraph = pickle.load(muse_file)    
+allPairs = load_file('allPairs')
+G = load_file('graph')
+results = load_file('ExperimentResults')
+musegraph = load_file('musegraph')
 
   
 def getTuples(mylist):
@@ -54,8 +43,8 @@ def getTuples_single(mylist):
                 
     return newlist
 
-
-placement_dict = nodes
+from parse_network import get_nodes
+placement_dict = get_nodes()
 combi_dict = {}
 mnprojs = []
 MSTypes = []

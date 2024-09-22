@@ -397,6 +397,8 @@ class PrimEvent(Tree):
         return self
     
     def evaluate(self):
+        from parse_network import get_rates
+        rates = get_rates()
         return rates[filter_numbers(self.evtype)]
 
 #print(SEQ(KL(AND(PrimEvent(('A')))), KL(SEQ(PrimEvent('B'), KL(PrimEvent('D'))))).stripKL_simple())
