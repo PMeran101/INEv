@@ -7,16 +7,13 @@ Created on Thu Aug 19 11:45:00 2021
 """
 from util import *
 
-from network import *
 import copy
 import numpy as np
 import pickle
 from tree import *
 from helper import *
-from parse_network import *
-from network import *
+from parse_network import get_nodes, get_network
 
-#import matplotlib.pyplot as plt
 import networkx as nx 
 from networkx.algorithms.approximation import steiner_tree
 from networkx.algorithms.components import is_connected
@@ -42,7 +39,10 @@ def initEventNodes():  #matrice: comlumn indices are node ids, row indices corre
     #Storing a dictionary with the event type and node id as key and the index in the myEventNodes type for the list.
     myIndexEventNodes = {}
     offset = 0
-    index = 0 
+    index = 0
+    nodes = get_nodes()
+    network = get_network()
+    print(nodes)
     #For each primitve event
     for etype in nodes.keys():
         myetbs = []
@@ -66,6 +66,8 @@ EventNodes = init_EventNodes[0]
 IndexEventNodes = init_EventNodes[1]
 projFilterDict = {}
 
+print("EventNodes", EventNodes)
+
 
 def getETBs(node):
     mylist = column1s(column(EventNodes, node))       
@@ -81,6 +83,7 @@ def unsetEventNodes(node, etb):
     EventNodes[IndexEventNodes[etb]][node] = 0    
     
 def addETB(etb, etype):
+    network = get_network()
     mylist = [0 for x in range(len(network.keys()))]
     EventNodes.append(mylist)
     index = len(EventNodes)-1
@@ -96,6 +99,7 @@ def SiSManageETBs(projection, node):
     setEventNodes(node, etbID)       
 
 def MSManageETBs(projection, parttype):
+    nodes = get_nodes()
     etbIDs = genericETB(parttype, projection)
     for projectionETB in etbIDs:
              addETB(projectionETB, projection)             
@@ -104,6 +108,7 @@ def MSManageETBs(projection, parttype):
 
 
 def genericETB(partType, projection):
+    nodes = get_nodes()
     ETBs = []   
     if len(partType) == 0 or not partType in projection.leafs():
         myID = ""
@@ -151,5 +156,3 @@ def getLongest():
 
 longestPath = getLongest()
 maxDist = max(sum(allPairs,[]))
-
-   

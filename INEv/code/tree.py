@@ -5,7 +5,6 @@ Implementation of Query-Tree
 from helper import * 
 import copy
 from itertools import *
-from parse_network import * 
 import numpy as np
 
 class Tree():
