@@ -7,22 +7,20 @@ Created on Fri Aug 20 13:03:07 2021
 
 Output selector related methods.
 """
-from structures import *
+from structures import get_IndexEventNodes, getLongest, getNumETBs
 from parse_network import get_nodes,get_rates,get_instances
+from binary_helper import load_file
 
-with open('singleSelectivities',  'rb') as  singleSelectivities_file:
-    singleSelectivities = pickle.load(singleSelectivities_file)
-    
-with open('projrates',  'rb') as projratesfile:
-    projrates = pickle.load(projratesfile)
-    
-with open('singleSelectivities',  'rb') as singleSelectivities_file:
-    singleSelectivities = pickle.load(singleSelectivities_file)
+singleSelectivities = load_file("singleSelectivities")
+projrates = load_file("projrates")
 
 def computePromisingType(projection):
     "Loading data from parse_network"
     rates = get_rates()
     
+    "Loading data from structures"
+    IndexEventNodes = get_IndexEventNodes()
+    longestPath = getLongest()
     
     promisingEvent = "X"
     currentSave = 0
@@ -39,6 +37,8 @@ def computePromisingType(projection):
         
         
 def numETBs(primEvents, projection):
+    "Loading data from structures"
+    IndexEventNodes = get_IndexEventNodes()
     count = 1
     for event in projection.leafs():
         if not event in primEvents:
@@ -75,7 +75,11 @@ def getKeySingleSelect(primEvent, projection):
 def additionalFilters(projection, promisingEvent):
     "Loading data from parse_network"
     rates = get_rates()
-        
+    
+    "Loading data from structures"
+    IndexEventNodes = get_IndexEventNodes()
+    longestPath = getLongest()
+    
     additionalFiltersList = []
     for event in projection.leafs():
         if not event  == promisingEvent:

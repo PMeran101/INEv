@@ -11,7 +11,7 @@ Generate beneficial projections for given query workload.
 import subsets as sbs 
 import multiprocessing
 from binary_helper import save_file, load_file
-
+from parse_network import get_nodes, get_network, get_rates, get_instances
 #from processCombination import *
 from filter import *
 
@@ -23,7 +23,7 @@ selectivities = load_file('selectivities')
 MSTrees  = {}
 DistMatrices =  {}
 
-from parse_network import get_nodes, get_network, get_rates, get_instances
+
 
 def optimisticTotalRate(projection): # USE FILTERED RATE FOR ESTIMATION
     "Getting Values from Parse Network"

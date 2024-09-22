@@ -20,17 +20,19 @@ from networkx.algorithms.components import is_connected
 from EvaluationPlan import *
 import time
 import numpy as np
-#G = nx.Graph()
+from binary_helper import load_file
 
-with open("allPairs", "rb") as allPairs_file:
-    allPairs = pickle.load(allPairs_file)
+allPairs = load_file("allPairs")
+G = load_file("graph")
 
-with open('graph',  'rb') as graph_file:
-    G = pickle.load(graph_file)
 ETB = {} # {"A": {"A1": [2,3], "A3" = [3]}, "B" {"B1:[1,3]} ....}
 placementTreeDict = {} # {("D", "A1"): (5,[2,3,4], steinerTree(5234)} show steiner tree to connect all D's with A1 -> problem: what about multiple recipient event types? what about single sink placements=
 eventNodeDict =  {} # {0: ["B1", "A3", "E0"], 1: ["A1B2", "A1B3", "B1"]} which instances of events/projections are generated or sent to/via node x -> maybe reuse network dict, but atm used for other stuff
 
+
+# Global caches for lazy loading
+_EventNodes = None
+_IndexEventNodes = None
 
 def initEventNodes():  #matrice: comlumn indices are node ids, row indices correspond to etbs, for a given etb use IndexEventNodes to get row ID for given ETB
     #Storign all nodes producing a given event type with a 1 in the corresponding list
@@ -61,28 +63,47 @@ def initEventNodes():  #matrice: comlumn indices are node ids, row indices corre
         offset = index
     return(myEventNodes, myIndexEventNodes)
 
-init_EventNodes = initEventNodes()        
-EventNodes = init_EventNodes[0]
-IndexEventNodes = init_EventNodes[1]
+def get_EventNodes():
+    global _EventNodes
+    if _EventNodes is None:
+        _EventNodes = initEventNodes()[0]
+    return _EventNodes
+
+def get_IndexEventNodes():
+    global _IndexEventNodes
+    if _IndexEventNodes is None:
+        _IndexEventNodes = initEventNodes()[1]
+    return _IndexEventNodes
+
 projFilterDict = {}
 
-print("EventNodes", EventNodes)
+
 
 
 def getETBs(node):
+    EventNodes = get_EventNodes()
+    IndexEventNodes = get_IndexEventNodes()
     mylist = column1s(column(EventNodes, node))       
     return [list(IndexEventNodes.keys())[list(IndexEventNodes.values()).index(x)] for x in mylist] # index from row id <-> etb
 
 def getNodes(etb):
+    EventNodes = get_EventNodes()
+    IndexEventNodes = get_IndexEventNodes()
     return column1s(EventNodes[IndexEventNodes[etb]])
 
 def setEventNodes(node, etb):
+    EventNodes = get_EventNodes()
+    IndexEventNodes = get_IndexEventNodes()
     EventNodes[IndexEventNodes[etb]][node] = 1
  
 def unsetEventNodes(node, etb):
+    EventNodes = get_EventNodes()
+    IndexEventNodes = get_IndexEventNodes()
     EventNodes[IndexEventNodes[etb]][node] = 0    
     
 def addETB(etb, etype):
+    EventNodes = get_EventNodes()
+    IndexEventNodes = get_IndexEventNodes()
     network = get_network()
     mylist = [0 for x in range(len(network.keys()))]
     EventNodes.append(mylist)
@@ -126,12 +147,16 @@ def genericETB(partType, projection):
     return ETBs
 
 def getNumETBs(projection):
+    EventNodes = get_EventNodes()
+    IndexEventNodes = get_IndexEventNodes()
     num = 1
     for etype in projection.leafs():
         num *= len(IndexEventNodes[etype])
     return num
 
 def NumETBsByKey(etb, projection):
+    EventNodes = get_EventNodes()
+    IndexEventNodes = get_IndexEventNodes()
     instancedEvents = []
     index = 0
     if len(projection) == 1:
@@ -154,5 +179,4 @@ def getLongest():
     return np.median(avs)
 
 
-longestPath = getLongest()
 maxDist = max(sum(allPairs,[]))
