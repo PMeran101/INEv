@@ -11,13 +11,29 @@ import random
 from Node import Node
 import argparse
 
-from binary_helper import save_file, load_file
+""" Experiment network rates 
+
+average event rates for google cluster data set first 12h, timewindow 30 min, 20 nodes
+#ev = [[0,855, 212, 24, 400, 129, 0, 0.005,0.05]]
+    
+event rates push-pull comparison:
+small:
+ev_PP = [[0.2994830154521548 , 0.14354286459134916 , 0.009297964702092328 , 0.2568894819120937 , 0.0771288310049754 ,  0.009297964702092328, 0.2994830154521548 , 0.26592179047984055 ]]    
+big: 
+ev =  [[1, 6, 1, 1, 1, 7, 8777, 1, 542, 72, 39, 1, 1, 318, 3, 1, 17, 2, 12, 2]]
 
 
+#ev =  [[1485,1000, 161, 300, 480, 229, 1, 1,20]] # average rates google cluster experiment
+#ev =  [[0.5, 6, 1, 136, 1000, 250, 0.5, 30, 60]] # average rates citibike experiment
 
-res = load_file('rates')
-event_rates_file = res[0]
-event_node_assignment = res[1]
+"""    
+
+
+with open('rates',  'rb') as  rates_file:
+        res = pickle.load(rates_file)
+        event_rates_file = res[0]
+        event_node_assignment = res[1]
+        
 
 def generate_eventrates(eventskew,numb_eventtypes):
     eventrates = np.random.zipf(eventskew,numb_eventtypes)
@@ -131,6 +147,42 @@ def main():
     print(f"Event type: {eventtype}, Param: {param}")
 
 
+    """
+    #default values for simulation 
+    nwsize = 10
+    node_event_ratio = 0.5
+    num_eventtypes = 20
+    eventskew = 1.3
+    toFile = False
+    swaps = 0   
+
+      
+    if len(sys.argv) > 1: #network size
+        nwsize =int(sys.argv[1])
+    if len(sys.argv) > 2:
+        node_event_ratio = float(sys.argv[2]) # event node ratio
+    if len(sys.argv) > 3: # event skew
+        eventskew = float(sys.argv[3]) 
+    if len(sys.argv) > 4: # size event universe        
+        num_eventtypes = int(sys.argv[4])
+    if len(sys.argv) > 4 and len(sys.argv) < 7 :   #write event types to file  
+        #eventrates = generate_eventrates(eventskew,num_eventtypes)   
+        toFile = False
+    if len(sys.argv) > 5:     # generate event types from file and apply given number of swaps
+        eventrates = event_rates_file # get event rates for event types
+        nodeassignment = event_node_assignment  # get node assignment, which node generates which event types
+        swaps = int(sys.argv[5]) # number of swaps
+        toFile = False # do not save generated rates to file
+        
+    if len(sys.argv) > 6:        # for setting event types to min/max rates (kleene, nseq experiments)
+        eventtype = str(sys.argv[6]) 
+    
+    if len(sys.argv) > 7: # set eventtype to param=max/min rate (kleene, nseq experiments)
+        param = str(sys.argv[7])
+        eventrates = swapRatesMax(eventtype, eventrates, param)   
+    
+    """
+    #eventrates = sorted(generate_eventrates(eventskew,num_eventtypes))
     eventrates =  generate_eventrates(eventskew,num_eventtypes)
     
     
@@ -222,8 +274,10 @@ def main():
     networkExperimentData = [eventskew, num_eventtypes, node_event_ratio, nwsize, min(eventrates)/max(eventrates)]
     with open('networkExperimentData', 'wb') as networkExperimentDataFile:
         pickle.dump(networkExperimentData, networkExperimentDataFile)
-        
-    save_file('network', nw)
+    
+    with open('network', 'wb') as network_file:
+          pickle.dump(nw, network_file)      
+          
          
     
    

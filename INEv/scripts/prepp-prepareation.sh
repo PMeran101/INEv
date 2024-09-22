@@ -4,9 +4,9 @@ cd ../code
 	
   echo "Script started at: $(date)"
 
-  for k in 5 10 20 # qwl size
+  for k in 5 10 # qwl size
   do 
-      for h in 6 10 15 20 25 # num event types
+      for h in 6 10 # num event types
       do
           echo "Starting outer loop with k=$k and h=$h at: $(date)"
 
@@ -15,7 +15,7 @@ cd ../code
           python3 allPairs.py
      
           a=1
-          while [ "$a" -lt 60 ]
+          while [ "$a" -lt 3 ]
           do
               echo "  Starting inner loop iteration $a with k=$k at: $(date)"
               
