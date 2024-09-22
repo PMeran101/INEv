@@ -19,15 +19,13 @@ from EvaluationPlan import *
 from generate_projections import *
 import pickle
 import math 
+from binary_helper import load_file,save_file
+from parse_network import get_rates,get_instances,get_network
 
 
-      
-with open('EvaluationPlan', 'rb') as EvaluationPlan_file: 
-          myplan = pickle.load(EvaluationPlan_file)[0]
+myplan = load_file('EvaluationPlan')[0]
+results = load_file('ExperimentResults')    
 
-    
-with open('ExperimentResults',  'rb') as result_file:
-    results = pickle.load(result_file)
 
 
     
@@ -79,6 +77,9 @@ def getTuples_single(mylist):
     return newlist
 
 def getSubgraph(routingTree, eventtype): # get subgraph for given routing tree and event type
+    "Loading data from parse_network"
+    nodes = get_nodes()
+    
     sinks = nodes[eventtype]
     myG= nx.Graph()
     myG.add_edges_from(routingTree)
@@ -90,6 +91,9 @@ def getSingleSinkRouting(etbsource, destination):
     return getTuples(myshortest)
           
 def getNewProjrates():
+    "Loading data from parse_network"
+    rates = get_rates()
+    
     myProjrates = {}
     for proj in myplan.projections:
         thisproj = proj.name.name          
@@ -134,6 +138,10 @@ def getMultiNodeRoutes(projection):
 
 
 def inputcosts(projection): #input rate of projection
+    "Loading data from parse_network"
+    instances = get_instances()
+    rates = get_rates()
+    
     costs = 0   
     for myinput in mycombi[projection]:
         if len(myinput) >1 :
@@ -167,7 +175,8 @@ def getCosts(routing, rates):
 
 
 def main():
-    
+    "Loading data from parse_network"
+    nodes = getNodes()
         
     
      

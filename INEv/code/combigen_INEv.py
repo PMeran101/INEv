@@ -12,6 +12,9 @@ import sys
 import random
 from generate_projections import *
 import time 
+from parse_network import get_nodes, get_rates, get_instances, get_network
+import matplotlib.pyplot as plt
+
 numberCombis = 0
 
 projFilterDict =  {}  
@@ -21,6 +24,10 @@ for proj in projlist:
     projFilterDict.update(returnProjFilterDict(proj))    
 
 def optimisticTotalRate(projection, *noFilterParam): # USE FILTERED RATE FOR ESTIMATION 
+    "Loading data from parse_network"
+    rates = get_rates()
+    nodes = get_nodes()
+    
     noFilter = 0
     if noFilterParam:
         noFilter = noFilter[0]
@@ -65,6 +72,11 @@ def cheapRest(upstreamprojection, projection, partEvent, restRate): # this is no
        
 def promisingChainProjection(projection):
     ''' outputs for a projection a dictionary having potential partitioning event types as keys and the potential multisink projections in which projection is part of the combination '''
+    
+    "Loading data from parse_network"
+    rates = get_rates()
+
+    
     optimisticRate =  optimisticTotalRate(projection)
     combinationdict = {}
     
@@ -109,7 +121,11 @@ def extractMsOptions(query):
     return MsOptions
             
 
-def estimatePC(projection):  # based on primitive inputs, here it should be taken into account that a projection may have a ms placement based on its primitive inputs
+def estimatePC(projection, criticalMSTypes):  # based on primitive inputs, here it should be taken into account that a projection may have a ms placement based on its primitive inputs
+    "Loading data from parse_network"
+    rates = get_rates()
+    nodes =get_nodes()
+    
     pc = 0
     res = returnPartitioning(projection, projection.leafs(), criticalMSTypes)
     if res: #HAS MS

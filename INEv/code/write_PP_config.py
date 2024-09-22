@@ -9,6 +9,7 @@ Writes configuration file that is input to PPoP algorithm.
 
 """
 from generate_projections import *
+from parse_network import get_nodes,get_rates,get_instances
 
 with open('ExperimentID', 'rb') as ExperimentID_file: 
       myexperimentID =pickle.load(ExperimentID_file)  
@@ -17,6 +18,7 @@ with open('networkExperimentData', 'rb') as networkExperimentData_file:
           networkParams = pickle.load(networkExperimentData_file)   
           
 def getString(eventlist):
+    rates = get_rates()
     mystr = ""
     for i in sorted(rates.keys()):
         if i in eventlist:
@@ -27,6 +29,8 @@ def getString(eventlist):
     return mystr     
 
 
+rates = get_rates()
+network = get_network()
 
 mystr = "intXaxis = \ndoubleXaxis = memoryFactor: 0.1 ; 1.0 ; 0.05\nnetworkType = 3 \nmaxRep = 1 \nrawEvents = 6 \nrawEventGlobalFrequency = 0.1 \nrawEventFrequencySkew = 3 \n"
 mystr += "shared = false \ncomplexEvents = 2	\nedtHeight = 2 \nsharedEvents = 2 \nsharingDegree = 3 \nfanoutMean = 3	\nfanoutStd = 0.001 \nselectivityScale=1 \n"

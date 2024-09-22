@@ -11,7 +11,7 @@ from EvaluationPlan import *
 from generate_projections import *
 import pickle
 import math 
-
+from parse_network import get_nodes
   
 with open("allPairs", "rb") as allPairs_file:
     allPairs = pickle.load(allPairs_file)
@@ -31,7 +31,7 @@ sources = {}
 mycombi = {}
 myrate = {}
 myRouting = {}
-placement_dict = nodes
+placement_dict = get_nodes()
 routing_dict = {}
 MSTypes = []
 

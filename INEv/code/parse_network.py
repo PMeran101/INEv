@@ -47,6 +47,7 @@ def load_network():
         ind += 1
     return network
 
+
 def get_rates():
     """
     Retrieve the rates dictionary, loading it only once and caching the result.

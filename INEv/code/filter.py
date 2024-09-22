@@ -8,6 +8,7 @@ Created on Fri Aug 20 13:03:07 2021
 Output selector related methods.
 """
 from structures import *
+from parse_network import get_nodes,get_rates,get_instances
 
 with open('singleSelectivities',  'rb') as  singleSelectivities_file:
     singleSelectivities = pickle.load(singleSelectivities_file)
@@ -19,6 +20,10 @@ with open('singleSelectivities',  'rb') as singleSelectivities_file:
     singleSelectivities = pickle.load(singleSelectivities_file)
 
 def computePromisingType(projection):
+    "Loading data from parse_network"
+    rates = get_rates()
+    
+    
     promisingEvent = "X"
     currentSave = 0
     for primEvent in projection.leafs():
@@ -41,6 +46,9 @@ def numETBs(primEvents, projection):
     return count
 
 def getDecomposed(primEvents, projection):
+    "Loading data from parse_network"
+    rates = get_rates()
+    
     mysum = 0
     for event in  projection.leafs():
         if not event in primEvents:
@@ -49,6 +57,11 @@ def getDecomposed(primEvents, projection):
     return mysum        
 
 def getDecomposedTotal(primEvents, projection): 
+    "Loading data from parse_network"
+    rates = get_rates()
+    instances = get_instances()
+    
+    
     mysum = 0
     for event in [x for x in projection.leafs() if not x in primEvents]:    # implement for list of primEvents, to use during placement    
             myKey = getKeySingleSelect(event, projection)
@@ -60,6 +73,9 @@ def getKeySingleSelect(primEvent, projection):
     return myString
 
 def additionalFilters(projection, promisingEvent):
+    "Loading data from parse_network"
+    rates = get_rates()
+        
     additionalFiltersList = []
     for event in projection.leafs():
         if not event  == promisingEvent:

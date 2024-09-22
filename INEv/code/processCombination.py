@@ -7,6 +7,8 @@ Created on Mon Aug 16 11:47:10 2021
 """
 from functools import reduce
 from generate_projections import *
+from parse_network import get_nodes,get_rates,get_instances
+
 
 with open('curcombi',  'rb') as  combi_file:
         mycombi = pickle.load(combi_file)
@@ -199,6 +201,9 @@ def strToProj(subProj, projection):
         return(settoproj(evlist,projection))   
 
 def getDiv(i, partType):
+    "Load data from parse network"
+    instances = get_instances()
+    
     if len(i)==1:
         if i == partType:
             return instances[partType]

@@ -15,7 +15,7 @@ from EvaluationPlan import *
 from generate_projections import *
 import pickle
 import math 
-
+from parse_network import get_rates
 
 
 def getTuples(mylist):
@@ -44,6 +44,9 @@ def getTuples_single(mylist):
 
           
 def getNewProjrates():
+    "Loading data from parse_network"
+    rates = get_rates()
+    
     myProjrates = {}
     for proj in myplan.projections:
         thisproj = proj.name.name          
