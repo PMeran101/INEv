@@ -69,6 +69,8 @@ def getTuples_single(mylist):
     return newlist
 
 def getSingleSinkRouting(etbsource, destination):
+    import networkx as nx
+    G = load_file('graph')
     myshortest = nx.shortest_path(G, etbsource, destination, method='dijkstra')
     return getTuples(myshortest)
 
@@ -112,6 +114,7 @@ with open('ExperimentResults',  'rb') as result_file:
             results = pickle.load(result_file)              
 def main():
 
+    from structures import NumETBsByKey
     
     
     

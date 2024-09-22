@@ -25,10 +25,40 @@ from binary_helper import load_file
 allPairs = load_file("allPairs")
 G = load_file("graph")
 
-ETB = {} # {"A": {"A1": [2,3], "A3" = [3]}, "B" {"B1:[1,3]} ....}
-placementTreeDict = {} # {("D", "A1"): (5,[2,3,4], steinerTree(5234)} show steiner tree to connect all D's with A1 -> problem: what about multiple recipient event types? what about single sink placements=
-eventNodeDict =  {} # {0: ["B1", "A3", "E0"], 1: ["A1B2", "A1B3", "B1"]} which instances of events/projections are generated or sent to/via node x -> maybe reuse network dict, but atm used for other stuff
+# ETB = {} # {"A": {"A1": [2,3], "A3" = [3]}, "B" {"B1:[1,3]} ....}
+# placementTreeDict = {} # {("D", "A1"): (5,[2,3,4], steinerTree(5234)} show steiner tree to connect all D's with A1 -> problem: what about multiple recipient event types? what about single sink placements=
+# eventNodeDict =  {} # {0: ["B1", "A3", "E0"], 1: ["A1B2", "A1B3", "B1"]} which instances of events/projections are generated or sent to/via node x -> maybe reuse network dict, but atm used for other stuff
 
+_ETB = None
+_placementTreeDict = None
+_eventNodeDict = None
+
+def init_ETB():
+    return {}
+
+def init_placementTreeDict():
+    return {}
+
+def init_eventNodeDict():
+    return {}
+
+def get_ETB():
+    global _ETB
+    if _ETB is None:
+        _ETB = init_ETB()
+    return _ETB
+
+def get_placementTreeDict():
+    global _placementTreeDict
+    if _placementTreeDict is None:
+        _placementTreeDict = init_placementTreeDict()
+    return _placementTreeDict
+
+def get_eventNodeDict():
+    global _eventNodeDict
+    if _eventNodeDict is None:
+        _eventNodeDict = init_eventNodeDict()
+    return _eventNodeDict
 
 # Global caches for lazy loading
 _EventNodes = None

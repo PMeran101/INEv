@@ -10,12 +10,20 @@ import time
 import csv
 import sys
 from parse_network import get_rates
+from binary_helper import load_file
+from structures import getLongest, get_IndexEventNodes,get_EventNodes
+from EvaluationPlan import EvaluationPlan
+import numpy as np
 
+allPairs = load_file("allPairs")
 maxDist = max([max(x) for x in allPairs])
 
 def getLowerBound(query): # lower bound -> for multiple projections, keep track of events sent as single sink and do not add up
-    "Load Data from parse network"
+    "Load Data from parse network"    
     rates = get_rates()
+    
+    "Load Data from structures"
+    longestPath = getLongest()
     MS = []
     for e in query.leafs():        
         myprojs= [p for p in list(set(projsPerQuery[query]).difference(set([query]))) if totalRate(p)<rates[e] and not e in p.leafs()]
@@ -71,10 +79,9 @@ def main():
     
     hopLatency = {}
     
-    #Reduce calls of initEventNodes
-    init_eventNodes = initEventNodes()   
-    EventNodes = init_eventNodes[0]
-    IndexEventNodes = init_eventNodes[1]    
+ 
+    EventNodes = get_EventNodes()
+    IndexEventNodes = get_IndexEventNodes()
     
     myPlan = EvaluationPlan([], [])
     
@@ -163,23 +170,17 @@ def main():
 
 
             
-    #getNetworkParameters, selectivityParameters, combigenParameters
-        
-    with open('networkExperimentData', 'rb') as networkExperimentData_file: 
-          networkParams = pickle.load(networkExperimentData_file)   
-    with open('selectivitiesExperimentData', 'rb') as selectivities_file: 
-          selectivityParams  = pickle.load(selectivities_file)   
-    with open('combiExperimentData', 'rb') as combiExperimentData_file: 
-          combigenParams = pickle.load(combiExperimentData_file) 
-    with open('processingLatency', 'rb') as processingLatency_file: 
-          processingLatencyParams = pickle.load(processingLatency_file)            
+    networkParams = load_file("networkExperimentData")
+    selectivityParams = load_file("selectivitiesExperimentData")
+    combigenParams = load_file("combiExperimentData")
+    processingLatencyParams = load_file("processingLatency")            
                       
     ID = int(np.random.uniform(0,10000000))
     hopfactor = processingLatencyParams[2]
   
     
     
-   
+    longestPath = getLongest()
     hoplatency = 0    
     totalLatencyRatio = 0
     myResult = [ID, mycosts,  Filters, networkParams[3], networkParams[0], networkParams[2], len(wl), combigenParams[3], selectivityParams[0], selectivityParams[1], combigenParams[1], longestPath, totaltime, hoplatency, float(max(list(dependencies.values()))/2), totalLatencyRatio, ccosts[0], lowerBound / ccosts[0], networkParams[1]]
@@ -197,7 +198,7 @@ def main():
        if new:
            writer.writerow(schema)              
        writer.writerow(myResult)
-      
+    import pickle
     with open('EvaluationPlan',  'wb') as EvaluationPlan_file:
         pickle.dump([myPlan, ID, MSPlacements], EvaluationPlan_file)
     

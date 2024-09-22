@@ -10,13 +10,12 @@ Writes configuration file that is input to PPoP algorithm.
 """
 from generate_projections import *
 from parse_network import get_nodes,get_rates,get_instances
+from binary_helper import load_file
 
-with open('ExperimentID', 'rb') as ExperimentID_file: 
-      myexperimentID =pickle.load(ExperimentID_file)  
- 
-with open('networkExperimentData', 'rb') as networkExperimentData_file: 
-          networkParams = pickle.load(networkExperimentData_file)   
-          
+myexperimentID = load_file("ExperimentID")
+networkParams = load_file("networkExperimentData")
+
+
 def getString(eventlist):
     rates = get_rates()
     mystr = ""

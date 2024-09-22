@@ -9,8 +9,20 @@ import multiprocessing
 from processCombination_aug import *
 from functools import partial
 from parse_network import get_network,get_nodes,get_rates,get_instances
+from structures import get_IndexEventNodes,get_EventNodes, getETBs, NumETBsByKey,get_placementTreeDict, setEventNodes,SiSManageETBs
+#from tree import 
+from EvaluationPlan import Projection, Instance
+from networkx.algorithms.approximation import steiner_tree
+import networkx as nx
+
+G = load_file("graph")
 
 def computeMSplacementCosts(projection, combination, partType, sharedDict, noFilter):
+    from structures import MSManageETBs
+    
+    "Loading Data from Structures"
+    IndexEventNodes = get_IndexEventNodes()
+    
     "Loading Data from parse_network"
     nodes = get_nodes()
         
@@ -77,6 +89,9 @@ def computeMSplacementCosts(projection, combination, partType, sharedDict, noFil
     return costs, myPathLength, myProjection, totalInstances, Filters
 
 def getFilters(projection, partType): # move to filter file eventually 
+        "Loading Data from Structures"
+        IndexEventNodes = get_IndexEventNodes()
+    
         totalETBs = 0
         for etb in IndexEventNodes[partType]: #for each multi-sink
             
@@ -98,9 +113,14 @@ def NEWcomputeMSplacementCosts(projection, sourcetypes, destinationtypes, noFilt
     """
     TODO getNodes(etb) wird zu oft aufgerufen
     """
+    "Loading Data from Structures"
+    IndexEventNodes = get_IndexEventNodes()
+    placementTreeDict = get_placementTreeDict()
     
     "Load Data from Parse Network"
     rates = get_rates()
+    
+
     
     costs = 0
     destinationNodes = []     
@@ -174,6 +194,11 @@ def NEWcomputeMSplacementCosts_Path(projection, sourcetypes, destinationtypes, n
     "Loading Data from Parse Network"
     rates = get_rates()
     
+    "Loading Data from Structures"
+    IndexEventNodes = get_IndexEventNodes()
+    
+
+    
     costs = 0
     destinationNodes = []     
 
@@ -227,6 +252,9 @@ def NEWcomputeMSplacementCosts_Path(projection, sourcetypes, destinationtypes, n
 
 
 def NEWcomputeMSplacementCosts_par(projection, sourcetypes, destinationtypes): #we need tuples, (C, [E,A]) C should be sent to all e and a nodes ([D,E], [A]) d and e should be sent to all a nodes etc
+    "Loading Data from Structures"
+    IndexEventNodes = get_IndexEventNodes()
+    
     costs = 0
     
     destinationNodes = []
@@ -261,6 +289,8 @@ def placeMS(destinationNodes, etype, etb,noFilter):
     "Loading Data from Parse Network"
     rates = get_rates()
     
+
+    
     mycosts = 0
     myPathLength = 0
     myInstance = Instance(etype, etb,[], {})
@@ -293,6 +323,12 @@ def placeMS(destinationNodes, etype, etb,noFilter):
 def alternative_NEWcomputeMSplacementCosts(sourcetypes, destinationtypes,noFilter): #we need tuples, (C, [E,A]) C should be sent to all e and a nodes ([D,E], [A]) d and e should be sent to all a nodes etc
     "Loading Data from Parse Network"
     rates = get_rates()
+    
+    "Loading Data from Structures"
+    IndexEventNodes = get_IndexEventNodes()
+    placementTreeDict = get_placementTreeDict()
+    
+    allPairs = load_file("allPairs")
     
     costs = 0
     destinationNodes = []
@@ -338,6 +374,10 @@ def alternative_NEWcomputeMSplacementCosts(sourcetypes, destinationtypes,noFilte
     return costs, pathLength          
 
 def findBestSource(sources, actualDestNodes): #this is only a heuristic, as the closest node can still be shit with respect to a good steiner tree ?+
+    import numpy as np
+    
+    allPairs = load_file('allPairs')
+    
     curmin = np.inf     
     for node in sources:        
         if min([allPairs[node][x] for x in actualDestNodes]) < curmin:
@@ -346,6 +386,7 @@ def findBestSource(sources, actualDestNodes): #this is only a heuristic, as the 
     return bestSource
         
 def getDestinationsUpstream(projection):
+    allPairs = load_file('allPairs')
     return  range(len(allPairs))    
     myPartTypes = []
     nodes = []
@@ -364,9 +405,15 @@ def getDestinationsUpstream(projection):
         return  range(len(allPairs))      
         
 def ComputeSingleSinkPlacement(projection, combination, noFilter):
+    import numpy as np
     "Load Data from parse network"
     rates = get_rates()
     network = get_network()
+    
+    "Loading Data from Structures"
+    IndexEventNodes = get_IndexEventNodes()
+    
+    allPairs = load_file("allPairs")
     
     costs = np.inf
     node = 0
@@ -450,6 +497,11 @@ def costsAt(eventtype, node):
     "Load Data from parse network"
     rates = get_rates()
     
+    "Loading Data from Structures"
+    IndexEventNodes = get_IndexEventNodes()
+    
+    allPairs = load_file("allPairs")
+    
     mycosts = 0
     for etb in IndexEventNodes[eventtype]:
                 possibleSources = getNodes(etb)
@@ -461,9 +513,17 @@ def costsAt(eventtype, node):
     return mycosts
 
 def NEWcomputeCentralCosts(workload):
+    import numpy as np
     #Adding all Eventtypes (simple events) to the list
     "Load Data from parse network"
     rates = get_rates()
+    
+    "Loading Data from Structures"
+    IndexEventNodes = get_IndexEventNodes()
+    
+    allPairs = load_file("allPairs")
+    
+    
     eventtypes = []
     for i in workload:
         myevents = i.leafs()

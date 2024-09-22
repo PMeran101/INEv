@@ -21,7 +21,7 @@ import pickle
 import math 
 from binary_helper import load_file,save_file
 from parse_network import get_rates,get_instances,get_network
-
+from structures import get_IndexEventNodes
 
 myplan = load_file('EvaluationPlan')[0]
 results = load_file('ExperimentResults')    
@@ -77,6 +77,9 @@ def getTuples_single(mylist):
     return newlist
 
 def getSubgraph(routingTree, eventtype): # get subgraph for given routing tree and event type
+    import networkx as nx
+    from networkx.algorithms.approximation import steiner_tree
+    
     "Loading data from parse_network"
     nodes = get_nodes()
     
@@ -87,6 +90,8 @@ def getSubgraph(routingTree, eventtype): # get subgraph for given routing tree a
     return list(subGraph.edges)
 
 def getSingleSinkRouting(etbsource, destination):
+    import networkx as nx
+    G = load_file("graph")
     myshortest = nx.shortest_path(G, etbsource, destination, method='dijkstra')
     return getTuples(myshortest)
           
@@ -115,6 +120,7 @@ def getparttype(projection):
         
 
 def getMultiNodeRoutes(projection):
+    IndexEventNodes = get_IndexEventNodes()
     mydict = {}
     parttype = getparttype(myplan.getProjection(projection).name)
     for inputproj in mycombi[projection]:
@@ -166,6 +172,7 @@ def getSingleNodeRoute(routingDict):
 
 
 def getCosts(routing, rates):
+    from structures import NumETBsByKey
     costs = 0 
     for i in myplan.instances: 
         
