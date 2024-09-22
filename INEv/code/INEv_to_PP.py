@@ -8,6 +8,7 @@ Created on Thu Oct 27 10:02:41 2022
 from  EvaluationPlan import *
 from generate_projections import *
 from parse_network import get_nodes,load_network_data
+from tree import AND,SEQ,PrimEvent
 
 singleSelectivities = {'D|D': 1.0, 'D': 1.0, 'F|F': 1.0, 'F': 1.0, 'G|G': 1.0, 'G': 1.0, 'I|I': 1.0, 'I': 1.0, 'D|DF': 0.5838496117160746, 'F|DF': 0.05138309488949179, 'G|DG': 0.7819436392161438, 'D|DG': 0.038365936488815706, 'D|DI': 0.4021936643557824, 'I|DI': 0.07459093133168268, 'F|FG': 0.40980480516314244, 'G|FG': 0.07320558378532692, 'I|FI': 0.7686902231468953, 'F|FI': 0.03902742495824232, 'G|GI': 0.13600974569263324, 'I|GI': 0.22057242918310158, 'F|DFG': 0.2849451418115158, 'G|DFG': 0.45234299037788883, 'D|DFG': 0.00020947617856471033, 'F|DFI': 0.775327368609418, 'I|DFI': 0.0504598606937951, 'D|DFI': 0.0006901326946667389, 'G|DGI': 0.31606327288306496, 'I|DGI': 0.07845061916983358, 'D|DGI': 0.001088913433560954, 'I|FGI': 0.34731790933760937, 'G|FGI': 0.06843441113994904, 'F|FGI': 0.0011359574166586253, 'D|DFGI': 1.0, 'F|DFGI': 1.0, 'G|DFGI': 1.0, 'I|DFGI': 1.0}
 query = AND(PrimEvent('G'),PrimEvent('I'),SEQ(PrimEvent('F'),PrimEvent('D')))
@@ -174,6 +175,7 @@ def forwardingRule(node):
     return text  
 
 def networkText():
+    import string
     nw = load_network_data()
     #myTypes = list(set(sum([x.leafs() for x in wl], [])))
     myTypes = query.leafs()

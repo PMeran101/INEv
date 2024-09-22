@@ -12,6 +12,7 @@ from generate_projections import *
 import pickle
 import math 
 from binary_helper import load_file,save_file
+import networkx as nx 
 
 allPairs = load_file('allPairs')
 G = load_file('graph')

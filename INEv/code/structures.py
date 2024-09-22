@@ -33,7 +33,7 @@ eventNodeDict =  {} # {0: ["B1", "A3", "E0"], 1: ["A1B2", "A1B3", "B1"]} which i
 # Global caches for lazy loading
 _EventNodes = None
 _IndexEventNodes = None
-
+_projFilterDict = {}
 def initEventNodes():  #matrice: comlumn indices are node ids, row indices correspond to etbs, for a given etb use IndexEventNodes to get row ID for given ETB
     #Storign all nodes producing a given event type with a 1 in the corresponding list
     # Node generating event type A would have: [1,0,0,0,...]
@@ -75,7 +75,11 @@ def get_IndexEventNodes():
         _IndexEventNodes = initEventNodes()[1]
     return _IndexEventNodes
 
-projFilterDict = {}
+def get_projFilterDict():
+    global _projFilterDict
+    return _projFilterDict
+
+
 
 
 

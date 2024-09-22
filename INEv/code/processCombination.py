@@ -8,20 +8,15 @@ Created on Mon Aug 16 11:47:10 2021
 from functools import reduce
 from generate_projections import *
 from parse_network import get_nodes,get_rates,get_instances
+from binary_helper import load_file
+import copy
 
 
-with open('curcombi',  'rb') as  combi_file:
-        mycombi = pickle.load(combi_file)
-        
-with open('originalCombiDict', 'rb') as combiDict_file:
-        originalDict = pickle.load(combiDict_file)
-        
-with open('criticalMSTypes', 'rb') as critical:
-      criticalMSTypes = pickle.load(critical)
-        
-with open('filterDict', 'rb') as filterDict_file:
-        filterDict = pickle.load(filterDict_file)    
-
+mycombi = load_file("curcombi")
+originalDict = load_file("originalCombiDict")
+criticalMSTypes = load_file("criticalMSTypes")
+filterDict = load_file("filterDict")
+ 
 criticalMSProjections = criticalMSTypes[1]
 criticalMSTypes = criticalMSTypes[0]
 
@@ -188,6 +183,8 @@ def removeSiSfamilies(combi):
     return newcombi    
 
 def strToProj(subProj, projection):
+    from tree import Tree
+    import string
     if isinstance(subProj, Tree):
         return subProj
     elif len(subProj) == 1:
@@ -249,6 +246,7 @@ def Diamond_costs(projection, diamonds, partType):
 
 def getMiniDiamonds(projection, partType, combination, *args): #args is list of filtered events
     samplingSize = 1 #len(combination) * 25 # TODO adjust to length/number of possibilities
+    import numpy as np
     costs = np.inf
     outDiamonds = []    
     diamonds = []
@@ -274,6 +272,7 @@ def getMiniDiamonds(projection, partType, combination, *args): #args is list of 
     return outDiamonds
 
 def getMiniDiamonds_rec(projection, partType, combination, diamonds):
+    import numpy as np
     combination = list(map(lambda x: strToProj(x, projection), combination))
     if len(combination) == 2:
         diamondTuple = combination

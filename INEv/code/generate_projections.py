@@ -14,6 +14,7 @@ from binary_helper import save_file, load_file
 from parse_network import get_nodes, get_network, get_rates, get_instances
 #from processCombination import *
 from filter import *
+from structures import get_IndexEventNodes, getLongest, getNumETBs, get_projFilterDict, getNodes
 
 wl = load_file('current_wl')
 selectivities = load_file('selectivities')
@@ -26,9 +27,13 @@ DistMatrices =  {}
 
 
 def optimisticTotalRate(projection): # USE FILTERED RATE FOR ESTIMATION
+
     "Getting Values from Parse Network"
     rates = get_rates()
     nodes = get_nodes()
+    
+    "Getting Values from Structures"
+    projFilterDict = get_projFilterDict()
     
     if projection in projlist: # is complex event        
         for i in projFilterDict.keys():
@@ -47,6 +52,9 @@ def optimisticTotalRate_single(projection): # USE FILTERED RATE FOR ESTIMATION
     "Getting Values from Parse Network"
     rates = get_rates()         
     nodes = get_nodes()
+    
+    "Getting Values from Structures"
+    projFilterDict = get_projFilterDict()
     
     for i in projFilterDict.keys():
             if i  == projection: 
@@ -134,10 +142,16 @@ def isPartitioning_customRates(element, combi, proj, myrates):
 
 def NEW_isPartitioning_customRates(element, combi, proj, myrates):
     ''' returns true if element partitioning input of proj generated with combi '''
-    
+    from networkx.algorithms.approximation import steiner_tree
     "Getting Values from Parse Network"
     rates = get_rates()
     nodes = get_nodes()
+    
+    "Getting Values from Structures"
+    IndexEventNodes = get_IndexEventNodes()
+    longestPath = getLongest()
+    
+    G = load_file('graph')
     
     etbs = IndexEventNodes[element]
     myNodes = [getNodes(x)[0] for x in etbs]   
@@ -179,10 +193,17 @@ def NEW_isPartitioning_customRates(element, combi, proj, myrates):
 
 def NEW_isPartitioning(element, combi, proj):
     ''' returns true if element partitioning input of proj generated with combi '''
-    
+    from networkx.algorithms.approximation import steiner_tree
     "Getting Values from Parse Network"
     rates = get_rates()
     nodes = get_nodes()
+    
+    "Getting Values from Structures"
+    IndexEventNodes = get_IndexEventNodes()
+    longestPath = getLongest()
+    
+    G = load_file('graph')
+    
     
     etbs = IndexEventNodes[element]
     myNodes = [getNodes(x)[0] for x in etbs]   
@@ -224,11 +245,16 @@ def NEW_isPartitioning(element, combi, proj):
         
 def NEW_isPartitioning_alt(element, combi, proj, myprojFilterDict):
     ''' returns true if element partitioning input of proj generated with combi '''
-    
+    from networkx.algorithms.approximation import steiner_tree
     "Getting Values from Parse Network"
     nodes = get_nodes()
     rates = get_rates()
+
+    "Getting Values from Structures"
+    IndexEventNodes = get_IndexEventNodes()
+    longestPath = getLongest()
     
+    G = load_file('graph')
     etbs = IndexEventNodes[element]
     myNodes = [getNodes(x)[0] for x in etbs]   
     if not element in MSTrees.keys():
@@ -268,6 +294,7 @@ def NEW_isPartitioning_alt(element, combi, proj, myprojFilterDict):
        
 
 def fillMyMatrice(myNodes, myEdges, me):  
+    import networkx as nx 
     myG = nx.Graph()
     myG.add_nodes_from(myNodes)
     myG.add_edges_from(myEdges)   
@@ -291,6 +318,8 @@ def fillMyDistMatrice(myG): #all pairs shortest path distance matrice -> also sl
 
     
 def min_max_doubles(query,projevents):
+    from helper import getdoubles_k,filter_numbers
+    
     doubles = getdoubles_k(projevents)
     leafs = map(lambda x: filter_numbers(x), query.leafs())
     for event in doubles.keys():
@@ -301,6 +330,9 @@ def min_max_doubles(query,projevents):
     
 def settoproj(evlist,query):
     """ take query and list of prim events and return projection"""
+    from helper import sepnumbers
+    from tree import PrimEvent
+    
     leaflist = []
     evlist = sepnumbers(evlist)  
     evlist = list(map(lambda x: str(x), evlist))
@@ -344,6 +376,8 @@ def totalRate(projection):
 def return_selectivity(proj):
     
     """ return selectivity for arbitrary projection """
+    from helper import filter_numbers
+    
     proj = list(map(lambda x: filter_numbers(x), proj))
     two_temp = sbs.printcombination(proj,2)    
     selectivity = 1
@@ -355,6 +389,8 @@ def return_selectivity(proj):
 
 def generate_projections(query):  
     """ generates list of benecifical projection """    
+    from helper import rename_without_numbers
+    
     negated = query.get_negated()
     projections = []
     projrates = {}

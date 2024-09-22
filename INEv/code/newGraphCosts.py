@@ -12,18 +12,14 @@ from generate_projections import *
 import pickle
 import math 
 from parse_network import get_nodes
-  
-with open("allPairs", "rb") as allPairs_file:
-    allPairs = pickle.load(allPairs_file)
+import networkx as nx
+from binary_helper import load_file
 
-with open('graph',  'rb') as graph_file:
-    G = pickle.load(graph_file)    
-   
-with open('ExperimentResults',  'rb') as result_file:
-    results = pickle.load(result_file)
-    
-with open('EvaluationPlan', 'rb') as EvaluationPlan_file: 
-          myplan = pickle.load(EvaluationPlan_file)[0]
+allPairs = load_file('allPairs')
+G = load_file('graph')
+results = load_file('ExperimentResults')
+myplan = load_file('EvaluationPlan')[0]
+
   
 myprojs = []
 multinode = []

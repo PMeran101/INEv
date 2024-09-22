@@ -14,7 +14,7 @@ from generate_projections import *
 import time 
 from parse_network import get_nodes, get_rates, get_instances, get_network
 import matplotlib.pyplot as plt
-
+from structures import getLongest
 numberCombis = 0
 
 projFilterDict =  {}  
@@ -55,6 +55,7 @@ removeFilters()
             
 def cheapRest(upstreamprojection, projection, partEvent, restRate): # this is not correct -> all partitionings of cheap rest must be investigated! also remaining events muss in teillisten aufgeteilt werden etc. 
     ''' checks if the rest of primitve events that must be provided to match upstream projection with projection and a multisink placement of partEvent allows the multi-sink placement at partEvent '''
+    from tree import PrimEvent
     remainingEvents = list(set(upstreamprojection.leafs()).difference(set(projection.leafs() + [partEvent])))
     remainingEventsQ = [PrimEvent(x) for x in remainingEvents]
     for event in remainingEvents: # problem -> primitive events    
@@ -126,6 +127,9 @@ def estimatePC(projection, criticalMSTypes):  # based on primitive inputs, here 
     rates = get_rates()
     nodes =get_nodes()
     
+    "Loading data from structures"
+    longestPath = getLongest()
+    
     pc = 0
     res = returnPartitioning(projection, projection.leafs(), criticalMSTypes)
     if res: #HAS MS
@@ -160,6 +164,8 @@ def getSavings(partType, combination, projection): #OPTIMISTIC TOTAL RATE
 
     myAllPairs = DistMatrices[MSTrees[partType]]      
     #bestNodeValue = min([sum(x) for x in myAllPairs if x]) #hier lieber average oder global average
+    "Loading data from structures"
+    longestPath = getLongest()
     
     #TODO: it is not totalRate but only local Rate that we save for PartType
     if not projection.get_original(wl) in wl: #some intermediate projection
@@ -172,7 +178,11 @@ def getSavings(partType, combination, projection): #OPTIMISTIC TOTAL RATE
     elif projection.get_original(wl) in wl and partType in list(map(lambda x: str(x), projection.get_original(wl).kleene_components())): # ms sink query at kleene type 
         return longestPath * totalRate(partType) - (len(MSTrees[partType].edges())*  (sum(list(map(lambda x: totalRate(x), [y for y in combination if not y == partType])))) + longestPath * optimisticTotalRate(projection))
 
-def getBestChainCombis(query, shared, criticalMSTypes, noFilter):         
+def getBestChainCombis(query, shared, criticalMSTypes, noFilter):    
+
+    "Loading data from structures"
+    longestPath = getLongest()
+         
     myMSDict = MSoptionsPerEvent(query)     
     myprojlist = [x for x in projsPerQuery[query]] # HERE WE NEED TO RESPECT OPERATOR SEMANTIC -> new function
 
@@ -273,62 +283,46 @@ def getBestTreeCombiRec(query, projection, mylist, mycombi, mycosts, shared, cri
        
 
 def costsOfCombination(projection, mycombi, shared, criticalMSTypes): # here is a good spot to check the combinations that are actually enumerated during our algorithm
-       
-       mycosts = 0
-       
-       for proj in [x for x in mycombi if x in combiDict.keys()]: # add savings per input of combination
-           mycosts += combiDict[proj][2]
-   
-       # check if it has a multi-sink placement and add costs/savings
-       partEvent = returnPartitioning(projection, mycombi, criticalMSTypes)
-       
-       if partEvent:           
-           mycosts += getSavings(partEvent[0], mycombi, projection)
-       
-       else: #projection has a single sink placement, such that we need to send th total rates of all inputs of the combination average path length at least once
-          mycosts -= (sum(list(map(lambda x: totalRate(x), [y for y in mycombi if y in combiDict.keys() and not combiDict[y][1]])))) * longestPath 
-           
-       # reduce by primitive events and shared subprojection
-       mycosts -= sharedAncestorsCost(projection, mycombi, partEvent)
-                
-       #if multiple projections share the same input, add a little bit of that inputs rate to simulate later sharing oportunities -> extend myMSTypes to dictionary   
-       mycosts += eventSharing(projection, mycombi, mycosts, shared) # rates of event types input to multiple multi-sink placement in the combination are shared, which should be accounted for here
-       
-       #TODO: this might be stupid in the case of multiquery
-       MSChildren = sum([combiDict[x][1] if len(x) > 1 else [x] for x in mycombi ],[])           
-       if (len(MSChildren) != len(mycombi) and not partEvent):
-               mycosts =  -np.inf
-           
-       
-       return (mycosts, partEvent) 
+      import numpy as np
 
-# def eventSharing_old(projection, mycombi, mycosts, shared): 
-#     # output costs of inputs of multi-sink placements that are shared between multiple projections of the combination
-    
-#     costs = 0
-#     # for each projection in mycombi, get all SIS events and generate Dict
-#     mySiSEvents =  sum([allSiSEvents(x) for x in mycombi if x in combiDict.keys()], [])
-#     SiSDict =  {x : mySiSEvents.count(x) for x in set(mySiSEvents)}  
-#     mySubProjections = sum([allAncestors(x, combiDict[x][0]) for x in mycombi if x in combiDict.keys()], [])
-#     mySubProjections += [x for x in mycombi if x in combiDict.keys()]
-#     SiSDict.update({x :  mySubProjections.count(x) for x in set(mySubProjections)})
-    
-#     #list containing all projections and primitive event types, that are input to single-sink placements for queries for which combination already computed
-#     globalSiSEvents = []   
-#     if shared:  
-#         globalSiSEvents = sum([allSiSEvents(x) for x in wl if x!= projection and x in combiDict.keys()],[])  
-#         globalSiSEvents += sum([allAncestors(x, combiDict[x][0]) for x in wl if x!= projection and x in combiDict.keys()],[]) #sharedSubprojections         
-            
-#     for event in SiSDict.keys():
-#         if event in globalSiSEvents: # for multi-query scenario
-#             costs += totalRate(event) * longestPath * SiSDict[event]
-#         else:
-#             costs += totalRate(event) * (SiSDict[event] - 1) * longestPath #TODO prefer something about the tree edges
-   
-#     return costs
+      "Loading data from structures"
+      longestPath = getLongest()
+      mycosts = 0
+      
+      for proj in [x for x in mycombi if x in combiDict.keys()]: # add savings per input of combination
+         mycosts += combiDict[proj][2]
+
+      # check if it has a multi-sink placement and add costs/savings
+      partEvent = returnPartitioning(projection, mycombi, criticalMSTypes)
+      
+      if partEvent:           
+         mycosts += getSavings(partEvent[0], mycombi, projection)
+      
+      else: #projection has a single sink placement, such that we need to send th total rates of all inputs of the combination average path length at least once
+         mycosts -= (sum(list(map(lambda x: totalRate(x), [y for y in mycombi if y in combiDict.keys() and not combiDict[y][1]])))) * longestPath 
+         
+      # reduce by primitive events and shared subprojection
+      mycosts -= sharedAncestorsCost(projection, mycombi, partEvent)
+               
+      #if multiple projections share the same input, add a little bit of that inputs rate to simulate later sharing oportunities -> extend myMSTypes to dictionary   
+      mycosts += eventSharing(projection, mycombi, mycosts, shared) # rates of event types input to multiple multi-sink placement in the combination are shared, which should be accounted for here
+      
+      #TODO: this might be stupid in the case of multiquery
+      MSChildren = sum([combiDict[x][1] if len(x) > 1 else [x] for x in mycombi ],[])           
+      if (len(MSChildren) != len(mycombi) and not partEvent):
+         
+            mycosts =  -np.inf
+         
+      
+      return (mycosts, partEvent) 
+
 
 
 def eventSharing(projection, mycombi, mycosts, shared): 
+    "Loading data from structures"
+    longestPath = getLongest()
+    
+    
     # output costs of inputs of multi-sink placements that are shared between multiple projections of the combination
     costs = 0
     # get for the sub-graph representing the combination of each projection in mycombi the ms placed sub-projections
@@ -344,6 +338,10 @@ def eventSharing(projection, mycombi, mycosts, shared):
 
 
 def sharedAncestorsCost(projection, mycombi, partEvent): #for each partitioning event type covered in the combi, we can only reduce its total rate once from the total savings provided by the combi   
+
+    "Loading data from structures"
+    longestPath = getLongest()
+    
     costs = 0
 
     if partEvent:
@@ -404,6 +402,9 @@ def allAncestors(projection, mycombi):
 
  
 def globalPartitioningOK(projection, combination):     #TODO: current version oversees the sharing potential with other projections with which the costs of those inputs are shared
+    "Loading data from structures"
+    longestPath = getLongest()
+    
     additionalCriticals = []
     myMSDict = {}
     ancestors = allAncestors(projection, combination)
@@ -466,6 +467,7 @@ def unfold_combiRec(combination, unfoldedDict):
 
  
 def plotCombi(combi):
+    import networkx as nx
     G = nx.Graph()
     G.add_nodes_from(list(map(lambda x: str(x), combi.keys())))
     for query in wl:
@@ -555,7 +557,7 @@ def main():
     print(numberCombis)
      
    # getExpensiveProjs(criticalMSTypes)
-    
+    import pickle
     with open('curcombi',  'wb') as newcombi:
         pickle.dump(mycombi, newcombi)
         
