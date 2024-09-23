@@ -6,14 +6,21 @@ Created on Tue Aug 10 13:16:11 2021
 @author: samira
 """
 import multiprocessing
-from processCombination_aug import *
+from structures import getNodes
+from filter import getDecomposedTotal,getKeySingleSelect
+# from processCombination_aug import *
+from processCombination_aug import get_projFilterDict
 from functools import partial
-from parse_network import get_network,get_nodes,get_rates,get_instances
-from structures import get_IndexEventNodes,get_EventNodes, getETBs, NumETBsByKey,get_placementTreeDict, setEventNodes,SiSManageETBs
+from parse_network import get_network,get_nodes,get_rates
+from structures import get_IndexEventNodes, getETBs, NumETBsByKey,get_placementTreeDict, setEventNodes,SiSManageETBs
+from generate_projections import getMaximalFilter,returnPartitioning
 #from tree import 
 from EvaluationPlan import Projection, Instance
 from networkx.algorithms.approximation import steiner_tree
 import networkx as nx
+from binary_helper import load_file
+import copy
+from adaptivity import *
 
 G = load_file("graph")
 
@@ -29,6 +36,7 @@ def computeMSplacementCosts(projection, combination, partType, sharedDict, noFil
     costs = 0
     Filters  = []
     
+    projFilterDict = get_projFilterDict()
     ##### FILTERS, append maximal filters
     intercombi = []
     
@@ -89,23 +97,25 @@ def computeMSplacementCosts(projection, combination, partType, sharedDict, noFil
     return costs, myPathLength, myProjection, totalInstances, Filters
 
 def getFilters(projection, partType): # move to filter file eventually 
-        "Loading Data from Structures"
-        IndexEventNodes = get_IndexEventNodes()
+    "Loading Data from Structures"
+    IndexEventNodes = get_IndexEventNodes()
     
-        totalETBs = 0
-        for etb in IndexEventNodes[partType]: #for each multi-sink
-            
-                numETBs = 1
-                node = getNodes(etb)[0]        
-                myETBs = getETBs(node)       
-                if not set(IndexEventNodes[projection]).issubset(set(getETBs(node))): # it is  checked if the node already received all etbs of the projection, if this is the case its not necessary to reduce something here     
-                    # jedes etb eines leaftypes von projection, aufsummieren, wenn von jedem mindestens 1 dann aufmultiplizieren und somit etbs ausrechnen und dann rate der etbs aufsummieren pro knoten
-                    for primEvent in projection.leafs():
-                        numETBs *= len(list(set(myETBs) & set(IndexEventNodes[primEvent])))
-                       
-                    totalETBs += numETBs
-      #  print("AUTO FILTERS: " + str(totalETBs * projrates[projection][1]))    # if the projection is also input to another projection in the combination, it may also be the case that the nodes of the parttypes already received all instances of the projections, hence filters can't help anymore...
-        return totalETBs * projrates[projection][1]
+    projrates = load_file('projrates')
+    
+    totalETBs = 0
+    for etb in IndexEventNodes[partType]: #for each multi-sink
+        
+            numETBs = 1
+            node = getNodes(etb)[0]        
+            myETBs = getETBs(node)       
+            if not set(IndexEventNodes[projection]).issubset(set(getETBs(node))): # it is  checked if the node already received all etbs of the projection, if this is the case its not necessary to reduce something here     
+                # jedes etb eines leaftypes von projection, aufsummieren, wenn von jedem mindestens 1 dann aufmultiplizieren und somit etbs ausrechnen und dann rate der etbs aufsummieren pro knoten
+                for primEvent in projection.leafs():
+                    numETBs *= len(list(set(myETBs) & set(IndexEventNodes[primEvent])))
+                    
+                totalETBs += numETBs
+    #  print("AUTO FILTERS: " + str(totalETBs * projrates[projection][1]))    # if the projection is also input to another projection in the combination, it may also be the case that the nodes of the parttypes already received all instances of the projections, hence filters can't help anymore...
+    return totalETBs * projrates[projection][1]
     
 
 def NEWcomputeMSplacementCosts(projection, sourcetypes, destinationtypes, noFilter): #we need tuples, (C, [E,A]) C should be sent to all e and a nodes ([D,E], [A]) d and e should be sent to all a nodes etc
@@ -120,7 +130,10 @@ def NEWcomputeMSplacementCosts(projection, sourcetypes, destinationtypes, noFilt
     "Load Data from Parse Network"
     rates = get_rates()
     
-
+    projFilterDict = get_projFilterDict()
+    singleSelectivities = load_file('singleSelectivities')
+    projrates = load_file('projrates')
+    mycombi = load_file('curcombi')
     
     costs = 0
     destinationNodes = []     
@@ -197,7 +210,10 @@ def NEWcomputeMSplacementCosts_Path(projection, sourcetypes, destinationtypes, n
     "Loading Data from Structures"
     IndexEventNodes = get_IndexEventNodes()
     
-
+    projFilterDict = get_projFilterDict()
+    singleSelectivities = load_file('singleSelectivities')
+    projrates = load_file('projrates')
+    mycombi = load_file('curcombi')
     
     costs = 0
     destinationNodes = []     
@@ -284,12 +300,12 @@ def NEWcomputeMSplacementCosts_par(projection, sourcetypes, destinationtypes): #
                 
     return costs, pathLength, newInstances
 
-def placeMS(destinationNodes, etype, etb,noFilter):
+def placeMS(destinationNodes, etype, etb,noFilter,projection):
     
     "Loading Data from Parse Network"
     rates = get_rates()
     
-
+    projFilterDict = get_projFilterDict()
     
     mycosts = 0
     myPathLength = 0
@@ -329,6 +345,8 @@ def alternative_NEWcomputeMSplacementCosts(sourcetypes, destinationtypes,noFilte
     placementTreeDict = get_placementTreeDict()
     
     allPairs = load_file("allPairs")
+
+    projFilterDict = get_projFilterDict()
     
     costs = 0
     destinationNodes = []
@@ -414,7 +432,11 @@ def ComputeSingleSinkPlacement(projection, combination, noFilter):
     IndexEventNodes = get_IndexEventNodes()
     
     allPairs = load_file("allPairs")
+    mycombi = load_file('curcombi')
     
+    projFilterDict = get_projFilterDict()
+    singleSelectivities = load_file('singleSelectivities')
+    projrates = load_file('projrates')
     costs = np.inf
     node = 0
     Filters  = []    
