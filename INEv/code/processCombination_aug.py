@@ -6,11 +6,12 @@ Created on Mon Aug 16 11:47:10 2021
 @author: samira
 """
 from functools import reduce
-from generate_projections import *
+# from generate_projections import *
 from parse_network import get_nodes,get_rates,get_instances
 from binary_helper import load_file
 import copy
-
+from generate_projections import returnPartitioning,getMaximalFilter, totalRate, getKeySingleSelect,settoproj,returnAdditionalFilterDict,returnProjFilterDict,getDecomposed
+from structures import getNumETBs
 
 mycombi = load_file("curcombi")
 originalDict = load_file("originalCombiDict")
@@ -115,6 +116,7 @@ def makeUnredundant(combi):
     return [x for x in combi if not x in toRemove]
             
 def removeLayer(combiDict, layer): # make sure, that no query is removed from 
+    wl = load_file("current_wl")
     levels = compute_dependencies_simple(combiDict)
     #levels = compute_dependencies(combiDict) 
     projections = [x for x in levels.keys() if levels[x] in layer and not x in wl]
@@ -145,6 +147,7 @@ def hasMSParent(projection): # checks for a projection if it is input to a MS pl
          return False
      
 def removeSisChains():    
+    wl = load_file("current_wl")
     levels = compute_dependencies_simple(mycombi)
     newlevels = {}
     toRemove = []
@@ -172,6 +175,7 @@ def removeSisChains():
     return  newcombi    
 
 def removeSiSfamilies(combi):
+    wl = load_file("current_wl")
     toRemove = []
     for i in [x for x in combi.keys() if not x in wl]:
         if not originalDict[i][1] and not hasMSParent(i):
@@ -213,19 +217,20 @@ def getDiv(i, partType):
         
 
 def getFilteredRate(projection, diamond, filtered):
-     if len(diamond) == 1:        
+    singleSelectivities = load_file
+    if len(diamond) == 1:        
         if diamond in filtered:    
             return singleSelectivities[getKeySingleSelect(diamond, projection)] * totalRate(diamond)
         return totalRate(diamond)
     
-     lst = [x for x in diamond.leafs() if x in filtered] #return list of filtered events contained in projection
-     filter_lst = [x for x in diamond.leafs() if not x in lst]
-     lst  = list(map(lambda x: singleSelectivities[getKeySingleSelect(x, projection)], lst))
-     filter_lst = list(map(lambda x: singleSelectivities[getKeySingleSelect(x, diamond)], filter_lst))
-     prod = 1
-     for i in lst + filter_lst:
-             prod *= i
-     return diamond.evaluate() *  getNumETBs(diamond) * prod
+    lst = [x for x in diamond.leafs() if x in filtered] #return list of filtered events contained in projection
+    filter_lst = [x for x in diamond.leafs() if not x in lst]
+    lst  = list(map(lambda x: singleSelectivities[getKeySingleSelect(x, projection)], lst))
+    filter_lst = list(map(lambda x: singleSelectivities[getKeySingleSelect(x, diamond)], filter_lst))
+    prod = 1
+    for i in lst + filter_lst:
+            prod *= i
+    return diamond.evaluate() *  getNumETBs(diamond) * prod
 
     
     
@@ -321,14 +326,83 @@ def augmentProjFilters(old, additional, mylist):
 ### this is for removing layers to save hops
 #mycombi = removeSisChains()
 
+
+# Global caches for lazy loading
+_projFilterDict = None
+_additionalProjFilter = None
+_additionalInputs = None
+
+def initProjFilterDict():
+    """
+    Initializes the projFilterDict.
+    This function processes the projlist and returns the projFilterDict.
+    """
+    from generate_projections import get_projlist
+    projFilterDict = {}
+    projlist = get_projlist()
+    # Populate the projection filter dictionary for each project in the projlist
+    for proj in projlist:
+        projFilterDict.update(returnProjFilterDict(proj))
+    
+    return projFilterDict
+
+def initAdditionalProjFilter():
+    """
+    Initializes the additionalProjFilter.
+    This function returns the additional projection filter dictionary.
+    """
+    return returnAdditionalFilterDict()
+
+def initAdditionalInputs():
+    """
+    Initializes the additionalInputs.
+    This function returns the additional MS inputs.
+    """
+    return getMSInputs()
+
+# Getter functions for lazy loading
+
+def get_projFilterDict():
+    """
+    Returns the projection filter dictionary.
+    If the filters are not initialized, it initializes them.
+    """
+    from generate_projections import get_projlist
+    projlist = get_projlist()
+    
+    global _projFilterDict
+    if _projFilterDict is None:
+        _projFilterDict = initProjFilterDict(projlist)
+    return _projFilterDict
+
+def get_additionalProjFilter():
+    """
+    Returns the additional projection filter dictionary.
+    If the filters are not initialized, it initializes them.
+    """
+    global _additionalProjFilter
+    if _additionalProjFilter is None:
+        _additionalProjFilter = initAdditionalProjFilter()
+    return _additionalProjFilter
+
+def get_additionalInputs():
+    """
+    Returns the additional MS inputs.
+    If the inputs are not initialized, it initializes them.
+    """
+    global _additionalInputs
+    if _additionalInputs is None:
+        _additionalInputs = initAdditionalInputs()
+    return _additionalInputs
+
 #mycombi = removeLayer(mycombi, [0])
 
-projFilterDict =  {}      
+# projFilterDict =  {}      
 
-for proj in projlist:
-    projFilterDict.update(returnProjFilterDict(proj))   
+# for proj in projlist:
+#     projFilterDict.update(returnProjFilterDict(proj))   
     
-additionalProjFilter = returnAdditionalFilterDict()
-additionalInputs = getMSInputs()
+# additionalProjFilter = returnAdditionalFilterDict()
+# additionalInputs = getMSInputs()
        
 #projFilterDict = augmentProjFilters(projFilterDict, additionalProjFilter, additionalInputs) #TODO!!! MUST BE INCLUDED IN ORIGINAL VERSION!

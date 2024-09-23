@@ -23,7 +23,12 @@ selectivities = load_file('selectivities')
 # structures for speedup in partInput function
 MSTrees  = {}
 DistMatrices =  {}
-
+# Global caches for lazy loading
+_sharedProjectionsDict = None
+_sharedProjectionsList = None
+_projsPerQuery = None
+_projlist = None
+_projrates = None
 
 
 def optimisticTotalRate(projection): # USE FILTERED RATE FOR ESTIMATION
@@ -35,6 +40,7 @@ def optimisticTotalRate(projection): # USE FILTERED RATE FOR ESTIMATION
     "Getting Values from Structures"
     projFilterDict = get_projFilterDict()
     
+    projlist = get_projlist()
     if projection in projlist: # is complex event        
         for i in projFilterDict.keys():
             if i  == projection: 
@@ -438,41 +444,110 @@ def returnSubProjections(proj, projlist):
 
     return outputlist
 
-sharedProjectionsDict = {}
-sharedProjectionsList = []
-projsPerQuery = {}
-#query = wl[0]
-projlist = []
-projrates = {}
-
-for query in wl:
-    #print(query)
-    query = query.stripKL_simple()
-    result = generate_projections(query)
-    #print(result)
-    #projsPerQuery[query] = result[0]
-    for i in result[0]:        
-        if not i in projlist:
-            projlist.append(i)
-            projrates[i] = result[1][i]
-            sharedProjectionsDict[i] = [query]
-        else:
-            for mykey in sharedProjectionsDict.keys():
-                if mykey == i:
-                    sharedProjectionsDict[mykey].append(query)
-#print(projrates)
-for query in wl:
-    query = query.stripKL_simple()
-    projsPerQuery[query] = [x for x in projlist if query.can_be_used(x)]
-
-for projection in sharedProjectionsDict.keys():
-    if len(sharedProjectionsDict[projection]) > 1:
-        sharedProjectionsList.append(projection) 
 
 
-for q in wl:
-        print(q, optimisticTotalRate_single(q))   
-           
+def initProjections():
+    """
+    Initializes the projections data structures.
+    This function processes the workload (wl) and returns:
+    - sharedProjectionsDict: A dictionary of projections and their associated queries.
+    - sharedProjectionsList: A list of projections shared across multiple queries.
+    - projsPerQuery: A dictionary mapping each query to the projections that can be used for it.
+    - projlist: A list of all projections encountered.
+    - projrates: A dictionary containing the projection rates.
+    """
+    sharedProjectionsDict = {}
+    sharedProjectionsList = []
+    projsPerQuery = {}
+    projlist = []
+    projrates = {}
+
+    # Process workload (wl)
+    for query in wl:
+        query = query.stripKL_simple()
+        result = generate_projections(query)
+
+        for i in result[0]:        
+            if i not in projlist:
+                projlist.append(i)
+                projrates[i] = result[1][i]
+                sharedProjectionsDict[i] = [query]
+            else:
+                if i in sharedProjectionsDict:
+                    sharedProjectionsDict[i].append(query)
+
+    # Filter projections based on usability in queries
+    for query in wl:
+        query = query.stripKL_simple()
+        projsPerQuery[query] = [x for x in projlist if query.can_be_used(x)]
+
+    # Identify shared projections
+    for projection in sharedProjectionsDict.keys():
+        if len(sharedProjectionsDict[projection]) > 1:
+            sharedProjectionsList.append(projection)
+
+    return sharedProjectionsDict, sharedProjectionsList, projsPerQuery, projlist, projrates
+
+# Getter functions for lazy loading
+
+def get_sharedProjectionsDict():
+    """
+    Returns the shared projections dictionary.
+    If the projections are not initialized, it initializes them.
+    """
+    global _sharedProjectionsDict
+    if _sharedProjectionsDict is None:
+        _sharedProjectionsDict = initProjections()[0]
+    return _sharedProjectionsDict
+
+def get_sharedProjectionsList():
+    """
+    Returns the shared projections list.
+    If the projections are not initialized, it initializes them.
+    """
+    global _sharedProjectionsList
+    if _sharedProjectionsList is None:
+        _sharedProjectionsList = initProjections()[1]
+    return _sharedProjectionsList
+
+def get_projsPerQuery():
+    """
+    Returns the projections per query.
+    If the projections are not initialized, it initializes them.
+    """
+    global _projsPerQuery
+    if _projsPerQuery is None:
+        _projsPerQuery = initProjections()[2]
+    return _projsPerQuery
+
+def get_projlist():
+    """
+    Returns the projection list.
+    If the projections are not initialized, it initializes them.
+    """
+    global _projlist
+    if _projlist is None:
+        _projlist = initProjections()[3]
+    return _projlist
+
+def get_projrates():
+    """
+    Returns the projection rates.
+    If the projections are not initialized, it initializes them.
+    """
+    global _projrates
+    if _projrates is None:
+        _projrates = initProjections()[4]
+    return _projrates
+
+# Function to display optimistic rates for queries
+def display_optimistic_rates():
+    """
+    Displays the optimistic rates for each query in the workload.
+    """
+    for q in wl:
+        print(q, optimisticTotalRate_single(q))
+
            
 save_file('projrates', projrates)
 
