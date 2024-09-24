@@ -14,6 +14,7 @@ from binary_helper import load_file
 from structures import getLongest, get_IndexEventNodes,get_EventNodes
 from EvaluationPlan import EvaluationPlan
 import numpy as np
+from processCombination_aug import getSharedMSinput,compute_dependencies
 
 allPairs = load_file("allPairs")
 maxDist = max([max(x) for x in allPairs])
@@ -21,6 +22,8 @@ maxDist = max([max(x) for x in allPairs])
 def getLowerBound(query): # lower bound -> for multiple projections, keep track of events sent as single sink and do not add up
     "Load Data from parse network"    
     rates = get_rates()
+    from generate_projections import get_projsPerQuery
+    projsPerQuery = get_projsPerQuery()
     
     "Load Data from structures"
     longestPath = getLongest()
@@ -49,7 +52,11 @@ def normalize(x, data):
     #return (x - min(data)) / (max(data) - min(data))
 
 def main():
+    from structures import get_projFilterDict
+    from combigen import get_criticalMSTypes
+    projFilterDict = get_projFilterDict()
     
+    criticalMSTypes = get_criticalMSTypes()
     
   
     Filters = []

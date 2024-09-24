@@ -19,6 +19,91 @@ numberCombis = 0
 
 projFilterDict =  {}  
     
+# Global caches for lazy loading
+_globalMSTypes_cache = None
+_globalSiSTypes_cache = None
+_criticalMSTypes_cache = None
+
+
+def load_wl():
+    """
+    Load the 'wl' data from the file.
+    
+    Returns:
+        list: The current 'wl' data loaded from a file.
+    """
+    return load_file('current_wl')
+
+def load_globalMSTypes():
+    """
+    Load and generate the globalMSTypes based on the loaded 'wl' data.
+    
+    Returns:
+        set: A set of global MS types.
+    """
+    wl = load_wl()
+    return set(sum([allMSTypes(x.stripKL_simple()) for x in wl], []))
+
+def get_globalMSTypes():
+    """
+    Retrieve the global MS types, loading them only once and caching the result.
+    
+    Returns:
+        set: A set of global MS types.
+    """
+    global _globalMSTypes_cache
+    if _globalMSTypes_cache is None:
+        print("Loading globalMSTypes")
+        _globalMSTypes_cache = load_globalMSTypes()
+    return _globalMSTypes_cache
+
+def load_globalSiSTypes():
+    """
+    Load and generate the globalSiSTypes based on the loaded 'wl' data.
+    
+    Returns:
+        set: A set of global SiS types.
+    """
+    wl = load_wl()
+    return set(sum([allSiSEvents(x.stripKL_simple()) for x in wl], []))
+
+def get_globalSiSTypes():
+    """
+    Retrieve the global SiS types, loading them only once and caching the result.
+    
+    Returns:
+        set: A set of global SiS types.
+    """
+    global _globalSiSTypes_cache
+    if _globalSiSTypes_cache is None:
+        print("Loading globalSiSTypes")
+        _globalSiSTypes_cache = load_globalSiSTypes()
+    return _globalSiSTypes_cache
+
+def load_criticalMSTypes():
+    """
+    Load and generate the critical MS types by intersecting globalMSTypes and globalSiSTypes.
+    
+    Returns:
+        list: A list of critical MS types (intersection of MS and SiS types).
+    """
+    globalMSTypes = get_globalMSTypes()
+    globalSiSTypes = get_globalSiSTypes()
+    return list(globalMSTypes.intersection(globalSiSTypes))
+
+def get_criticalMSTypes():
+    """
+    Retrieve the critical MS types, loading them only once and caching the result.
+    
+    Returns:
+        list: A list of critical MS types (intersection of MS and SiS types).
+    """
+    global _criticalMSTypes_cache
+    if _criticalMSTypes_cache is None:
+        print("Loading criticalMSTypes")
+        _criticalMSTypes_cache = load_criticalMSTypes()
+    return _criticalMSTypes_cache
+
 
 for proj in projlist:
     projFilterDict.update(returnProjFilterDict(proj))    
@@ -315,30 +400,6 @@ def costsOfCombination(projection, mycombi, shared, criticalMSTypes): # here is 
       
       return (mycosts, partEvent) 
 
-# def eventSharing_old(projection, mycombi, mycosts, shared): 
-#     # output costs of inputs of multi-sink placements that are shared between multiple projections of the combination
-    
-#     costs = 0
-#     # for each projection in mycombi, get all SIS events and generate Dict
-#     mySiSEvents =  sum([allSiSEvents(x) for x in mycombi if x in combiDict.keys()], [])
-#     SiSDict =  {x : mySiSEvents.count(x) for x in set(mySiSEvents)}  
-#     mySubProjections = sum([allAncestors(x, combiDict[x][0]) for x in mycombi if x in combiDict.keys()], [])
-#     mySubProjections += [x for x in mycombi if x in combiDict.keys()]
-#     SiSDict.update({x :  mySubProjections.count(x) for x in set(mySubProjections)})
-    
-#     #list containing all projections and primitive event types, that are input to single-sink placements for queries for which combination already computed
-#     globalSiSEvents = []   
-#     if shared:  
-#         globalSiSEvents = sum([allSiSEvents(x) for x in wl if x!= projection and x in combiDict.keys()],[])  
-#         globalSiSEvents += sum([allAncestors(x, combiDict[x][0]) for x in wl if x!= projection and x in combiDict.keys()],[]) #sharedSubprojections         
-            
-#     for event in SiSDict.keys():
-#         if event in globalSiSEvents: # for multi-query scenario
-#             costs += totalRate(event) * longestPath * SiSDict[event]
-#         else:
-#             costs += totalRate(event) * (SiSDict[event] - 1) * longestPath #TODO prefer something about the tree edges
-   
-#     return costs
 
 
 def eventSharing(projection, mycombi, mycosts, shared): #
@@ -519,11 +580,11 @@ def main():
    
    combigenTime = round(end_time - start_time,2)
    
-   globalMSTypes   = set(sum([allMSTypes(x.stripKL_simple()) for x in wl],[]))
+   globalMSTypes   = get_globalMSTypes()
    #print("potentialMSTypes:  "  + str(globalMSTypes))
-   globalSiSTypes  = set(sum([allSiSEvents(x.stripKL_simple()) for x in wl],[]))
+   globalSiSTypes  = get_globalSiSTypes()
    # print("globalSiSTypes:  "  + str(globalSiSTypes))
-   criticalMSTypes = list(set(globalMSTypes).intersection(set(globalSiSTypes)))
+   criticalMSTypes = get_criticalMSTypes()
    
 #   criticalMSTypes += globalPartitioningOK(wl[0], wl) # add parttypes to ciritcalMSTypes that exceed global threshold
    

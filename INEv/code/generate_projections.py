@@ -11,11 +11,11 @@ Generate beneficial projections for given query workload.
 import subsets as sbs 
 import multiprocessing
 from binary_helper import save_file, load_file
-from parse_network import get_nodes, get_network, get_rates, get_instances
-#from processCombination import *
-from filter import *
-from structures import get_IndexEventNodes, getLongest, getNumETBs, get_projFilterDict, getNodes
+from parse_network import get_nodes, get_rates, get_instances
 
+
+from structures import get_IndexEventNodes, getLongest, getNumETBs, get_projFilterDict, getNodes
+from filter import getMaximalFilter,getDecomposedTotal
 wl = load_file('current_wl')
 selectivities = load_file('selectivities')
 
@@ -62,6 +62,8 @@ def optimisticTotalRate_single(projection): # USE FILTERED RATE FOR ESTIMATION
     "Getting Values from Structures"
     projFilterDict = get_projFilterDict()
     
+    projrates = load_file("projrates")
+    
     for i in projFilterDict.keys():
             if i  == projection: 
                 myproj = i
@@ -101,6 +103,8 @@ def isPartitioning(element, combi, proj):
     "Getting Values from Parse Network"
     rates = get_rates()
     instances = get_instances()
+    
+    projrates = load_file("projrates")
     
     mysum =  0    
     for i in combi:   
@@ -203,6 +207,8 @@ def NEW_isPartitioning(element, combi, proj):
     "Getting Values from Parse Network"
     rates = get_rates()
     nodes = get_nodes()
+    
+    projrates = load_file("projrates")
     
     "Getting Values from Structures"
     IndexEventNodes = get_IndexEventNodes()
@@ -366,7 +372,7 @@ def totalRate(projection):
     "Getting Values from Parse Network"
     rates = get_rates()
     nodes = get_nodes()
-    
+    projrates = load_file("projrates")
     if projection in projrates.keys(): # is complex event
        # print(projection, projrates[projection][1], getNumETBs(projection))
         return projrates[projection][1] * getNumETBs(projection)
@@ -549,5 +555,5 @@ def display_optimistic_rates():
         print(q, optimisticTotalRate_single(q))
 
            
-save_file('projrates', projrates)
+save_file('projrates', get_projrates())
 

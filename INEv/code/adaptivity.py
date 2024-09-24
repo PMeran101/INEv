@@ -15,7 +15,6 @@ Computes costs of repaired graph.
 """
 import sys
 import csv
-from EvaluationPlan import *
 from generate_projections import *
 import pickle
 import math 
