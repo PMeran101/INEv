@@ -185,7 +185,7 @@ def main():
     #eventrates = sorted(generate_eventrates(eventskew,num_eventtypes))
     eventrates =  generate_eventrates(eventskew,num_eventtypes)
     
-    
+        
     def create_random_tree(nwsize, eventrates, node_event_ratio, max_parents: int = 1):
         if nwsize <= 0:
             return None
@@ -196,7 +196,7 @@ def main():
         levels = math.ceil(math.log2(nwsize))
         print(levels)
         # Create the root node
-        root = Node(id=0, compute_power=math.inf, memore=math.inf )#, eventrate=generate_events(eventrates, node_event_ratio))
+        root = Node(id=0, compute_power=math.inf, memore=math.inf)  #, eventrate=generate_events(eventrates, node_event_ratio))
         nw.append(root)
 
         # Track nodes by level to manage the structure and prevent imbalance
@@ -217,18 +217,14 @@ def main():
             # Ensure level-specific nodes exist in the dictionary
             if level not in level_nodes:
                 level_nodes[level] = []
-            
-            # Randomly choose the number of parents between 1 and max_parents
-            num_parents = random.randint(1,max_parents)
-                
-            # Randomly choose parents from the previous level
-            parent_nodes = random.sample(level_nodes[level - 1], min(len(level_nodes[level - 1]), num_parents))
+
+            # Assign all nodes from the previous level as parents
+            parent_nodes = level_nodes[level - 1]
 
             # Set parents and add the new node to each parent's list of children
             for parent_node in parent_nodes:
                 new_node.Parent.append(parent_node)
                 parent_node.Child.append(new_node)
-
 
             # Add new node to the list and to the level-specific tracking
             nw.append(new_node)
@@ -237,9 +233,7 @@ def main():
         # Assign event rates to leaf nodes and initialize non-leaf nodes with empty event rates
         for node in nw:
             if len(node.Child) == 0:
-   
                 evtrate = generate_events(eventrates, node_event_ratio)
-
                 with open('PrimitiveEvents', 'wb') as f:
                     pickle.dump(evtrate, f)
                 node.eventrates = evtrate
@@ -248,7 +242,7 @@ def main():
 
         # post_order_sum_events(root)
         return root, nw
-    
+
     nw = []
     root, nw = create_random_tree(nwsize, eventrates, node_event_ratio, max_parents)
     # for node in range(nwsize):
