@@ -4,19 +4,22 @@ cd ../code
 	
   echo "Script started at: $(date)"
 
-#   for k in 5 10 20 # qwl size
-#   do 
+  for k in 5 10 20 # qwl size
+  do 
       for h in 6 10 15 20 25 # num event types
       do
+      for b in 2 3 4 5 6 7
+      do
+      
           echo "Starting outer loop with k=$k and h=$h at: $(date)"
 
           Generate network and graph files
-          python3 generate_network.py -nw 50 -ner 0.5 -es 1.3 -ne "$h"
+          python3 generate_network.py -nw 50 -ner 0.5 -es 1.3 -ne "$h" -mp $b
           python3 generate_graph.py
           python3 allPairs.py
      
           a=1
-          while [ "$a" -lt 5 ]
+          while [ "$a" -lt 60 ]
           do
               echo "  Starting inner loop iteration $a with k=$k at: $(date)"
               
@@ -26,14 +29,15 @@ cd ../code
               python3 determine_all_single_selectivities.py
               python3 generate_projections.py
               python3 combigen.py
-              python3 computePlanCosts_aug.py "QWL10"
+              python3 computePlanCosts_aug.py "QWL$k" $b
               
               echo "  Completed inner loop iteration $a with k=$k at: $(date)"
               a=$((a + 1))
           done
           
           echo "Completed outer loop with k=$k and h=$h at: $(date)"
-    #   done
+      done
+      done
   done
   
   echo "Script completed at: $(date)"
