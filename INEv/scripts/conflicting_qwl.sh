@@ -8,15 +8,18 @@ cd ../code
   do 
       for h in 6 10 15 20 25 # num event types
       do
+
+    #   for b in 2 3 4 
+    #   do 
           echo "Starting outer loop with k=$k and h=$h at: $(date)"
 
           Generate network and graph files
-          python3 generate_network.py -nw 20 -ner 0.5 -es 1.3 -ne "$h"
+          python3 generate_network.py -nw 20 -ner 0.5 -es 1.3 -ne "$h" -mp 7
           python3 generate_graph.py
           python3 allPairs.py
      
           a=1
-          while [ "$a" -lt 60 ]
+          while [ "$a" -lt 3 ]
           do
               echo "  Starting inner loop iteration $a with k=$k at: $(date)"
               
@@ -30,8 +33,8 @@ cd ../code
               
               echo "  Completed inner loop iteration $a with k=$k at: $(date)"
               a=$((a + 1))
-          done
-          
+        #   done
+      done    
           echo "Completed outer loop with k=$k and h=$h at: $(date)"
       done
   done
