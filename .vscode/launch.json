@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy", // Changed from debugpy to python for better compatibility with VS Code's debugger
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/INEv/code", // Set the correct working directory,
+            "python": "/home/pme/miniconda3/envs/INEvEnv/bin/python", // Path to your conda environment's Python interpreter
+            "env": {
+                "PATH": "/home/pme/miniconda3/envs/INEvEnv/bin:${env:PATH}" // Activates the Conda environment
+            }
+        }
+    ]
+}

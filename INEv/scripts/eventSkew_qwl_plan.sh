@@ -3,7 +3,7 @@ cd ../code
 
 echo "Event_SKew_QWL PLAN"
 
-python3 generate_network.py 20 0.5 1.3 25
+python3 generate_network.py -nw 20 -ner 0.5 -es 1.3 -ne 25
 python3 generate_graph.py
 python3 allPairs.py
 
@@ -14,10 +14,12 @@ do
 	python3 generate_selectivity.py 
 	for j in  1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 
 	do
+	      for b in 2 3 4 5 6 7
+      do
 			a=0
 			while [ $a -lt 40 ]
 			do
-			python3 generate_network.py 20 0.5 $j 25 
+			python3 generate_network.py -nw 20 -ner 0.5 -es $j -ne 25 -mp $b
 			python3 generate_graph.py
 			python3 allPairs.py
 			python3 write_config_single.py

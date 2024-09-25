@@ -1,7 +1,7 @@
 import os
 
 # Define the suffix you want to add
-suffix = "_INEv_100"  # Replace with your desired suffix
+suffix = "_Fog"  # Replace with your desired suffix
 
 # Get the current directory
 current_directory = os.getcwd()
@@ -9,7 +9,7 @@ current_directory = os.getcwd()
 # Loop through all files in the current directory
 for filename in os.listdir(current_directory):
     # Check if the file is a CSV
-    if filename.endswith(".csv"):
+    if filename.endswith(".csv") and not filename.endswith("_Fog.csv"):
         # Split the file name and extension
         name, ext = os.path.splitext(filename)
         

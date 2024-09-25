@@ -453,22 +453,23 @@ def NEWcomputeCentralCosts(workload):
     #print(eventtypes)
     costs = np.inf
     node = 0
-    for destination in range(len(allPairs)):
-        mycosts = 0      
-        for eventtype in eventtypes:
-            oldcosts = mycosts
-            for etb in IndexEventNodes[eventtype]:
+    # for destination in range(len(allPairs)):
+    destination = 0
+    mycosts = 0      
+    for eventtype in eventtypes:
+        oldcosts = mycosts
+        for etb in IndexEventNodes[eventtype]:
 
-                possibleSources = getNodes(etb)
-                mySource = possibleSources[0]
-                for source in possibleSources:
-                  
-                    if allPairs[destination][source] <= allPairs[destination][mySource]:
-                       mySource  = source
-                mycosts += rates[eventtype] * allPairs[destination][mySource]       
-        if mycosts < costs:
-            costs = mycosts
-            node = destination
+            possibleSources = getNodes(etb)
+            mySource = possibleSources[0]
+            for source in possibleSources:
+                
+                if allPairs[destination][source] <= allPairs[destination][mySource]:
+                    mySource  = source
+            mycosts += rates[eventtype] * allPairs[destination][mySource]       
+    if mycosts < costs:
+        costs = mycosts
+        node = destination
     longestPath = max(allPairs[node])
     
     routingDict = {} # for evaluation plan
