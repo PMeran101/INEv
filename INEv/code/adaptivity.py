@@ -23,7 +23,7 @@ from parse_network import get_rates,get_instances,get_network
 from structures import get_IndexEventNodes
 
 myplan = load_file('EvaluationPlan')[0]
-results = load_file('ExperimentResults')    
+  
 
 
 
@@ -290,7 +290,7 @@ def main():
     
     
     
-
+    results = load_file('ExperimentResults')  
             
     schema = ["ID", "TransmissionRatioINEv" , "Percentage", "NumberProjections", "brokenProjections", "NumberPlacements", "brokenPlacements", "costs", "costs_rep1", "costs_rep2"] 
     myResult = [results[0],  results[1] , percentage,  len(myprojs) , len(brokenProjs), len(multinode),  len(brokenMNplacements), costsBefore/results[2], costsRep1/results[2], costsRep2/results[2]]

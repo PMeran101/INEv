@@ -10,12 +10,15 @@ from functools import reduce
 from parse_network import get_nodes,get_rates,get_instances
 from binary_helper import load_file
 import copy
-from generate_projections import returnPartitioning,getMaximalFilter, totalRate, getKeySingleSelect,settoproj,returnAdditionalFilterDict,returnProjFilterDict,getDecomposed
+from generate_projections import returnPartitioning,getMaximalFilter, totalRate,settoproj
 from structures import getNumETBs
+from filter import getKeySingleSelect, returnAdditionalFilterDict, returnProjFilterDict, getDecomposed
+from combigen import get_criticalMSTypes
 
 mycombi = load_file("curcombi")
 originalDict = load_file("originalCombiDict")
-criticalMSTypes = load_file("criticalMSTypes")
+criticalMSTypes = get_criticalMSTypes()
+print(criticalMSTypes)
 filterDict = load_file("filterDict")
  
 

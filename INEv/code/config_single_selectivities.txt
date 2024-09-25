@@ -20,7 +20,7 @@ Computational Power: 4
 Memory: 4
 Eventrates: [0, 0, 0, 0, 0, 0]
 Parents: [0]
-Child: [5, 6]
+Child: [4, 6]
 Siblings: None
 
 Node 3 Node 3
@@ -28,29 +28,29 @@ Computational Power: 4
 Memory: 4
 Eventrates: [0, 0, 0, 0, 0, 0]
 Parents: [0]
-Child: [4]
+Child: [5]
 Siblings: None
 
 Node 4 Node 4
 Computational Power: 3
 Memory: 3
-Eventrates: [0, 0, 0, 0, 0, 0]
-Parents: [3]
-Child: [10, 11]
+Eventrates: [1, 25, 0, 101, 0, 0]
+Parents: [2]
+Child: None
 Siblings: None
 
 Node 5 Node 5
 Computational Power: 3
 Memory: 3
-Eventrates: [1, 13, 0, 2, 0, 0]
-Parents: [2]
-Child: None
+Eventrates: [0, 0, 0, 0, 0, 0]
+Parents: [3]
+Child: [8, 11]
 Siblings: None
 
 Node 6 Node 6
 Computational Power: 3
 Memory: 3
-Eventrates: [1, 13, 2, 0, 41, 0]
+Eventrates: [1, 25, 2, 101, 0, 0]
 Parents: [2]
 Child: None
 Siblings: None
@@ -60,15 +60,15 @@ Computational Power: 3
 Memory: 3
 Eventrates: [0, 0, 0, 0, 0, 0]
 Parents: [1]
-Child: [8, 9]
+Child: [9, 10]
 Siblings: None
 
 Node 8 Node 8
 Computational Power: 2
 Memory: 2
 Eventrates: [0, 0, 0, 0, 0, 0]
-Parents: [7]
-Child: [15, 17]
+Parents: [5]
+Child: [13, 16]
 Siblings: None
 
 Node 9 Node 9
@@ -76,77 +76,77 @@ Computational Power: 2
 Memory: 2
 Eventrates: [0, 0, 0, 0, 0, 0]
 Parents: [7]
-Child: [16, 18, 19]
+Child: [18]
 Siblings: None
 
 Node 10 Node 10
 Computational Power: 2
 Memory: 2
 Eventrates: [0, 0, 0, 0, 0, 0]
-Parents: [4]
-Child: [12, 14]
+Parents: [7]
+Child: [15]
 Siblings: None
 
 Node 11 Node 11
 Computational Power: 2
 Memory: 2
 Eventrates: [0, 0, 0, 0, 0, 0]
-Parents: [4]
-Child: [13]
+Parents: [5]
+Child: [12, 14, 17, 19]
 Siblings: None
 
 Node 12 Node 12
 Computational Power: 1
 Memory: 1
-Eventrates: [1, 13, 2, 2, 41, 0]
-Parents: [10]
+Eventrates: [0, 25, 0, 0, 153, 51]
+Parents: [11]
 Child: None
 Siblings: None
 
 Node 13 Node 13
 Computational Power: 1
 Memory: 1
-Eventrates: [0, 0, 2, 0, 41, 0]
-Parents: [11]
+Eventrates: [0, 25, 0, 101, 153, 51]
+Parents: [8]
 Child: None
 Siblings: None
 
 Node 14 Node 14
 Computational Power: 1
 Memory: 1
-Eventrates: [1, 0, 0, 0, 0, 0]
-Parents: [10]
+Eventrates: [1, 0, 2, 0, 0, 0]
+Parents: [11]
 Child: None
 Siblings: None
 
 Node 15 Node 15
 Computational Power: 1
 Memory: 1
-Eventrates: [0, 0, 0, 2, 0, 0]
-Parents: [8]
+Eventrates: [0, 0, 2, 101, 153, 51]
+Parents: [10]
 Child: None
 Siblings: None
 
 Node 16 Node 16
 Computational Power: 1
 Memory: 1
-Eventrates: [1, 13, 0, 2, 41, 0]
-Parents: [9]
+Eventrates: [0, 25, 2, 0, 0, 0]
+Parents: [8]
 Child: None
 Siblings: None
 
 Node 17 Node 17
 Computational Power: 1
 Memory: 1
-Eventrates: [0, 13, 0, 0, 0, 0]
-Parents: [8]
+Eventrates: [0, 25, 2, 101, 0, 0]
+Parents: [11]
 Child: None
 Siblings: None
 
 Node 18 Node 18
 Computational Power: 1
 Memory: 1
-Eventrates: [0, 0, 2, 2, 0, 5]
+Eventrates: [1, 0, 2, 0, 153, 0]
 Parents: [9]
 Child: None
 Siblings: None
@@ -154,17 +154,17 @@ Siblings: None
 Node 19 Node 19
 Computational Power: 1
 Memory: 1
-Eventrates: [1, 0, 0, 0, 0, 5]
-Parents: [9]
+Eventrates: [1, 0, 2, 0, 153, 0]
+Parents: [11]
 Child: None
 Siblings: None
 
 
 queries
-AND(C, F, B, E)
+AND(C, D, E)
 
 muse graph
 SELECT SEQ(A, B, C, D, E) FROM AND(B, SEQ(A, E, F)); I ON {1, 2, 4, 6, 7, 8, 9}/n(I)
 
 selectivities
-{'FE': 0.021407512014722782, 'EF': 0.021407512014722782, 'BC': 0.08540769862320065, 'CB': 0.08540769862320065, 'DE': 1, 'ED': 1, 'EC': 0.036453459340038186, 'CE': 0.036453459340038186, 'FA': 0.06040603045975799, 'AF': 0.06040603045975799, 'FD': 1, 'DF': 1, 'FC': 0.030883276572883714, 'CF': 0.030883276572883714, 'DA': 1, 'AD': 1, 'BA': 0.02172159374194603, 'AB': 0.02172159374194603, 'CA': 0.036345277686187824, 'AC': 0.036345277686187824, 'EB': 0.08263795647688466, 'BE': 0.08263795647688466, 'FB': 0.035304395734663985, 'BF': 0.035304395734663985, 'DC': 0.09372918936125836, 'CD': 0.09372918936125836, 'DB': 0.07883805594040041, 'BD': 0.07883805594040041, 'EA': 0.030563425720358, 'AE': 0.030563425720358}
+{'CB': 1, 'BC': 1, 'CF': 1, 'FC': 1, 'EB': 0.055570169864968585, 'BE': 0.055570169864968585, 'AF': 0.011923668201842083, 'FA': 0.011923668201842083, 'BF': 1, 'FB': 1, 'EC': 0.05101442219004336, 'CE': 0.05101442219004336, 'EA': 0.0464517801630024, 'AE': 0.0464517801630024, 'ED': 0.04023296744595199, 'DE': 0.04023296744595199, 'AB': 0.01954635543864751, 'BA': 0.01954635543864751, 'DB': 0.020826450465314186, 'BD': 0.020826450465314186, 'DF': 0.05713102655673359, 'FD': 0.05713102655673359, 'AC': 0.07549333918391872, 'CA': 0.07549333918391872, 'EF': 0.07332132691164822, 'FE': 0.07332132691164822, 'CD': 1, 'DC': 1, 'AD': 0.0408448693179583, 'DA': 0.0408448693179583}

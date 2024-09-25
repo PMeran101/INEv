@@ -14,6 +14,8 @@ from generate_projections import *
 import time 
 from parse_network import get_nodes, get_rates, get_instances, get_network
 import matplotlib.pyplot as plt
+from generate_projections import get_projlist
+from filter import returnProjFilterDict
 
 numberCombis = 0
 
@@ -104,7 +106,7 @@ def get_criticalMSTypes():
         _criticalMSTypes_cache = load_criticalMSTypes()
     return _criticalMSTypes_cache
 
-
+projlist = get_projlist()
 for proj in projlist:
     projFilterDict.update(returnProjFilterDict(proj))    
 
@@ -112,6 +114,8 @@ def optimisticTotalRate(projection, *noFilterParam): # USE FILTERED RATE FOR EST
     "Loading data from parse_network"
     rates = get_rates()
     nodes = get_nodes()
+    
+    projlist = get_projlist()
     
     noFilter = 0
     if noFilterParam:
@@ -164,7 +168,7 @@ def promisingChainProjection(projection):
     
     optimisticRate =  optimisticTotalRate(projection)
     combinationdict = {}
-    
+    query = load_file('current_wl')[0]
     cheapRests = {}
     for eventtype in query.leafs():   
         if not eventtype in projection.leafs():     
@@ -196,6 +200,7 @@ def extractMsOptions(query):
     ''' returns all possible event types which can be partitioning input of a multisink projection '''
     MsOptions = []    
     #per query 
+    projsPerQuery = get_projsPerQuery()
     myprojlist = [x for x in projsPerQuery[query]]
     for projection in myprojlist:
         dictionary = promisingChainProjection(projection)
@@ -267,6 +272,8 @@ def getSavings(partType, combination, projection): #OPTIMISTIC TOTAL RATE
 def getBestChainCombis(query, shared, criticalMSTypes, noFilter):         
     "Loading data from structures"
     longestPath = getLongest()
+    
+    projsPerQuery = get_projsPerQuery()
     
     myMSDict = MSoptionsPerEvent(query)     
     myprojlist = [x for x in projsPerQuery[query]] # HERE WE NEED TO RESPECT OPERATOR SEMANTIC -> new function
@@ -561,98 +568,99 @@ def plotCombi(combi):
     
 
 def main():
-   criticalMSTypes= []
-   noFilter = 0
-   shared = 1
-   if len(sys.argv) > 1: 
-      noFilter = int(sys.argv[1])
-
-      
-   
-   start_time = time.time()
-   #random.shuffle(wl)
-   for query in sorted(wl, key = (lambda x: len(projsPerQuery[x.stripKL_simple()])), reverse = True): #start with queries having the least projections, try other sortings...
-
-      query = query.stripKL_simple()
-      getBestChainCombis(query, shared, criticalMSTypes, noFilter)
-      criticalMSTypes += allSiSEvents(query)# update sis placed projections here already
-   end_time = time.time()
-   
-   combigenTime = round(end_time - start_time,2)
-   
-   globalMSTypes   = get_globalMSTypes()
-   #print("potentialMSTypes:  "  + str(globalMSTypes))
-   globalSiSTypes  = get_globalSiSTypes()
-   # print("globalSiSTypes:  "  + str(globalSiSTypes))
-   criticalMSTypes = get_criticalMSTypes()
-   
-#   criticalMSTypes += globalPartitioningOK(wl[0], wl) # add parttypes to ciritcalMSTypes that exceed global threshold
-   
-   # check if critical MSTypes share inputs with other MS placements in their SiS Projections
-
-   print("critical Types " + str(criticalMSTypes))
-# print(globalPartitioningOK(wl[0], wl))
-
-   # use globalPartitioningOK in order to identify more critical MS Types
-   
-   # use getExpensiveProjs to identify cases in which although critical an MS placement is superior over a Sis placement due to the outrate of a projection
-   #getExpensiveProjs(criticalMSTypes) # get expensive projections and check if a ms placement exists at a criticaltype, weigh against estimated input costs and remove from criticals
-
-   # check of each Projection which is SIS placed, if a multi-sink placement exists due to event sharing
-   
-   
-   
-   
-   
-   #print("globalMSTypes: " + str(set(globalMSTypes).difference(set(criticalMSTypes))))
-
-   # EXPERIMENT -> Idea: If a combination of a query has no multi-sink placement (because its forbidden by criticalevents), just enforce primitive combination as it is probably even more expensive to match multiple sis projections and send around projections etc.
-   # make this smarter by also removing parts of the combination treee that consist only of Single Sink Placements
-   # TODO when is a chain of single sink better 
-   
-   # for query in wl:
-
-   #     if set(allMSTypes(query)).issubset(set(criticalMSTypes)):
-   #         combiDict[query] = (query.leafs(), [], 0)
-         
-   curcombi = {}
-   
-         
-   for i in range(len(wl)):   
-      query = wl[i].stripKL_simple()
-      if query in combiDict.keys():
-         curcombi.update(unfold_combi(query, combiDict[[query][0]][0]))    
+	criticalMSTypes= []
+	noFilter = 0
+	shared = 1
+	if len(sys.argv) > 1: 
+		noFilter = int(sys.argv[1])
 
 
-   mycombi = curcombi
-   criticalMSProjs = [x for x in mycombi.keys() if combiDict[x][1] and combiDict[x][1][0] in criticalMSTypes]
+	projsPerQuery= get_projsPerQuery()
 
-   #plotCombi(mycombi) # plot combination graph
-   
-   
-   for pro in curcombi.keys():
-      print(str(pro) + " " + str(list(map(lambda x: str(x), curcombi[pro]))))
-   print("time: " + str(end_time - start_time))   
-   print(numberCombis)
-     
-   # getExpensiveProjs(criticalMSTypes)
-   import pickle
-   with open('curcombi',  'wb') as newcombi:
-      pickle.dump(mycombi, newcombi)
-      
-   with open('originalCombiDict', 'wb') as combidict:
-      pickle.dump(combiDict, combidict)
-      
-   with open('criticalMSTypes',  'wb') as criticaltypes:
-      pickle.dump([criticalMSTypes, criticalMSProjs], criticaltypes)
-      
-   with open('filterDict',  'wb') as filterDict_file:
-      pickle.dump(projFilterDict , filterDict_file)  
-   
-   # export number of queries, computation time combination, maximal query length, TODO: maximal depth combination tree, portion of rates saved by multi-sink eventtypes
-   combiExperimentData = [len(wl), combigenTime, max(len(x) for x in wl), len(projlist)] 
-   with open('combiExperimentData',  'wb') as combiExperimentData_file:
-      pickle.dump(combiExperimentData , combiExperimentData_file)  
+	start_time = time.time()
+	#random.shuffle(wl)
+	for query in sorted(wl, key = (lambda x: len(projsPerQuery[x.stripKL_simple()])), reverse = True): #start with queries having the least projections, try other sortings...
+
+		query = query.stripKL_simple()
+		getBestChainCombis(query, shared, criticalMSTypes, noFilter)
+		criticalMSTypes += allSiSEvents(query)# update sis placed projections here already
+	end_time = time.time()
+
+	combigenTime = round(end_time - start_time,2)
+
+	globalMSTypes   = get_globalMSTypes()
+	#print("potentialMSTypes:  "  + str(globalMSTypes))
+	globalSiSTypes  = get_globalSiSTypes()
+	# print("globalSiSTypes:  "  + str(globalSiSTypes))
+	criticalMSTypes = get_criticalMSTypes()
+
+	#   criticalMSTypes += globalPartitioningOK(wl[0], wl) # add parttypes to ciritcalMSTypes that exceed global threshold
+
+	# check if critical MSTypes share inputs with other MS placements in their SiS Projections
+
+	print("critical Types " + str(criticalMSTypes))
+	# print(globalPartitioningOK(wl[0], wl))
+
+	# use globalPartitioningOK in order to identify more critical MS Types
+
+	# use getExpensiveProjs to identify cases in which although critical an MS placement is superior over a Sis placement due to the outrate of a projection
+	#getExpensiveProjs(criticalMSTypes) # get expensive projections and check if a ms placement exists at a criticaltype, weigh against estimated input costs and remove from criticals
+
+	# check of each Projection which is SIS placed, if a multi-sink placement exists due to event sharing
+
+
+
+
+
+	#print("globalMSTypes: " + str(set(globalMSTypes).difference(set(criticalMSTypes))))
+
+	# EXPERIMENT -> Idea: If a combination of a query has no multi-sink placement (because its forbidden by criticalevents), just enforce primitive combination as it is probably even more expensive to match multiple sis projections and send around projections etc.
+	# make this smarter by also removing parts of the combination treee that consist only of Single Sink Placements
+	# TODO when is a chain of single sink better 
+
+	# for query in wl:
+
+	#     if set(allMSTypes(query)).issubset(set(criticalMSTypes)):
+	#         combiDict[query] = (query.leafs(), [], 0)
+			
+	curcombi = {}
+
+			
+	for i in range(len(wl)):   
+		query = wl[i].stripKL_simple()
+		if query in combiDict.keys():
+			curcombi.update(unfold_combi(query, combiDict[[query][0]][0]))    
+
+
+	mycombi = curcombi
+	criticalMSProjs = [x for x in mycombi.keys() if combiDict[x][1] and combiDict[x][1][0] in criticalMSTypes]
+
+	#plotCombi(mycombi) # plot combination graph
+
+
+	for pro in curcombi.keys():
+		print(str(pro) + " " + str(list(map(lambda x: str(x), curcombi[pro]))))
+	print("time: " + str(end_time - start_time))   
+	print(numberCombis)
+		
+	# getExpensiveProjs(criticalMSTypes)
+	import pickle
+	with open('curcombi',  'wb') as newcombi:
+		pickle.dump(mycombi, newcombi)
+		
+	with open('originalCombiDict', 'wb') as combidict:
+		pickle.dump(combiDict, combidict)
+		
+	with open('criticalMSTypes',  'wb') as criticaltypes:
+		pickle.dump([criticalMSTypes, criticalMSProjs], criticaltypes)
+		
+	with open('filterDict',  'wb') as filterDict_file:
+		pickle.dump(projFilterDict , filterDict_file)  
+
+	# export number of queries, computation time combination, maximal query length, TODO: maximal depth combination tree, portion of rates saved by multi-sink eventtypes
+	combiExperimentData = [len(wl), combigenTime, max(len(x) for x in wl), len(projlist)] 
+	with open('combiExperimentData',  'wb') as combiExperimentData_file:
+		pickle.dump(combiExperimentData , combiExperimentData_file)  
         
 if __name__ == "__main__":
     main()

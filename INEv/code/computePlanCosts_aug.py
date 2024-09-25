@@ -102,6 +102,9 @@ def main():
     # print(projFilterDict.keys())
     sharedDict = getSharedMSinput(unfolded, projFilterDict)    
     dependencies = compute_dependencies(unfolded)
+    
+    print(f"Dependencies: {dependencies}")
+    
     processingOrder = sorted(compute_dependencies(unfolded).keys(), key = lambda x : dependencies[x] ) # unfolded enthält kombi   
     costs = 0
     #processingOrder = compute_dependencies_alt(unfolded) # alternative processing order //
