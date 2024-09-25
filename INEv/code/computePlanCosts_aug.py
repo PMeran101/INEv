@@ -51,6 +51,8 @@ def main():
     #only write experiment data for shared costs, use ID and total costs for writing results of shared/seperate window
     if len(sys.argv) > 1:
          filename = sys.argv[1]
+    if len(sys.argv) > 2:
+        number_parents = sys.argv[2]
     # if len(sys.argv) > 1:
     #     
     # if len(sys.argv) > 2:
@@ -180,8 +182,8 @@ def main():
    
     hoplatency = 0    
     totalLatencyRatio = 0
-    myResult = [ID, mycosts,  Filters, networkParams[3], networkParams[0], networkParams[2], len(wl), combigenParams[3], selectivityParams[0], selectivityParams[1], combigenParams[1], longestPath, totaltime, hoplatency, float(max(list(dependencies.values()))/2), totalLatencyRatio, ccosts[0], lowerBound / ccosts[0], networkParams[1]]
-    schema = ["ID", "TransmissionRatio", "FilterUsed", "Nodes", "EventSkew", "EventNodeRatio", "WorkloadSize", "NumberProjections", "MinimalSelectivity", "MedianSelectivity","CombigenComputationTime", "Efficiency", "PlacementComputationTime", "HopCount", "Depth", "ProcessingLatencyRatio", "CentralTransmission", "LowerBound", "EventTypes"] 
+    myResult = [ID, mycosts,  Filters, networkParams[3], networkParams[0], networkParams[2], len(wl), combigenParams[3], selectivityParams[0], selectivityParams[1], combigenParams[1], longestPath, totaltime, hoplatency, float(max(list(dependencies.values()))/2), totalLatencyRatio, ccosts[0], lowerBound / ccosts[0], networkParams[1], number_parents]
+    schema = ["ID", "TransmissionRatio", "FilterUsed", "Nodes", "EventSkew", "EventNodeRatio", "WorkloadSize", "NumberProjections", "MinimalSelectivity", "MedianSelectivity","CombigenComputationTime", "Efficiency", "PlacementComputationTime", "HopCount", "Depth", "ProcessingLatencyRatio", "CentralTransmission", "LowerBound", "EventTypes", "Max_parents"] 
     
  
     new = False
