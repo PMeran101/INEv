@@ -8,7 +8,7 @@ do
 		a=0
 		while [ $a -lt 50 ]
 		do
-		python3 generate_network.py 20 0.5 $j # generate rates
+		python3 generate_network.py -nw 20 -ner 0.5 -es $j # generate rates
                 # start with min
 		# q nseq
 		# q seq
@@ -16,7 +16,7 @@ do
 		# q nseq
 		for param in 'max' 'min'
                         do
-			python3 generate_network.py 20 0.5 $j 10 10 'A' $param
+			python3 generate_network.py -nw 20 -nw 0.5 -es $j -ne 10 -sw 10 -et 'A' -p $param
 			python3 generate_qwls.py 10 5 0
 			python3 write_config_single.py
 		        python3 determine_all_single_selectivities.py
