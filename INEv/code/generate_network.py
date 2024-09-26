@@ -37,6 +37,8 @@ with open('rates',  'rb') as  rates_file:
 
 def generate_eventrates(eventskew,numb_eventtypes):
     eventrates = np.random.zipf(eventskew,numb_eventtypes)
+    eventrates = eventrates / np.sum(eventrates)
+    eventrates = eventrates * 10000
     return eventrates
 
 # At one Node show in Array the Events which are generated at each node
