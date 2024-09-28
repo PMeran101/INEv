@@ -3,11 +3,7 @@ cd ../code
 
 echo "Event SKEW QWL"
 
-<<<<<<< HEAD
-python3 generate_network.py 20 0.5 1.3 25
-=======
 python3 generate_network.py -nw 50 -ner 0.5 -es 1.3 -ne 25
->>>>>>> fog_cloud_topology
 python3 generate_graph.py
 python3 allPairs.py
 
@@ -23,22 +19,14 @@ do
 			a=0
 			while [ $a -lt 40 ]
 			do
-<<<<<<< HEAD
-			python3 generate_network.py 20 0.5 $j 25 
-=======
 			python3 generate_network.py -nw 50 -ner 0.5 -es $j -ne 25 -mp $b
->>>>>>> fog_cloud_topology
 			python3 generate_graph.py
 			python3 allPairs.py
 			python3 write_config_single.py
 			python3 determine_all_single_selectivities.py
 			python3 generate_projections.py
 			python3 combigen.py
-<<<<<<< HEAD
-			python3 computePlanCosts_aug.py eventSkew_qwl+$k
-=======
 			python3 computePlanCosts_aug.py eventSkew_qwl+$k $b
->>>>>>> fog_cloud_topology
 			a=`expr $a + 1`
 			done
 	done
