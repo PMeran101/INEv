@@ -28,7 +28,7 @@ with open('EvaluationPlan', 'rb') as EvaluationPlan_file:
 with open('CentralEvaluationPlan', 'rb') as CentralEvaluationPlan_file: 
           centralPlan = pickle.load(CentralEvaluationPlan_file)
 
-ID = myplan[1]
+ID = "curr"
 MSPlacements = myplan[2]
 myplan = myplan[0]
           
