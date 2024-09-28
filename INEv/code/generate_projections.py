@@ -47,8 +47,13 @@ def optimisticTotalRate_single(projection): # USE FILTERED RATE FOR ESTIMATION
                 else:
                         return projrates[myproj][1] * getNumETBs(myproj) #TODO change
     else:
+<<<<<<< HEAD
         return 40
         #return rates[projection.leafs()[0]] * len(nodes[projection.leafs()[0]])    
+=======
+        #return 40
+        return rates[projection.leafs()[0]] * len(nodes[projection.leafs()[0]])    
+>>>>>>> fog_cloud_topology
 
 
     
@@ -346,7 +351,13 @@ def generate_projections(query):
     selectivity =  return_selectivity(query.leafs())
     rate = outrate * selectivity                            
     projrates[query] = (selectivity, rate) 
+<<<<<<< HEAD
 
+=======
+    # print("printing")
+    # print(projections)
+    # print(projrates)
+>>>>>>> fog_cloud_topology
     return projections, projrates
 
 def returnSubProjections(proj, projlist):
@@ -371,6 +382,10 @@ for query in wl:
     #print(query)
     query = query.stripKL_simple()
     result = generate_projections(query)
+<<<<<<< HEAD
+=======
+    #print(result)
+>>>>>>> fog_cloud_topology
     #projsPerQuery[query] = result[0]
     for i in result[0]:        
         if not i in projlist:
@@ -381,7 +396,11 @@ for query in wl:
             for mykey in sharedProjectionsDict.keys():
                 if mykey == i:
                     sharedProjectionsDict[mykey].append(query)
+<<<<<<< HEAD
 
+=======
+#print(projrates)
+>>>>>>> fog_cloud_topology
 for query in wl:
     query = query.stripKL_simple()
     projsPerQuery[query] = [x for x in projlist if query.can_be_used(x)]

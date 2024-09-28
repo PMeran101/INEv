@@ -1,7 +1,11 @@
 import os
 
 # Define the suffix you want to add
+<<<<<<< HEAD
 suffix = "_normal"  # Replace with your desired suffix
+=======
+suffix = "_Fog"  # Replace with your desired suffix
+>>>>>>> fog_cloud_topology
 
 # Get the current directory
 current_directory = os.getcwd()
@@ -9,7 +13,11 @@ current_directory = os.getcwd()
 # Loop through all files in the current directory
 for filename in os.listdir(current_directory):
     # Check if the file is a CSV
+<<<<<<< HEAD
     if filename.endswith(".csv"):
+=======
+    if filename.endswith(".csv") and not filename.endswith("_Fog.csv"):
+>>>>>>> fog_cloud_topology
         # Split the file name and extension
         name, ext = os.path.splitext(filename)
         

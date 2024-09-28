@@ -1,4 +1,5 @@
 network
+<<<<<<< HEAD
 Node 0 [0, 0, 12, 0, 0, 17, 0, 1]
 Node 1 [3, 3, 0, 0, 1, 17, 2, 0]
 Node 2 [0, 3, 0, 0, 0, 0, 0, 1]
@@ -22,9 +23,178 @@ Node 19 [0, 0, 0, 849, 0, 17, 2, 0]
 
 queries
 SEQ(H, AND(C, SEQ(A, F, B)))
+=======
+Node 0 Node 0
+Computational Power: inf
+Memory: inf
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0]
+Parents: None
+Child: [1, 2, 3]
+Siblings: None
+
+Node 1 Node 1
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [4, 6, 7]
+Siblings: None
+
+Node 2 Node 2
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [5]
+Siblings: None
+
+Node 3 Node 3
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 18, 6, 0, 1, 0, 0, 0]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 4 Node 4
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [1]
+Child: [8]
+Siblings: None
+
+Node 5 Node 5
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 18, 0, 86, 1, 7, 3, 0]
+Parents: [2]
+Child: None
+Siblings: None
+
+Node 6 Node 6
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [1]
+Child: [10]
+Siblings: None
+
+Node 7 Node 7
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [1]
+Child: [9, 11]
+Siblings: None
+
+Node 8 Node 8
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [4]
+Child: [12, 15, 16]
+Siblings: None
+
+Node 9 Node 9
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [7]
+Child: [13]
+Siblings: None
+
+Node 10 Node 10
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [6]
+Child: [17, 19]
+Siblings: None
+
+Node 11 Node 11
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [7]
+Child: [14, 18]
+Siblings: None
+
+Node 12 Node 12
+Computational Power: 1
+Memory: 1
+Eventrates: [1, 18, 0, 86, 1, 0, 0, 1]
+Parents: [8]
+Child: None
+Siblings: None
+
+Node 13 Node 13
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 18, 0, 0, 0, 7, 0, 1]
+Parents: [9]
+Child: None
+Siblings: None
+
+Node 14 Node 14
+Computational Power: 1
+Memory: 1
+Eventrates: [1, 0, 0, 86, 0, 7, 0, 1]
+Parents: [11]
+Child: None
+Siblings: None
+
+Node 15 Node 15
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 18, 6, 0, 0, 0, 3, 0]
+Parents: [8]
+Child: None
+Siblings: None
+
+Node 16 Node 16
+Computational Power: 1
+Memory: 1
+Eventrates: [1, 0, 0, 86, 1, 0, 3, 0]
+Parents: [8]
+Child: None
+Siblings: None
+
+Node 17 Node 17
+Computational Power: 1
+Memory: 1
+Eventrates: [1, 18, 0, 86, 0, 7, 0, 0]
+Parents: [10]
+Child: None
+Siblings: None
+
+Node 18 Node 18
+Computational Power: 1
+Memory: 1
+Eventrates: [1, 0, 0, 86, 0, 7, 0, 1]
+Parents: [11]
+Child: None
+Siblings: None
+
+Node 19 Node 19
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 18, 0, 86, 0, 0, 3, 1]
+Parents: [10]
+Child: None
+Siblings: None
+
+
+queries
+AND(B, SEQ(E, A, D, H))
+>>>>>>> fog_cloud_topology
 
 muse graph
 SELECT SEQ(A, B, C, D, E) FROM AND(B, SEQ(A, E, F)); I ON {1, 2, 4, 6, 7, 8, 9}/n(I)
 
 selectivities
+<<<<<<< HEAD
 {'EB': 0.040597716224903664, 'BE': 0.040597716224903664, 'GD': 0.07571721412827111, 'DG': 0.07571721412827111, 'DF': 0.04766192577754258, 'FD': 0.04766192577754258, 'DA': 0.027810554695103074, 'AD': 0.027810554695103074, 'EA': 0.06138525837922611, 'AE': 0.06138525837922611, 'EF': 0.05557838069605407, 'FE': 0.05557838069605407, 'GA': 1, 'AG': 1, 'GH': 0.0987976020682257, 'HG': 0.0987976020682257, 'HC': 1, 'CH': 1, 'GC': 1, 'CG': 1, 'EC': 1, 'CE': 1, 'HF': 0.09360506358059775, 'FH': 0.09360506358059775, 'HB': 0.08371280768838432, 'BH': 0.08371280768838432, 'AF': 1, 'FA': 1, 'CF': 1, 'FC': 1, 'ED': 1, 'DE': 1, 'DC': 0.026157483021530967, 'CD': 0.026157483021530967, 'GB': 0.03305812862546732, 'BG': 0.03305812862546732, 'AB': 0.04937828840858435, 'BA': 0.04937828840858435, 'GE': 0.0578233478327653, 'EG': 0.0578233478327653, 'EH': 0.08412465491511717, 'HE': 0.08412465491511717, 'GF': 1, 'FG': 1, 'HA': 1, 'AH': 1, 'CB': 1, 'BC': 1, 'DH': 1, 'HD': 1, 'CA': 0.03433810894665808, 'AC': 0.03433810894665808, 'DB': 0.03541798385580626, 'BD': 0.03541798385580626, 'BF': 0.01431175071392643, 'FB': 0.01431175071392643}
+=======
+{'BF': 0.057205624124313, 'FB': 0.057205624124313, 'EG': 0.017440733145911894, 'GE': 0.017440733145911894, 'GF': 0.05204128756139676, 'FG': 0.05204128756139676, 'DF': 0.04584574858082311, 'FD': 0.04584574858082311, 'EH': 0.05918367752729509, 'HE': 0.05918367752729509, 'AG': 0.09082671949368594, 'GA': 0.09082671949368594, 'CG': 0.030381193634064718, 'GC': 0.030381193634064718, 'BG': 1, 'GB': 1, 'HG': 0.03900172750623028, 'GH': 0.03900172750623028, 'BE': 0.0628380693508579, 'EB': 0.0628380693508579, 'EA': 0.03419388899603654, 'AE': 0.03419388899603654, 'CF': 0.017846344096033778, 'FC': 0.017846344096033778, 'HF': 0.01985223023069667, 'FH': 0.01985223023069667, 'BA': 1, 'AB': 1, 'AH': 0.0873020138536548, 'HA': 0.0873020138536548, 'BH': 0.03855017911650115, 'HB': 0.03855017911650115, 'CD': 1, 'DC': 1, 'EF': 0.010763935112802658, 'FE': 0.010763935112802658, 'CE': 0.02029502775374735, 'EC': 0.02029502775374735, 'BD': 1, 'DB': 1, 'CH': 0.022013124050367913, 'HC': 0.022013124050367913, 'ED': 0.015058071726692254, 'DE': 0.015058071726692254, 'AF': 1, 'FA': 1, 'CA': 0.047759105976704956, 'AC': 0.047759105976704956, 'DG': 0.08652355635543207, 'GD': 0.08652355635543207, 'AD': 0.042977265773118105, 'DA': 0.042977265773118105, 'DH': 0.05873771743716909, 'HD': 0.05873771743716909, 'CB': 0.030838144508048032, 'BC': 0.030838144508048032}
+>>>>>>> fog_cloud_topology

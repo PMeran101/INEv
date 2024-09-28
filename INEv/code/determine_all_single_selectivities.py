@@ -232,6 +232,8 @@ def extract_muse_graph_forbidden(line):
 
 
 def extract_muse_graph_selectivities(line):
+    # print(line)
+    # print("Printed")
     all_positions_of_eventcombinations = [m.start() for m in re.finditer("'", line)]
     all_positions_of_eventproducts = [m.start() for m in re.finditer(",", line)]
     all_positions_of_eventproducts = all_positions_of_eventproducts + [m.start() for m in re.finditer("}", line)]
@@ -496,12 +498,13 @@ if __name__ == "__main__":
             query_network.append(query)
 
         if CURRENT_SECTION == SELECTIVITIES:
+           # print(line)
             extract_muse_graph_selectivities(line)
 
     for i in workload:
         determine_all_single_selectivities_for_projection(str(i))
     
-    print(single_selectivity_of_eventtype_within_projection)
+    #print(single_selectivity_of_eventtype_within_projection)
     
 with open('singleSelectivities', 'wb') as selectivities_file:
           pickle.dump(single_selectivity_of_eventtype_within_projection, selectivities_file)  
