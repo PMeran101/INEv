@@ -25,6 +25,7 @@ def events(node):
     return network[node]
 
 nodes = {}
+# Dictionary with Keys are Prim Events and Values is list of nodes generating.
 for i in network.keys():
     for event in network[i]:
         if not event in nodes.keys():
