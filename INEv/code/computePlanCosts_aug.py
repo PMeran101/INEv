@@ -153,7 +153,10 @@ def main():
     print("Transmission Ratio: " + str(mycosts))
     print("INEv Depth: " + str(float(max(list(dependencies.values()))+1)/2))
     
+    ID = int(np.random.uniform(0,10000000))
     
+    with open('EvaluationPlan',  'wb') as EvaluationPlan_file:
+        pickle.dump([myPlan, ID, MSPlacements], EvaluationPlan_file)
     
     
     
@@ -196,9 +199,7 @@ def main():
            writer.writerow(schema)              
        writer.writerow(myResult)
       
-    with open('EvaluationPlan',  'wb') as EvaluationPlan_file:
-        pickle.dump([myPlan, ID, MSPlacements], EvaluationPlan_file)
-    
+
     with open('CentralEvaluationPlan',  'wb') as CentralEvaluationPlan_file:
         pickle.dump([ccosts[1],ccosts[3], wl], CentralEvaluationPlan_file)
     

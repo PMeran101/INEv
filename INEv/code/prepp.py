@@ -1,5 +1,5 @@
 import re
-
+import argparse
 import math
 
 from timeit import default_timer as timer
@@ -533,18 +533,36 @@ def determine_all_single_selectivities_for_every_possible_projection():
 
     
 
+def load_args():
+    # Create argument parser
+    parser = argparse.ArgumentParser(description="Process command-line arguments.")
+
+    # Define arguments with default values
+    parser.add_argument("--input_file", help="Input file name (without extension).", type=str, default="plans/curr_MS")
+    parser.add_argument("--method", help="Method to use.", type=str, default="ppmuse")
+    parser.add_argument("--algorithm", help="Algorithm to use.", type=str, default="e")
+    parser.add_argument("--samples", help="Number of samples.", type=int, default=0)
+    parser.add_argument("--topk", help="Top K value.", type=int, default=0)
+    parser.add_argument("--runs", help="Number of runs.", type=int, default=5)
+    parser.add_argument("--plan_print", help="Plan print flag.", type=bool, default=False)
+
+    # Parse arguments
+    return parser.parse_args()
 
 if __name__ == "__main__":
-    #os.nice(19)
+    args = load_args()
 
-    method = sys.argv[2]
-    algorithm = sys.argv[3]
-    samples = sys.argv[4]
-    topk = sys.argv[5]
-    runs = sys.argv[6]
-    plan_print = sys.argv[7]
+    # Accessing the arguments
+    input_file_name = args.input_file
+    method = args.method
+    algorithm = args.algorithm
+    samples = args.samples
+    topk = args.topk
+    runs = args.runs
+    plan_print = args.plan_print
 
-    input_file_name = sys.argv[1]
+
+    # input_file_name = sys.argv[1]
     input_file = open(input_file_name+".txt", "r")
     single_sink_evaluation_node = []
     single_sink_query_network = []
@@ -558,7 +576,7 @@ if __name__ == "__main__":
             continue
         
         if CURRENT_SECTION == NETWORK:
-            if not "[" in line:
+            if not "Eventrates: [" in line:
                 continue
             output_rates = extract_network_node(line)
             
@@ -585,7 +603,7 @@ if __name__ == "__main__":
                     if event_type not in all_event_types:
 
                         nw.remove(event_type)
-
+            # Was ist hier die Logik um Central Costs = total sum - current_highest zu berechnen?
             current_highest = 0
             current_value = 0
             total_sum = 0

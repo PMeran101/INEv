@@ -113,7 +113,7 @@ def parse_arguments():
     # Add arguments with default values
     parser.add_argument('--nwsize', '-nw', type=int, default=10, help='Network size (default: 10)')
     parser.add_argument('--node_event_ratio', '-ner', type=float, default=0.5, help='Node event ratio (default: 0.5)')
-    parser.add_argument('--num_eventtypes', '-ne', type=int, default=20, help='Number of event types (default: 20)')
+    parser.add_argument('--num_eventtypes', '-ne', type=int, default=6, help='Number of event types (default: 20)')
     parser.add_argument('--eventskew', '-es', type=float, default=1.3, help='Event skew (default: 1.3)')
     parser.add_argument('--swaps', '-sw', type=int, default=0, help='Number of swaps (default: 0)')
     parser.add_argument('--toFile', '-tf', action='store_true', help='Write event types to file')

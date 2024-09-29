@@ -114,7 +114,7 @@ for i in myplan.projections:
         filterDict[filterTuple[0]] = filterTuple[1]     
     for node in myproj.sinks:
             evaluationDict[node].append(str(myproj.name))
-                  
+    # Operator as Key and Prim Values as Value                  
     combinationDict[str(myproj.name)] = list(map(lambda x: str(x), myproj.combination.keys()))    # remove events used as filters
     selectionRate[str(myproj.name)] = getSelectionRate(myproj.name, myproj.combination.keys())
     sinkDict[str(myproj.name)] = [myproj.sinks,""]
