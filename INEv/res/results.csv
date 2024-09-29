@@ -1,0 +1,2 @@
+ID,TransmissionRatio,FilterUsed,Nodes,EventSkew,EventNodeRatio,WorkloadSize,NumberProjections,MinimalSelectivity,MedianSelectivity,CombigenComputationTime,Efficiency,PlacementComputationTime,HopCount,Depth,ProcessingLatencyRatio,CentralTransmission,LowerBound,EventTypes
+3075960,0.8874231794401259,[],50,1.3,0.5,10,72,0.1,0.06867195181250942,1.02,3.72,0.16,0,4.0,0,478446.5412735106,0.0,15
