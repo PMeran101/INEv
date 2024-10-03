@@ -545,6 +545,7 @@ def load_args():
     parser.add_argument("--topk", help="Top K value.", type=int, default=0)
     parser.add_argument("--runs", help="Number of runs.", type=int, default=5)
     parser.add_argument("--plan_print", help="Plan print flag.", type=bool, default=False)
+    parser.add_argument("--output_file", help="Output file name (without extension).", type=str, default="output", required=True)
 
     # Parse arguments
     return parser.parse_args()
@@ -560,7 +561,7 @@ if __name__ == "__main__":
     topk = args.topk
     runs = args.runs
     plan_print = args.plan_print
-
+    output_csv = args.output_file
 
     # input_file_name = sys.argv[1]
     input_file = open(input_file_name+".txt", "r")
@@ -607,6 +608,8 @@ if __name__ == "__main__":
             current_highest = 0
             current_value = 0
             total_sum = 0
+            # non_leaf_nodes = [x for x in network if len(x) == 0]
+            # print(non_leaf_nodes)
             for node_idx,nw in enumerate(network):
                 for event_type in nw:
                     current_value += all_eventtype_output_rates[event_type]
@@ -714,6 +717,12 @@ if __name__ == "__main__":
     sampling_best_generated_costs_single_sink = float('inf')
     central_push_costs = total_sum - current_highest
     print("Central push costs:", central_push_costs)
+    
+    greedy_costs_avg = []
+    sampling_costs_avg = []
+    factorial_costs_avg = []
+    exact_costs_avg = []
+    
     for idx in range(1, number_of_samples+1):
         eventtype_pair_to_selectivity = old_eventtype_pair_to_selectivity.copy()
         eventtypes_single_selectivities = {}
@@ -724,6 +733,17 @@ if __name__ == "__main__":
 
         if method == "ppmuse":
             greedy_costs, sampling_costs, factorial_costs, exact_costs, greedy_algo_time, exact_algo_time, factorial_algo_time, sampling_algo_time = determine_randomized_distribution_push_pull_costs(q_network, eventtype_combinations, highest_primitive_eventtype_to_be_processed, algorithm, samples, topk, plan_print)
+            
+            greedy_costs_avg.append(greedy_costs)
+            sampling_costs_avg.append(sampling_costs)
+            factorial_costs_avg.append(factorial_costs)
+            exact_costs_avg.append(exact_costs)
+            print(f"greedy_costs: {greedy_costs}")
+            print(f"sampling_costs: {sampling_costs}")
+            print(f"factorial_costs: {factorial_costs}")
+            print(f"exact_costs: {exact_costs}")
+            
+           
             print("§§§§§§§§§§ Push-Pull MuSE costs §§§§§§§§§§")
             if algorithm == "g":
                 print("####### GREEDY #######")
@@ -792,6 +812,9 @@ if __name__ == "__main__":
 
         elif method == "cent":
             greedy_costs, sampling_costs, factorial_costs, exact_costs, greedy_algo_time, exact_algo_time, factorial_algo_time, sampling_algo_time = determine_randomized_distribution_push_pull_costs(q_network, eventtype_combinations, highest_primitive_eventtype_to_be_processed, algorithm, samples, topk, plan_print)
+            
+
+            
             print("§§§§§§§§§§ Centralized Push-Pull costs §§§§§§§§§§")
             if algorithm == "g":
                 print("####### GREEDY #######")
@@ -861,4 +884,38 @@ if __name__ == "__main__":
         
             query_network_copy = copy.deepcopy(query_network)
             single_sink_query_network_copy = copy.deepcopy(single_sink_query_network)
-            
+    print(greedy_costs_avg)
+    print(sampling_costs_avg)
+    print(factorial_costs_avg)
+    print(exact_costs_avg)      
+    import csv
+    # Open the existing CSV file and read its content
+    with open(output_csv, mode='r', newline='') as file:
+        reader = list(csv.DictReader(file))
+        fieldnames = reader[0].keys()  # Get existing column names
+
+    # Columns to append
+    new_columns = ["greedy_costs", "sampling_costs","factorial_costs","exact_costs"]  # Add your new column names here
+
+    # Check if new columns already exist
+    if all(col in fieldnames for col in new_columns):
+        # If the new columns already exist, just append the new data to the rows
+        updated_fieldnames = list(fieldnames)
+    else:
+        # If new columns don't exist, append them to the existing fieldnames
+        updated_fieldnames = list(fieldnames) + new_columns
+    # Open the CSV file for writing (with updated fieldnames)
+    with open(output_csv, mode='w', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=updated_fieldnames)
+
+        # Write the updated headers (if needed)
+        writer.writeheader()
+
+        # Write the updated rows with additional data
+        for row in reader[:-1]:
+            # Add new data to each row (Example values)
+            row["greedy_costs"] = sum(greedy_costs_avg)/len(greedy_costs_avg)
+            row["sampling_costs"] = sum(sampling_costs_avg)/len(sampling_costs_avg)
+            row["factorial_costs"] = sum(factorial_costs_avg)/len(factorial_costs_avg)
+            row["exact_costs"] = sum(exact_costs_avg)/len(exact_costs_avg)
+            writer.writerow(row)

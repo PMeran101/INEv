@@ -55,7 +55,7 @@ def main():
     #     
     # if len(sys.argv) > 2:
     #     noFilter = int(sys.argv[2])
-        
+    print(filename)
     ccosts = NEWcomputeCentralCosts(wl)
     #print("central costs : " + str(ccosts))
     centralHopLatency = max(allPairs[ccosts[1]])
@@ -157,8 +157,6 @@ def main():
     
     with open('EvaluationPlan',  'wb') as EvaluationPlan_file:
         pickle.dump([myPlan, ID, MSPlacements], EvaluationPlan_file)
-    
-    
     
     totaltime = str(round(time.time() - start_time, 2))
 
