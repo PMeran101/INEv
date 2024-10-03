@@ -24,6 +24,7 @@ with open('graph',  'rb') as graph_file:
 myNodes = list(G.nodes)
 allPairs = [[] for x in myNodes]
 
+
 def fillMyMatrice(me):  
     myDistances = []
     for j in range(len(G.nodes)):   
@@ -33,14 +34,29 @@ def fillMyMatrice(me):
         except nx.NetworkXNoPath:
             # If no direct path exists, simulate travel via the cloud (node 0)
             try:
-                # Find shortest path from me to the cloud (node 0) and j to the cloud (node 0)
-                distance_me_to_cloud = len(nx.shortest_path(G, me, 0, method='dijkstra')) - 1
-                distance_j_to_cloud = len(nx.shortest_path(G, j, 0, method='dijkstra')) - 1
-                # Simulate the distance via the cloud by summing both distances
-                myDistances.append(distance_me_to_cloud + distance_j_to_cloud)
+                # Get all shortest path lengths from me and j to all other nodes (including the cloud)
+                me_shortest_paths = nx.single_source_dijkstra_path_length(G, me)
+                j_shortest_paths = nx.single_source_dijkstra_path_length(G, j)
+                
+                # Find the common nodes (ancestors) reachable from both me and j
+                common_ancestors = set(me_shortest_paths.keys()) & set(j_shortest_paths.keys())
+                
+                if common_ancestors:
+                    # Calculate the combined path length for all common ancestors
+                    combined_distances = [
+                        me_shortest_paths[ancestor] + j_shortest_paths[ancestor] 
+                        for ancestor in common_ancestors
+                    ]
+                    # Get the minimum combined distance
+                    myDistances.append(min(combined_distances))
+                else:
+                    # Fallback to the cloud (node 0) if no other common ancestors exist
+                    distance_me_to_cloud = me_shortest_paths.get(0, float('inf'))
+                    distance_j_to_cloud = j_shortest_paths.get(0, float('inf'))
+                    myDistances.append(distance_me_to_cloud + distance_j_to_cloud)
             except nx.NetworkXNoPath:
-                # If there is no path to the cloud, set a very high value or handle it appropriately
-                myDistances.append(float('inf'))  # You can use a large number or some other placeholder
+                # If there's no path to the cloud or any other intermediary, handle it appropriately
+                myDistances.append(float('inf'))  # Or another placeholder value
     return (me, myDistances)
          
 

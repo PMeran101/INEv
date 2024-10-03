@@ -369,9 +369,13 @@ def ComputeSingleSinkPlacement(projection, combination, noFilter):
     myProjection = Projection(projection, {}, [], [], Filters) #!
     
     #goodDestinations = getDestinationsUpstream(projection) # consider only placement at upstream projections in cas of ms placements
-    goodDestinations = [x for x in range(len(allPairs))]
+    # goodDestinations = [x for x in range(len(allPairs))]
     #print(list(map(lambda x: str(x), combination)))
-    for destination in network.keys(): 
+    "TODO not for all nodes only non-leaf nodes"
+    # Extract only the keys (nodes) with an empty list of connections
+    non_leaf = [node for node, neighbors in network.items() if not neighbors]
+    
+    for destination in non_leaf: 
         mycosts = 0       
         for eventtype in combination:
                 
