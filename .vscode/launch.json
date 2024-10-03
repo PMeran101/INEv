@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "cwd": "${workspaceFolder}/INEv/code", // Set the correct working directory,
+            "cwd": "/home/pme/Bachelorarbeit/CEP/INEv/INEv/code", // Set the correct working directory,
             "python": "/home/pme/miniconda3/envs/INEvEnv/bin/python", // Path to your conda environment's Python interpreter
             "env": {
                 "PATH": "/home/pme/miniconda3/envs/INEvEnv/bin:${env:PATH}" // Activates the Conda environment
