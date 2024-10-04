@@ -399,6 +399,7 @@ class Initiate():
             else:
                 number_of_sources = len(self.eventtype_to_sources_map[next_eventtype])
                 
+            "TODO hinzufügen von anzahl Hops pro Source durch das Netzwerk"    
             optimized_pull_answer += self.outputrate_map[next_eventtype] * self.single_selectivity_of_eventtype_within_projection[single_selectivity_key] * number_of_sources 
         
         totally_combined_result = self.determine_total_output_rate_of_eventtypes(sorted_all_eventtypes_key)

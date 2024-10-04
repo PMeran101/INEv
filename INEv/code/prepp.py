@@ -545,7 +545,7 @@ def load_args():
     parser.add_argument("--topk", help="Top K value.", type=int, default=0)
     parser.add_argument("--runs", help="Number of runs.", type=int, default=5)
     parser.add_argument("--plan_print", help="Plan print flag.", type=bool, default=False)
-    parser.add_argument("--output_file", help="Output file name (without extension).", type=str, default="output", required=True)
+    parser.add_argument("--output_file", help="Output file name (without extension).", type=str, default="output", required=False)
 
     # Parse arguments
     return parser.parse_args()

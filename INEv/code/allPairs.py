@@ -69,6 +69,67 @@ def find_shortest_path_or_ancestor(G, me, j):
             return []
 
 
+def get_common_ancestor_and_steps(G, source, destination):
+    """Find the common ancestor between source and destination and calculate the steps from each."""
+    if source == destination:
+        return source, 0  # The common ancestor is the node itself
+
+    # Attempt to find a direct path
+    if nx.has_path(G, source, destination):
+        # Direct path exists
+        path = nx.shortest_path(G, source, destination, method='dijkstra')
+        common_ancestor = destination
+        steps_from_source = len(path) - 1
+        steps_from_destination = 0
+    else:
+        # No direct path; find common ancestors
+        source_paths = nx.single_source_dijkstra_path_length(G, source)
+        dest_paths = nx.single_source_dijkstra_path_length(G, destination)
+
+        # Find common ancestors
+        common_ancestors = set(source_paths.keys()) & set(dest_paths.keys())
+
+        if common_ancestors:
+            # Find the common ancestor with the minimal combined distance
+            min_combined_distance = float('inf')
+            best_ancestor = None
+            for ancestor in common_ancestors:
+                total_distance = source_paths[ancestor] + dest_paths[ancestor]
+                if total_distance < min_combined_distance:
+                    min_combined_distance = total_distance
+                    best_ancestor = ancestor
+            common_ancestor = best_ancestor
+            steps_from_source = source_paths[best_ancestor]
+            steps_from_destination = dest_paths[best_ancestor]
+        else:
+            # Fallback to the cloud (node 0)
+            try:
+                source_to_cloud = nx.shortest_path_length(G, source, 0, method='dijkstra')
+                dest_to_cloud = nx.shortest_path_length(G, destination, 0, method='dijkstra')
+                common_ancestor = 0
+                steps_from_source = source_to_cloud
+                steps_from_destination = dest_to_cloud
+            except nx.NetworkXNoPath:
+                # No path exists
+                common_ancestor = None
+                steps_from_source = None
+                steps_from_destination = None
+    hops = steps_from_source + steps_from_destination
+    return common_ancestor, hops
+
+def create_routing_dict():
+    """Create the routing dictionary for the graph."""
+    routing_dict = {}
+    for destination in G.nodes():
+        routing_dict[destination] = {}
+        for source in G.nodes():
+            common_ancestor, hops = get_common_ancestor_and_steps(G, source, destination)
+            routing_dict[destination][source] = {
+                'common_ancestor': common_ancestor,
+                'hops': hops
+            }
+    return routing_dict
+
 
 def create_myDistances(G, me):
     """Create the myDistances array for a given node `me`."""
