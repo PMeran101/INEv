@@ -1,7 +1,7 @@
 import itertools
 import operator
 import copy
-
+import pickle
 import math
 
 import random
@@ -9,6 +9,9 @@ import random
 
 import re
 from itertools import permutations, combinations, chain
+
+with open('allPairs', 'rb') as aP:
+    allPairs = pickle.load(aP)
 
 class CachedOptimalStep():
     def __init__(self, lowest_costs, best_step):
@@ -196,7 +199,13 @@ class Initiate():
         for eventtype_to_acquire in projection_to_process:
             
             number_of_sources = self.determine_correct_number_of_sources(node, eventtype_to_acquire)
-            push_costs += self.outputrate_map[eventtype_to_acquire] * number_of_sources
+            
+            for source in self.eventtype_to_sources_map[eventtype_to_acquire]:
+                key = str(source) +"~"+ str(node)+ "~" + str(eventtype_to_acquire)
+                if key not in self.source_sent_this_type_to_node and source is not node:
+                    push_costs += self.outputrate_map[eventtype_to_acquire] * allPairs[node][source]
+            
+            #push_costs += self.outputrate_map[eventtype_to_acquire] * number_of_sources
 
         return push_costs
 
@@ -443,8 +452,8 @@ class Initiate():
         for events_to_pull_with in all_permutations:    
             pull_request_size = self.determine_optimized_pull_request_size_for_step(acquired_eventtypes, events_to_pull_with, node)
             pull_answer_size = self.determine_optimized_pull_answer_size_for_step(events_to_pull_with, eventtype_to_acquire, node)
-
-            total_costs_for_step = ((pull_request_size / self.number_of_nodes_producing_this_projection) + pull_answer_size) * self.determine_correct_number_of_sources(node, eventtype_to_acquire)
+            for source in self.eventtype_to_sources_map[eventtype_to_acquire]:
+                total_costs_for_step = ((pull_request_size / self.number_of_nodes_producing_this_projection) + pull_answer_size) * allPairs[node][source]#* self.determine_correct_number_of_sources(node, eventtype_to_acquire)
             if total_costs_for_step < lowest_costs_for_step:# and total_costs_for_step > 0:
                 lowest_costs_for_step = total_costs_for_step
                 best_step = events_to_pull_with
@@ -467,7 +476,10 @@ class Initiate():
         for eventtype_group in plan:
             for eventtype in eventtype_group:
                 if push:
-                    costs += self.outputrate_map[eventtype] * self.determine_correct_number_of_sources(node, eventtype)
+                    for source in self.eventtype_to_sources_map[eventtype]:
+                        key = str(source) +"~"+ str(node)+ "~" + str(eventtype)
+                        if key not in self.source_sent_this_type_to_node and source is not node:
+                            costs += self.outputrate_map[eventtype] * allPairs[node][source]#self.determine_correct_number_of_sources(node, eventtype)
                 else:
                     lowest_costs_for_this_step, used_eventtypes = self.determine_optimal_pull_strategy_for_step_in_plan(available_predicates, eventtype, node)
                     costs += lowest_costs_for_this_step
@@ -510,7 +522,10 @@ class Initiate():
             for eventtype in eventtype_group:
                 if push:                 
                     number_of_sources = self.determine_correct_number_of_sources(node, eventtype)
-                    costs += self.outputrate_map[eventtype] * number_of_sources
+                    for source in self.eventtype_to_sources_map[eventtype]:
+                        key = str(source) +"~"+ str(node)+ "~" + str(eventtype)
+                        if key not in self.source_sent_this_type_to_node and source is not node:
+                            costs += self.outputrate_map[eventtype] * allPairs[node][source]#number_of_sources
                 else:
                     lowest_costs_for_this_step, used_eventtype = self.determine_optimal_pull_strategy_for_step_in_plan(available_predicates, eventtype, node)
 

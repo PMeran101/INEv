@@ -10,4 +10,4 @@ python3 combigen.py
 python3 computePlanCosts_aug.py "test"
 python3 generateEvaluationPlan.py
 python3 generateEvalPlan.py
-python prepp.py --input_file plans/curr_MS --method ppmuse --algorithm f --samples 0  --topk 0  --runs 5 --plan_print f --output_file ../res/test.csv
+python prepp.py --input_file plans/curr_MS --method ppmuse --algorithm e --samples 0  --topk 0  --runs 5 --plan_print f --output_file ../res/test.csv
