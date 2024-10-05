@@ -40,11 +40,11 @@ def generate_eventrates(eventskew, numb_eventtypes):
     
     # Scale down if max value exceeds 1000
     if np.max(eventrates) > 1000:
-        scale_factor = 1000 / np.max(eventrates)
+        scale_factor = 500 / np.max(eventrates)
         eventrates = eventrates * scale_factor
     
-    eventrates = eventrates / np.sum(eventrates)
-    eventrates = eventrates * 10000
+    # eventrates = eventrates / np.sum(eventrates)
+    # eventrates = eventrates * 10000
     eventrates = np.round(eventrates).astype(int)
     return eventrates
 

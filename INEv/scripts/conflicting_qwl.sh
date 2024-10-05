@@ -19,7 +19,7 @@ cd ../code
           python3 allPairs.py
      
           a=1
-          while [ "$a" -lt 60 ]
+          while [ "$a" -lt 3 ]
           do
               echo "  Starting inner loop iteration $a with k=$k at: $(date)"
               
@@ -33,6 +33,7 @@ cd ../code
               
               echo "  Completed inner loop iteration $a with k=$k at: $(date)"
               a=$((a + 1))
+              sleep 1
         #   done
       done    
           echo "Completed outer loop with k=$k and h=$h at: $(date)"
