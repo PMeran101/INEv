@@ -10,7 +10,7 @@ import string
 import random
 from Node import Node
 import argparse
-
+import pandas as pd
 """ Experiment network rates 
 
 average event rates for google cluster data set first 12h, timewindow 30 min, 20 nodes
@@ -35,18 +35,27 @@ with open('rates',  'rb') as  rates_file:
         event_node_assignment = res[1]
         
 
-def generate_eventrates(eventskew, numb_eventtypes):
-    eventrates = np.random.zipf(eventskew, numb_eventtypes)
+def generate_eventrates(eventskew, numb_eventtypes,total_count=10000):
+        # Ensure all eventrates are greater than 0
+    min_value = 1
+    max_value = 1000
+    # Generate ranks
+    k = np.arange(1, numb_eventtypes + 1)
     
-    # Scale down if max value exceeds 1000
-    if np.max(eventrates) > 1000:
-        scale_factor = 500 / np.max(eventrates)
-        eventrates = eventrates * scale_factor
+    # Calculate weights based on Zipf's law
+    weights = 1 / k ** eventskew
+    weights /= weights.sum()  # Normalize to sum to 1
     
-    # eventrates = eventrates / np.sum(eventrates)
-    # eventrates = eventrates * 10000
-    eventrates = np.round(eventrates).astype(int)
+    # Sample event rates from multinomial distribution
+    eventrates = np.random.multinomial(total_count, weights)
+    
+    # Clip event rates to be within min and max values
+    eventrates = np.clip(eventrates, min_value, max_value)
+    
     return eventrates
+    
+    # eventrates[eventrates < 1] = 1
+    # return eventrates
 
 # At one Node show in Array the Events which are generated at each node
 # Looping through all Eventrates 
@@ -218,7 +227,20 @@ def main():
                 node.eventrates = evtrate
             else:
                 node.eventrates = [0] * len(eventrates)
-
+                
+        eventrates_df = pd.DataFrame([node.eventrates for node in nw if len(node.Child) == 0])
+          # Check if any column (representing an event) has only 0
+        for column in eventrates_df.columns:
+            if eventrates_df[column].sum() == 0:
+                # Select a random leaf node and assign the eventrate from eventrates array
+                # print(f"Assigning eventrate to a random leaf node {column}")
+                random_leaf_node = random.choice([node for node in nw if len(node.Child) == 0])
+                #print(random_leaf_node)
+                random_leaf_node.eventrates[column] = eventrates[column]
+        print(eventrates)
+        for column in eventrates_df.columns:
+            if eventrates_df[column].sum() == 0:
+                print("Still 0 ")
         # post_order_sum_events(root)
         return root, nw
     
