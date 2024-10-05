@@ -35,8 +35,17 @@ with open('rates',  'rb') as  rates_file:
         event_node_assignment = res[1]
         
 
-def generate_eventrates(eventskew,numb_eventtypes):
-    eventrates = np.random.zipf(eventskew,numb_eventtypes)
+def generate_eventrates(eventskew, numb_eventtypes):
+    eventrates = np.random.zipf(eventskew, numb_eventtypes)
+    
+    # Scale down if max value exceeds 1000
+    if np.max(eventrates) > 1000:
+        scale_factor = 1000 / np.max(eventrates)
+        eventrates = eventrates * scale_factor
+    
+    eventrates = eventrates / np.sum(eventrates)
+    eventrates = eventrates * 10000
+    eventrates = np.round(eventrates).astype(int)
     return eventrates
 
 # At one Node show in Array the Events which are generated at each node
@@ -46,7 +55,7 @@ def generate_events(eventrates, n_e_r):
     for i in range(len(eventrates)):
         x = np.random.uniform(0,1)
         if x < n_e_r:
-            myevents.append(eventrates[i])
+            myevents.append(int(eventrates[i]))
         else:
             myevents.append(0)
     
@@ -111,7 +120,7 @@ def parse_arguments():
     # Add arguments with default values
     parser.add_argument('--nwsize', '-nw', type=int, default=10, help='Network size (default: 10)')
     parser.add_argument('--node_event_ratio', '-ner', type=float, default=0.5, help='Node event ratio (default: 0.5)')
-    parser.add_argument('--num_eventtypes', '-ne', type=int, default=20, help='Number of event types (default: 20)')
+    parser.add_argument('--num_eventtypes', '-ne', type=int, default=6, help='Number of event types (default: 20)')
     parser.add_argument('--eventskew', '-es', type=float, default=1.3, help='Event skew (default: 1.3)')
     parser.add_argument('--swaps', '-sw', type=int, default=0, help='Number of swaps (default: 0)')
     parser.add_argument('--toFile', '-tf', action='store_true', help='Write event types to file')
@@ -146,42 +155,6 @@ def main():
     print(f"Number of event types: {num_eventtypes}, Swaps: {swaps}, To file: {toFile}")
     print(f"Event type: {eventtype}, Param: {param}")
 
-
-    """
-    #default values for simulation 
-    nwsize = 10
-    node_event_ratio = 0.5
-    num_eventtypes = 20
-    eventskew = 1.3
-    toFile = False
-    swaps = 0   
-
-      
-    if len(sys.argv) > 1: #network size
-        nwsize =int(sys.argv[1])
-    if len(sys.argv) > 2:
-        node_event_ratio = float(sys.argv[2]) # event node ratio
-    if len(sys.argv) > 3: # event skew
-        eventskew = float(sys.argv[3]) 
-    if len(sys.argv) > 4: # size event universe        
-        num_eventtypes = int(sys.argv[4])
-    if len(sys.argv) > 4 and len(sys.argv) < 7 :   #write event types to file  
-        #eventrates = generate_eventrates(eventskew,num_eventtypes)   
-        toFile = False
-    if len(sys.argv) > 5:     # generate event types from file and apply given number of swaps
-        eventrates = event_rates_file # get event rates for event types
-        nodeassignment = event_node_assignment  # get node assignment, which node generates which event types
-        swaps = int(sys.argv[5]) # number of swaps
-        toFile = False # do not save generated rates to file
-        
-    if len(sys.argv) > 6:        # for setting event types to min/max rates (kleene, nseq experiments)
-        eventtype = str(sys.argv[6]) 
-    
-    if len(sys.argv) > 7: # set eventtype to param=max/min rate (kleene, nseq experiments)
-        param = str(sys.argv[7])
-        eventrates = swapRatesMax(eventtype, eventrates, param)   
-    
-    """
     #eventrates = sorted(generate_eventrates(eventskew,num_eventtypes))
     eventrates =  generate_eventrates(eventskew,num_eventtypes)
     

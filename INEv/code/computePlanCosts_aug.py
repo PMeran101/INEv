@@ -57,7 +57,7 @@ def main():
     #     
     # if len(sys.argv) > 2:
     #     noFilter = int(sys.argv[2])
-        
+    print(filename)
     ccosts = NEWcomputeCentralCosts(wl)
     #print("central costs : " + str(ccosts))
     centralHopLatency = max(allPairs[ccosts[1]])
@@ -86,7 +86,7 @@ def main():
     unfolded = mycombi
     # print(unfolded)
     # print(projFilterDict.keys())
-    sharedDict = getSharedMSinput(unfolded, projFilterDict)    
+    # sharedDict = getSharedMSinput(unfolded, projFilterDict)    
     dependencies = compute_dependencies(unfolded)
     processingOrder = sorted(compute_dependencies(unfolded).keys(), key = lambda x : dependencies[x] ) # unfolded enthält kombi   
     costs = 0
@@ -155,9 +155,10 @@ def main():
     print("Transmission Ratio: " + str(mycosts))
     print("INEv Depth: " + str(float(max(list(dependencies.values()))+1)/2))
     
+    ID = int(np.random.uniform(0,10000000))
     
-    
-    
+    with open('EvaluationPlan',  'wb') as EvaluationPlan_file:
+        pickle.dump([myPlan, ID, MSPlacements], EvaluationPlan_file)
     
     totaltime = str(round(time.time() - start_time, 2))
 
@@ -182,8 +183,8 @@ def main():
    
     hoplatency = 0    
     totalLatencyRatio = 0
-    myResult = [ID, mycosts,  Filters, networkParams[3], networkParams[0], networkParams[2], len(wl), combigenParams[3], selectivityParams[0], selectivityParams[1], combigenParams[1], longestPath, totaltime, hoplatency, float(max(list(dependencies.values()))/2), totalLatencyRatio, ccosts[0], lowerBound / ccosts[0], networkParams[1], number_parents]
-    schema = ["ID", "TransmissionRatio", "FilterUsed", "Nodes", "EventSkew", "EventNodeRatio", "WorkloadSize", "NumberProjections", "MinimalSelectivity", "MedianSelectivity","CombigenComputationTime", "Efficiency", "PlacementComputationTime", "HopCount", "Depth", "ProcessingLatencyRatio", "CentralTransmission", "LowerBound", "EventTypes", "Max_parents"] 
+    myResult = [ID, mycosts, ccosts, costs,Filters, networkParams[3], networkParams[0], networkParams[2], len(wl), combigenParams[3], selectivityParams[0], selectivityParams[1], combigenParams[1], longestPath, totaltime, hoplatency, float(max(list(dependencies.values()))/2), totalLatencyRatio, ccosts[0], lowerBound / ccosts[0], networkParams[1]]
+    schema = ["ID", "TransmissionRatio", "Transmission","INEvTransmission","FilterUsed", "Nodes", "EventSkew", "EventNodeRatio", "WorkloadSize", "NumberProjections", "MinimalSelectivity", "MedianSelectivity","CombigenComputationTime", "Efficiency", "PlacementComputationTime", "HopCount", "Depth", "ProcessingLatencyRatio", "CentralTransmission", "LowerBound", "EventTypes"] 
     
  
     new = False
@@ -198,9 +199,7 @@ def main():
            writer.writerow(schema)              
        writer.writerow(myResult)
       
-    with open('EvaluationPlan',  'wb') as EvaluationPlan_file:
-        pickle.dump([myPlan, ID, MSPlacements], EvaluationPlan_file)
-    
+
     with open('CentralEvaluationPlan',  'wb') as CentralEvaluationPlan_file:
         pickle.dump([ccosts[1],ccosts[3], wl], CentralEvaluationPlan_file)
     

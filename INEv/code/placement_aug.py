@@ -8,7 +8,7 @@ Created on Tue Aug 10 13:16:11 2021
 import multiprocessing
 from processCombination_aug import *
 from functools import partial
-
+from allPairs import find_shortest_path_or_ancestor
 
 def computeMSplacementCosts(projection, combination, partType, sharedDict, noFilter):
     costs = 0
@@ -349,6 +349,8 @@ def getDestinationsUpstream(projection):
         return  range(len(allPairs))      
         
 def ComputeSingleSinkPlacement(projection, combination, noFilter):
+    from allPairs import create_routing_dict
+    routingDict = create_routing_dict()
     costs = np.inf
     node = 0
     Filters  = []    
@@ -369,12 +371,34 @@ def ComputeSingleSinkPlacement(projection, combination, noFilter):
     myProjection = Projection(projection, {}, [], [], Filters) #!
     
     #goodDestinations = getDestinationsUpstream(projection) # consider only placement at upstream projections in cas of ms placements
-    goodDestinations = [x for x in range(len(allPairs))]
+    # goodDestinations = [x for x in range(len(allPairs))]
     #print(list(map(lambda x: str(x), combination)))
-    for destination in network.keys(): 
-        mycosts = 0       
+    "TODO not for all nodes only non-leaf nodes"
+    # Extract only the keys (nodes) with an empty list of connections
+    non_leaf = [node for node, neighbors in network.items() if not neighbors]
+    
+    for destination in non_leaf:
+        skip_destination = False  # Flag to determine if we should skip this destination
         for eventtype in combination:
-                
+            for etb in IndexEventNodes[eventtype]:
+                possibleSources = getNodes(etb)
+                for source in possibleSources:
+                    # Use the routing_dict to get the common ancestor
+                    common_ancestor = routingDict[destination][source]['common_ancestor']
+                    if common_ancestor != destination:
+                        # print(f"Skipping destination {destination} for source {source} (Common ancestor: {common_ancestor})")
+                        skip_destination = True
+                        break
+                if skip_destination:
+                    break  # Break out of the etb loop
+            if skip_destination:
+                break  # Break out of the eventtype loop
+        if skip_destination:
+            continue  # Move on to the next destination without computing costs
+        
+        mycosts = 0
+        for eventtype in combination:
+
                 for etb in IndexEventNodes[eventtype]: #check for all sources #here iterated over length of IndesEventNodes to get all sources for etb Instances
                         
                         possibleSources = getNodes(etb)
@@ -382,17 +406,21 @@ def ComputeSingleSinkPlacement(projection, combination, noFilter):
                         for source in possibleSources:
                             if allPairs[destination][source] < allPairs[destination][mySource]:                               
                                    mySource  = source
+                        
+                        #print(hops)
                         if eventtype in projFilterDict.keys() and  getMaximalFilter(projFilterDict, eventtype, noFilter): #case filter 
                             mycosts +=  allPairs[destination][mySource] * getDecomposedTotal(getMaximalFilter(projFilterDict, eventtype, noFilter), eventtype)                    
                             if len(IndexEventNodes[eventtype]) > 1 : # filtered projection has ms placement
                                 partType = returnPartitioning(eventtype, mycombi[eventtype])[0]                     
                                 mycosts -= allPairs[destination][mySource] * rates[partType] * singleSelectivities[getKeySingleSelect(partType, eventtype)] * len(IndexEventNodes[eventtype])
-                                mycosts += allPairs[destination][mySource] * rates[partType] * singleSelectivities[getKeySingleSelect(partType, eventtype)] 
+                                mycosts += allPairs[destination][mySource] * rates[partType] * singleSelectivities[getKeySingleSelect(partType, eventtype)]
                         elif eventtype in rates.keys():        # case primitive event
-                            mycosts += rates[eventtype] * allPairs[destination][mySource]  
+
+                            mycosts += (rates[eventtype] * allPairs[destination][mySource] )
                         else: # case projection                         
                              num = NumETBsByKey(etb, eventtype)
                              mycosts += projrates[eventtype][1] * allPairs[destination][mySource] * num 
+        print(mycosts)
         if mycosts < costs:
             costs = mycosts
             node = destination
@@ -408,7 +436,8 @@ def ComputeSingleSinkPlacement(projection, combination, noFilter):
                 for source in possibleSources:                    
                     if allPairs[node][source] < allPairs[node][mySource]:
                        mySource  = source     
-                shortestPath = nx.shortest_path(G, mySource, node, method='dijkstra') 
+
+                shortestPath = find_shortest_path_or_ancestor(G, mySource, node) 
               
                 if len(shortestPath) - 1 > longestPath:
                     longestPath = len(shortestPath) - 1                    
@@ -423,8 +452,9 @@ def ComputeSingleSinkPlacement(projection, combination, noFilter):
             myProjection.addInstances(eventtype, curInstances)     #!        
                         
     SiSManageETBs(projection, node)
-    
+    hops = len(find_shortest_path_or_ancestor(G, 0, node)) - 1 if len(find_shortest_path_or_ancestor(G, 0, node)) > 1 else 0
     myProjection.addSpawned([IndexEventNodes[projection][0]]) #!
+    costs += hops
     return costs, node, longestPath, myProjection, newInstances, Filters
 
 def costsAt(eventtype, node):

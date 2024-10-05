@@ -27,8 +27,8 @@ def main():
      
    if len(sys.argv) > 1: 
       outdegree = int(sys.argv[1])      
-   G = nx.Graph()
-   G = create_fog_graph(nw[0], G)
+#    G = nx.Graph()
+   G = create_fog_graph(nw[0])
 
  
    with open('graph', 'wb') as graph_file:

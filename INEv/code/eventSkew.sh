@@ -11,7 +11,7 @@ do
 		python3.8 write_config_single.py
 		python3.8 determine_all_single_selectivities.py
 		python3.8 generate_projections.py
-                python3.8 centralProcessingLatency.py
+		python3.8 centralProcessingLatency.py
 		python3.8 combigen.py
 		python3.8 estimateLatency.py
 		python3.8 computePlanCosts.py basicFilter #unconstrainedFilter

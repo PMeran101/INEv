@@ -153,7 +153,47 @@ def NEW_isPartitioning_customRates(element, combi, proj, myrates):
 
        else: 
            return False 
-       
+
+
+import networkx as nx
+
+def minimum_subgraph(G, nodes_list):
+    # Initialize an empty set to hold the edges in the minimum subgraph
+    subgraph_edges = set()
+    
+    # For each pair of nodes in the list, find the shortest path
+    for i, source in enumerate(nodes_list):
+        for target in nodes_list[i+1:]:
+            try:
+                # Get the shortest path as a list of nodes
+                path = nx.shortest_path(G, source=source, target=target, method='dijkstra')
+                
+                # Add all the edges in this path to the subgraph
+                subgraph_edges.update(zip(path[:-1], path[1:]))
+                
+            except nx.NetworkXNoPath:
+                # If no direct path exists, connect via node 0 (the cloud node)
+                try:
+                    # Get shortest path from source to node 0
+                    path_source_to_0 = nx.shortest_path(G, source=source, target=0, method='dijkstra')
+                    # Get shortest path from target to node 0
+                    path_target_to_0 = nx.shortest_path(G, source=target, target=0, method='dijkstra')
+                    
+                    # Combine paths via node 0 (source -> 0 -> target)
+                    # Add source to 0 edges
+                    subgraph_edges.update(zip(path_source_to_0[:-1], path_source_to_0[1:]))
+                    # Add target to 0 edges in reverse direction (node 0 -> target)
+                    subgraph_edges.update(zip(path_target_to_0[:-1], path_target_to_0[1:]))
+                    
+                except nx.NetworkXNoPath:
+                    # If there's no path to node 0, raise an exception or handle as needed
+                    print(f"Neither {source} nor {target} has a path to node 0, which shouldn't happen in your topology.")
+    
+    # Create the subgraph from the collected edges
+    subgraph = G.edge_subgraph(subgraph_edges).copy()
+    
+    return subgraph
+
 
 def NEW_isPartitioning(element, combi, proj):
        ''' returns true if element partitioning input of proj generated with combi '''
@@ -161,7 +201,7 @@ def NEW_isPartitioning(element, combi, proj):
        etbs = IndexEventNodes[element]
        myNodes = [getNodes(x)[0] for x in etbs]   
        if not element in MSTrees.keys():
-           myTree = steiner_tree(G, myNodes)
+           myTree = minimum_subgraph(G, myNodes)
            MSTrees[element] = myTree
        else:
            myTree =  MSTrees[element]

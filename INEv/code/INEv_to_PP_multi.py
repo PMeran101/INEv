@@ -13,14 +13,14 @@ singleSelectivities = {'E': 1.0, 'A': 1.0, 'B': 1.0, 'C': 1.0, 'D': 1.0, 'E|AE':
 query = SEQ(PrimEvent('E'),PrimEvent('A'), PrimEvent('B'), PrimEvent('C'),PrimEvent('D'))
 
 qwl = [query]
-#plan = {('B',''): [], ('A','B'):[('B','')], ('K','B'):[('B','')],('C','B'):[('A','B')], ('E','BK'):[('K','B')], ('EF','AB'):[('A','B')], ('D','C'):[('C','B')], ('K', 'C'):[('EF','AB'),('D','C')], }
+plan = {('B',''): [], ('A','B'):[('B','')], ('K','B'):[('B','')],('C','B'):[('A','B')], ('E','BK'):[('K','B')], ('EF','AB'):[('A','B')], ('D','C'):[('C','B')], ('K', 'C'):[('EF','AB'),('D','C')], }
 
 
 # for each key, traverse all predecessors and merge acquisition steps, to generate acquisition sets and projections to match from evaluator
 def get_projection(step):
     
     if step[1]:        
-        acquired = getAcquired(step, [])
+        # acquired = getAcquired(step, [])
         acquired = sorted(list(set(acquired)))
         myproj = settoproj(acquired, step[2][0])
     elif not step[1] and len(step[0]) == 1:
@@ -58,7 +58,7 @@ def get_pull_projection(step):
         for pull_event in step[1]:
             myEvents = sorted(acquisition_event + pull_event)
             pull_projections.append((settoproj(myEvents, step[2][0])),acquisition_event)
-    return pull_projection        
+    return pull_projections   
 
 # for each eventtype pulled, generate dict with pull_projection
 
@@ -71,5 +71,5 @@ def generate_pull_dict():
 
 #get combination of pull_projection which has as input the projection at the evaluator from last step, for two projections add merged projection
 
-def get_string(projection):
+# def get_string(projection):
     

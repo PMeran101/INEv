@@ -41,7 +41,7 @@ do
 
         # Initialize iteration counter
         a=0
-        while [ "$a" -lt 2 ]
+        while [ "$a" -lt 50 ]
         do
             echo "Starting iteration $a for nwsize=$j, k=$k at: $(date)"
             
