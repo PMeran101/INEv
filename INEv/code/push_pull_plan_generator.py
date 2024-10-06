@@ -403,6 +403,8 @@ class Initiate():
         for next_eventtype in next_eventtype_to_pull_key:
 
             single_selectivity_key =  str(next_eventtype) + '|' + str(sorted_all_eventtypes_key)
+            if single_selectivity_key not in self.single_selectivity_of_eventtype_within_projection:
+                continue
             if node in self.eventtype_to_sources_map[next_eventtype]:
                 number_of_sources = len(self.eventtype_to_sources_map[next_eventtype]) - 1
             else:

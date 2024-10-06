@@ -94,7 +94,7 @@ def processInstance(instance):
             routingTuples.append(traverseList(instance.sources, path))
         else:
             routingTuples.append(traverseListTuples(instance.sources,  path))         
-    print(instance, routingTuples)    # -> [entry of routingdict]   
+   # print(instance, routingTuples)    # -> [entry of routingdict]   
     for path in routingTuples:
         for mytuple in path:
             if not mytuple[0] in instanceDict.keys():
@@ -442,7 +442,7 @@ def generatePlan():
         #text += processingRules(node) + "\n"
         processingRules = processingRules_Diamonds(node)
         text += processingRules + "\n"
-        print(processingRules)
+        #print(processingRules)
     return text
 
 
