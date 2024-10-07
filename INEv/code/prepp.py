@@ -9,7 +9,7 @@ import random
 import copy
 
 import push_pull_plan_generator
-
+import pickle
 import sys
 
 import os
@@ -44,6 +44,9 @@ all_eventtype_output_rates = {}
 eventtype_to_sources_map = {}
 
 eventtype_to_nodes = {}
+
+with open('allPairs', 'rb') as aP:
+    allPairs = pickle.load(aP)
 
 
 class Query_fragment():
@@ -145,6 +148,7 @@ def determine_query_output_rate(query, multi_sink_placement_eventtype, is_single
     
     if not is_complex_eventtype(query):
         if query != multi_sink_placement_eventtype or is_single_sink_placement:
+            "returned rates * the number of sources"
             return all_eventtype_output_rates[query] * len(eventtype_to_sources_map[query])
         else:
             return all_eventtype_output_rates[query]
@@ -160,6 +164,7 @@ def determine_query_output_rate(query, multi_sink_placement_eventtype, is_single
 
     if first_operator == 'AND':
         operand_count = len(all_query_components)
+        "all rates for all eventtypes multiplied are multiplied again by number of events"
         return  operand_count * output_rate
 
 
@@ -562,7 +567,10 @@ if __name__ == "__main__":
     runs = args.runs
     plan_print = args.plan_print
     output_csv = args.output_file
-
+    
+    #NEW Variables for the new approach
+    query_node_dict = {}
+    node_prim_events_dict = {}
     # input_file_name = sys.argv[1]
     input_file = open(input_file_name+".txt", "r")
     single_sink_evaluation_node = []
@@ -594,7 +602,35 @@ if __name__ == "__main__":
 
             
         if CURRENT_SECTION == MUSE_GRAPH:
+            if "SELECT" in line and "ON" in line:
+                # Split the line at "SELECT" and "FROM"
+                select_split = line.split("SELECT")[1].split("FROM")
+                query = select_split[0].strip()  # Extract the query, it's the part between SELECT and FROM
+                
+                # Now split the line at "ON" to get the part with the node
+                on_split = line.split("ON")[1]
+                
+                # Extract the node(s), splitting by commas if there are multiple values
+                node_part = on_split.split("{")[1].split("}")[0].strip()
+                
+                # Convert the node part into a list of integers (comma-separated values)
+                nodes = [int(n.strip()) for n in node_part.split(",")]
+                
+                # Store the query and the node(s) list in the dictionary
+                query_node_dict[query] = nodes
+                
+                for node in nodes:
+                    if node not in node_prim_events_dict:
+                        node_prim_events_dict[node] = set()
+            
+                    # Get the primitive events for this query
+                    prim_events = determine_all_primitive_events_of_projection(query)
+                    # Store primitive events in the new dictionary with node as the key
+                    node_prim_events_dict[node].update(prim_events)
+
             all_event_types = []
+            
+            
             for query_to_process in queries_to_process:
                 for event_type in determine_all_primitive_events_of_projection(query_to_process):
                     all_event_types.append(event_type)
@@ -610,6 +646,10 @@ if __name__ == "__main__":
             total_sum = 0
             # non_leaf_nodes = [x for x in network if len(x) == 0]
             # print(non_leaf_nodes)
+            "Hier berechne ich immer die Summe der Rates pro Leaf Node"
+            "Der höchste Wert wird als Single Sink gewählt und das soll simulieren, Central Costs!"
+            "TODO hier muss entweder Node 0 immer als Single Sink gewählt werden. Oder wir nehmen den INEv Wert bzw. berechnen den Neu"
+            "Wir brauchen hier nur unser allPairs array aus INEv"
             for node_idx,nw in enumerate(network):
                 for event_type in nw:
                     current_value += all_eventtype_output_rates[event_type]
@@ -643,6 +683,33 @@ if __name__ == "__main__":
             extract_muse_graph_selectivities(line)
 
 
+    """Calculating Total Costs:
+    1. Iterate over my query_nod_dict dictionary. For each query, get the node(s) from the dictionary.
+    2. Iterate over the nodes and for each query get the PrimEvents using determine_all_primitive_events_of_projection.
+    3. creating a dict with the sink node as key and prim events as values.
+    
+    """
+    # Optional: Convert sets back to lists if you need lists as the final output
+    for node in node_prim_events_dict:
+        node_prim_events_dict[node] = sorted(list(node_prim_events_dict[node]))
+    total_cost = 0
+    
+    for node in node_prim_events_dict:
+        "Here we are in our Sinks"
+        for prim_event in node_prim_events_dict[node]:
+            "Iterate over all PrimEvents of the Sink"
+            "Calculate the Costs to send the PrimEvent to the Sink"
+            "Rate * Path"        
+            for source in eventtype_to_sources_map[prim_event]:
+                "Iterate over all Sources of the PrimEvent"
+                "Calculate the Costs to send the PrimEvent to the Sink"
+                "Rate * Path"
+                rate = all_eventtype_output_rates[prim_event]
+                cost = allPairs[node][source] * rate
+                total_cost += cost
+    
+    print(f"total central push cost is {total_cost}")
+    central_push_costs = total_cost
     reversed_query_network = []
     for i in range(len(query_network)-2,-1,-1):
         reversed_query_network.append(query_network[i])
@@ -715,8 +782,8 @@ if __name__ == "__main__":
     sampling_accumulated_exec_time_single_sink = 0
     sampling_worst_generated_costs_single_sink = 0
     sampling_best_generated_costs_single_sink = float('inf')
-    central_push_costs = total_sum - current_highest
-    print("Central push costs:", central_push_costs)
+    # central_push_costs = total_sum - current_highest
+    # print("Central push costs:", central_push_costs)
     
     greedy_costs_avg = []
     sampling_costs_avg = []

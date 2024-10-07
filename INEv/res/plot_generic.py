@@ -61,11 +61,7 @@ def main():
     plt.rcParams.update({'font.size':17})
     plt.xlabel(X_Column)
     plt.ylabel(Y_Column)
-<<<<<<< HEAD
-    plt.yscale("log")
-=======
     # plt.yscale("log")
->>>>>>> fog_cloud_topology
     
     
 

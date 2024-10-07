@@ -94,7 +94,7 @@ def processInstance(instance):
             routingTuples.append(traverseList(instance.sources, path))
         else:
             routingTuples.append(traverseListTuples(instance.sources,  path))         
-    print(instance, routingTuples)    # -> [entry of routingdict]   
+    #print(instance, routingTuples)    # -> [entry of routingdict]   
     for path in routingTuples:
         for mytuple in path:
             if not mytuple[0] in instanceDict.keys():
@@ -374,9 +374,9 @@ def processingRulesCentral_Diamonds(i):
             for query in wl:
                 myDiamonds = getMiniDiamonds(query, "", query.leafs(), "", 2000)
                 # for diamond in myDiamonds:
-                #     print(list(map(lambda x: str(x), diamond)))
-                #     print(list(map(lambda x: totalRate(x), diamond)))
-                #print(Diamond_costs(myDiamonds, "E"))    
+                #     #print(list(map(lambda x: str(x), diamond)))
+                #     #print(list(map(lambda x: totalRate(x), diamond)))
+                ##print(Diamond_costs(myDiamonds, "E"))    
                 #selRate = projrates[query][0] ** float((1/len(myDiamonds)))
                 for diamond in myDiamonds:
                     selRate = return_selectivity(settoproj(sum([x.leafs() if len(x)> 1 else [x] for x in diamond],[]), query).leafs())
@@ -442,7 +442,7 @@ def generatePlan():
         #text += processingRules(node) + "\n"
         processingRules = processingRules_Diamonds(node)
         text += processingRules + "\n"
-        print(processingRules)
+        #print(processingRules)
     return text
 
 
@@ -484,42 +484,42 @@ if filterUsed() or not filterUsed():
     f.write(generateCentralPlan()) 
     f.close()
 
-    # print(networkText())
-    # print("-----------")
-    # print("Randomized Rate-Based Primitive Event Generation")
-    # print("-----------")
-    # print(singleSelecText())
-    # print("-----------")
+    # #print(networkText())
+    # #print("-----------")
+    # #print("Randomized Rate-Based Primitive Event Generation")
+    # #print("-----------")
+    # #print(singleSelecText())
+    # #print("-----------")
     # for node in evaluationDict.keys():
-    #     print("~~")
-    #     print("node" + str(node))
-    #     print("--")
-    #     print(forwardingRule(node))
-    #     print("--")
-    #     print(processingRules(node))
+    #     #print("~~")
+    #     #print("node" + str(node))
+    #     #print("--")
+    #     #print(forwardingRule(node))
+    #     #print("--")
+    #     #print(processingRules(node))
         
 # def generateCentralPlan():
-#     print(networkText())
-#     print("-----------")
-#     print("Randomized Rate-Based Primitive Event Generation")
-#     print("-----------")
-#     print(singleSelecText())
-#     print("-----------")
+#     #print(networkText())
+#     #print("-----------")
+#     #print("Randomized Rate-Based Primitive Event Generation")
+#     #print("-----------")
+#     #print(singleSelecText())
+#     #print("-----------")
 #     myforwardingDict = adjustRoutingCentral(cdict,csource)
 #     for node in evaluationDict.keys():
-#         print("~~")
-#         print("node" + str(node))
-#         print("--")
-#         print(forwardingRuleCentral(node,myforwardingDict))
-#         print("--")
-#         print(processingRulesCentral(node))
+#         #print("~~")
+#         #print("node" + str(node))
+#         #print("--")
+#         #print(forwardingRuleCentral(node,myforwardingDict))
+#         #print("--")
+#         #print(processingRulesCentral(node))
 
 
 
-#print(forwardingDict)
-#print(generatePlan())
+##print(forwardingDict)
+##print(generatePlan())
 #generateCentralPlan()
-#print(generateCentralPlan())
+##print(generateCentralPlan())
 
 
 
