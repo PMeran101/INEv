@@ -26,7 +26,7 @@ do
 		python3 determine_all_single_selectivities.py
 		python3 generate_projections.py
 		python3 combigen.py
-		python3 computePlanCosts_aug.py lower+"$s"
+		python3 computePlanCosts_aug.py lower+"$s" $b
 		a=`expr $a + 1`
 		done
 done

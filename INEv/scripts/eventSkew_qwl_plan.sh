@@ -26,7 +26,7 @@ do
 			python3 determine_all_single_selectivities.py
 			python3 generate_projections.py
 			python3 combigen.py
-			python3 computePlanCosts_aug.py eventSkew_qwl+$k
+			python3 computePlanCosts_aug.py eventSkew_qwl+$k $b
 			python3 generateEvaluationPlan.py
 			a=`expr $a + 1`
 			done
