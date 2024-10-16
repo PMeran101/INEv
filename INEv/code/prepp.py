@@ -707,6 +707,13 @@ if __name__ == "__main__":
                 rate = all_eventtype_output_rates[prim_event]
                 cost = allPairs[node][source] * rate
                 total_cost += cost
+    filtered_dict = {k: v for k, v in query_node_dict.items() if v != [0]}
+    
+    for key,sinks in filtered_dict.items():
+        for sink in sinks:
+            cost = allPairs[0][sink]
+            total_cost += cost
+    
     
     print(f"total central push cost is {total_cost}")
     central_push_costs = total_cost
