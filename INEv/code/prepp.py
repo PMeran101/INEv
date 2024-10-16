@@ -566,7 +566,7 @@ if __name__ == "__main__":
     topk = args.topk
     runs = args.runs
     plan_print = args.plan_print
-    output_csv = args.output_file
+    output_csv = f"../res/{args.output_file}.csv"
     
     #NEW Variables for the new approach
     query_node_dict = {}
@@ -963,33 +963,44 @@ if __name__ == "__main__":
     print(factorial_costs_avg)
     print(exact_costs_avg)      
     import csv
-    # Open the existing CSV file and read its content
+    # Open the CSV file in read mode to get the existing rows and fieldnames
     with open(output_csv, mode='r', newline='') as file:
         reader = list(csv.DictReader(file))
-        fieldnames = reader[0].keys()  # Get existing column names
+        fieldnames = reader[0].keys() if reader else []  # Handle empty CSV case
 
     # Columns to append
-    new_columns = ["greedy_costs", "sampling_costs","factorial_costs","exact_costs"]  # Add your new column names here
+    new_columns = ["greedy_costs", "sampling_costs", "factorial_costs", "exact_costs"]  # New column names
 
-    # Check if new columns already exist
-    if all(col in fieldnames for col in new_columns):
-        # If the new columns already exist, just append the new data to the rows
-        updated_fieldnames = list(fieldnames)
-    else:
-        # If new columns don't exist, append them to the existing fieldnames
-        updated_fieldnames = list(fieldnames) + new_columns
-    # Open the CSV file for writing (with updated fieldnames)
+    # Update fieldnames only if new columns don't already exist
+    updated_fieldnames = list(fieldnames)
+    if not all(col in fieldnames for col in new_columns):
+        updated_fieldnames += [col for col in new_columns if col not in fieldnames]
+
+    # Modify the last row with new data
+    if reader:  # If the CSV is not empty
+        last_row = reader[-1]
+
+        # Add or update new data to the last row
+        last_row["greedy_costs"] = sum(greedy_costs_avg) / len(greedy_costs_avg)
+        last_row["sampling_costs"] = sum(sampling_costs_avg) / len(sampling_costs_avg)
+        last_row["factorial_costs"] = sum(factorial_costs_avg) / len(factorial_costs_avg)
+        last_row["exact_costs"] = sum(exact_costs_avg) / len(exact_costs_avg)
+
+        # Replace the last row with the updated one
+        reader[-1] = last_row
+
+    # Ensure all rows have the updated fieldnames (missing fields are set to empty string)
+    for row in reader:
+        for field in updated_fieldnames:
+            if field not in row:
+                row[field] = ''  # Add missing field with empty value
+
+    # Write back all the rows including the updated last row
     with open(output_csv, mode='w', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=updated_fieldnames)
 
-        # Write the updated headers (if needed)
+        # Write the headers once
         writer.writeheader()
 
-        # Write the updated rows with additional data
-        for row in reader[:-1]:
-            # Add new data to each row (Example values)
-            row["greedy_costs"] = sum(greedy_costs_avg)/len(greedy_costs_avg)
-            row["sampling_costs"] = sum(sampling_costs_avg)/len(sampling_costs_avg)
-            row["factorial_costs"] = sum(factorial_costs_avg)/len(factorial_costs_avg)
-            row["exact_costs"] = sum(exact_costs_avg)/len(exact_costs_avg)
-            writer.writerow(row)
+        # Write all rows including the updated last row
+        writer.writerows(reader)
