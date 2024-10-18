@@ -506,7 +506,7 @@ class Initiate():
         return combined_key
 
 
-    def determine_costs_for_projection_on_node(self, plan, projection_to_process, node):
+    def determine_costs_for_projection_on_node(self, plan, projection_to_process, node, node_received_eventtypes):
         push = True
         costs = 0
 
@@ -524,12 +524,14 @@ class Initiate():
                     number_of_sources = self.determine_correct_number_of_sources(node, eventtype)
                     for source in self.eventtype_to_sources_map[eventtype]:
                         key = str(source) +"~"+ str(node)+ "~" + str(eventtype)
-                        if key not in self.source_sent_this_type_to_node and source is not node:
-                            costs += self.outputrate_map[eventtype] * allPairs[node][source]#number_of_sources
+                        if key not in self.source_sent_this_type_to_node and source is not node and eventtype not in node_received_eventtypes[node]:
+                            costs += self.outputrate_map[eventtype] * allPairs[node][source] #number_of_sources
+                            node_received_eventtypes[node].append(eventtype)
                 else:
                     lowest_costs_for_this_step, used_eventtype = self.determine_optimal_pull_strategy_for_step_in_plan(available_predicates, eventtype, node)
-
-                    costs += lowest_costs_for_this_step
+                    if eventtype not in node_received_eventtypes[node]:
+                        costs += lowest_costs_for_this_step
+                        node_received_eventtypes[node].append(eventtype)
                     for used_type in used_eventtype:
                         used_eventtypes.append(used_type)
 

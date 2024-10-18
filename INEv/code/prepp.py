@@ -292,18 +292,23 @@ def determine_randomized_distribution_push_pull_costs(queries, eventtype_combina
     total_factorial_costs = 0
     total_sampling_costs = 0
     
-    push_pull_plan_generator_greedy = push_pull_plan_generator.Initiate(eventtype_pair_to_selectivity, eventtype_to_sources_map, all_eventtype_output_rates, eventtypes_single_selectivities, single_selectivity_of_eventtype_within_projection, eventtype_combinations, highest_primitive_eventtype_to_be_processed)
+#    push_pull_plan_generator_greedy = push_pull_plan_generator.Initiate(eventtype_pair_to_selectivity, eventtype_to_sources_map, all_eventtype_output_rates, eventtypes_single_selectivities, single_selectivity_of_eventtype_within_projection, eventtype_combinations, highest_primitive_eventtype_to_be_processed)
     
     push_pull_plan_generator_exact = push_pull_plan_generator.Initiate(eventtype_pair_to_selectivity, eventtype_to_sources_map, all_eventtype_output_rates, eventtypes_single_selectivities, single_selectivity_of_eventtype_within_projection, eventtype_combinations, highest_primitive_eventtype_to_be_processed)
     
-    push_pull_plan_generator_factorial = push_pull_plan_generator.Initiate(eventtype_pair_to_selectivity, eventtype_to_sources_map, all_eventtype_output_rates, eventtypes_single_selectivities, single_selectivity_of_eventtype_within_projection, eventtype_combinations, highest_primitive_eventtype_to_be_processed)
+    # push_pull_plan_generator_factorial = push_pull_plan_generator.Initiate(eventtype_pair_to_selectivity, eventtype_to_sources_map, all_eventtype_output_rates, eventtypes_single_selectivities, single_selectivity_of_eventtype_within_projection, eventtype_combinations, highest_primitive_eventtype_to_be_processed)
     
-    push_pull_plan_generator_sampling = push_pull_plan_generator.Initiate(eventtype_pair_to_selectivity, eventtype_to_sources_map, all_eventtype_output_rates, eventtypes_single_selectivities, single_selectivity_of_eventtype_within_projection, eventtype_combinations, highest_primitive_eventtype_to_be_processed)
+    # push_pull_plan_generator_sampling = push_pull_plan_generator.Initiate(eventtype_pair_to_selectivity, eventtype_to_sources_map, all_eventtype_output_rates, eventtypes_single_selectivities, single_selectivity_of_eventtype_within_projection, eventtype_combinations, highest_primitive_eventtype_to_be_processed)
 
     greedy_exec_times = []
     exact_exec_times = []
     factorial_exec_times = []
     sampling_exec_times = []
+    already_received_eventtypes = {}
+    for query in queries:
+        for current_node in query.node_placement:
+            already_received_eventtypes[current_node] = []
+        
     for query in queries:
         if query.query == '':
             continue
@@ -313,59 +318,6 @@ def determine_randomized_distribution_push_pull_costs(queries, eventtype_combina
         for current_node in query.node_placement:
             #print("~~~~~~~~")
             query.primitive_operators = copy.deepcopy(old_copy)
-            if algorithm == "g":
-                start_greedy = timer()
-                greedy_single_step_push_pull_plan_for_a_projection, used_pull_eventtypes = push_pull_plan_generator_greedy.greedy_single_step_plan_generator(query, current_node)
-                
-                
-                end_greedy = timer()
-                greedy_exec_times.append(end_greedy-start_greedy)
-
-                push_pull_plan_generator_exact.source_sent_this_type_to_node =  copy.deepcopy(push_pull_plan_generator_greedy.source_sent_this_type_to_node)
-                query.primitive_operators = copy.deepcopy(old_copy)
-                greedy_costs, used_eventtypes_to_pull = push_pull_plan_generator_greedy.determine_costs_for_greedy_plans_projection_on_node(greedy_single_step_push_pull_plan_for_a_projection, used_pull_eventtypes, query, current_node)
-                if plan_print == "t":
-                    if len(used_eventtypes_to_pull) == 1:
-                        print("greedy_single_step_push_pull_plan_for_a_projection:", used_eventtypes_to_pull)
-                        print("used_eventtypes_to_pull:", used_eventtypes_to_pull)
-                    else:
-                        print("greedy_single_step_push_pull_plan_for_a_projection:", greedy_single_step_push_pull_plan_for_a_projection)
-                        print("used_eventtypes_to_pull:", used_eventtypes_to_pull)
-                total_greedy_costs += greedy_costs
-
-            query.primitive_operators = copy.deepcopy(old_copy)
-            sample_size = int(samples)
-
-            if algorithm == "s":
-                start_sampling = timer()
-                best_approximated_sampling_push_pull_plan_for_a_projection = push_pull_plan_generator_sampling.determine_approximated_factorial_sampling_push_pull_plan(query, top_k, sample_size, current_node)
-                
-                end_sampling = timer()
-                sampling_exec_times.append(end_sampling-start_sampling)
-                
-                query.primitive_operators = copy.deepcopy(old_copy)
-                sampling_costs, used_eventtypes_to_pull = push_pull_plan_generator_sampling.determine_costs_for_projection_on_node(best_approximated_sampling_push_pull_plan_for_a_projection, query, current_node)
-                if plan_print == "t":
-                    print("best_sampling_prepp_plan_for_a_projection:", best_approximated_sampling_push_pull_plan_for_a_projection)
-                    print("used_eventtypes_to_pull:", used_eventtypes_to_pull)
-                total_sampling_costs += sampling_costs
-            query.primitive_operators = copy.deepcopy(old_copy)
-
-            if algorithm == "f":
-                start_factorial = timer()
-                best_factorial_push_pull_plan_for_a_projection = push_pull_plan_generator_factorial.determine_approximated_factorial_push_pull_plan(query, top_k, current_node)
-                
-                end_factorial = timer()
-                factorial_exec_times.append(end_factorial-start_factorial)
-
-                query.primitive_operators = copy.deepcopy(old_copy)
-                factorial_costs, used_eventtypes_to_pull = push_pull_plan_generator_factorial.determine_costs_for_projection_on_node(best_factorial_push_pull_plan_for_a_projection, query, current_node)
-                if plan_print == "t":
-                    print("best_factorial_push_pull_plan_for_a_projection:", best_factorial_push_pull_plan_for_a_projection)
-                    print("used_eventtypes_to_pull:", used_eventtypes_to_pull)
-                total_factorial_costs += factorial_costs
-            query.primitive_operators = copy.deepcopy(old_copy)
-
 
             if algorithm == "e":
                 start_exact = timer()
@@ -374,7 +326,8 @@ def determine_randomized_distribution_push_pull_costs(queries, eventtype_combina
                 end_exact = timer()
                 exact_exec_times.append(end_exact-start_exact)
                 query.primitive_operators = copy.deepcopy(old_copy)
-                exact_costs, used_eventtypes_to_pull = push_pull_plan_generator_exact.determine_costs_for_projection_on_node(exact_push_pull_plan_for_a_projection, query, current_node)
+
+                exact_costs, used_eventtypes_to_pull = push_pull_plan_generator_exact.determine_costs_for_projection_on_node(exact_push_pull_plan_for_a_projection, query, current_node, already_received_eventtypes)
                 if plan_print == "t":
                     print("exact_push_pull_plan_for_a_projection:", exact_push_pull_plan_for_a_projection)
                     print("used_eventtypes_to_pull:", used_eventtypes_to_pull)

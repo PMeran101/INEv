@@ -29,8 +29,10 @@ cd ../code
               python3 determine_all_single_selectivities.py
               python3 generate_projections.py
               python3 combigen.py
-              python3 computePlanCosts_aug.py "QWL$k" $b
-              
+              python3 computePlanCosts_aug.py "QWL_PrePP_$k" $b
+                python3 generateEvaluationPlan.py
+                python3 generateEvalPlan.py
+                python prepp.py --input_file plans/curr_MS --method ppmuse --algorithm e --samples 0  --topk 0  --runs 1 --plan_print f --output_file "QWL_PrePP_$k"
               echo "  Completed inner loop iteration $a with k=$k at: $(date)"
               a=$((a + 1))
               sleep 1
