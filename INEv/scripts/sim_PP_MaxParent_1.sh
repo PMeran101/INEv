@@ -30,7 +30,7 @@ cd ../code
             python3 computePlanCosts_aug.py "PP_MaxParents_1_Query_$k" 1
             python3 generateEvaluationPlan.py
             python3 generateEvalPlan.py
-            python prepp.py --input_file plans/curr_MS --method ppmuse --algorithm e --samples 0  --topk 0  --runs 1 --plan_print f --output_file "PP_MaxParents_1_Query_$k"
+            python3 prepp.py --input_file plans/curr_MS --method ppmuse --algorithm e --samples 0  --topk 0  --runs 1 --plan_print f --output_file "PP_MaxParents_1_Query_$k"
             
             echo "  Completed inner loop iteration $a with k=$k at: $(date)"
               a=$((a + 1))
