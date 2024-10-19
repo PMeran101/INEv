@@ -798,7 +798,7 @@ if __name__ == "__main__":
         fieldnames = reader[0].keys() if reader else []  # Handle empty CSV case
 
     # Columns to append
-    new_columns = ["greedy_costs", "sampling_costs", "factorial_costs", "exact_costs"]  # New column names
+    new_columns = [ "exact_costs"]  # New column names
 
     # Update fieldnames only if new columns don't already exist
     updated_fieldnames = list(fieldnames)
@@ -810,9 +810,6 @@ if __name__ == "__main__":
         last_row = reader[-1]
 
         # Add or update new data to the last row
-        last_row["greedy_costs"] = sum(greedy_costs_avg) / len(greedy_costs_avg)
-        last_row["sampling_costs"] = sum(sampling_costs_avg) / len(sampling_costs_avg)
-        last_row["factorial_costs"] = sum(factorial_costs_avg) / len(factorial_costs_avg)
         last_row["exact_costs"] = sum(exact_costs_avg) / len(exact_costs_avg)
 
         # Replace the last row with the updated one
