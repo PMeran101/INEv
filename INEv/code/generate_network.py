@@ -147,7 +147,7 @@ def main():
         # Parse command-line arguments
     args = parse_arguments()
 
-    # Now you can access the parsed arguments from the dictionary
+    # Getting access to the Arguments
     nwsize = args['nwsize']
     node_event_ratio = args['node_event_ratio']
     num_eventtypes = args['num_eventtypes']

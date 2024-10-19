@@ -4,145 +4,409 @@ Computational Power: inf
 Memory: inf
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Parents: None
-Child: [1, 2]
+Child: [1, 2, 3, 4, 5, 6, 7]
 Siblings: None
 
 Node 1 Node 1
-Computational Power: 3
-Memory: 3
-Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 1000, 1000, 728, 0, 0, 417, 400, 0, 308, 0, 0, 0, 207, 217]
 Parents: [0]
-Child: [3, 4, 5]
+Child: None
 Siblings: None
 
 Node 2 Node 2
-Computational Power: 3
-Memory: 3
+Computational Power: 5
+Memory: 5
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Parents: [0]
-Child: [3, 4, 5]
+Child: [8, 11, 12]
 Siblings: None
 
 Node 3 Node 3
-Computational Power: 2
-Memory: 2
-Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parents: [2, 1]
-Child: [6, 7, 8, 9, 13, 14]
+Computational Power: 5
+Memory: 5
+Eventrates: [1000, 0, 0, 0, 0, 503, 417, 400, 336, 0, 284, 0, 0, 0, 0]
+Parents: [0]
+Child: None
 Siblings: None
 
 Node 4 Node 4
-Computational Power: 2
-Memory: 2
+Computational Power: 5
+Memory: 5
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parents: [1, 2]
-Child: [6, 7, 8, 10, 11, 12]
+Parents: [0]
+Child: [9, 15]
 Siblings: None
 
 Node 5 Node 5
-Computational Power: 2
-Memory: 2
+Computational Power: 5
+Memory: 5
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parents: [1, 2]
-Child: [6, 7, 8, 10, 11, 12, 14]
+Parents: [0]
+Child: [10, 14]
 Siblings: None
 
 Node 6 Node 6
-Computational Power: 1
-Memory: 1
-Eventrates: [0, 0, 999, 0, 0, 0, 0, 0, 232, 195, 175, 0, 0, 0, 0]
-Parents: [4, 5, 3]
+Computational Power: 5
+Memory: 5
+Eventrates: [1000, 0, 1000, 728, 623, 0, 0, 400, 336, 308, 0, 0, 0, 0, 217]
+Parents: [0]
 Child: None
 Siblings: None
 
 Node 7 Node 7
-Computational Power: 1
-Memory: 1
-Eventrates: [1000, 1000, 999, 0, 494, 0, 0, 0, 232, 0, 0, 158, 133, 0, 99]
-Parents: [5, 4, 3]
-Child: None
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [13]
 Siblings: None
 
 Node 8 Node 8
-Computational Power: 1
-Memory: 1
-Eventrates: [1000, 0, 0, 0, 494, 367, 0, 0, 0, 195, 0, 0, 133, 0, 99]
-Parents: [5, 3, 4]
-Child: None
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [2]
+Child: [23]
 Siblings: None
 
 Node 9 Node 9
-Computational Power: 1
-Memory: 1
-Eventrates: [1000, 1000, 999, 0, 0, 0, 336, 0, 0, 195, 0, 158, 133, 129, 0]
-Parents: [3]
-Child: None
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [4]
+Child: [19]
 Siblings: None
 
 Node 10 Node 10
-Computational Power: 1
-Memory: 1
-Eventrates: [0, 1000, 0, 689, 0, 367, 0, 257, 232, 0, 0, 0, 0, 129, 99]
-Parents: [4, 5]
-Child: None
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [5]
+Child: [20, 22]
 Siblings: None
 
 Node 11 Node 11
-Computational Power: 1
-Memory: 1
-Eventrates: [1000, 1000, 999, 689, 494, 367, 336, 0, 0, 195, 0, 158, 0, 129, 0]
-Parents: [5, 4]
-Child: None
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [2]
+Child: [21]
 Siblings: None
 
 Node 12 Node 12
-Computational Power: 1
-Memory: 1
-Eventrates: [1000, 1000, 0, 0, 494, 367, 0, 0, 0, 195, 0, 0, 0, 0, 99]
-Parents: [5, 4]
-Child: None
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [2]
+Child: [16, 18]
 Siblings: None
 
 Node 13 Node 13
-Computational Power: 1
-Memory: 1
-Eventrates: [0, 1000, 0, 689, 0, 0, 0, 257, 0, 0, 175, 158, 133, 129, 0]
-Parents: [3]
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 1000, 1000, 728, 0, 0, 417, 0, 0, 308, 284, 0, 241, 207, 217]
+Parents: [7]
 Child: None
 Siblings: None
 
 Node 14 Node 14
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [5]
+Child: [17]
+Siblings: None
+
+Node 15 Node 15
+Computational Power: 4
+Memory: 4
+Eventrates: [1000, 1000, 0, 0, 623, 503, 417, 0, 0, 308, 0, 0, 0, 0, 0]
+Parents: [4]
+Child: None
+Siblings: None
+
+Node 16 Node 16
+Computational Power: 3
+Memory: 3
+Eventrates: [1000, 0, 0, 728, 0, 0, 0, 400, 0, 0, 284, 242, 0, 0, 217]
+Parents: [12]
+Child: None
+Siblings: None
+
+Node 17 Node 17
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [14]
+Child: [25]
+Siblings: None
+
+Node 18 Node 18
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [12]
+Child: [24, 31]
+Siblings: None
+
+Node 19 Node 19
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [9]
+Child: [30]
+Siblings: None
+
+Node 20 Node 20
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [10]
+Child: [28]
+Siblings: None
+
+Node 21 Node 21
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 1000, 1000, 728, 0, 0, 0, 0, 0, 0, 0, 242, 241, 207, 217]
+Parents: [11]
+Child: None
+Siblings: None
+
+Node 22 Node 22
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [10]
+Child: [26, 27, 29]
+Siblings: None
+
+Node 23 Node 23
+Computational Power: 3
+Memory: 3
+Eventrates: [1000, 1000, 0, 728, 0, 0, 0, 0, 336, 0, 284, 0, 241, 0, 0]
+Parents: [8]
+Child: None
+Siblings: None
+
+Node 24 Node 24
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [18]
+Child: [45, 47]
+Siblings: None
+
+Node 25 Node 25
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [17]
+Child: [36, 46, 49]
+Siblings: None
+
+Node 26 Node 26
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [22]
+Child: [34, 40, 41]
+Siblings: None
+
+Node 27 Node 27
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [22]
+Child: [37]
+Siblings: None
+
+Node 28 Node 28
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [20]
+Child: [32, 33, 39, 43, 44]
+Siblings: None
+
+Node 29 Node 29
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [22]
+Child: [48]
+Siblings: None
+
+Node 30 Node 30
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [19]
+Child: [35]
+Siblings: None
+
+Node 31 Node 31
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [18]
+Child: [38, 42]
+Siblings: None
+
+Node 32 Node 32
 Computational Power: 1
 Memory: 1
-Eventrates: [1000, 1000, 999, 689, 0, 367, 336, 0, 0, 0, 175, 158, 133, 129, 99]
-Parents: [5, 3]
+Eventrates: [1000, 0, 1000, 728, 623, 0, 417, 400, 336, 308, 284, 242, 0, 207, 0]
+Parents: [28]
+Child: None
+Siblings: None
+
+Node 33 Node 33
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 623, 0, 417, 0, 336, 0, 0, 0, 0, 0, 0]
+Parents: [28]
+Child: None
+Siblings: None
+
+Node 34 Node 34
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 0, 0, 0, 417, 0, 336, 0, 0, 242, 0, 0, 0]
+Parents: [26]
+Child: None
+Siblings: None
+
+Node 35 Node 35
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 623, 0, 0, 0, 0, 0, 0, 242, 0, 207, 0]
+Parents: [30]
+Child: None
+Siblings: None
+
+Node 36 Node 36
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 728, 0, 0, 0, 0, 0, 308, 0, 242, 0, 207, 217]
+Parents: [25]
+Child: None
+Siblings: None
+
+Node 37 Node 37
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 728, 0, 503, 417, 0, 0, 0, 284, 0, 0, 207, 0]
+Parents: [27]
+Child: None
+Siblings: None
+
+Node 38 Node 38
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 728, 0, 0, 0, 400, 0, 0, 0, 0, 0, 0, 217]
+Parents: [31]
+Child: None
+Siblings: None
+
+Node 39 Node 39
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 728, 623, 0, 417, 0, 336, 0, 0, 242, 241, 0, 217]
+Parents: [28]
+Child: None
+Siblings: None
+
+Node 40 Node 40
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 728, 0, 0, 0, 400, 336, 0, 0, 0, 241, 0, 0]
+Parents: [26]
+Child: None
+Siblings: None
+
+Node 41 Node 41
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 0, 0, 0, 336, 0, 0, 0, 0, 207, 217]
+Parents: [26]
+Child: None
+Siblings: None
+
+Node 42 Node 42
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 0, 0, 503, 0, 0, 0, 0, 0, 242, 241, 0, 0]
+Parents: [31]
+Child: None
+Siblings: None
+
+Node 43 Node 43
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 728, 623, 0, 0, 0, 0, 308, 0, 0, 241, 207, 217]
+Parents: [28]
+Child: None
+Siblings: None
+
+Node 44 Node 44
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 728, 623, 0, 417, 400, 0, 0, 284, 242, 0, 207, 217]
+Parents: [28]
+Child: None
+Siblings: None
+
+Node 45 Node 45
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 0, 0, 503, 417, 400, 0, 308, 0, 0, 0, 207, 0]
+Parents: [24]
+Child: None
+Siblings: None
+
+Node 46 Node 46
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 728, 623, 503, 0, 400, 336, 0, 284, 0, 0, 207, 217]
+Parents: [25]
+Child: None
+Siblings: None
+
+Node 47 Node 47
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 0, 503, 417, 0, 0, 0, 0, 0, 0, 207, 217]
+Parents: [24]
+Child: None
+Siblings: None
+
+Node 48 Node 48
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 623, 0, 0, 400, 0, 308, 284, 242, 241, 207, 217]
+Parents: [29]
+Child: None
+Siblings: None
+
+Node 49 Node 49
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 728, 623, 503, 0, 400, 0, 0, 284, 0, 0, 0, 0]
+Parents: [25]
 Child: None
 Siblings: None
 
 
 selectivities
-{'JG': 0.0915083518235392, 'GJ': 0.0915083518235392, 'ND': 0.07775192187896518, 'DN': 0.07775192187896518, 'JI': 0.02827968089342943, 'IJ': 0.02827968089342943, 'LD': 1, 'DL': 1, 'BH': 1, 'HB': 1, 'HF': 1, 'FH': 1, 'BE': 0.0417428773998347, 'EB': 0.0417428773998347, 'KO': 0.05468199922764822, 'OK': 0.05468199922764822, 'GH': 1, 'HG': 1, 'AF': 0.0607857374432536, 'FA': 0.0607857374432536, 'OF': 1, 'FO': 1, 'IF': 0.09048554316238576, 'FI': 0.09048554316238576, 'BG': 1, 'GB': 1, 'JE': 0.08737233889530108, 'EJ': 0.08737233889530108, 'KF': 0.05265816220739842, 'FK': 0.05265816220739842, 'ID': 0.04532210568800614, 'DI': 0.04532210568800614, 'OI': 0.056546529145893885, 'IO': 0.056546529145893885, 'MO': 0.09924230450361123, 'OM': 0.09924230450361123, 'BI': 0.048781934846959106, 'IB': 0.048781934846959106, 'GC': 1, 'CG': 1, 'BN': 0.029477604931750667, 'NB': 0.029477604931750667, 'JD': 0.0471631661004756, 'DJ': 0.0471631661004756, 'LK': 0.0781875882303978, 'KL': 0.0781875882303978, 'NF': 0.09045476079331942, 'FN': 0.09045476079331942, 'CE': 1, 'EC': 1, 'BA': 1, 'AB': 1, 'AC': 1, 'CA': 1, 'GA': 0.010489091693990218, 'AG': 0.010489091693990218, 'KE': 1, 'EK': 1, 'DF': 0.026763286391732546, 'FD': 0.026763286391732546, 'ML': 1, 'LM': 1, 'JK': 1, 'KJ': 1, 'NE': 0.012018055075705539, 'EN': 0.012018055075705539, 'JC': 0.029953201050266248, 'CJ': 0.029953201050266248, 'LF': 1, 'FL': 1, 'JM': 0.035469544199509026, 'MJ': 0.035469544199509026, 'NO': 1, 'ON': 1, 'NH': 0.05936050860537604, 'HN': 0.05936050860537604, 'JH': 1, 'HJ': 1, 'OE': 0.08631270427601667, 'EO': 0.08631270427601667, 'ME': 0.03799902325668583, 'EM': 0.03799902325668583, 'LI': 0.06447256441667246, 'IL': 0.06447256441667246, 'GE': 1, 'EG': 1, 'AI': 0.062224903825062974, 'IA': 0.062224903825062974, 'KC': 0.08679779754226132, 'CK': 0.08679779754226132, 'GF': 0.06286711326490926, 'FG': 0.06286711326490926, 'HE': 1, 'EH': 1, 'LN': 1, 'NL': 1, 'JB': 0.04705929663078433, 'BJ': 0.04705929663078433, 'LO': 0.07691621166877168, 'OL': 0.07691621166877168, 'BL': 0.08593907640703549, 'LB': 0.08593907640703549, 'KI': 0.08501903132763186, 'IK': 0.08501903132763186, 'BC': 0.09314281590088362, 'CB': 0.09314281590088362, 'FE': 1, 'EF': 1, 'LE': 0.03312858701409502, 'EL': 0.03312858701409502, 'DC': 0.01778022231673565, 'CD': 0.01778022231673565, 'LC': 0.02943696663878198, 'CL': 0.02943696663878198, 'DH': 0.08415396594145828, 'HD': 0.08415396594145828, 'GM': 1, 'MG': 1, 'MC': 1, 'CM': 1, 'OC': 1, 'CO': 1, 'JL': 0.09070378537351052, 'LJ': 0.09070378537351052, 'KN': 0.035448371709706605, 'NK': 0.035448371709706605, 'IH': 0.06601744185612307, 'HI': 0.06601744185612307, 'MN': 1, 'NM': 1, 'GN': 1, 'NG': 1, 'BM': 0.09070669076965832, 'MB': 0.09070669076965832, 'BF': 0.08976959626068436, 'FB': 0.08976959626068436, 'JN': 0.08250441970952882, 'NJ': 0.08250441970952882, 'KH': 0.019770984472174416, 'HK': 0.019770984472174416, 'GK': 1, 'KG': 1, 'AH': 0.04268423154885706, 'HA': 0.04268423154885706, 'BO': 0.015484578311401431, 'OB': 0.015484578311401431, 'AL': 1, 'LA': 1, 'AE': 0.01617498092521949, 'EA': 0.01617498092521949, 'AO': 0.08286333479635925, 'OA': 0.08286333479635925, 'OH': 0.01393444068533152, 'HO': 0.01393444068533152, 'NI': 0.04409623426689532, 'IN': 0.04409623426689532, 'OD': 0.0781829356261308, 'DO': 0.0781829356261308, 'MI': 0.09248264261436599, 'IM': 0.09248264261436599, 'GD': 0.058484825187263584, 'DG': 0.058484825187263584, 'GL': 1, 'LG': 1, 'KD': 0.08210633878291455, 'DK': 0.08210633878291455, 'HC': 1, 'CH': 1, 'MF': 0.031164258271952225, 'FM': 0.031164258271952225, 'IE': 0.06312325149642944, 'EI': 0.06312325149642944, 'DE': 1, 'ED': 1, 'JO': 1, 'OJ': 1, 'GO': 0.0483629782333725, 'OG': 0.0483629782333725, 'JA': 1, 'AJ': 1, 'JF': 0.07565379099931471, 'FJ': 0.07565379099931471, 'AK': 0.07500536141223034, 'KA': 0.07500536141223034, 'BK': 1, 'KB': 1, 'BD': 0.02734714382111751, 'DB': 0.02734714382111751, 'AN': 1, 'NA': 1, 'AM': 0.061593723059898874, 'MA': 0.061593723059898874, 'GI': 0.04158665666699913, 'IG': 0.04158665666699913, 'MH': 0.04044599965509373, 'HM': 0.04044599965509373, 'FC': 1, 'CF': 1, 'NC': 0.06424337794603346, 'CN': 0.06424337794603346, 'IC': 0.05209985033854408, 'CI': 0.05209985033854408, 'MK': 1, 'KM': 1, 'AD': 0.079589418276149, 'DA': 0.079589418276149, 'MD': 0.03600115390646298, 'DM': 0.03600115390646298, 'LH': 1, 'HL': 1} 
+{'LI': 0.06462736376043032, 'IL': 0.06462736376043032, 'OC': 0.0553671598228619, 'CO': 0.0553671598228619, 'JN': 1, 'NJ': 1, 'JI': 0.02338750277490817, 'IJ': 0.02338750277490817, 'OM': 0.013531231998408055, 'MO': 0.013531231998408055, 'AI': 0.0421289405308897, 'IA': 0.0421289405308897, 'JE': 0.08480213913079954, 'EJ': 0.08480213913079954, 'JD': 0.021019841571981918, 'DJ': 0.021019841571981918, 'KN': 1, 'NK': 1, 'KF': 0.06952702864718532, 'FK': 0.06952702864718532, 'FN': 0.04354590416458414, 'NF': 0.04354590416458414, 'ED': 1, 'DE': 1, 'CD': 0.0661418388428735, 'DC': 0.0661418388428735, 'CN': 1, 'NC': 1, 'LB': 1, 'BL': 1, 'HM': 0.03580149337712962, 'MH': 0.03580149337712962, 'GI': 0.09069318809724808, 'IG': 0.09069318809724808, 'AH': 0.08434495454636869, 'HA': 0.08434495454636869, 'AE': 0.060811117828076376, 'EA': 0.060811117828076376, 'FI': 0.046768828593145156, 'IF': 0.046768828593145156, 'JM': 1, 'MJ': 1, 'JH': 0.08235641877849685, 'HJ': 0.08235641877849685, 'HN': 0.046799420467823726, 'NH': 0.046799420467823726, 'JA': 0.09564362400682942, 'AJ': 0.09564362400682942, 'GM': 0.04934732371144977, 'MG': 0.04934732371144977, 'CH': 1, 'HC': 1, 'LF': 0.05389749999283255, 'FL': 0.05389749999283255, 'LM': 1, 'ML': 1, 'OD': 0.07493822883570272, 'DO': 0.07493822883570272, 'EB': 1, 'BE': 1, 'KI': 0.0479186229242648, 'IK': 0.0479186229242648, 'HI': 0.09158131401568104, 'IH': 0.09158131401568104, 'KB': 1, 'BK': 1, 'FM': 1, 'MF': 1, 'LH': 1, 'HL': 1, 'JG': 1, 'GJ': 1, 'KC': 1, 'CK': 1, 'OI': 0.07494705959350213, 'IO': 0.07494705959350213, 'FG': 0.08359183259457051, 'GF': 0.08359183259457051, 'OB': 0.021858280959285048, 'BO': 0.021858280959285048, 'KG': 0.0987152762378621, 'GK': 0.0987152762378621, 'GO': 1, 'OG': 1, 'FB': 0.02164301264566608, 'BF': 0.02164301264566608, 'LG': 0.02283762747448033, 'GL': 0.02283762747448033, 'LC': 1, 'CL': 1, 'IB': 1, 'BI': 1, 'GC': 0.0459316360259115, 'CG': 0.0459316360259115, 'IN': 0.03429650150918105, 'NI': 0.03429650150918105, 'LN': 0.022661103242979985, 'NL': 0.022661103242979985, 'EH': 0.051086309167713576, 'HE': 0.051086309167713576, 'NM': 1, 'MN': 1, 'LD': 0.05232439934644297, 'DL': 0.05232439934644297, 'FH': 0.09520155955158222, 'HF': 0.09520155955158222, 'KM': 0.04205537437893886, 'MK': 0.04205537437893886, 'CM': 0.03850609112202021, 'MC': 0.03850609112202021, 'KO': 1, 'OK': 1, 'GA': 0.010460361817540814, 'AG': 0.010460361817540814, 'EM': 1, 'ME': 1, 'JF': 0.07236080851116145, 'FJ': 0.07236080851116145, 'LA': 0.07443053492714365, 'AL': 0.07443053492714365, 'AM': 0.07680922852995936, 'MA': 0.07680922852995936, 'JC': 1, 'CJ': 1, 'HD': 0.04558829120073329, 'DH': 0.04558829120073329, 'LE': 0.09934977562548143, 'EL': 0.09934977562548143, 'CA': 0.021062533548228804, 'AC': 0.021062533548228804, 'DB': 1, 'BD': 1, 'OE': 0.02225369077037044, 'EO': 0.02225369077037044, 'BM': 1, 'MB': 1, 'KE': 0.06931009057954063, 'EK': 0.06931009057954063, 'IM': 1, 'MI': 1, 'NB': 0.05090445207156212, 'BN': 0.05090445207156212, 'CI': 0.027807096444399035, 'IC': 0.027807096444399035, 'KA': 1, 'AK': 1, 'CB': 0.09867878226586524, 'BC': 0.09867878226586524, 'FO': 0.08265355673231045, 'OF': 0.08265355673231045, 'JO': 1, 'OJ': 1, 'HB': 0.08489004313206502, 'BH': 0.08489004313206502, 'AN': 0.041125032257716396, 'NA': 0.041125032257716396, 'OA': 0.07976408857450426, 'AO': 0.07976408857450426, 'KH': 1, 'HK': 1, 'JB': 0.09800776675334609, 'BJ': 0.09800776675334609, 'AD': 1, 'DA': 1, 'JL': 1, 'LJ': 1, 'FA': 1, 'AF': 1, 'FD': 1, 'DF': 1, 'GN': 0.08501601998605007, 'NG': 0.08501601998605007, 'EN': 1, 'NE': 1, 'GB': 0.04537875863591853, 'BG': 0.04537875863591853, 'ID': 0.04374887416023715, 'DI': 0.04374887416023715, 'FE': 0.01885060843334098, 'EF': 0.01885060843334098, 'GD': 0.05419860900495399, 'DG': 0.05419860900495399, 'KL': 0.045913587029181815, 'LK': 0.045913587029181815, 'CE': 1, 'EC': 1, 'JK': 1, 'KJ': 1, 'KD': 1, 'DK': 1, 'ON': 0.06234893389513146, 'NO': 0.06234893389513146, 'ND': 1, 'DN': 1, 'LO': 0.0386040291140255, 'OL': 0.0386040291140255, 'EI': 0.018555520961682406, 'IE': 0.018555520961682406, 'GH': 0.04102114503891885, 'HG': 0.04102114503891885, 'FC': 0.08013353683350459, 'CF': 0.08013353683350459, 'DM': 0.015330356006008378, 'MD': 0.015330356006008378, 'OH': 0.05681145375255575, 'HO': 0.05681145375255575, 'GE': 1, 'EG': 1, 'AB': 0.0717484871247138, 'BA': 0.0717484871247138} 
 
 queries
-AND(O, SEQ(C, AND(J, SEQ(N, H, A))))
-AND(A, B, L)
-SEQ(K, AND(A, L, E))
-SEQ(N, C, K, J)
-SEQ(L, K, I, M)
-AND(F, L, O, C, I)
-AND(J, D, C)
-AND(E, N, O, I, D)
-SEQ(D, J, H, O)
-SEQ(K, N, AND(F, C, H))
+SEQ(M, F, I, O)
+SEQ(I, C, A)
 
 muse graph
-SELECT AND(O, SEQ(C, AND(J, SEQ(N, H, A)))) FROM A; N; C; O; H; J ON {1} WITH selectionRate= 4.6447875343532606e-10
-SELECT AND(A, B, L) FROM L; B; A ON {1} WITH selectionRate= 0.08593907640703549
-SELECT SEQ(K, AND(A, L, E)) FROM L; A; K; E ON {1} WITH selectionRate= 3.142511063117066e-06
-SELECT SEQ(N, C, K, J) FROM K; N; C; J ON {1} WITH selectionRate= 4.884879108176133e-07
-SELECT SEQ(L, K, I, M) FROM L; I; M; K ON {1} WITH selectionRate= 3.963593843905524e-05
-SELECT AND(F, L, O, C, I) FROM L; C; O; F; I ON {1} WITH selectionRate= 3.891414677832665e-08
-SELECT AND(J, D, C) FROM D; C; J ON {1} WITH selectionRate= 2.5117903083680608e-05
-SELECT AND(E, N, O, I, D) FROM N; O; E; D; I ON {1} WITH selectionRate= 4.498201607781889e-11
-SELECT SEQ(D, J, H, O) FROM H; D; O; J ON {1} WITH selectionRate= 4.323933981204441e-06
-SELECT SEQ(K, N, AND(F, C, H)) FROM N; C; F; K; H ON {1} WITH selectionRate= 1.1049850453582539e-09
+SELECT SEQ(M, F, I, O) FROM F; O; M; I ON {0} WITH selectionRate= 3.920215831659159e-06
+SELECT SEQ(I, C, A) FROM A; I; C ON {0} WITH selectionRate= 2.467441078202342e-05

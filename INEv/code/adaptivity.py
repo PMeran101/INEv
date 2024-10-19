@@ -19,7 +19,7 @@ from EvaluationPlan import *
 from generate_projections import *
 import pickle
 import math 
-
+import argparse
 
       
 with open('EvaluationPlan', 'rb') as EvaluationPlan_file: 
@@ -164,6 +164,15 @@ def getCosts(routing, rates):
         costs += len(routing[i.name]) * rates[i.projname] * NumETBsByKey(i.name, i.projname)
     return costs
 
+def parse_arguments():
+    # Initialize the parser
+    parser = argparse.ArgumentParser(description="Process percentage and file input.")
+
+    # Add the parameters
+    parser.add_argument('--percentage', type=int, default=0, help="Percentage value")
+
+    # Parse the arguments and return the results
+    return parser.parse_args()
 
 
 def main():
@@ -172,9 +181,10 @@ def main():
     
      
           
-    percentage = 0 
-    if len(sys.argv) > 1:
-            percentage = int(sys.argv[1])
+    args = parse_arguments()
+
+    # Access the arguments
+    percentage = args.percentage
     # compute projection rates (additionally to proj rates)
 
     

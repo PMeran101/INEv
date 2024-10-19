@@ -109,20 +109,6 @@ def extractMsOptions(query):
     return MsOptions
             
 
-def estimatePC(projection):  # based on primitive inputs, here it should be taken into account that a projection may have a ms placement based on its primitive inputs
-    pc = 0
-    res = returnPartitioning(projection, projection.leafs(), criticalMSTypes)
-    if res: #HAS MS
-        partEvent = res[0]
-        costs = res[1]        
-        for event in [x for x in projection.leafs() if not x == partEvent]:
-            pc += res[1] * rates[event]*len(nodes[event])  
-    else:
-        for event in projection.leafs():
-            pc += longestPath * rates[event]*len(nodes[event])
-    return pc
-   
-
 
 def MSoptionsPerEvent(query):
     events =  extractMsOptions(query) 
@@ -286,31 +272,6 @@ def costsOfCombination(projection, mycombi, shared, criticalMSTypes): # here is 
        
        return (mycosts, partEvent) 
 
-# def eventSharing_old(projection, mycombi, mycosts, shared): 
-#     # output costs of inputs of multi-sink placements that are shared between multiple projections of the combination
-    
-#     costs = 0
-#     # for each projection in mycombi, get all SIS events and generate Dict
-#     mySiSEvents =  sum([allSiSEvents(x) for x in mycombi if x in combiDict.keys()], [])
-#     SiSDict =  {x : mySiSEvents.count(x) for x in set(mySiSEvents)}  
-#     mySubProjections = sum([allAncestors(x, combiDict[x][0]) for x in mycombi if x in combiDict.keys()], [])
-#     mySubProjections += [x for x in mycombi if x in combiDict.keys()]
-#     SiSDict.update({x :  mySubProjections.count(x) for x in set(mySubProjections)})
-    
-#     #list containing all projections and primitive event types, that are input to single-sink placements for queries for which combination already computed
-#     globalSiSEvents = []   
-#     if shared:  
-#         globalSiSEvents = sum([allSiSEvents(x) for x in wl if x!= projection and x in combiDict.keys()],[])  
-#         globalSiSEvents += sum([allAncestors(x, combiDict[x][0]) for x in wl if x!= projection and x in combiDict.keys()],[]) #sharedSubprojections         
-            
-#     for event in SiSDict.keys():
-#         if event in globalSiSEvents: # for multi-query scenario
-#             costs += totalRate(event) * longestPath * SiSDict[event]
-#         else:
-#             costs += totalRate(event) * (SiSDict[event] - 1) * longestPath #TODO prefer something about the tree edges
-   
-#     return costs
-
 
 def eventSharing(projection, mycombi, mycosts, shared): 
     # output costs of inputs of multi-sink placements that are shared between multiple projections of the combination
@@ -449,19 +410,7 @@ def unfold_combiRec(combination, unfoldedDict):
     return unfoldedDict 
 
  
-def plotCombi(combi):
-    G = nx.Graph()
-    G.add_nodes_from(list(map(lambda x: str(x), combi.keys())))
-    for query in wl:
-        for e in query.leafs():
-            if not e in G.nodes:
-                G.add_node(e)
-    for i in combi.keys():
-        for k in combi[i]:
-            G.add_edge(str(i),str(k))
-    nx.draw(G, with_labels=True, font_weight='bold')
-    plt.show() 
-    
+
 
 def main():
     criticalMSTypes= []
@@ -494,30 +443,7 @@ def main():
     # check if critical MSTypes share inputs with other MS placements in their SiS Projections
 
     print("critical Types " + str(criticalMSTypes))
-   # print(globalPartitioningOK(wl[0], wl))
-   
-    # use globalPartitioningOK in order to identify more critical MS Types
-    
-    # use getExpensiveProjs to identify cases in which although critical an MS placement is superior over a Sis placement due to the outrate of a projection
-    #getExpensiveProjs(criticalMSTypes) # get expensive projections and check if a ms placement exists at a criticaltype, weigh against estimated input costs and remove from criticals
 
-    # check of each Projection which is SIS placed, if a multi-sink placement exists due to event sharing
-    
-    
-    
-    
-    
-    #print("globalMSTypes: " + str(set(globalMSTypes).difference(set(criticalMSTypes))))
-
-    # EXPERIMENT -> Idea: If a combination of a query has no multi-sink placement (because its forbidden by criticalevents), just enforce primitive combination as it is probably even more expensive to match multiple sis projections and send around projections etc.
-    # make this smarter by also removing parts of the combination treee that consist only of Single Sink Placements
-    # TODO when is a chain of single sink better 
-    
-    # for query in wl:
-
-    #     if set(allMSTypes(query)).issubset(set(criticalMSTypes)):
-    #         combiDict[query] = (query.leafs(), [], 0)
-            
     curcombi = {}
     
             
@@ -530,7 +456,6 @@ def main():
     mycombi = curcombi
     criticalMSProjs = [x for x in mycombi.keys() if combiDict[x][1] and combiDict[x][1][0] in criticalMSTypes]
 
-    #plotCombi(mycombi) # plot combination graph
     
     
     for pro in curcombi.keys():
