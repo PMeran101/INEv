@@ -11,6 +11,9 @@ import random
 from Node import Node
 import argparse
 import pandas as pd
+
+import sys
+sys.setrecursionlimit(10000)
 """ Experiment network rates 
 
 average event rates for google cluster data set first 12h, timewindow 30 min, 20 nodes
