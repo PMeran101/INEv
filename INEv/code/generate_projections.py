@@ -433,9 +433,7 @@ for projection in sharedProjectionsDict.keys():
     if len(sharedProjectionsDict[projection]) > 1:
         sharedProjectionsList.append(projection) 
 
-#PP_Projs = [totalRate(settoproj(['A','B','C'], wl[0])), totalRate(settoproj(['D','E','F'], wl[0])), 0, totalRate(settoproj(['D','E','F'], wl[0])),0]
-#print(totalRate(settoproj(['A','B','C'], wl[0])))
-#print(totalRate(settoproj(['D','E','F'], wl[0])))
+
 for q in wl:
         print(q, optimisticTotalRate_single(q))      
 with open('projrates',  'wb') as projratesfile:

@@ -1,34 +1,12 @@
-"""
-Generate query workload with given number of queries (number), maximal query length (size).    
-
-Queries for Case Studies:
-    #wl = [AND(PrimEvent('E'), PrimEvent('F'), PrimEvent('G'),PrimEvent('H'))] # final 1 bikecity
-    #wl =  [SEQ(PrimEvent('C'), PrimEvent('D'), PrimEvent('E'),PrimEvent('I'))]  # final 2 bikecity
-    #wl = [AND(PrimEvent('A'), SEQ(PrimEvent('D'), PrimEvent('I')),PrimEvent('F'))] #final 3 bikecity
-    #wl = [SEQ(PrimEvent('A'), AND(PrimEvent('B'), PrimEvent('I')),PrimEvent('E')), AND(PrimEvent('E'), PrimEvent('F'), PrimEvent('C'),PrimEvent('H'))] #final 4 bikecity
-
-    #wl = [SEQ(PrimEvent('A'), PrimEvent('C'), PrimEvent('I'), PrimEvent('E')), AND(PrimEvent('F'), SEQ(PrimEvent('C'), PrimEvent('I')), PrimEvent('G'))]
-    
-    #wl = [SEQ(PrimEvent('A'), PrimEvent('B'), PrimEvent('G'), PrimEvent('F'), PrimEvent('I'))] # Google: jobLost
-    #wl= [SEQ(PrimEvent('B'), PrimEvent('C'), PrimEvent('F'), PrimEvent('H'))] # Google: unlucky user
-"""    
-
 from tree import *
 import random as rd
 import sys
 import pickle
-
+import argparse
 
 with open('network',  'rb') as  nw_file:
         nw = pickle.load(nw_file)
 
-
-"""
-TODO
-We need to know how many events we are working with.
-In INEv every node generated Events now it is random
-
-"""    
 
 with open ('PrimitiveEvents', 'rb') as pe_file:
     pe = pickle.load(pe_file)
@@ -320,20 +298,27 @@ def makeLongBalanced(count, length):
     wl = generate_BalancedWorkload(count, length)      
     return wl
 
-def main():
-    count = 3
-    length = 5
-    negated = 3
-    if len(sys.argv) > 1: 
-        length  = int(sys.argv[1])
-    if len(sys.argv) > 2:
-        count = int(sys.argv[2])    
-    if len(sys.argv) > 3:
-        negated = int(sys.argv[3])
-    
+def parse_arguments():
+    # Initialize the parser
+    parser = argparse.ArgumentParser(description="Process length, count, and negated values.")
 
-    # generate workload with 1/3 queries containing kleene and 1/3 queries containing nseq
-    #wl =  makeLongBalanced(count, length)      
+    # Add the parameters with default values
+    parser.add_argument('--length', type=int, default=5, help="Length value (default: 5)")
+    parser.add_argument('--count', type=int, default=3, help="Count value (default: 3)")
+    parser.add_argument('--negated', type=int, default=3, help="Negated value (default: 3)")
+
+    # Parse the arguments and return the results
+    return parser.parse_args()
+
+def main():
+    # Parse arguments using the function
+    args = parse_arguments()
+
+    # Access the arguments
+    length = args.length
+    count = args.count
+    negated = args.negated
+    
     
     # generate workload without kleene and nseq
     wl = generate_workload(count, length)
@@ -346,18 +331,6 @@ def main():
     elif negated==2:
           wl = [AND(PrimEvent('D'),NSEQ(PrimEvent('B'),  PrimEvent('A'), PrimEvent('C')),PrimEvent('E'))]
         
-    
-    #wl = [AND(PrimEvent('E'), PrimEvent('F'), PrimEvent('G'),PrimEvent('H'))] # final 1 bikecity
-    #wl =  [SEQ(PrimEvent('C'), PrimEvent('D'), PrimEvent('E'),PrimEvent('I'))]  # final 2 bikecity
-    #wl = [AND(PrimEvent('A'), SEQ(PrimEvent('D'), PrimEvent('I')),PrimEvent('F'))] #final 3 bikecity
-    #wl = [SEQ(PrimEvent('A'), AND(PrimEvent('B'), PrimEvent('I')),PrimEvent('E')), AND(PrimEvent('E'), PrimEvent('F'), PrimEvent('C'),PrimEvent('H'))] #final 4 bikecity
-
-    #wl = [SEQ(PrimEvent('A'), SEQ(PrimEvent('H'), PrimEvent('B')),PrimEvent('I'))] # Google double update Q1
-    #wl = [SEQ(PrimEvent('A'), PrimEvent('B'), PrimEvent('G'),PrimEvent('F'), PrimEvent('I'))] # Google Lost Job  Q2
-    #wl = [SEQ(PrimEvent('I'), PrimEvent('B'), PrimEvent('H'), PrimEvent('G')), SEQ(PrimEvent('I'), PrimEvent('D'), PrimEvent('H'), PrimEvent('G'))] # Google Q3 failed update
-    #wl = [SEQ(PrimEvent('B'),PrimEvent('C'), PrimEvent('F'),PrimEvent('H'))] # Google Q4 unlucky
-
-    #wl = [SEQ(PrimEvent('E'),PrimEvent('A'), PrimEvent('B'), PrimEvent('C'),PrimEvent('D'),PrimEvent('F'), PrimEvent('G'), PrimEvent('H'), PrimEvent('I'))]
     
     with open('current_wl', 'wb') as wl_file:
         pickle.dump(wl, wl_file)

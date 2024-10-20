@@ -9,7 +9,7 @@ from placement_aug import *
 import time
 import csv
 import sys
-
+import argparse
 
 maxDist = max([max(x) for x in allPairs])
 
@@ -34,9 +34,18 @@ def getLowerBound(query): # lower bound -> for multiple projections, keep track 
     return minimalRate#, nonMS) 
 
 
-def normalize(x, data):
-    return x
-    #return (x - min(data)) / (max(data) - min(data))
+
+def parse_arguments():
+    # Initialize the parser
+    parser = argparse.ArgumentParser(description="Process filename and number of parents.")
+
+    # Add the parameters
+    parser.add_argument('--file', type=str, required=True, help="Filename to process")
+    parser.add_argument('--number_parents', type=int, default=1, help="Number of parents (default: 1)")
+
+    # Parse the arguments and return the results
+    return parser.parse_args()
+
 
 def main():
     
@@ -49,14 +58,12 @@ def main():
     noFilter = 0 # NO FILTER
     
     #only write experiment data for shared costs, use ID and total costs for writing results of shared/seperate window
-    if len(sys.argv) > 1:
-         filename = sys.argv[1]
-    if len(sys.argv) > 2:
-        number_parents = sys.argv[2]
-    # if len(sys.argv) > 1:
-    #     
-    # if len(sys.argv) > 2:
-    #     noFilter = int(sys.argv[2])
+    args = parse_arguments()
+
+    # Access the arguments
+    filename = args.file
+    number_parents = args.number_parents
+
     print(filename)
     ccosts = NEWcomputeCentralCosts(wl)
     #print("central costs : " + str(ccosts))
@@ -84,13 +91,11 @@ def main():
     
     #mycombi = removeSisChains()
     unfolded = mycombi
-    # print(unfolded)
-    # print(projFilterDict.keys())
-    # sharedDict = getSharedMSinput(unfolded, projFilterDict)    
+ 
     dependencies = compute_dependencies(unfolded)
     processingOrder = sorted(compute_dependencies(unfolded).keys(), key = lambda x : dependencies[x] ) # unfolded enthält kombi   
     costs = 0
-    #processingOrder = compute_dependencies_alt(unfolded) # alternative processing order //
+
     for projection in processingOrder:  #parallelize computation for all projections at the same level
             if set(unfolded[projection]) == set(projection.leafs()): #initialize hop latency with maximum of children
                hopLatency[projection] = 0 
@@ -99,49 +104,21 @@ def main():
 
           
             partType = returnPartitioning(projection, unfolded[projection], criticalMSTypes)
-            if False : 
-                MSPlacements[projection] = partType
-                result = computeMSplacementCosts(projection, unfolded[projection], partType, sharedDict, noFilter)
-                additional = result[0]
-                costs += additional
-                hopLatency[projection] += result[1]
+
                 
-                myPlan.addProjection(result[2]) #!
+            result = ComputeSingleSinkPlacement(projection, unfolded[projection], noFilter)
+            additional = result[0]
+            costs += additional
+            hopLatency[projection] += result[2]
+            myPlan.addProjection(result[3]) #!
+            for newin in result[3].spawnedInstances: # add new spawned instances
                 
-                for newin in result[2].spawnedInstances: # add new spawned instances
-                    myPlan.addInstances(projection, newin) 
-      
-               #adding routing keys
-                myPlan.updateInstances(result[3]) #! update instances
+                myPlan.addInstances(projection, newin)
             
-                
-                Filters += result[4]
-                # if partType, and projection in wl and partType kleene component of projection, add sink
-                print("MS " + str(projection) + " At: " + str(partType) + " PC: " + str(additional) + " Hops:" + str(result[1]))
-
-
-                if projection.get_original(wl) in wl and partType[0] in list(map(lambda x: str(x), projection.get_original(wl).kleene_components())):
-                    
-                    
-                    result =  ComputeSingleSinkPlacement(projection.get_original(wl), [projection], noFilter)
-                    additional = result[0]
-                    costs += additional
-                    print("SiS Sink for Kleene:" + str(projection.get_original(wl)) + " PC: " + str(additional) + " Hops:" + str(result[1]))
-            else:
-                
-                result = ComputeSingleSinkPlacement(projection, unfolded[projection], noFilter)
-                additional = result[0]
-                costs += additional
-                hopLatency[projection] += result[2]
-                myPlan.addProjection(result[3]) #!
-                for newin in result[3].spawnedInstances: # add new spawned instances
-                   
-                    myPlan.addInstances(projection, newin)
-                
-                myPlan.updateInstances(result[4]) #! update instances
-                Filters += result[5]
-               
-                print("SiS " + str(projection) + "PC: " + str(additional)  + " Hops: " + str(result[2]))
+            myPlan.updateInstances(result[4]) #! update instances
+            Filters += result[5]
+            
+            print("SiS " + str(projection) + "PC: " + str(additional)  + " Hops: " + str(result[2]))
                 
     mycosts = costs/ccosts[0]
     print("INEv Transmission " + str(costs) )
@@ -210,10 +187,6 @@ def main():
         with open('ExperimentResults',  'wb') as ExperimentID_file: 
             pickle.dump([ID,costs], ExperimentID_file)  # write only INEv Costs and ID for timewindow exp
 
-    #for q in wl:
-    #    print(projrates[q][1])
-#    with open('ExperimentResults',  'wb') as ExperimentID_file: -> for adaptivity & topology?
-#        pickle.dump([ID,mycosts,ccosts[0]], ExperimentID_file)  
 
 if __name__ == "__main__":
     main()                    
