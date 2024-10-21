@@ -11,3 +11,6 @@ echo "Query Size"
 ./sim_OP_Query.sh
 echo "Sweet Spot"
 ./sim_OP_sweetSpot.sh
+cd ../res
+./compare_fog_plots.sh
+./create_mulit_variate.sh

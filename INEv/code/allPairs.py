@@ -19,6 +19,9 @@ print(os.getcwd())
 with open('graph', 'rb') as graph_file:
     G = pickle.load(graph_file)
 
+routingAlgo = dict(nx.all_pairs_shortest_path(G))
+
+
 myNodes = list(G.nodes)
 allPairs = [[] for x in myNodes]
 
@@ -29,13 +32,13 @@ def find_shortest_path_or_ancestor(G, me, j):
     """
     try:
         # Attempt to find the direct shortest path and return the path (list of nodes)
-        return nx.shortest_path(G, me, j, method='dijkstra')
-    except nx.NetworkXNoPath:
+        return routingAlgo[me][j] #nx.shortest_path(G, me, j, method='dijkstra')
+    except KeyError:
         # If no direct path exists, find the shortest combined path via an intermediate node
         try:
             # Get all shortest path lengths from me and j to all other nodes (including the cloud)
-            me_shortest_paths = nx.single_source_dijkstra_path_length(G, me)
-            j_shortest_paths = nx.single_source_dijkstra_path_length(G, j)
+            me_shortest_paths = routingAlgo[me]#nx.single_source_dijkstra_path_length(G, me)
+            j_shortest_paths = routingAlgo[j]  #nx.single_source_dijkstra_path_length(G, j)
 
             # Find the common nodes (ancestors) reachable from both me and j
             common_ancestors = set(me_shortest_paths.keys()) & set(j_shortest_paths.keys())
@@ -46,8 +49,8 @@ def find_shortest_path_or_ancestor(G, me, j):
                 min_distance = float('inf')
                 # Check which common ancestor offers the shortest combined path
                 for ancestor in common_ancestors:
-                    path_me_to_ancestor = nx.shortest_path(G, me, ancestor, method='dijkstra')
-                    path_j_to_ancestor = nx.shortest_path(G, j, ancestor, method='dijkstra')
+                    path_me_to_ancestor = routingAlgo[me][ancestor] #nx.shortest_path(G, me, ancestor, method='dijkstra')
+                    path_j_to_ancestor = routingAlgo [j][ancestor] #nx.shortest_path(G, j, ancestor, method='dijkstra')
                     combined_distance = len(path_me_to_ancestor) + len(path_j_to_ancestor) - 2  # Subtract 2 to exclude double-counting ancestor
 
                     if combined_distance < min_distance:
@@ -59,8 +62,8 @@ def find_shortest_path_or_ancestor(G, me, j):
 
             else:
                 # Fallback to the cloud (node 0) if no other common ancestors exist
-                path_me_to_cloud = nx.shortest_path(G, me, 0, method='dijkstra')
-                path_j_to_cloud = nx.shortest_path(G, j, 0, method='dijkstra')
+                path_me_to_cloud = routingAlgo[me][0]
+                path_j_to_cloud = routingAlgo[j][0 ]#nx.shortest_path(G, j, 0, method='dijkstra')
                 # Combine the paths via the cloud (node 0) and return
                 return path_me_to_cloud + path_j_to_cloud[::-1][1:]
 
@@ -136,6 +139,7 @@ def create_myDistances(G, me):
     myDistances = []
     for j in range(len(G.nodes)):
         # Call the function to find the shortest path or compute it via common ancestors/cloud
+        # print(f"Calculating distance from {me} to {j}")
         myDistances.append(len(find_shortest_path_or_ancestor(G, me, j))-1) ## -1
     return (me, myDistances)
 
@@ -150,10 +154,10 @@ def main():
     pool = multiprocessing.Pool()
     start = time.time()
     result = pool.map(compute_distances_for_node, myNodes)
-
+    # print(result)
     for i in result:
         allPairs[i[0]] = i[1]
-
+    #print(allPairs)
     end = time.time()
 
     #print("All Pairs " + str(end-start))

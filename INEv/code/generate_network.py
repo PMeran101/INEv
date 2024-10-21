@@ -13,23 +13,7 @@ import argparse
 import pandas as pd
 
 import sys
-sys.setrecursionlimit(10000)
-""" Experiment network rates 
-
-average event rates for google cluster data set first 12h, timewindow 30 min, 20 nodes
-#ev = [[0,855, 212, 24, 400, 129, 0, 0.005,0.05]]
-    
-event rates push-pull comparison:
-small:
-ev_PP = [[0.2994830154521548 , 0.14354286459134916 , 0.009297964702092328 , 0.2568894819120937 , 0.0771288310049754 ,  0.009297964702092328, 0.2994830154521548 , 0.26592179047984055 ]]    
-big: 
-ev =  [[1, 6, 1, 1, 1, 7, 8777, 1, 542, 72, 39, 1, 1, 318, 3, 1, 17, 2, 12, 2]]
-
-
-#ev =  [[1485,1000, 161, 300, 480, 229, 1, 1,20]] # average rates google cluster experiment
-#ev =  [[0.5, 6, 1, 136, 1000, 250, 0.5, 30, 60]] # average rates citibike experiment
-
-"""    
+sys.setrecursionlimit(200000)
 
 
 with open('rates',  'rb') as  rates_file:
@@ -285,7 +269,7 @@ def main():
         print(nw[i])
     print("\n")
     
-    nw[0].visualize_tree(nw[0])
+    # nw[0].visualize_tree(nw[0])
     
     
         

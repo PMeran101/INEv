@@ -187,7 +187,7 @@ def minimum_subgraph(G, nodes_list):
                     
                 except nx.NetworkXNoPath:
                     # If there's no path to node 0, raise an exception or handle as needed
-                    print(f"Neither {source} nor {target} has a path to node 0, which shouldn't happen in your topology.")
+                    print(f"Neither {source} nor {target} has a path to node 0, which shouldn't happen in our topology.")
     
     # Create the subgraph from the collected edges
     subgraph = G.edge_subgraph(subgraph_edges).copy()
