@@ -57,12 +57,14 @@ def main():
         return
     
     
-    
+    plt.figure(figsize=(12, 6))
     plt.rcParams.update({'font.size':17})
     plt.xlabel(X_Column)
     plt.ylabel(Y_Column)
     # plt.yscale("log")
-    
+    plt.ylim(0, 1.05)
+    plt.yticks(np.linspace(0, 1, 11))
+    #plt.grid(True, which='both', axis='y')
     
 
     # arrange x-Ticks

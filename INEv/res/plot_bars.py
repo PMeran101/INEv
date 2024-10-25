@@ -32,6 +32,8 @@ def plot_bar(files, y_column, labels, output_file):
     
     # Set x-axis labels and ensure alignment
     plt.xticks(positions, labels, rotation=45, ha='right')
+    plt.yticks(np.arange(0, 1.1, 0.1))
+    #plt.grid(True, which='both', axis='y')
     plt.tight_layout()
     plt.rcParams.update({'font.size':17})
     # Save the figure to a file
