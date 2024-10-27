@@ -1,6 +1,6 @@
 #echo "Creating bar plot for MaxParents CSV files..."
-python3 multi_variate_bar.py -i OP_MaxParents_4.csv OP_MaxParents_6.csv \
-    -y TransmissionRatio -x EventTypes -l MaxParents_4 MaxParents_6 -o Fig_Bar_TransmissionRatio_MaxParents_4_6.pdf -c tab:orange green
+python3 multi_variate_bar.py -i OP_MaxParents_3.csv OP_MaxParents_4.csv OP_MaxParents_6.csv \
+    -y TransmissionRatio -x EventTypes -l MaxParents_3 MaxParents_4 MaxParents_6 -o Fig_Bar_TransmissionRatio_MaxParents_4_6.pdf -c tab:blue tab:orange tab:green
 
 # Create bar plots for the second set of CSV files (Query Sizes)
 #echo "Creating bar plot for Query Size CSV files..."
