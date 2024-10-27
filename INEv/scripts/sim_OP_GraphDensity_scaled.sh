@@ -2,7 +2,7 @@
 #!/bin/sh
 
 cd ../code
-for nw in 100 500 1000 5000 10000
+for nw in 1000 5000 10000
 do 
   for k in 5 10 20 # qwl amount
   do 

@@ -207,7 +207,7 @@ def plot_percentile_bars(input_files, y_column, x_column, labels, output_file, c
     #plt.title(f"{y_column} vs {x_column} with 80% Range Bars and Outliers")
     plt.legend(title="Data Sets")
     plt.tight_layout()
-    plt.grid(axis='y', linestyle='--', zorder=0)
+    #plt.grid(axis='y', linestyle='--', zorder=0)
 
     # Save the plot
     plt.savefig(output_file, format='pdf', bbox_inches='tight')
