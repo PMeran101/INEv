@@ -292,13 +292,9 @@ def determine_randomized_distribution_push_pull_costs(queries, eventtype_combina
     total_factorial_costs = 0
     total_sampling_costs = 0
     
-#    push_pull_plan_generator_greedy = push_pull_plan_generator.Initiate(eventtype_pair_to_selectivity, eventtype_to_sources_map, all_eventtype_output_rates, eventtypes_single_selectivities, single_selectivity_of_eventtype_within_projection, eventtype_combinations, highest_primitive_eventtype_to_be_processed)
-    
+
     push_pull_plan_generator_exact = push_pull_plan_generator.Initiate(eventtype_pair_to_selectivity, eventtype_to_sources_map, all_eventtype_output_rates, eventtypes_single_selectivities, single_selectivity_of_eventtype_within_projection, eventtype_combinations, highest_primitive_eventtype_to_be_processed)
     
-    # push_pull_plan_generator_factorial = push_pull_plan_generator.Initiate(eventtype_pair_to_selectivity, eventtype_to_sources_map, all_eventtype_output_rates, eventtypes_single_selectivities, single_selectivity_of_eventtype_within_projection, eventtype_combinations, highest_primitive_eventtype_to_be_processed)
-    
-    # push_pull_plan_generator_sampling = push_pull_plan_generator.Initiate(eventtype_pair_to_selectivity, eventtype_to_sources_map, all_eventtype_output_rates, eventtypes_single_selectivities, single_selectivity_of_eventtype_within_projection, eventtype_combinations, highest_primitive_eventtype_to_be_processed)
 
     greedy_exec_times = []
     exact_exec_times = []
@@ -772,22 +768,6 @@ if __name__ == "__main__":
             
            
             print("§§§§§§§§§§ Push-Pull MuSE costs §§§§§§§§§§")
-            if algorithm == "g":
-                print("####### GREEDY #######")
-                print("Greedy network costs:", greedy_costs)
-                all_greedy_costs += greedy_costs
-                print("Greedy Average:", all_greedy_costs/idx)
-                print("Greedy Average Transsmission Ratio:", (all_greedy_costs/idx) / central_push_costs)
-                if greedy_costs < greedy_best_generated_costs:
-                    greedy_best_generated_costs = greedy_costs
-				
-                if greedy_costs > greedy_worst_generated_costs:
-                    greedy_worst_generated_costs = greedy_costs
-				
-                greedy_accumulated_exec_time += greedy_algo_time
-                print("Average greedy algorithm execution time:", greedy_accumulated_exec_time/idx)
-                
-
             if algorithm == "e":            
                 print("####### EXACT #######")
                 print("Exact network costs:", exact_costs)
@@ -804,111 +784,7 @@ if __name__ == "__main__":
                 print("Average exact algorithm execution time:", exact_accumulated_exec_time/idx)
 
 
-            if algorithm == "f":  
-                print("####### FACTORIAL #######")
-                print("Factorial approximated network costs:", factorial_costs)
-                all_factorial_costs += factorial_costs
-                print("Factorial Average:", all_factorial_costs/idx)
-                print("Factorial Average Transsmission Ratio:", (all_factorial_costs/idx) / central_push_costs)
-                if factorial_costs < factorial_best_generated_costs:
-                    factorial_best_generated_costs = factorial_costs
-				
-                if factorial_costs > factorial_worst_generated_costs:
-                    factorial_worst_generated_costs = factorial_costs
-				
-                factorial_accumulated_exec_time += factorial_algo_time
-                print("Average factorial approximation algorithm execution time:", factorial_accumulated_exec_time/idx)
-                
 
-            if algorithm == "s":
-                print("####### SAMPLING #######")
-                print("Sampling approximated network costs:", sampling_costs)
-                all_sampling_costs += sampling_costs
-                print("Sampling Average:", all_sampling_costs/idx)
-                print("Sampling Average Transsmission Ratio:", (all_sampling_costs/idx) / central_push_costs)
-                if sampling_costs < sampling_best_generated_costs:
-                    sampling_best_generated_costs = sampling_costs
-				
-                if sampling_costs > sampling_worst_generated_costs:
-                    sampling_worst_generated_costs = sampling_costs
-			
-                sampling_accumulated_exec_time += sampling_algo_time
-                print("Average sampling approximation algorithm execution time:", sampling_accumulated_exec_time/idx)
-                print("#######################")
-
-
-        elif method == "cent":
-            greedy_costs, sampling_costs, factorial_costs, exact_costs, greedy_algo_time, exact_algo_time, factorial_algo_time, sampling_algo_time = determine_randomized_distribution_push_pull_costs(q_network, eventtype_combinations, highest_primitive_eventtype_to_be_processed, algorithm, samples, topk, plan_print)
-            
-
-            
-            print("§§§§§§§§§§ Centralized Push-Pull costs §§§§§§§§§§")
-            if algorithm == "g":
-                print("####### GREEDY #######")
-                print("Greedy network costs:", greedy_costs)
-                all_greedy_costs_single_sink += greedy_costs
-                print("Greedy Average:", all_greedy_costs_single_sink/idx)
-                print("Greedy Average Transsmission Ratio:", (all_greedy_costs_single_sink/idx) / central_push_costs)
-                if greedy_costs < greedy_best_generated_costs_single_sink:
-                    greedy_best_generated_costs_single_sink = greedy_costs
-			
-                if greedy_costs > greedy_worst_generated_costs_single_sink:
-                    greedy_worst_generated_costs_single_sink = greedy_costs
-				
-                greedy_accumulated_exec_time_single_sink += greedy_algo_time
-                print("Average greedy algorithm execution time:", greedy_accumulated_exec_time_single_sink/idx)
-
-
-            if algorithm == "e":
-                print("####### EXACT #######")
-                print("Exact network costs:", exact_costs)
-                all_exact_costs_single_sink += exact_costs
-                print("Exact Average:", all_exact_costs_single_sink/idx)
-                print("Exact Average Transsmission Ratio:", (all_exact_costs_single_sink/idx) / central_push_costs)
-                if exact_costs < exact_best_generated_costs_single_sink:
-                    exact_best_generated_costs_single_sink = exact_costs
-				
-                if exact_costs > exact_worst_generated_costs_single_sink:
-                    exact_worst_generated_costs_single_sink = exact_costs
-				
-                exact_accumulated_exec_time_single_sink += exact_algo_time
-                print("Average exact algorithm execution time:", exact_accumulated_exec_time_single_sink/idx)
-
-
-            if algorithm == "f":
-                print("####### FACTORIAL #######")
-                print("Factorial approximated network costs:", factorial_costs)
-                all_factorial_costs_single_sink += factorial_costs
-                print("Factorial Average:", all_factorial_costs_single_sink/idx)
-                print("Factorial Average Transsmission Ratio:", (all_factorial_costs_single_sink/idx) / central_push_costs)
-                if factorial_costs < factorial_best_generated_costs_single_sink:
-                    factorial_best_generated_costs_single_sink = factorial_costs
-				
-                if factorial_costs > factorial_worst_generated_costs_single_sink:
-                    factorial_worst_generated_costs_single_sink = factorial_costs
-				
-                factorial_accumulated_exec_time_single_sink += factorial_algo_time
-                print("Average factorial approximation algorithm execution time:", factorial_accumulated_exec_time_single_sink/idx)
-
-            if algorithm == "s":
-                print("####### SAMPLING #######")
-                print("Sampling approximated network costs:", sampling_costs)
-                all_sampling_costs_single_sink += sampling_costs
-                print("Sampling Average:", all_sampling_costs_single_sink/idx)
-                print("Sampling Average Transsmission Ratio:", (all_sampling_costs_single_sink/idx) / central_push_costs)
-                if sampling_costs < sampling_best_generated_costs_single_sink:
-                    sampling_best_generated_costs_single_sink = sampling_costs
-				
-                if sampling_costs > sampling_worst_generated_costs_single_sink:
-                    sampling_worst_generated_costs_single_sink = sampling_costs
-				
-                sampling_accumulated_exec_time_single_sink += sampling_algo_time
-                print("Average sampling approximation algorithm execution time:", sampling_accumulated_exec_time_single_sink/idx)
-                print("#######################")
-
-			
-            print("Run:", idx)
-        
             query_network_copy = copy.deepcopy(query_network)
             single_sink_query_network_copy = copy.deepcopy(single_sink_query_network)
     print(greedy_costs_avg)
@@ -922,7 +798,7 @@ if __name__ == "__main__":
         fieldnames = reader[0].keys() if reader else []  # Handle empty CSV case
 
     # Columns to append
-    new_columns = ["greedy_costs", "sampling_costs", "factorial_costs", "exact_costs"]  # New column names
+    new_columns = [ "exact_costs"]  # New column names
 
     # Update fieldnames only if new columns don't already exist
     updated_fieldnames = list(fieldnames)
@@ -934,9 +810,6 @@ if __name__ == "__main__":
         last_row = reader[-1]
 
         # Add or update new data to the last row
-        last_row["greedy_costs"] = sum(greedy_costs_avg) / len(greedy_costs_avg)
-        last_row["sampling_costs"] = sum(sampling_costs_avg) / len(sampling_costs_avg)
-        last_row["factorial_costs"] = sum(factorial_costs_avg) / len(factorial_costs_avg)
         last_row["exact_costs"] = sum(exact_costs_avg) / len(exact_costs_avg)
 
         # Replace the last row with the updated one

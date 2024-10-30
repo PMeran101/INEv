@@ -57,20 +57,24 @@ def main():
         return
     
     
-    
+    plt.figure(figsize=(12, 6))
     plt.rcParams.update({'font.size':17})
     plt.xlabel(X_Column)
     plt.ylabel(Y_Column)
     # plt.yscale("log")
-    
+    plt.ylim(0, 1.05)
+    plt.yticks(np.linspace(0, 1, 11))
+    #plt.grid(True, which='both', axis='y')
     
 
     # arrange x-Ticks
     myX_o = sorted(list(set(df1[X_Column].tolist()))) # to extract x-ticks use values of "X"- column -> normalize X values ? 
     myX = range(0, len(myX_o)) # counting of x ticks
+
     
     for i in range(len(mydata)):
         y_data = mydata[i].groupby(X_Column)[Y_Column].median().to_numpy()
+        myX = myX[:len(y_data)] 
         plt.plot(myX, y_data, marker="x", label=labels[i])
         #plt.plot(myX,mydata[i].groupby(X_Column)[Y_Column].mean(),marker="o", label = labels[i])
     plt.legend()

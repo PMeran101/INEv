@@ -187,7 +187,7 @@ def minimum_subgraph(G, nodes_list):
                     
                 except nx.NetworkXNoPath:
                     # If there's no path to node 0, raise an exception or handle as needed
-                    print(f"Neither {source} nor {target} has a path to node 0, which shouldn't happen in your topology.")
+                    print(f"Neither {source} nor {target} has a path to node 0, which shouldn't happen in our topology.")
     
     # Create the subgraph from the collected edges
     subgraph = G.edge_subgraph(subgraph_edges).copy()
@@ -433,9 +433,7 @@ for projection in sharedProjectionsDict.keys():
     if len(sharedProjectionsDict[projection]) > 1:
         sharedProjectionsList.append(projection) 
 
-#PP_Projs = [totalRate(settoproj(['A','B','C'], wl[0])), totalRate(settoproj(['D','E','F'], wl[0])), 0, totalRate(settoproj(['D','E','F'], wl[0])),0]
-#print(totalRate(settoproj(['A','B','C'], wl[0])))
-#print(totalRate(settoproj(['D','E','F'], wl[0])))
+
 for q in wl:
         print(q, optimisticTotalRate_single(q))      
 with open('projrates',  'wb') as projratesfile:
