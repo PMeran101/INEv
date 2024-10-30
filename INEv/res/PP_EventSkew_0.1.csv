@@ -1,5 +1,5 @@
-ID,TransmissionRatio,Transmission,INEvTransmission,FilterUsed,Nodes,EventSkew,EventNodeRatio,WorkloadSize,NumberProjections,MinimalSelectivity,MedianSelectivity,CombigenComputationTime,Efficiency,PlacementComputationTime,HopCount,Depth,ProcessingLatencyRatio,CentralTransmission,LowerBound,EventTypes,MaximumParents,greedy_costs,sampling_costs,factorial_costs,exact_costs
-533699,1.0,497008.0,497008.0,[],50,0.1,0.5,10,10,0.1,0.0759664959468809,0.09,2.98,1.86,0,0.5,0,497008.0,0.0,10,4,0.0,0.0,0.0,153827.15221900615
-8503792,1.0,396820.0,396820.0,[],50,0.1,0.5,10,10,0.1,0.08757531259919445,0.02,2.82,1.83,0,0.5,0,396820.0,0.0,10,4,0.0,0.0,0.0,125485.00641967446
-8345283,1.0,456026.0,456026.0,[],50,0.1,0.5,10,10,0.1,0.08308612445695658,0.03,3.06,1.69,0,0.5,0,456026.0,0.0,10,4,0.0,0.0,0.0,55938.089444584104
-6386520,0.6000482980958476,414095.0,248477.0,[],50,0.1,0.5,10,10,0.1,0.06390278665088253,0.08,2.74,1.97,0,0.5,0,414095.0,0.0,10,4,0.0,0.0,0.0,74652.5562987098
+ID,TransmissionRatio,Transmission,INEvTransmission,FilterUsed,Nodes,EventSkew,EventNodeRatio,WorkloadSize,NumberProjections,MinimalSelectivity,MedianSelectivity,CombigenComputationTime,Efficiency,PlacementComputationTime,HopCount,Depth,ProcessingLatencyRatio,CentralTransmission,LowerBound,EventTypes,MaximumParents,greedy_costs,sampling_costs,factorial_costs,exact_costs,TransmissionRatioINEv,TransmissionRatioCentral
+533699,1.0,497008.0,497008.0,[],50,0.1,0.5,10,10,0.1,0.0759664959468809,0.09,2.98,1.86,0,0.5,0,497008.0,0.0,10,4,0.0,0.0,0.0,153827.15221900615,0.3095063906798405,0.3095063906798405
+8503792,1.0,396820.0,396820.0,[],50,0.1,0.5,10,10,0.1,0.0875753125991944,0.02,2.82,1.83,0,0.5,0,396820.0,0.0,10,4,0.0,0.0,0.0,125485.00641967446,0.3162265168582089,0.3162265168582089
+8345283,1.0,456026.0,456026.0,[],50,0.1,0.5,10,10,0.1,0.0830861244569565,0.03,3.06,1.69,0,0.5,0,456026.0,0.0,10,4,0.0,0.0,0.0,55938.0894445841,0.12266425476745646,0.12266425476745646
+6386520,0.6000482980958476,414095.0,248477.0,[],50,0.1,0.5,10,10,0.1,0.0639027866508825,0.08,2.74,1.97,0,0.5,0,414095.0,0.0,10,4,0.0,0.0,0.0,74652.5562987098,0.3004405087742922,0.1802788159690646

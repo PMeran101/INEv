@@ -8,8 +8,7 @@ Modified by Assistant on [Current Date]
 """
 
 import matplotlib.pyplot as plt
-import pandas as pd 
-import numpy as np
+import pandas as pd
 import argparse
 
 def main():
@@ -50,10 +49,10 @@ def main():
             print("Available columns: " + ", ".join(mycolumns))
             return
     
-    plt.rcParams.update({'font.size':17})
+    plt.rcParams.update({'font.size': 10})
     plt.xlabel(X_Column)
-    plt.ylabel(", ".join(Y_Columns))
-    
+    plt.ylabel("Transmission Ratio")  # Set Y-axis label as Transmission Ratio
+
     # Arrange X-ticks
     df1 = mydata[0]
     myX_o = sorted(list(set(df1[X_Column].tolist())))
@@ -66,8 +65,11 @@ def main():
             y_data = df.groupby(X_Column)[y_col].median().reindex(myX_o).to_numpy()
             plt.plot(myX, y_data, marker="x", label=f"{labels[i]} - {y_col}")
     
-    plt.legend()
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
     
+    # Rotate X-axis labels to avoid overlap
+    plt.xticks(myX, myX_o, rotation=45, ha='right')
+
     if myargs.boxplot:
         # Add boxplots for each Y column
         for y_col in Y_Columns:
@@ -78,8 +80,6 @@ def main():
                     data_at_x.extend(df[df[X_Column] == x_value][y_col].tolist())
                 list_of_lists.append(data_at_x)
             plt.boxplot(list_of_lists, positions=myX, manage_ticks=False)
-    
-    plt.xticks(myX, myX_o)
     
     plt.savefig("figs/" + str(myargs.outname), format='pdf', bbox_inches='tight')
     # plt.show()
