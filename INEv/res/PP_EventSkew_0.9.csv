@@ -1,0 +1,5 @@
+ID,TransmissionRatio,Transmission,INEvTransmission,FilterUsed,Nodes,EventSkew,EventNodeRatio,WorkloadSize,NumberProjections,MinimalSelectivity,MedianSelectivity,CombigenComputationTime,Efficiency,PlacementComputationTime,HopCount,Depth,ProcessingLatencyRatio,CentralTransmission,LowerBound,EventTypes,MaximumParents,greedy_costs,sampling_costs,factorial_costs,exact_costs
+4330920,1.0000031676042775,315696.0,315697.0,[],50,0.9,0.5,10,10,0.1,0.07343535950983042,0.04,2.98,1.77,0,0.5,0,315696.0,0.0,10,4,0.0,0.0,0.0,104583.84291444324
+408258,0.7958873491282968,335550.0,267060.0,[],50,0.9,0.5,10,10,0.1,0.05819206985842626,0.06,2.74,1.93,0,0.5,0,335550.0,0.0,10,4,0.0,0.0,0.0,54727.07360985274
+1817417,0.4000950992201864,315460.0,126214.0,[],50,0.9,0.5,10,10,0.1,0.07920446571461731,0.03,2.88,1.88,0,0.5,0,315460.0,0.0,10,4,0.0,0.0,0.0,28357.597464574555
+3502555,0.7947559702107779,291112.0,231363.0,[],50,0.9,0.5,10,10,0.1,0.07326657240498255,0.06,2.86,1.73,0,0.5,0,291112.0,0.0,10,4,0.0,0.0,0.0,42441.45984509049
