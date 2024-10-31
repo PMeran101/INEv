@@ -31,15 +31,15 @@
 # done
 
 
+# Max Parents Transmission Ratio plotting
+python3 plot_PP_generic.py -i PP_MaxParents_3.csv PP_MaxParents_6.csv -l MaxParents3 MaxParents6 -x EventTypes -y TransmissionRatio TransmissionRatioCentral -o PP_MaxParents_3_6.pdf
+python3 multi_variate_PP_bar.py -i PP_MaxParents_3.csv PP_MaxParents_6.csv -l MaxParents3 MaxParents6 -x EventTypes -y TransmissionRatio TransmissionRatioCentral -o PP_MaxParents_Whisker.pdf
 
-python plot_PP_generic.py -i PP_MaxParents_1_Query_5.csv PP_MaxParents_1_Query_10.csv PP_MaxParents_1_Query_20.csv -l Query_5 Query_10 Query_20 -x EventTypes -y TransmissionRatioINEv TransmissionRatioCentral -o PP_MaxParents_1_Query.pdf
-python plot_PP_generic.py -i PP_MaxParents_2_Query_5.csv PP_MaxParents_2_Query_10.csv PP_MaxParents_2_Query_20.csv -l Query_5 Query_10 Query_20 -x EventTypes -y TransmissionRatioINEv TransmissionRatioCentral -o PP_MaxParents_2_Query.pdf
-python plot_PP_generic.py -i PP_MaxParents_3_Query_5.csv PP_MaxParents_3_Query_10.csv PP_MaxParents_3_Query_20.csv -l Query_5 Query_10 Query_20 -x EventTypes -y TransmissionRatioINEv TransmissionRatioCentral -o PP_MaxParents_3_Query.pdf
-python plot_PP_generic.py -i PP_MaxParents_4_Query_5.csv PP_MaxParents_4_Query_10.csv PP_MaxParents_4_Query_20.csv -l Query_5 Query_10 Query_20 -x EventTypes -y TransmissionRatioINEv TransmissionRatioCentral -o PP_MaxParents_4_Query.pdf
-python plot_PP_generic.py -i PP_MaxParents_5_Query_5.csv PP_MaxParents_5_Query_10.csv PP_MaxParents_5_Query_20.csv -l Query_5 Query_10 Query_20 -x EventTypes -y TransmissionRatioINEv TransmissionRatioCentral -o PP_MaxParents_5_Query.pdf
-python plot_PP_generic.py -i PP_MaxParents_6_Query_5.csv PP_MaxParents_6_Query_10.csv PP_MaxParents_6_Query_20.csv -l Query_5 Query_10 Query_20 -x EventTypes -y TransmissionRatioINEv TransmissionRatioCentral -o PP_MaxParents_6_Query.pdf
-python plot_PP_generic.py -i PP_MaxParents_7_Query_5.csv PP_MaxParents_7_Query_10.csv PP_MaxParents_7_Query_20.csv -l Query_5 Query_10 Query_20 -x EventTypes -y TransmissionRatioINEv TransmissionRatioCentral -o PP_MaxParents_7_Query.pdf
-python plot_PP_generic.py -i PP_MaxParents_8_Query_5.csv PP_MaxParents_8_Query_10.csv PP_MaxParents_8_Query_20.csv -l Query_5 Query_10 Query_20 -x EventTypes -y TransmissionRatioINEv TransmissionRatioCentral -o PP_MaxParents_8_Query.pdf
+#Max Parents bar plotting
+python3 plot_PP_bars.py -i PP_MaxParents_3.csv PP_MaxParents_4.csv PP_MaxParents_5.csv PP_MaxParents_6.csv PP_MaxParents_7.csv PP_MaxParents_8.csv -l 3 4 5 6 7 8 -y TransmissionRatio TransmissionRatioCentral -o PP_MaxParents.pdf
+
+## Event Skew Plotting
+python3 plot_PP_generic.py -i combined_output.csv -l Ratio -x EventSkew -y TransmissionRatio TransmissionRatioINEv TransmissionRatioCentral -o PP_EventSkew.pdf
 
 
-python plot_PP_generic.py -i combined_output.csv -l Ratio -x EventSkew -y TransmissionRatioINEv TransmissionRatioCentral -o PP_EventSkew.pdf
+python3 multi_variate_PP_bar.py -i combined_output.csv -l Ratio -x EventSkew -y TransmissionRatio TransmissionRatioINEv TransmissionRatioCentral -o PP_EventSkew_Whisker.pdf

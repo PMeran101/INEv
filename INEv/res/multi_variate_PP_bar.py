@@ -222,7 +222,7 @@ def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, 
     ax.set_xticklabels([str(x) for x in x_points])
 
     plt.xlabel(x_column)
-    plt.ylabel("Values")
+    
     # plt.title(f"{', '.join(y_columns)} vs {x_column} with 80% Range Bars and Outliers")
     # Create a custom legend
     from matplotlib.lines import Line2D
@@ -233,8 +233,16 @@ def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, 
             legend_elements.append(
                 Line2D([0], [0], color=color, lw=10, label=f"{label} - {y_col}")
             )
-    ax.legend(handles=legend_elements, title="Data Sets")
-    plt.tight_layout()
+
+    ax.legend(
+        handles=legend_elements,
+        title="Data Sets",
+        loc='upper center',
+        bbox_to_anchor=(0.5, 1.4),
+        ncol=len(labels) * len(y_columns) // 2,  # Adjust for multiple columns
+        frameon=True  # Optional: remove legend border
+    )
+    # plt.tight_layout()
     # plt.grid(axis='y', linestyle='--', zorder=0)
 
     # Save the plot

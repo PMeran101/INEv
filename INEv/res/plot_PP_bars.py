@@ -69,9 +69,9 @@ def plot_bar(files, y_columns, labels, output_file):
         plt.bar(bar_positions, means, width=bar_width, label=y_columns[i], color=colors[i % len(colors)], align='center')
 
         # Plot the trend line connecting the tops of the bars
-        plt.plot(bar_positions, means, marker='o', linestyle='-', color=colors[i % len(colors)], label=f'Trend {y_columns[i]}')
+        plt.plot(bar_positions, means, marker='o', linestyle='-', color='red')
 
-    plt.xlabel('MaxParents')
+    plt.xlabel('Max Parents')
     plt.ylabel('Mean Values')
     plt.title(f'Mean Values for Different MaxParents')
     
@@ -80,8 +80,8 @@ def plot_bar(files, y_columns, labels, output_file):
 
     # Set y-axis ticks
     max_y = max([max(means) for means in data_means]) * 1.1
-    plt.yticks(np.linspace(0, max_y, num=11))
-    plt.ylim(0, max_y)
+    plt.yticks(np.linspace(0, 1, num=11))
+    # plt.ylim(0, max_y)
 
     # Add legend
     plt.legend()

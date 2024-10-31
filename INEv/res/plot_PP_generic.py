@@ -10,6 +10,7 @@ Modified by Assistant on [Current Date]
 import matplotlib.pyplot as plt
 import pandas as pd
 import argparse
+import numpy as np
 
 def main():
     parser = argparse.ArgumentParser(description='Generate Plots')
@@ -49,7 +50,7 @@ def main():
             print("Available columns: " + ", ".join(mycolumns))
             return
     
-    plt.rcParams.update({'font.size': 10})
+    plt.rcParams.update({'font.size': 17})
     plt.xlabel(X_Column)
     plt.ylabel("Transmission Ratio")  # Set Y-axis label as Transmission Ratio
 
@@ -65,11 +66,13 @@ def main():
             y_data = df.groupby(X_Column)[y_col].median().reindex(myX_o).to_numpy()
             plt.plot(myX, y_data, marker="x", label=f"{labels[i]} - {y_col}")
     
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+    # Place the legend on top of the plot
+    plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.20), ncol=len(labels), borderaxespad=0., frameon=True)
+
     
     # Rotate X-axis labels to avoid overlap
     plt.xticks(myX, myX_o, rotation=45, ha='right')
-
+    plt.yticks(np.arange(0, 1.1, 0.1))
     if myargs.boxplot:
         # Add boxplots for each Y column
         for y_col in Y_Columns:
