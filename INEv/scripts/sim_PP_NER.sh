@@ -14,7 +14,7 @@ do
           python3 allPairs.py
      
           a=1
-          while [ "$a" -lt 3 ]
+          while [ "$a" -lt 20 ]
           do
               echo "  Starting inner loop iteration $a with k=$k at: $(date)"
               
