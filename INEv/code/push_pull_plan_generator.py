@@ -14,9 +14,10 @@ with open('allPairs', 'rb') as aP:
     allPairs = pickle.load(aP)
 
 class CachedOptimalStep():
-    def __init__(self, lowest_costs, best_step):
+    def __init__(self, lowest_costs, best_step,highest_latency):
         self.lowest_costs = lowest_costs
         self.best_step = best_step
+        self.highest_latency = highest_latency
 
 class PushPullPlan():
     def __init__(self, plan, costs):
@@ -432,14 +433,17 @@ class Initiate():
 
 
     
-
+    
     def determine_optimal_pull_strategy_for_step_in_plan(self, acquired_eventtypes, eventtype_to_acquire, node):
         acquired_eventtypes = self.get_sorted_primitive_eventtypes_from_projection_string(acquired_eventtypes)
-
+        #determine the latency which will be caused by the request
         #### Pull step caching ###
+        
+        latency = 0
+        
         key = (acquired_eventtypes, eventtype_to_acquire, node)
         if key in self.optimal_pull_strategy_cache:
-            return self.optimal_pull_strategy_cache[key].lowest_costs, self.optimal_pull_strategy_cache[key].best_step
+            return self.optimal_pull_strategy_cache[key].lowest_costs, self.optimal_pull_strategy_cache[key].best_step,self.optimal_pull_strategy_cache[key].highest_latency
 
 
 
@@ -452,19 +456,23 @@ class Initiate():
         for events_to_pull_with in all_permutations:    
             pull_request_size = self.determine_optimized_pull_request_size_for_step(acquired_eventtypes, events_to_pull_with, node)
             pull_answer_size = self.determine_optimized_pull_answer_size_for_step(events_to_pull_with, eventtype_to_acquire, node)
+            highest_lat = 0
             for source in self.eventtype_to_sources_map[eventtype_to_acquire]:
-                total_costs_for_step = ((pull_request_size / self.number_of_nodes_producing_this_projection) + pull_answer_size) * allPairs[node][source]#* self.determine_correct_number_of_sources(node, eventtype_to_acquire)
+                total_costs_for_step = ((pull_request_size / self.number_of_nodes_producing_this_projection) + pull_answer_size) * allPairs[node][source]
+                latency = allPairs[node][source] + allPairs[source][node]
+                highest_lat = latency if latency > highest_lat else highest_lat
             if total_costs_for_step < lowest_costs_for_step:# and total_costs_for_step > 0:
                 lowest_costs_for_step = total_costs_for_step
                 best_step = events_to_pull_with
+                step_latency = highest_lat
 
             self.source_sent_this_type_to_node = copy.deepcopy(old_source_sent_this_type_to_node_map)
 
 
-        optimal_push_pull_decision = CachedOptimalStep(lowest_costs_for_step, best_step)
+        optimal_push_pull_decision = CachedOptimalStep(lowest_costs_for_step, best_step,step_latency)
         self.optimal_pull_strategy_cache[key] = optimal_push_pull_decision
             
-        return lowest_costs_for_step, best_step
+        return lowest_costs_for_step, best_step,latency
 
 
     def determine_costs_of_push_pull_plan(self,plan,projection_to_process, node = 1337):
@@ -481,7 +489,7 @@ class Initiate():
                         if key not in self.source_sent_this_type_to_node and source is not node:
                             costs += self.outputrate_map[eventtype] * allPairs[node][source]#self.determine_correct_number_of_sources(node, eventtype)
                 else:
-                    lowest_costs_for_this_step, used_eventtypes = self.determine_optimal_pull_strategy_for_step_in_plan(available_predicates, eventtype, node)
+                    lowest_costs_for_this_step, used_eventtypes,latency = self.determine_optimal_pull_strategy_for_step_in_plan(available_predicates, eventtype, node)
                     costs += lowest_costs_for_this_step
 
             for eventtype in eventtype_group:
@@ -513,25 +521,34 @@ class Initiate():
         old_source_sent_this_type_to_node_map = copy.deepcopy(self.source_sent_this_type_to_node)
         push_plan_costs = self.get_push_costs(projection_to_process.primitive_operators, node)
         self.source_sent_this_type_to_node = copy.deepcopy(old_source_sent_this_type_to_node_map)
-        
+
+        max_latency = 0
         available_predicates = []
         used_eventtype_to_pull = []
         used_eventtype = ''
         for eventtype_group in plan:
             used_eventtypes = []
             for eventtype in eventtype_group:
+                latency = 0
                 if push:                 
                     number_of_sources = self.determine_correct_number_of_sources(node, eventtype)
                     for source in self.eventtype_to_sources_map[eventtype]:
                         key = str(source) +"~"+ str(node)+ "~" + str(eventtype)
+                        latency = allPairs[node][source] if allPairs[node][source] > latency else latency # add the highest latency from all Sources 
                         if key not in self.source_sent_this_type_to_node and source is not node and eventtype not in node_received_eventtypes[node]:
                             costs += self.outputrate_map[eventtype] * allPairs[node][source] #number_of_sources
                             node_received_eventtypes[node].append(eventtype)
+                            
                 else:
-                    lowest_costs_for_this_step, used_eventtype = self.determine_optimal_pull_strategy_for_step_in_plan(available_predicates, eventtype, node)
+                    lowest_costs_for_this_step, used_eventtype,pull_latency = self.determine_optimal_pull_strategy_for_step_in_plan(available_predicates, eventtype, node)
+                    for source in self.eventtype_to_sources_map[eventtype]:
+                        latency = max(latency, allPairs[node][source])
+                    latency += pull_latency
+                    max_latency = latency if latency > max_latency else max_latency
                     if eventtype not in node_received_eventtypes[node]:
                         costs += lowest_costs_for_this_step
                         node_received_eventtypes[node].append(eventtype)
+
                     for used_type in used_eventtype:
                         used_eventtypes.append(used_type)
 
@@ -544,7 +561,7 @@ class Initiate():
             push = False
         
         if costs < push_plan_costs:
-            return costs, used_eventtype_to_pull
+            return costs, used_eventtype_to_pull,latency
         else:
             return push_plan_costs, [[]]
 

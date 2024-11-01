@@ -40,7 +40,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="Process filename and number of parents.")
 
     # Add the parameters
-    parser.add_argument('--file', type=str, required=True, help="Filename to process")
+    parser.add_argument('--file', type=str, required=True, default="test", help="Filename to process")
     parser.add_argument('--number_parents', type=int, default=1, help="Number of parents (default: 1)")
 
     # Parse the arguments and return the results
@@ -48,7 +48,6 @@ def parse_arguments():
 
 
 def main():
-    
     
   
     Filters = []
@@ -158,10 +157,10 @@ def main():
     
     
    
-    hoplatency = 0    
-    totalLatencyRatio = 0
+    hoplatency = max([hopLatency[x] for x in hopLatency.keys()])   
+    totalLatencyRatio = hoplatency / centralHopLatency
     myResult = [ID, mycosts, ccosts[0], costs,Filters, networkParams[3], networkParams[0], networkParams[2], len(wl), combigenParams[3], selectivityParams[0], selectivityParams[1], combigenParams[1], longestPath, totaltime, hoplatency, float(max(list(dependencies.values()))/2), totalLatencyRatio, ccosts[0], lowerBound / ccosts[0], networkParams[1], number_parents]
-    schema = ["ID", "TransmissionRatio", "Transmission","INEvTransmission","FilterUsed", "Nodes", "EventSkew", "EventNodeRatio", "WorkloadSize", "NumberProjections", "MinimalSelectivity", "MedianSelectivity","CombigenComputationTime", "Efficiency", "PlacementComputationTime", "HopCount", "Depth", "ProcessingLatencyRatio", "CentralTransmission", "LowerBound", "EventTypes", "MaximumParents"] 
+    schema = ["ID", "TransmissionRatio", "Transmission","INEvTransmission","FilterUsed", "Nodes", "EventSkew", "EventNodeRatio", "WorkloadSize", "NumberProjections", "MinimalSelectivity", "MedianSelectivity","CombigenComputationTime", "Efficiency", "PlacementComputationTime", "OperatorPlacementLatency", "Depth", "ProcessingLatencyRatio", "CentralTransmission", "LowerBound", "EventTypes", "MaximumParents"] 
     
  
     new = False

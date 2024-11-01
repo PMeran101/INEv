@@ -191,9 +191,9 @@ def main():
 
 
 
-#    p = nx.drawing.nx_pydot.to_pydot(G)
-#    p.set_rankdir('BT')  # Set the layout direction from top to bottom
-#    p.write_png('graph.png')
+   p = nx.drawing.nx_pydot.to_pydot(G)
+   p.set_rankdir('BT')  # Set the layout direction from top to bottom
+   p.write_png('graph.png')
    
    with open('graph', 'wb') as graph_file:
          pickle.dump(G,graph_file)                

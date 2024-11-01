@@ -13,7 +13,7 @@ import pickle
 import sys
 
 import os
-
+import time
 from itertools import permutations, chain, combinations
 
 NETWORK = 'network'
@@ -304,7 +304,7 @@ def determine_randomized_distribution_push_pull_costs(queries, eventtype_combina
     for query in queries:
         for current_node in query.node_placement:
             already_received_eventtypes[current_node] = []
-        
+    max_latency = 0
     for query in queries:
         if query.query == '':
             continue
@@ -323,7 +323,8 @@ def determine_randomized_distribution_push_pull_costs(queries, eventtype_combina
                 exact_exec_times.append(end_exact-start_exact)
                 query.primitive_operators = copy.deepcopy(old_copy)
 
-                exact_costs, used_eventtypes_to_pull = push_pull_plan_generator_exact.determine_costs_for_projection_on_node(exact_push_pull_plan_for_a_projection, query, current_node, already_received_eventtypes)
+                exact_costs, used_eventtypes_to_pull,latency = push_pull_plan_generator_exact.determine_costs_for_projection_on_node(exact_push_pull_plan_for_a_projection, query, current_node, already_received_eventtypes)
+                max_latency = max(max_latency, latency)
                 if plan_print == "t":
                     print("exact_push_pull_plan_for_a_projection:", exact_push_pull_plan_for_a_projection)
                     print("used_eventtypes_to_pull:", used_eventtypes_to_pull)
@@ -331,7 +332,7 @@ def determine_randomized_distribution_push_pull_costs(queries, eventtype_combina
 
 
 
-    return total_greedy_costs, total_sampling_costs, total_factorial_costs, total_exact_costs, sum(greedy_exec_times), sum(exact_exec_times), sum(factorial_exec_times), sum(sampling_exec_times)
+    return total_greedy_costs, total_sampling_costs, total_factorial_costs, total_exact_costs, sum(greedy_exec_times), sum(exact_exec_times), sum(factorial_exec_times), sum(sampling_exec_times),max_latency
 
 
 
@@ -516,7 +517,7 @@ if __name__ == "__main__":
     runs = args.runs
     plan_print = args.plan_print
     output_csv = f"../res/{args.output_file}.csv"
-    
+    start_time = time.time()
     #NEW Variables for the new approach
     query_node_dict = {}
     node_prim_events_dict = {}
@@ -755,7 +756,7 @@ if __name__ == "__main__":
         q_network = query_network_copy if method == "ppmuse" else single_sink_query_network_copy
 
         if method == "ppmuse":
-            greedy_costs, sampling_costs, factorial_costs, exact_costs, greedy_algo_time, exact_algo_time, factorial_algo_time, sampling_algo_time = determine_randomized_distribution_push_pull_costs(q_network, eventtype_combinations, highest_primitive_eventtype_to_be_processed, algorithm, samples, topk, plan_print)
+            greedy_costs, sampling_costs, factorial_costs, exact_costs, greedy_algo_time, exact_algo_time, factorial_algo_time, sampling_algo_time,max_latency = determine_randomized_distribution_push_pull_costs(q_network, eventtype_combinations, highest_primitive_eventtype_to_be_processed, algorithm, samples, topk, plan_print)
             
             greedy_costs_avg.append(greedy_costs)
             sampling_costs_avg.append(sampling_costs)
@@ -791,6 +792,8 @@ if __name__ == "__main__":
     print(sampling_costs_avg)
     print(factorial_costs_avg)
     print(exact_costs_avg)      
+    end_time = time.time()
+    total_time = end_time - start_time
     import csv
     # Open the CSV file in read mode to get the existing rows and fieldnames
     with open(output_csv, mode='r', newline='') as file:
@@ -798,7 +801,7 @@ if __name__ == "__main__":
         fieldnames = reader[0].keys() if reader else []  # Handle empty CSV case
 
     # Columns to append
-    new_columns = [ "exact_costs"]  # New column names
+    new_columns = [ "exact_costs","TransmissionRatioOperatorPlacement","TransmissionRatioCentral","PushPullTime","MaxPushPullLatency"]  # New column names
 
     # Update fieldnames only if new columns don't already exist
     updated_fieldnames = list(fieldnames)
@@ -808,10 +811,16 @@ if __name__ == "__main__":
     # Modify the last row with new data
     if reader:  # If the CSV is not empty
         last_row = reader[-1]
-
+        transmission_value = float(last_row["Transmission"])
+        inev_transmission_value = float(last_row["INEvTransmission"])
         # Add or update new data to the last row
-        last_row["exact_costs"] = sum(exact_costs_avg) / len(exact_costs_avg)
+        exact_cost = sum(exact_costs_avg) / len(exact_costs_avg)
+        last_row["exact_costs"] = exact_cost
 
+        last_row["TransmissionRatioOperatorPlacement"] = exact_cost / inev_transmission_value
+        last_row["TransmissionRatioCentral"] = exact_cost / transmission_value
+        last_row["PushPullTime"] = total_time
+        last_row["MaxPushPullLatency"] = max_latency
         # Replace the last row with the updated one
         reader[-1] = last_row
 

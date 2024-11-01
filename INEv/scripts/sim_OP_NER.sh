@@ -9,7 +9,7 @@ do
       
           echo "Starting outer loop with k=$k and h=$h at: $(date)"
 
-          python3 generate_network.py -nw 50 -ner 0.5 -es 1.3 -ne 10 -mp $k
+          python3 generate_network.py -nw 50 -ner $b -es 1.3 -ne 10 -mp $k
           python3 generate_graph.py
           python3 allPairs.py
      

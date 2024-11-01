@@ -4,7 +4,7 @@
 #     a=0
 #     while [ $a -lt 3 ]
 #     do
-        python3 generate_network.py -nw 100 -ner 0.5 -es 1 -ne 15 -mp 3 #$max_p
+        python3 generate_network.py -nw 15 -ner 0.5 -es 1 -ne 15 -mp 2 #$max_p
         python3 generate_graph.py
         echo "Finisehd graph"
         python3 allPairs.py
