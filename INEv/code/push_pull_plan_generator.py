@@ -544,6 +544,7 @@ class Initiate():
                     for source in self.eventtype_to_sources_map[eventtype]:
                         latency = max(latency, allPairs[node][source])
                     latency += pull_latency
+                    latency += allPairs[node][0]
                     max_latency = latency if latency > max_latency else max_latency
                     if eventtype not in node_received_eventtypes[node]:
                         costs += lowest_costs_for_this_step
@@ -561,7 +562,7 @@ class Initiate():
             push = False
         
         if costs < push_plan_costs:
-            return costs, used_eventtype_to_pull,latency
+            return costs, used_eventtype_to_pull,max_latency
         else:
             return push_plan_costs, [[]]
 
