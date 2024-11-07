@@ -8,7 +8,7 @@ do
           while [ "$a" -lt 100 ]
           do
 
-            python3 generate_network.py -nw $k-ner 0.5 -es 1.3 -ne 10 -mp 1
+            python3 generate_network.py -nw $k -ner 0.5 -es 1.3 -ne 10 -mp 1
             python3 generate_graph.py
             python3 allPairs.py
             python3 generate_qwls.py --length 6 --count 10	
