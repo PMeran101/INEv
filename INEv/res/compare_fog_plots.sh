@@ -22,3 +22,15 @@ python3 plot_generic.py -i OP_Query_Sizes_5.csv OP_Query_Sizes_10.csv OP_Query_S
 
 # Example 3: All MaxParents files
 python3 plot_bars.py -i OP_SweetSpot_MaxParents_2.csv OP_SweetSpot_MaxParents_3.csv OP_SweetSpot_MaxParents_4.csv OP_SweetSpot_MaxParents_5.csv OP_SweetSpot_MaxParents_6.csv OP_SweetSpot_MaxParents_7.csv OP_SweetSpot_MaxParents_8.csv OP_SweetSpot_MaxParents_9.csv OP_SweetSpot_MaxParents_10.csv OP_SweetSpot_MaxParents_11.csv OP_SweetSpot_MaxParents_12.csv OP_SweetSpot_MaxParents_13.csv OP_SweetSpot_MaxParents_14.csv OP_SweetSpot_MaxParents_15.csv -y TransmissionRatio -l MaxParents_2 MaxParents_3 MaxParents_4 MaxParents_5 MaxParents_6 MaxParents_7 MaxParents_8 MaxParents_9 MaxParents_10 MaxParents_11 MaxParents_12 MaxParents_13 MaxParents_14 MaxParents_15 -o Fig_Bar_TransmissionRatio_AllMaxParents.pdf
+
+python3 plot_generic.py -i OP_NER_3.csv OP_NER_4.csv OP_NER_6.csv -x EventNodeRatio -y TransmissionRatio -l MaxParents_3 MaxParents_4 MaxParents_6 -o Fig_TransmissionRatio_NER_OP.pdf
+
+python3 plot_generic.py -i OP_NER_4.csv OP_NER_5.csv OP_NER_6.csv -x EventNodeRatio -y TransmissionRatio -l MaxParents_4 MaxParents_5 MaxParents_6 -o Fig_TransmissionRatio_NER_OP.pdf
+
+python3 plot_generic.py -i OP_NER_6.csv OP_NER_7.csv OP_NER_8.csv -x EventNodeRatio -y TransmissionRatio -l MaxParents_6 MaxParents_7 MaxParents_8 -o Fig_TransmissionRatio_NER_OP_HighMax.pdf
+
+python3 plot_generic.py -i OP_NER_Combined.csv -x EventNodeRatio -y TransmissionRatio -l AvgTransmissionRatio -o Fig_Transmission_Ratio_NER_Combined.pdf
+
+python3 plot_generic.py -i PP_NER_4.csv PP_NER_6.csv PP_NER_8.csv -x EventNodeRatio -y TransmissionRatio -l MaxParents_4 MaxParents_6 MaxParents_8 -o Fig_TransmissionRatio_NER_PP.pdf
+
+python3 plot_PP_generic.py -i PP_NER_Combined.csv -x EventNodeRatio -y TransmissionRatio TransmissionRatioCentral -l AvgTransmissionRatio -o Fig_Transmission_Ratio_NER_PP_Combined.pdf

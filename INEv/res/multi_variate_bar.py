@@ -42,8 +42,8 @@ def plot_percentile_bars(input_files, y_column, x_column, labels, output_file, c
         for x_point, group in grouped:
             key = (x_point, label)
             # Calculate percentiles and min/max
-            p10 = np.percentile(group, 10)
-            p90 = np.percentile(group, 90)
+            p10 = np.percentile(group, 20)
+            p90 = np.percentile(group, 80)
             min_value = group.min()
             max_value = group.max()
             data_dict[key] = {'p10': p10, 'p90': p90, 'min': min_value, 'max': max_value}

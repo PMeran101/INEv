@@ -6,3 +6,5 @@ echo "Starting Graph Density"
 ./sim_PP_GraphDensity.sh
 echo "Starting Event Skew"
 ./sim_PP_EventSkew.sh
+echo "Node Event Ratio"
+./sim_PP_NER.sh

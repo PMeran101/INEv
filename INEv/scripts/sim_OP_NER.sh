@@ -24,7 +24,7 @@ do
               python3 determine_all_single_selectivities.py
               python3 generate_projections.py
               python3 combigen.py
-              python3 computePlanCosts_aug.py --file "OP_NER_$k" --number_parents $k
+              python3 computePlanCosts_aug.py --file "OP_NER_Combined" --number_parents $k
 
               echo "  Completed inner loop iteration $a with k=$k at: $(date)"
               a=$((a + 1))

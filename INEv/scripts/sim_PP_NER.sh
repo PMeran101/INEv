@@ -24,9 +24,9 @@ do
               python3 determine_all_single_selectivities.py
               python3 generate_projections.py
               python3 combigen.py
-              python3 computePlanCosts_aug.py --file "PP_NER_$k" --number_parents $k
+              python3 computePlanCosts_aug.py --file "PP_NER_Combined" --number_parents $k
             python3 generateEvalPlan.py
-            python3 prepp.py --input_file plans/curr_MS --method ppmuse --algorithm e --samples 0  --topk 0  --runs 1 --plan_print f --output_file "PP_NER_$k"
+            python3 prepp.py --input_file plans/curr_MS --method ppmuse --algorithm e --samples 0  --topk 0  --runs 1 --plan_print f --output_file "PP_NER_Combined"
                 
               echo "  Completed inner loop iteration $a with k=$k at: $(date)"
               a=$((a + 1))
