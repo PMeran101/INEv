@@ -20,18 +20,12 @@ We vary:
       do
       for b in 2 3 4 5 6 7
       do
-      
-          echo "Starting outer loop with k=$k and h=$h at: $(date)"
-
-          python3 generate_network.py -nw 50 -ner 0.5 -es 1.3 -ne "$h" -mp $b
-          python3 generate_graph.py
-          python3 allPairs.py
-     
           a=1
-          while [ "$a" -lt 3 ]
-          do
-              echo "  Starting inner loop iteration $a with k=$k at: $(date)"
-              
+          while [ "$a" -lt 200 ]
+          do  
+            python3 generate_network.py -nw 50 -ner 0.5 -es 1.3 -ne "$h" -mp $b
+            python3 generate_graph.py
+            python3 allPairs.py
               python3 generate_qwls.py --length 6 --count $k	
               python3 generate_selectivity.py 
               python3 write_config_single.py

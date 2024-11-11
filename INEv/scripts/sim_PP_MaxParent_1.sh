@@ -15,7 +15,7 @@ cd ../code
 
      
           a=1
-          while [ "$a" -lt 3 ]
+          while [ "$a" -lt 200 ]
           do
               echo "  Starting inner loop iteration $a with k=$k at: $(date)"
             python3 generate_network.py -nw 50 -ner 0.5 -es 1.3 -ne "$h" -mp 1

@@ -1,5 +1,3 @@
-./sim_OP_NER.sh
+./combined_OP.sh
 
-./sim_PP_NER.sh
-
-./sim_PP_EventSkew.sh
+./combined_PP.sh

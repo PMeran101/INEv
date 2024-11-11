@@ -14,7 +14,7 @@ do
 
      
           a=1
-          while [ "$a" -lt 20 ]
+          while [ "$a" -lt 200 ]
           do
               echo "  Starting inner loop iteration $a with k=$k at: $(date)"
             python3 generate_network.py -nw 50 -ner 0.5 -es $k -ne 10 -mp 4
