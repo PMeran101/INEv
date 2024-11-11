@@ -4,7 +4,7 @@
 Plot grouped bar graph from multiple CSV files with multiple Y values for each X-axis entry.
 
 Original Author: samira
-Modified by Assistant to support multiple files with multiple Y columns.
+Modified by Assistant to support multiple files with multiple Y columns and customizable axis labels and legend.
 """
 
 import argparse
@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Function to generate bar plot
-def plot_bar(files, x_column, y_columns, labels, output_file):
+def plot_bar(files, x_column, y_columns, labels, output_file, x_label=None, y_label=None, legend_labels=None):
     # Check that the number of input files and labels match
     if len(files) != len(labels):
         raise ValueError("The number of input files and labels must be the same.")
@@ -59,7 +59,14 @@ def plot_bar(files, x_column, y_columns, labels, output_file):
     if n_bars * n_files > len(colors):
         colors *= (n_bars * n_files // len(colors) + 1)
 
+    # Default legend labels if custom labels are not provided
+    if legend_labels is None:
+        legend_labels = [f"{label} - {y_col}" for label in labels for y_col in y_columns]
+    if len(legend_labels) != n_files * n_bars:
+        raise ValueError("The number of legend labels must match the total number of input files and Y columns.")
+
     # Plot each file's data
+    legend_idx = 0
     for i, (means, label) in enumerate(zip(data_means, labels)):
         for j, (y_col, y_data) in enumerate(zip(y_columns, means)):
             # Calculate the position offset for each bar
@@ -67,11 +74,12 @@ def plot_bar(files, x_column, y_columns, labels, output_file):
             bar_positions = positions + offset
 
             # Plot bars for each Y column from each file
-            plt.bar(bar_positions, y_data, width=bar_width, label=f"{label} - {y_col}", color=colors[(i * n_bars + j) % len(colors)], align='center')
+            plt.bar(bar_positions, y_data, width=bar_width, label=legend_labels[legend_idx], color=colors[(i * n_bars + j) % len(colors)], align='center')
+            legend_idx += 1
 
-    plt.xlabel(x_column)
-    plt.ylabel('ComputationTime')
-    plt.title(f'Computation Time for Different {x_column}')
+    plt.xlabel(x_label if x_label else x_column)  # Use custom x-axis label or default
+    plt.ylabel(y_label if y_label else 'Computation Time')  # Use custom y-axis label or default
+    #plt.title(f'Computation Time for Different {x_column}')
 
     # Set x-axis labels and ensure alignment
     plt.xticks(positions, x_labels, rotation=45, ha='right')
@@ -98,11 +106,23 @@ def main():
     parser.add_argument('-y', '--y_columns', nargs='+', required=True, help="Column names for y-axis (e.g., TransmissionRatio TransmissionRatioINEv)")
     parser.add_argument('-l', '--labels', nargs='+', required=True, help="Labels for the files (e.g., File1 File2)")
     parser.add_argument('-o', '--output_file', required=True, help="Output file for the bar plot")
+    parser.add_argument('--x_label', help="Custom label for the x-axis")
+    parser.add_argument('--y_label', help="Custom label for the y-axis")
+    parser.add_argument('--legend_labels', nargs='+', help="Custom labels for the legend")
 
     args = parser.parse_args()
 
     # Call the plotting function
-    plot_bar(args.input_files, args.x_column, args.y_columns, args.labels, args.output_file)
+    plot_bar(
+        args.input_files,
+        args.x_column,
+        args.y_columns,
+        args.labels,
+        args.output_file,
+        x_label=args.x_label,
+        y_label=args.y_label,
+        legend_labels=args.legend_labels
+    )
 
 if __name__ == "__main__":
     main()

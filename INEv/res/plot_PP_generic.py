@@ -19,9 +19,24 @@ def main():
     
     if len(myargs.labels) != len(myargs.inputs):
         print("Number of input paths and labels must be the same.")
-        return 
+        return
+    
+    if myargs.colors and len(myargs.colors) != len(myargs.inputs) * len(myargs.yC):
+        print("Number of colors must match the total number of input file and Y column combinations.")
+        return
+    
+    if myargs.styles and len(myargs.styles) != len(myargs.inputs) * len(myargs.yC):
+        print("Number of styles must match the total number of input file and Y column combinations.")
+        return
+    
+    if myargs.legend_labels and len(myargs.legend_labels) != len(myargs.inputs) * len(myargs.yC):
+        print("Number of legend labels must match the total number of input file and Y column combinations.")
+        return
     
     labels = myargs.labels
+    colors = myargs.colors if myargs.colors else ['b'] * (len(labels) * len(myargs.yC))
+    styles = myargs.styles if myargs.styles else ['-'] * (len(labels) * len(myargs.yC))
+    legend_labels = myargs.legend_labels if myargs.legend_labels else [f"{labels[i]} - {y_col}" for i in range(len(labels)) for y_col in myargs.yC]
     Y_Columns = myargs.yC  # Accept multiple Y columns
 
     # Read the data and find common columns across all files
@@ -50,29 +65,46 @@ def main():
             print("Available columns: " + ", ".join(mycolumns))
             return
     
-    plt.rcParams.update({'font.size': 17})
-    plt.xlabel(X_Column)
-    plt.ylabel("Transmission Ratio")  # Set Y-axis label as Transmission Ratio
+    plt.rcParams.update({'font.size': 10})
+    plt.xlabel(myargs.x_label if myargs.x_label else X_Column)  # Use custom x-axis label if provided
+    plt.ylabel(myargs.y_label if myargs.y_label else "Transmission Ratio")  # Use custom y-axis label if provided
 
     # Arrange X-ticks
     df1 = mydata[0]
     myX_o = sorted(list(set(df1[X_Column].tolist())))
     myX = range(len(myX_o))  # Positions for X-ticks
     
-    # Plot data
+    # Plot data with specific colors, styles, and legend labels
+    legend_index = 0
     for i in range(len(mydata)):
         df = mydata[i]
-        for y_col in Y_Columns:
+        for j, y_col in enumerate(Y_Columns):
             y_data = df.groupby(X_Column)[y_col].median().reindex(myX_o).to_numpy()
-            plt.plot(myX, y_data, marker="x", label=f"{labels[i]} - {y_col}")
+            color = colors[i * len(Y_Columns) + j]
+            style = styles[i * len(Y_Columns) + j]
+            label = legend_labels[legend_index]
+            legend_index += 1
+            
+            # Plot each line
+            line, = plt.plot(myX, y_data, marker='x',label=label, color=color, linestyle='-' if style == 'loosely dashed' else style)
+            
+            # Apply custom dashes if 'loosely dashed'
+            if style == 'loosely dashed':
+                line.set_dashes([10, 5])  # 10 points on, 5 points off for loosely dashed
     
     # Place the legend on top of the plot
-    plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.20), ncol=len(labels), borderaxespad=0., frameon=True)
+    plt.legend(
+        loc='upper center', 
+        bbox_to_anchor=(0.5, 1.20), 
+        ncol=len(labels), 
+        borderaxespad=0., 
+        frameon=True
+    )
 
-    
     # Rotate X-axis labels to avoid overlap
     plt.xticks(myX, myX_o, rotation=45, ha='right')
     plt.yticks(np.arange(0, 1.1, 0.1))
+    
     if myargs.boxplot:
         # Add boxplots for each Y column
         for y_col in Y_Columns:
@@ -85,18 +117,21 @@ def main():
             plt.boxplot(list_of_lists, positions=myX, manage_ticks=False)
     
     plt.savefig("figs/" + str(myargs.outname), format='pdf', bbox_inches='tight')
-    # plt.show()
 
 def myparse_args(parser):
     parser.add_argument('-i', '--inputs', nargs='+', help='Input CSV file paths', required=True)
     parser.add_argument('-l', '--labels', nargs='+', help='Labels for input files', required=True)
     parser.add_argument('-x', '--xC', help='X-axis column name', required=True)
     parser.add_argument('-y', '--yC', nargs='+', help='Y-axis column name(s)', required=True)
+    parser.add_argument('-c', '--colors', nargs='+', required=False, help='Colors for each (input file, Y column) combination')
+    parser.add_argument('-s', '--styles', nargs='+', required=False, help='Line styles for each (input file, Y column) combination (e.g., "-", "--", "-.", ":", "loosely dashed")')
+    parser.add_argument('-legend_labels', nargs='+', required=False, help='Custom labels for each line in the legend')
     parser.add_argument('-box', '--boxplot', action='store_true', required=False, default=False,
                         help='Include boxplots in the graph')
     parser.add_argument('-o', '--outname', required=False, default="plot", help='Output file name')
-    args = parser.parse_args()
-    return args
+    parser.add_argument('--x_label', required=False, help='Custom label for the X-axis')
+    parser.add_argument('--y_label', required=False, help='Custom label for the Y-axis')
+    return parser.parse_args()
          
 if __name__ == "__main__":
     main()

@@ -12,7 +12,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, colors=None, y_min=None, y_max=None, min_height=0.3):
+def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, colors=None, y_min=None, y_max=None, min_height=0.3, x_label=None, y_label=None, legend_labels=None):
     """
     Generates a bar graph where each unique x-axis point shows the range from the 10th to 90th percentile
     of y_column values, with whiskers extending to outliers.
@@ -27,6 +27,9 @@ def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, 
     - y_min: Minimum Y-axis limit (optional).
     - y_max: Maximum Y-axis limit (optional).
     - min_height: Minimum height for each bar to ensure visibility (default is 0.02).
+    - x_label: Custom label for the x-axis (optional).
+    - y_label: Custom label for the y-axis (optional).
+    - legend_labels: Custom labels for the legend (optional).
     """
     # Validate file and label counts
     if len(input_files) != len(labels):
@@ -158,7 +161,7 @@ def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, 
     if y_max is None:
         y_max = global_max + 0.1 * abs(global_max)  # 10% buffer
     ax.set_ylim(y_min, y_max)
-    ax.set_ylabel('Computation Time')
+    ax.set_ylabel(y_label if y_label else 'Computation Time')
     # Customize ticks
     ax.set_yticks(np.linspace(y_min, y_max, 10))
 
@@ -166,17 +169,20 @@ def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, 
     ax.set_xticks(positions)
     ax.set_xticklabels([str(x) for x in x_points])
 
-    plt.xlabel(x_column)
+    plt.xlabel(x_label if x_label else x_column)
     
     # Custom legend
     from matplotlib.lines import Line2D
     legend_elements = []
-    for idx_label, label in enumerate(labels):
-        for idx_y, y_col in enumerate(y_columns):
-            color = colors[(idx_label * n_y_columns + idx_y) % len(colors)]
-            legend_elements.append(Line2D([0], [0], color=color, lw=10, label=f"{label} - {y_col}"))
+    custom_legend_labels = legend_labels if legend_labels else [f"{label} - {y_col}" for label in labels for y_col in y_columns]
+    if len(custom_legend_labels) != n_labels * n_y_columns:
+        raise ValueError("Number of legend labels must match the total number of input files and Y columns.")
+    
+    for idx, legend_label in enumerate(custom_legend_labels):
+        color = colors[idx % len(colors)]
+        legend_elements.append(Line2D([0], [0], color=color, lw=10, label=legend_label))
 
-    ax.legend(handles=legend_elements, title="Data Sets", loc='upper center', bbox_to_anchor=(0.5, 1.2), ncol=2)
+    ax.legend(handles=legend_elements, loc='upper center', bbox_to_anchor=(0.5, 1.2), ncol=2)
 
     plt.savefig(output_file, format='pdf', bbox_inches='tight')
     plt.close()
@@ -192,6 +198,9 @@ def main():
     parser.add_argument('-c', '--colors', nargs='+', help="Colors for the bars (optional).")
     parser.add_argument('--y_min', type=float, help="Minimum Y-axis value (optional).")
     parser.add_argument('--y_max', type=float, help="Maximum Y-axis value (optional).")
+    parser.add_argument('--x_label', help="Custom label for the x-axis")
+    parser.add_argument('--y_label', help="Custom label for the y-axis")
+    parser.add_argument('--legend_labels', nargs='+', help="Custom labels for the legend")
 
     args = parser.parse_args()
 
@@ -203,7 +212,10 @@ def main():
         args.output_file,
         colors=args.colors,
         y_min=args.y_min,
-        y_max=args.y_max
+        y_max=args.y_max,
+        x_label=args.x_label,
+        y_label=args.y_label,
+        legend_labels=args.legend_labels
     )
 
 if __name__ == "__main__":

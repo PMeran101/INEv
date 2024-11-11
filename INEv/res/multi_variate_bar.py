@@ -3,12 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-def plot_percentile_bars(input_files, y_column, x_column, labels, output_file, colors=None):
+def plot_percentile_bars(input_files, y_column, x_column, labels, output_file, colors=None, x_label=None, y_label=None, legend_title="Data Sets"):
     """
     Generates a bar graph where for each unique x-axis point, the bar represents the range
     from the 10th percentile to the 90th percentile of the y_column values.
     Whiskers show the outliers (minimum to 10th percentile and 90th percentile to maximum).
-    Allows customization of figure size and bar colors.
+    Allows customization of figure size, axis labels, and legend title.
 
     Parameters:
     - input_files: List of CSV file paths.
@@ -17,6 +17,9 @@ def plot_percentile_bars(input_files, y_column, x_column, labels, output_file, c
     - labels: List of labels corresponding to each CSV file.
     - output_file: Path to save the output plot.
     - colors: List of colors for the bars (optional).
+    - x_label: Custom x-axis label (optional).
+    - y_label: Custom y-axis label (optional).
+    - legend_title: Custom title for the legend (optional).
     """
     # Check that the number of input files and labels match
     if len(input_files) != len(labels):
@@ -42,8 +45,8 @@ def plot_percentile_bars(input_files, y_column, x_column, labels, output_file, c
         for x_point, group in grouped:
             key = (x_point, label)
             # Calculate percentiles and min/max
-            p10 = np.percentile(group, 20)
-            p90 = np.percentile(group, 80)
+            p10 = np.percentile(group, 10)
+            p90 = np.percentile(group, 90)
             min_value = group.min()
             max_value = group.max()
             data_dict[key] = {'p10': p10, 'p90': p90, 'min': min_value, 'max': max_value}
@@ -202,12 +205,10 @@ def plot_percentile_bars(input_files, y_column, x_column, labels, output_file, c
     ax.set_xticks(positions)
     ax.set_xticklabels([str(x) for x in x_points])
 
-    plt.xlabel(x_column)
-    plt.ylabel(y_column)
-    #plt.title(f"{y_column} vs {x_column} with 80% Range Bars and Outliers")
-    plt.legend(title="Data Sets")
+    plt.xlabel(x_label if x_label else x_column)
+    plt.ylabel(y_label if y_label else y_column)
+    plt.legend()
     plt.tight_layout()
-    #plt.grid(axis='y', linestyle='--', zorder=0)
 
     # Save the plot
     plt.savefig(output_file, format='pdf', bbox_inches='tight')
@@ -222,7 +223,9 @@ def main():
     parser.add_argument('-l', '--labels', nargs='+', required=True, help="Labels for the input files.")
     parser.add_argument('-o', '--output_file', required=True, help="Output file for the plot.")
     parser.add_argument('-c', '--colors', nargs='+', help="Colors for the bars (optional).")
-    parser.add_argument('--figsize', nargs=2, type=float, default=[10, 6], help="Figure size as width height (default: 10 6).")
+    parser.add_argument('--x_label', help="Custom x-axis label (optional).")
+    parser.add_argument('--y_label', help="Custom y-axis label (optional).")
+    parser.add_argument('--legend_title', default="Legend", help="Title for the legend (optional).")
 
     args = parser.parse_args()
 
@@ -233,7 +236,10 @@ def main():
         args.x_column,
         args.labels,
         args.output_file,
-        colors=args.colors
+        colors=args.colors,
+        x_label=args.x_label,
+        y_label=args.y_label,
+        legend_title=args.legend_title
     )
 
 if __name__ == "__main__":

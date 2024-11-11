@@ -4,129 +4,8009 @@ Computational Power: inf
 Memory: inf
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Parents: None
-Child: [1, 2]
+Child: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
 Siblings: None
 
 Node 1 Node 1
-Computational Power: 3
-Memory: 3
-Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Computational Power: 9
+Memory: 9
+Eventrates: [1000, 0, 0, 790, 571, 485, 440, 0, 0, 0, 0, 239, 0, 0, 187]
 Parents: [0]
-Child: [3, 4, 5]
+Child: None
 Siblings: None
 
 Node 2 Node 2
-Computational Power: 3
-Memory: 3
+Computational Power: 9
+Memory: 9
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Parents: [0]
-Child: [3, 4]
+Child: [192]
 Siblings: None
 
 Node 3 Node 3
-Computational Power: 2
-Memory: 2
+Computational Power: 9
+Memory: 9
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parents: [2, 1]
-Child: [8, 12, 14]
+Parents: [0]
+Child: [128, 175, 176, 181, 196]
 Siblings: None
 
 Node 4 Node 4
-Computational Power: 2
-Memory: 2
-Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parents: [2, 1]
-Child: [6, 7, 8, 10]
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 790, 571, 485, 440, 0, 0, 0, 253, 0, 234, 0, 0]
+Parents: [0]
+Child: None
 Siblings: None
 
 Node 5 Node 5
-Computational Power: 2
-Memory: 2
+Computational Power: 9
+Memory: 9
 Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-Parents: [1]
-Child: [9, 10, 11, 12, 13, 14]
+Parents: [0]
+Child: [102, 161]
 Siblings: None
 
 Node 6 Node 6
-Computational Power: 1
-Memory: 1
-Eventrates: [1000, 0, 0, 0, 574, 0, 428, 382, 0, 0, 0, 232, 0, 222, 0]
-Parents: [4]
-Child: None
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [124, 143]
 Siblings: None
 
 Node 7 Node 7
-Computational Power: 1
-Memory: 1
-Eventrates: [0, 1000, 973, 745, 574, 0, 0, 382, 0, 303, 0, 232, 0, 0, 213]
-Parents: [4]
-Child: None
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [141]
 Siblings: None
 
 Node 8 Node 8
-Computational Power: 1
-Memory: 1
-Eventrates: [1000, 0, 973, 745, 0, 0, 0, 382, 0, 303, 0, 0, 0, 222, 213]
-Parents: [3, 4]
-Child: None
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [168]
 Siblings: None
 
 Node 9 Node 9
-Computational Power: 1
-Memory: 1
-Eventrates: [0, 0, 973, 0, 574, 534, 0, 382, 331, 303, 0, 0, 233, 0, 213]
-Parents: [5]
-Child: None
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [198]
 Siblings: None
 
 Node 10 Node 10
-Computational Power: 1
-Memory: 1
-Eventrates: [1000, 0, 973, 745, 0, 534, 0, 382, 331, 0, 268, 232, 233, 222, 0]
-Parents: [5, 4]
+Computational Power: 9
+Memory: 9
+Eventrates: [1000, 1000, 1000, 790, 571, 0, 440, 0, 0, 0, 253, 239, 234, 215, 187]
+Parents: [0]
 Child: None
 Siblings: None
 
 Node 11 Node 11
-Computational Power: 1
-Memory: 1
-Eventrates: [0, 1000, 0, 745, 574, 0, 0, 382, 331, 303, 0, 0, 233, 0, 213]
-Parents: [5]
-Child: None
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [161]
 Siblings: None
 
 Node 12 Node 12
-Computational Power: 1
-Memory: 1
-Eventrates: [0, 0, 0, 0, 574, 534, 428, 0, 0, 0, 268, 0, 233, 222, 0]
-Parents: [3, 5]
-Child: None
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [172]
 Siblings: None
 
 Node 13 Node 13
-Computational Power: 1
-Memory: 1
-Eventrates: [1000, 0, 973, 0, 574, 534, 428, 0, 0, 0, 0, 232, 233, 222, 0]
-Parents: [5]
-Child: None
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [108, 139, 187]
 Siblings: None
 
 Node 14 Node 14
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 1000, 1000, 0, 0, 485, 0, 0, 309, 301, 253, 239, 0, 215, 187]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 15 Node 15
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [110, 184]
+Siblings: None
+
+Node 16 Node 16
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [121, 160]
+Siblings: None
+
+Node 17 Node 17
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [120, 171]
+Siblings: None
+
+Node 18 Node 18
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [137]
+Siblings: None
+
+Node 19 Node 19
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [130, 185]
+Siblings: None
+
+Node 20 Node 20
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [107, 143, 182]
+Siblings: None
+
+Node 21 Node 21
+Computational Power: 9
+Memory: 9
+Eventrates: [1000, 0, 0, 0, 0, 485, 0, 0, 0, 301, 253, 239, 234, 0, 187]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 22 Node 22
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [101]
+Siblings: None
+
+Node 23 Node 23
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [190]
+Siblings: None
+
+Node 24 Node 24
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [139]
+Siblings: None
+
+Node 25 Node 25
+Computational Power: 9
+Memory: 9
+Eventrates: [1000, 0, 1000, 0, 571, 485, 440, 423, 0, 301, 253, 239, 0, 0, 0]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 26 Node 26
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [112]
+Siblings: None
+
+Node 27 Node 27
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [132]
+Siblings: None
+
+Node 28 Node 28
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [132, 134, 195]
+Siblings: None
+
+Node 29 Node 29
+Computational Power: 9
+Memory: 9
+Eventrates: [1000, 0, 0, 0, 0, 0, 0, 423, 309, 0, 253, 239, 0, 215, 187]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 30 Node 30
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [122, 166, 168, 192]
+Siblings: None
+
+Node 31 Node 31
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [197]
+Siblings: None
+
+Node 32 Node 32
+Computational Power: 9
+Memory: 9
+Eventrates: [1000, 1000, 0, 0, 571, 0, 0, 423, 309, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 33 Node 33
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [146, 198]
+Siblings: None
+
+Node 34 Node 34
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [138]
+Siblings: None
+
+Node 35 Node 35
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [101, 138]
+Siblings: None
+
+Node 36 Node 36
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [177, 191]
+Siblings: None
+
+Node 37 Node 37
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [103, 152, 154]
+Siblings: None
+
+Node 38 Node 38
+Computational Power: 9
+Memory: 9
+Eventrates: [1000, 1000, 1000, 0, 571, 0, 440, 0, 309, 0, 0, 0, 0, 215, 0]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 39 Node 39
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [142]
+Siblings: None
+
+Node 40 Node 40
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [103, 104, 105]
+Siblings: None
+
+Node 41 Node 41
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [119, 136, 157]
+Siblings: None
+
+Node 42 Node 42
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [117]
+Siblings: None
+
+Node 43 Node 43
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [179]
+Siblings: None
+
+Node 44 Node 44
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 1000, 0, 790, 0, 0, 440, 0, 0, 0, 253, 0, 0, 0, 0]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 45 Node 45
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [158, 199]
+Siblings: None
+
+Node 46 Node 46
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [118, 167, 174]
+Siblings: None
+
+Node 47 Node 47
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [165, 175, 193]
+Siblings: None
+
+Node 48 Node 48
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [183]
+Siblings: None
+
+Node 49 Node 49
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [100, 123, 173]
+Siblings: None
+
+Node 50 Node 50
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [134]
+Siblings: None
+
+Node 51 Node 51
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [122, 172]
+Siblings: None
+
+Node 52 Node 52
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [178]
+Siblings: None
+
+Node 53 Node 53
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [127]
+Siblings: None
+
+Node 54 Node 54
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [109, 116, 159, 162, 189]
+Siblings: None
+
+Node 55 Node 55
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [144]
+Siblings: None
+
+Node 56 Node 56
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [149]
+Siblings: None
+
+Node 57 Node 57
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [199]
+Siblings: None
+
+Node 58 Node 58
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [114]
+Siblings: None
+
+Node 59 Node 59
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [127, 178]
+Siblings: None
+
+Node 60 Node 60
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [142]
+Siblings: None
+
+Node 61 Node 61
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [110, 170, 181]
+Siblings: None
+
+Node 62 Node 62
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [195]
+Siblings: None
+
+Node 63 Node 63
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [137]
+Siblings: None
+
+Node 64 Node 64
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [129, 147]
+Siblings: None
+
+Node 65 Node 65
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [111]
+Siblings: None
+
+Node 66 Node 66
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [131, 144, 151, 160, 187]
+Siblings: None
+
+Node 67 Node 67
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [158, 159]
+Siblings: None
+
+Node 68 Node 68
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [129, 154, 169]
+Siblings: None
+
+Node 69 Node 69
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [186]
+Siblings: None
+
+Node 70 Node 70
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [135]
+Siblings: None
+
+Node 71 Node 71
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 1000, 1000, 790, 571, 0, 0, 0, 309, 301, 253, 239, 0, 215, 187]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 72 Node 72
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [104]
+Siblings: None
+
+Node 73 Node 73
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [126]
+Siblings: None
+
+Node 74 Node 74
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [106, 167, 182]
+Siblings: None
+
+Node 75 Node 75
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 571, 485, 440, 423, 309, 0, 253, 239, 234, 0, 187]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 76 Node 76
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [150, 188]
+Siblings: None
+
+Node 77 Node 77
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [164]
+Siblings: None
+
+Node 78 Node 78
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [155]
+Siblings: None
+
+Node 79 Node 79
+Computational Power: 9
+Memory: 9
+Eventrates: [1000, 0, 1000, 790, 571, 0, 440, 423, 309, 301, 0, 0, 234, 0, 187]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 80 Node 80
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [163, 180]
+Siblings: None
+
+Node 81 Node 81
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [123, 140, 148]
+Siblings: None
+
+Node 82 Node 82
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [116, 125, 191]
+Siblings: None
+
+Node 83 Node 83
+Computational Power: 9
+Memory: 9
+Eventrates: [1000, 0, 0, 790, 571, 485, 440, 423, 309, 301, 253, 239, 234, 215, 187]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 84 Node 84
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [153, 169]
+Siblings: None
+
+Node 85 Node 85
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [108, 148]
+Siblings: None
+
+Node 86 Node 86
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [152]
+Siblings: None
+
+Node 87 Node 87
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 1000, 1000, 790, 0, 485, 440, 423, 0, 0, 253, 0, 234, 215, 0]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 88 Node 88
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [113]
+Siblings: None
+
+Node 89 Node 89
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [102]
+Siblings: None
+
+Node 90 Node 90
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [105]
+Siblings: None
+
+Node 91 Node 91
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 790, 0, 485, 440, 0, 309, 0, 0, 239, 0, 215, 187]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 92 Node 92
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [115, 133]
+Siblings: None
+
+Node 93 Node 93
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [136]
+Siblings: None
+
+Node 94 Node 94
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [166, 185]
+Siblings: None
+
+Node 95 Node 95
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [194]
+Siblings: None
+
+Node 96 Node 96
+Computational Power: 9
+Memory: 9
+Eventrates: [1000, 0, 0, 790, 571, 485, 0, 0, 309, 301, 0, 239, 0, 215, 187]
+Parents: [0]
+Child: None
+Siblings: None
+
+Node 97 Node 97
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [145, 151]
+Siblings: None
+
+Node 98 Node 98
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [194]
+Siblings: None
+
+Node 99 Node 99
+Computational Power: 9
+Memory: 9
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [156]
+Siblings: None
+
+Node 100 Node 100
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [49]
+Child: [245, 254, 290]
+Siblings: None
+
+Node 101 Node 101
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [35, 22]
+Child: [271, 278]
+Siblings: None
+
+Node 102 Node 102
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [5, 89]
+Child: [213, 255, 277]
+Siblings: None
+
+Node 103 Node 103
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [40, 37]
+Child: [207, 261]
+Siblings: None
+
+Node 104 Node 104
+Computational Power: 8
+Memory: 8
+Eventrates: [1000, 1000, 1000, 0, 0, 0, 0, 0, 0, 0, 0, 239, 0, 215, 187]
+Parents: [40, 72]
+Child: None
+Siblings: None
+
+Node 105 Node 105
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [90, 40]
+Child: [228, 263]
+Siblings: None
+
+Node 106 Node 106
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [74]
+Child: [217, 242, 244]
+Siblings: None
+
+Node 107 Node 107
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [20]
+Child: [208]
+Siblings: None
+
+Node 108 Node 108
+Computational Power: 8
+Memory: 8
+Eventrates: [1000, 0, 1000, 790, 571, 485, 440, 0, 309, 301, 253, 239, 234, 215, 0]
+Parents: [85, 13]
+Child: None
+Siblings: None
+
+Node 109 Node 109
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [54]
+Child: [218]
+Siblings: None
+
+Node 110 Node 110
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [61, 15]
+Child: [201, 251, 284]
+Siblings: None
+
+Node 111 Node 111
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [65]
+Child: [234, 275]
+Siblings: None
+
+Node 112 Node 112
+Computational Power: 8
+Memory: 8
+Eventrates: [1000, 0, 0, 0, 0, 0, 440, 423, 0, 301, 253, 0, 0, 215, 0]
+Parents: [26]
+Child: None
+Siblings: None
+
+Node 113 Node 113
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [88]
+Child: [200, 232]
+Siblings: None
+
+Node 114 Node 114
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [58]
+Child: [231]
+Siblings: None
+
+Node 115 Node 115
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [92]
+Child: [220, 277]
+Siblings: None
+
+Node 116 Node 116
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [54, 82]
+Child: [217, 253]
+Siblings: None
+
+Node 117 Node 117
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [42]
+Child: [230, 276]
+Siblings: None
+
+Node 118 Node 118
+Computational Power: 8
+Memory: 8
+Eventrates: [1000, 1000, 1000, 790, 0, 0, 0, 423, 0, 301, 253, 0, 234, 215, 187]
+Parents: [46]
+Child: None
+Siblings: None
+
+Node 119 Node 119
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [41]
+Child: [212, 271]
+Siblings: None
+
+Node 120 Node 120
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 1000, 1000, 790, 571, 0, 440, 0, 0, 0, 253, 239, 0, 215, 187]
+Parents: [17]
+Child: None
+Siblings: None
+
+Node 121 Node 121
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [16]
+Child: [208, 222]
+Siblings: None
+
+Node 122 Node 122
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [51, 30]
+Child: [229]
+Siblings: None
+
+Node 123 Node 123
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [81, 49]
+Child: [255, 291]
+Siblings: None
+
+Node 124 Node 124
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [6]
+Child: [211]
+Siblings: None
+
+Node 125 Node 125
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [82]
+Child: [259, 268]
+Siblings: None
+
+Node 126 Node 126
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [73]
+Child: [213, 241, 275]
+Siblings: None
+
+Node 127 Node 127
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [53, 59]
+Child: [233, 297]
+Siblings: None
+
+Node 128 Node 128
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [3]
+Child: [282, 289]
+Siblings: None
+
+Node 129 Node 129
+Computational Power: 8
+Memory: 8
+Eventrates: [1000, 1000, 0, 0, 571, 0, 0, 423, 0, 0, 253, 0, 0, 0, 0]
+Parents: [64, 68]
+Child: None
+Siblings: None
+
+Node 130 Node 130
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [19]
+Child: [270, 293]
+Siblings: None
+
+Node 131 Node 131
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [66]
+Child: [292]
+Siblings: None
+
+Node 132 Node 132
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [28, 27]
+Child: [233]
+Siblings: None
+
+Node 133 Node 133
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [92]
+Child: [235, 242, 269]
+Siblings: None
+
+Node 134 Node 134
+Computational Power: 8
+Memory: 8
+Eventrates: [1000, 0, 1000, 0, 571, 0, 440, 423, 0, 301, 0, 239, 234, 0, 187]
+Parents: [28, 50]
+Child: None
+Siblings: None
+
+Node 135 Node 135
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [70]
+Child: [202, 239, 286]
+Siblings: None
+
+Node 136 Node 136
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [41, 93]
+Child: [223, 288]
+Siblings: None
+
+Node 137 Node 137
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [63, 18]
+Child: [273]
+Siblings: None
+
+Node 138 Node 138
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [35, 34]
+Child: [258, 287]
+Siblings: None
+
+Node 139 Node 139
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [13, 24]
+Child: [227]
+Siblings: None
+
+Node 140 Node 140
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [81]
+Child: [222, 228, 285]
+Siblings: None
+
+Node 141 Node 141
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [7]
+Child: [240, 268, 295]
+Siblings: None
+
+Node 142 Node 142
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [60, 39]
+Child: [245, 272, 295]
+Siblings: None
+
+Node 143 Node 143
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [6, 20]
+Child: [243]
+Siblings: None
+
+Node 144 Node 144
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [66, 55]
+Child: [223]
+Siblings: None
+
+Node 145 Node 145
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [97]
+Child: [224, 237, 253]
+Siblings: None
+
+Node 146 Node 146
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [33]
+Child: [252, 262]
+Siblings: None
+
+Node 147 Node 147
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [64]
+Child: [249, 263, 280]
+Siblings: None
+
+Node 148 Node 148
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [81, 85]
+Child: [238, 259]
+Siblings: None
+
+Node 149 Node 149
+Computational Power: 8
+Memory: 8
+Eventrates: [1000, 0, 0, 790, 0, 485, 0, 0, 0, 301, 0, 239, 0, 0, 187]
+Parents: [56]
+Child: None
+Siblings: None
+
+Node 150 Node 150
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 1000, 1000, 0, 0, 485, 440, 423, 309, 301, 0, 239, 234, 0, 0]
+Parents: [76]
+Child: None
+Siblings: None
+
+Node 151 Node 151
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [66, 97]
+Child: [250]
+Siblings: None
+
+Node 152 Node 152
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [37, 86]
+Child: [262]
+Siblings: None
+
+Node 153 Node 153
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [84]
+Child: [214, 279]
+Siblings: None
+
+Node 154 Node 154
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 1000, 0, 0, 0, 485, 440, 423, 309, 301, 253, 0, 0, 215, 187]
+Parents: [37, 68]
+Child: None
+Siblings: None
+
+Node 155 Node 155
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [78]
+Child: [279, 285]
+Siblings: None
+
+Node 156 Node 156
+Computational Power: 8
+Memory: 8
+Eventrates: [1000, 0, 0, 0, 0, 0, 440, 423, 0, 301, 253, 239, 0, 0, 0]
+Parents: [99]
+Child: None
+Siblings: None
+
+Node 157 Node 157
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 790, 0, 0, 0, 0, 309, 301, 253, 239, 234, 215, 187]
+Parents: [41]
+Child: None
+Siblings: None
+
+Node 158 Node 158
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [67, 45]
+Child: [221, 237]
+Siblings: None
+
+Node 159 Node 159
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 790, 571, 0, 0, 423, 0, 0, 253, 0, 234, 215, 0]
+Parents: [67, 54]
+Child: None
+Siblings: None
+
+Node 160 Node 160
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [16, 66]
+Child: [247, 278, 284]
+Siblings: None
+
+Node 161 Node 161
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [11, 5]
+Child: [260, 287]
+Siblings: None
+
+Node 162 Node 162
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [54]
+Child: [215, 225, 257, 264]
+Siblings: None
+
+Node 163 Node 163
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 790, 571, 0, 440, 0, 309, 0, 253, 239, 0, 0, 0]
+Parents: [80]
+Child: None
+Siblings: None
+
+Node 164 Node 164
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [77]
+Child: [216, 267, 283, 299]
+Siblings: None
+
+Node 165 Node 165
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [47]
+Child: [224, 236]
+Siblings: None
+
+Node 166 Node 166
+Computational Power: 8
+Memory: 8
+Eventrates: [1000, 1000, 0, 0, 571, 0, 0, 0, 0, 0, 253, 239, 0, 0, 187]
+Parents: [94, 30]
+Child: None
+Siblings: None
+
+Node 167 Node 167
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [46, 74]
+Child: [218]
+Siblings: None
+
+Node 168 Node 168
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [8, 30]
+Child: [205, 248, 281]
+Siblings: None
+
+Node 169 Node 169
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [84, 68]
+Child: [202, 235]
+Siblings: None
+
+Node 170 Node 170
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [61]
+Child: [274]
+Siblings: None
+
+Node 171 Node 171
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [17]
+Child: [201]
+Siblings: None
+
+Node 172 Node 172
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [12, 51]
+Child: [205]
+Siblings: None
+
+Node 173 Node 173
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [49]
+Child: [210, 293]
+Siblings: None
+
+Node 174 Node 174
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [46]
+Child: [257]
+Siblings: None
+
+Node 175 Node 175
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [3, 47]
+Child: [231]
+Siblings: None
+
+Node 176 Node 176
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [3]
+Child: [216, 247, 274]
+Siblings: None
+
+Node 177 Node 177
+Computational Power: 8
+Memory: 8
+Eventrates: [1000, 0, 1000, 790, 571, 485, 440, 0, 309, 0, 253, 239, 0, 0, 0]
+Parents: [36]
+Child: None
+Siblings: None
+
+Node 178 Node 178
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [52, 59]
+Child: [254, 256]
+Siblings: None
+
+Node 179 Node 179
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [43]
+Child: [272]
+Siblings: None
+
+Node 180 Node 180
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [80]
+Child: [251]
+Siblings: None
+
+Node 181 Node 181
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [3, 61]
+Child: [200, 290, 298]
+Siblings: None
+
+Node 182 Node 182
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [74, 20]
+Child: [265]
+Siblings: None
+
+Node 183 Node 183
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 790, 0, 485, 0, 0, 0, 301, 253, 239, 234, 0, 187]
+Parents: [48]
+Child: None
+Siblings: None
+
+Node 184 Node 184
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [15]
+Child: [206, 209, 256]
+Siblings: None
+
+Node 185 Node 185
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [19, 94]
+Child: [215, 229]
+Siblings: None
+
+Node 186 Node 186
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [69]
+Child: [203, 204, 260]
+Siblings: None
+
+Node 187 Node 187
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [66, 13]
+Child: [246]
+Siblings: None
+
+Node 188 Node 188
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [76]
+Child: [294]
+Siblings: None
+
+Node 189 Node 189
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [54]
+Child: [232, 246, 286]
+Siblings: None
+
+Node 190 Node 190
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [23]
+Child: [249, 280, 291]
+Siblings: None
+
+Node 191 Node 191
+Computational Power: 8
+Memory: 8
+Eventrates: [1000, 1000, 1000, 0, 0, 485, 0, 423, 309, 301, 0, 0, 0, 0, 187]
+Parents: [82, 36]
+Child: None
+Siblings: None
+
+Node 192 Node 192
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [30, 2]
+Child: [296]
+Siblings: None
+
+Node 193 Node 193
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 1000, 790, 571, 0, 0, 0, 0, 301, 253, 239, 0, 0, 187]
+Parents: [47]
+Child: None
+Siblings: None
+
+Node 194 Node 194
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [95, 98]
+Child: [219]
+Siblings: None
+
+Node 195 Node 195
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [28, 62]
+Child: [209, 226]
+Siblings: None
+
+Node 196 Node 196
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [3]
+Child: [241, 288]
+Siblings: None
+
+Node 197 Node 197
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [31]
+Child: [267]
+Siblings: None
+
+Node 198 Node 198
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [33, 9]
+Child: [266]
+Siblings: None
+
+Node 199 Node 199
+Computational Power: 8
+Memory: 8
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [57, 45]
+Child: [221, 266]
+Siblings: None
+
+Node 200 Node 200
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [113, 181]
+Child: [317]
+Siblings: None
+
+Node 201 Node 201
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [171, 110]
+Child: [350, 398]
+Siblings: None
+
+Node 202 Node 202
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [135, 169]
+Child: [329]
+Siblings: None
+
+Node 203 Node 203
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [186]
+Child: [319, 334, 359, 389]
+Siblings: None
+
+Node 204 Node 204
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [186]
+Child: [311]
+Siblings: None
+
+Node 205 Node 205
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [168, 172]
+Child: [311, 373]
+Siblings: None
+
+Node 206 Node 206
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [184]
+Child: [315, 337, 367]
+Siblings: None
+
+Node 207 Node 207
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 1000, 0, 0, 485, 0, 423, 0, 301, 0, 0, 234, 215, 187]
+Parents: [103]
+Child: None
+Siblings: None
+
+Node 208 Node 208
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [107, 121]
+Child: [375]
+Siblings: None
+
+Node 209 Node 209
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [195, 184]
+Child: [342, 346]
+Siblings: None
+
+Node 210 Node 210
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [173]
+Child: [353, 391]
+Siblings: None
+
+Node 211 Node 211
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [124]
+Child: [338]
+Siblings: None
+
+Node 212 Node 212
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [119]
+Child: [393, 396]
+Siblings: None
+
+Node 213 Node 213
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [102, 126]
+Child: [370]
+Siblings: None
+
+Node 214 Node 214
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 1000, 0, 0, 0, 485, 440, 0, 309, 301, 253, 0, 0, 0, 187]
+Parents: [153]
+Child: None
+Siblings: None
+
+Node 215 Node 215
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 1000, 0, 571, 0, 440, 423, 309, 0, 0, 239, 234, 0, 187]
+Parents: [162, 185]
+Child: None
+Siblings: None
+
+Node 216 Node 216
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [176, 164]
+Child: [344]
+Siblings: None
+
+Node 217 Node 217
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [106, 116]
+Child: [308, 394, 397]
+Siblings: None
+
+Node 218 Node 218
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [167, 109]
+Child: [364]
+Siblings: None
+
+Node 219 Node 219
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [194]
+Child: [300, 343, 351, 361, 378, 389]
+Siblings: None
+
+Node 220 Node 220
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [115]
+Child: [312, 386]
+Siblings: None
+
+Node 221 Node 221
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [199, 158]
+Child: [376]
+Siblings: None
+
+Node 222 Node 222
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 1000, 0, 0, 0, 0, 0, 0, 309, 301, 0, 0, 0, 215, 187]
+Parents: [140, 121]
+Child: None
+Siblings: None
+
+Node 223 Node 223
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [136, 144]
+Child: [338]
+Siblings: None
+
+Node 224 Node 224
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 790, 0, 0, 440, 423, 0, 301, 0, 239, 234, 215, 187]
+Parents: [145, 165]
+Child: None
+Siblings: None
+
+Node 225 Node 225
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [162]
+Child: [349, 357, 378]
+Siblings: None
+
+Node 226 Node 226
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [195]
+Child: [335, 384]
+Siblings: None
+
+Node 227 Node 227
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [139]
+Child: [305, 380]
+Siblings: None
+
+Node 228 Node 228
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [105, 140]
+Child: [327, 332, 362, 379, 395]
+Siblings: None
+
+Node 229 Node 229
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [185, 122]
+Child: [331, 365]
+Siblings: None
+
+Node 230 Node 230
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 1000, 0, 0, 0, 485, 0, 0, 309, 301, 253, 239, 0, 0, 0]
+Parents: [117]
+Child: None
+Siblings: None
+
+Node 231 Node 231
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 1000, 0, 790, 571, 0, 0, 423, 0, 301, 0, 0, 234, 215, 0]
+Parents: [114, 175]
+Child: None
+Siblings: None
+
+Node 232 Node 232
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [189, 113]
+Child: [307, 318]
+Siblings: None
+
+Node 233 Node 233
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [132, 127]
+Child: [327, 358, 372, 387]
+Siblings: None
+
+Node 234 Node 234
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [111]
+Child: [314, 368]
+Siblings: None
+
+Node 235 Node 235
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [133, 169]
+Child: [335]
+Siblings: None
+
+Node 236 Node 236
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [165]
+Child: [324]
+Siblings: None
+
+Node 237 Node 237
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [158, 145]
+Child: [303, 366]
+Siblings: None
+
+Node 238 Node 238
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 1000, 1000, 790, 571, 0, 440, 0, 0, 301, 0, 0, 234, 0, 187]
+Parents: [148]
+Child: None
+Siblings: None
+
+Node 239 Node 239
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [135]
+Child: [314, 373, 398]
+Siblings: None
+
+Node 240 Node 240
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [141]
+Child: [305]
+Siblings: None
+
+Node 241 Node 241
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [126, 196]
+Child: [309, 363]
+Siblings: None
+
+Node 242 Node 242
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 1000, 790, 0, 485, 0, 0, 309, 301, 253, 239, 234, 0, 0]
+Parents: [106, 133]
+Child: None
+Siblings: None
+
+Node 243 Node 243
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 0, 1000, 790, 0, 0, 440, 0, 309, 301, 0, 0, 234, 0, 187]
+Parents: [143]
+Child: None
+Siblings: None
+
+Node 244 Node 244
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [106]
+Child: [310, 321, 390]
+Siblings: None
+
+Node 245 Node 245
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [100, 142]
+Child: [330]
+Siblings: None
+
+Node 246 Node 246
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [189, 187]
+Child: [322, 369]
+Siblings: None
+
+Node 247 Node 247
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [176, 160]
+Child: [342]
+Siblings: None
+
+Node 248 Node 248
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [168]
+Child: [344, 346, 358]
+Siblings: None
+
+Node 249 Node 249
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [147, 190]
+Child: [308, 316, 347, 384]
+Siblings: None
+
+Node 250 Node 250
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [151]
+Child: [320, 390]
+Siblings: None
+
+Node 251 Node 251
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [110, 180]
+Child: [345]
+Siblings: None
+
+Node 252 Node 252
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 1000, 1000, 0, 571, 485, 440, 0, 0, 0, 0, 0, 234, 215, 0]
+Parents: [146]
+Child: None
+Siblings: None
+
+Node 253 Node 253
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 0, 0, 790, 571, 0, 0, 423, 309, 301, 0, 239, 234, 215, 0]
+Parents: [145, 116]
+Child: None
+Siblings: None
+
+Node 254 Node 254
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [178, 100]
+Child: [388, 399]
+Siblings: None
+
+Node 255 Node 255
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [102, 123]
+Child: [330, 340, 381]
+Siblings: None
+
+Node 256 Node 256
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [184, 178]
+Child: [313, 348]
+Siblings: None
+
+Node 257 Node 257
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [162, 174]
+Child: [316, 364]
+Siblings: None
+
+Node 258 Node 258
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [138]
+Child: [319]
+Siblings: None
+
+Node 259 Node 259
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [148, 125]
+Child: [300, 339, 352, 386, 388]
+Siblings: None
+
+Node 260 Node 260
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 1000, 1000, 790, 571, 485, 0, 423, 309, 0, 253, 239, 234, 0, 0]
+Parents: [186, 161]
+Child: None
+Siblings: None
+
+Node 261 Node 261
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [103]
+Child: [302, 377]
+Siblings: None
+
+Node 262 Node 262
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [146, 152]
+Child: [333]
+Siblings: None
+
+Node 263 Node 263
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [147, 105]
+Child: [332, 357]
+Siblings: None
+
+Node 264 Node 264
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 0, 0, 790, 0, 485, 440, 423, 0, 301, 253, 0, 234, 0, 187]
+Parents: [162]
+Child: None
+Siblings: None
+
+Node 265 Node 265
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [182]
+Child: [347]
+Siblings: None
+
+Node 266 Node 266
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [199, 198]
+Child: [350]
+Siblings: None
+
+Node 267 Node 267
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [164, 197]
+Child: [328]
+Siblings: None
+
+Node 268 Node 268
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 1000, 0, 790, 571, 0, 0, 0, 309, 0, 253, 0, 0, 0, 187]
+Parents: [125, 141]
+Child: None
+Siblings: None
+
+Node 269 Node 269
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 1000, 1000, 0, 0, 485, 440, 0, 309, 0, 0, 239, 234, 215, 187]
+Parents: [133]
+Child: None
+Siblings: None
+
+Node 270 Node 270
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 1000, 1000, 790, 0, 0, 0, 423, 0, 301, 253, 239, 234, 0, 0]
+Parents: [130]
+Child: None
+Siblings: None
+
+Node 271 Node 271
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [101, 119]
+Child: [324, 356]
+Siblings: None
+
+Node 272 Node 272
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [142, 179]
+Child: [318]
+Siblings: None
+
+Node 273 Node 273
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [137]
+Child: [310, 326]
+Siblings: None
+
+Node 274 Node 274
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [176, 170]
+Child: [331, 333, 374]
+Siblings: None
+
+Node 275 Node 275
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [111, 126]
+Child: [304, 371]
+Siblings: None
+
+Node 276 Node 276
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 1000, 0, 0, 571, 485, 0, 0, 0, 0, 253, 0, 234, 0, 0]
+Parents: [117]
+Child: None
+Siblings: None
+
+Node 277 Node 277
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 1000, 0, 0, 0, 440, 0, 309, 0, 253, 0, 234, 0, 0]
+Parents: [102, 115]
+Child: None
+Siblings: None
+
+Node 278 Node 278
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [101, 160]
+Child: [351, 399]
+Siblings: None
+
+Node 279 Node 279
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 1000, 0, 0, 0, 485, 440, 0, 309, 0, 253, 0, 0, 0, 187]
+Parents: [153, 155]
+Child: None
+Siblings: None
+
+Node 280 Node 280
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [147, 190]
+Child: [323]
+Siblings: None
+
+Node 281 Node 281
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [168]
+Child: [374]
+Siblings: None
+
+Node 282 Node 282
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [128]
+Child: [370]
+Siblings: None
+
+Node 283 Node 283
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [164]
+Child: [352, 371]
+Siblings: None
+
+Node 284 Node 284
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [110, 160]
+Child: [339, 383, 392]
+Siblings: None
+
+Node 285 Node 285
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 1000, 1000, 0, 571, 0, 0, 0, 309, 301, 0, 239, 0, 0, 187]
+Parents: [155, 140]
+Child: None
+Siblings: None
+
+Node 286 Node 286
+Computational Power: 7
+Memory: 7
+Eventrates: [1000, 1000, 0, 0, 0, 485, 0, 0, 0, 301, 253, 0, 234, 0, 0]
+Parents: [135, 189]
+Child: None
+Siblings: None
+
+Node 287 Node 287
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [138, 161]
+Child: [385]
+Siblings: None
+
+Node 288 Node 288
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [136, 196]
+Child: [325, 355, 392]
+Siblings: None
+
+Node 289 Node 289
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [128]
+Child: [359]
+Siblings: None
+
+Node 290 Node 290
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [181, 100]
+Child: [301, 322, 340]
+Siblings: None
+
+Node 291 Node 291
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [123, 190]
+Child: [336]
+Siblings: None
+
+Node 292 Node 292
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 1000, 790, 571, 485, 440, 0, 309, 301, 253, 239, 234, 0, 187]
+Parents: [131]
+Child: None
+Siblings: None
+
+Node 293 Node 293
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 1000, 0, 571, 0, 440, 0, 309, 301, 0, 0, 234, 0, 0]
+Parents: [173, 130]
+Child: None
+Siblings: None
+
+Node 294 Node 294
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [188]
+Child: [360, 382]
+Siblings: None
+
+Node 295 Node 295
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [142, 141]
+Child: [354]
+Siblings: None
+
+Node 296 Node 296
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [192]
+Child: [309, 341]
+Siblings: None
+
+Node 297 Node 297
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [127]
+Child: [343]
+Siblings: None
+
+Node 298 Node 298
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [181]
+Child: [306]
+Siblings: None
+
+Node 299 Node 299
+Computational Power: 7
+Memory: 7
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [164]
+Child: [326]
+Siblings: None
+
+Node 300 Node 300
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [259, 219]
+Child: [436, 460, 463, 468, 487, 495]
+Siblings: None
+
+Node 301 Node 301
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [290]
+Child: [459]
+Siblings: None
+
+Node 302 Node 302
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [261]
+Child: [412]
+Siblings: None
+
+Node 303 Node 303
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [237]
+Child: [446, 476, 498]
+Siblings: None
+
+Node 304 Node 304
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [275]
+Child: [435]
+Siblings: None
+
+Node 305 Node 305
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [240, 227]
+Child: [408, 496]
+Siblings: None
+
+Node 306 Node 306
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [298]
+Child: [469]
+Siblings: None
+
+Node 307 Node 307
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [232]
+Child: [466, 489]
+Siblings: None
+
+Node 308 Node 308
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [249, 217]
+Child: [434]
+Siblings: None
+
+Node 309 Node 309
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 440, 0, 0, 0, 0, 239, 0, 0, 0]
+Parents: [241, 296]
+Child: None
+Siblings: None
+
+Node 310 Node 310
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [244, 273]
+Child: [400, 419, 440]
+Siblings: None
+
+Node 311 Node 311
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [205, 204]
+Child: [406, 408, 416, 478, 490]
+Siblings: None
+
+Node 312 Node 312
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 1000, 1000, 790, 0, 485, 0, 423, 0, 301, 0, 239, 234, 0, 0]
+Parents: [220]
+Child: None
+Siblings: None
+
+Node 313 Node 313
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [256]
+Child: [423]
+Siblings: None
+
+Node 314 Node 314
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [234, 239]
+Child: [474, 488]
+Siblings: None
+
+Node 315 Node 315
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [206]
+Child: [403]
+Siblings: None
+
+Node 316 Node 316
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 1000, 0, 571, 485, 440, 423, 309, 0, 0, 239, 234, 215, 187]
+Parents: [257, 249]
+Child: None
+Siblings: None
+
+Node 317 Node 317
+Computational Power: 6
+Memory: 6
+Eventrates: [1000, 1000, 1000, 790, 0, 0, 440, 0, 309, 301, 253, 0, 234, 0, 187]
+Parents: [200]
+Child: None
+Siblings: None
+
+Node 318 Node 318
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [272, 232]
+Child: [492]
+Siblings: None
+
+Node 319 Node 319
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [258, 203]
+Child: [462, 476]
+Siblings: None
+
+Node 320 Node 320
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [250]
+Child: [420]
+Siblings: None
+
+Node 321 Node 321
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 485, 440, 423, 309, 0, 253, 239, 234, 0, 0]
+Parents: [244]
+Child: None
+Siblings: None
+
+Node 322 Node 322
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [290, 246]
+Child: [402, 433, 455, 461]
+Siblings: None
+
+Node 323 Node 323
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [280]
+Child: [415, 441]
+Siblings: None
+
+Node 324 Node 324
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [236, 271]
+Child: [425, 465]
+Siblings: None
+
+Node 325 Node 325
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 1000, 790, 571, 485, 0, 0, 0, 0, 253, 0, 0, 0, 187]
+Parents: [288]
+Child: None
+Siblings: None
+
+Node 326 Node 326
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [273, 299]
+Child: [400, 464]
+Siblings: None
+
+Node 327 Node 327
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [233, 228]
+Child: [438, 495]
+Siblings: None
+
+Node 328 Node 328
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [267]
+Child: [401, 449, 460, 473, 484, 486]
+Siblings: None
+
+Node 329 Node 329
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [202]
+Child: [451, 493]
+Siblings: None
+
+Node 330 Node 330
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [255, 245]
+Child: [414, 438]
+Siblings: None
+
+Node 331 Node 331
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [229, 274]
+Child: [411]
+Siblings: None
+
+Node 332 Node 332
+Computational Power: 6
+Memory: 6
+Eventrates: [1000, 1000, 1000, 0, 571, 0, 0, 0, 0, 0, 253, 0, 0, 215, 187]
+Parents: [263, 228]
+Child: None
+Siblings: None
+
+Node 333 Node 333
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [274, 262]
+Child: [442]
+Siblings: None
+
+Node 334 Node 334
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [203]
+Child: [410, 442, 449]
+Siblings: None
+
+Node 335 Node 335
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [235, 226]
+Child: [405, 450, 475]
+Siblings: None
+
+Node 336 Node 336
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 571, 485, 440, 423, 0, 0, 253, 239, 234, 0, 187]
+Parents: [291]
+Child: None
+Siblings: None
+
+Node 337 Node 337
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [206]
+Child: [407, 461]
+Siblings: None
+
+Node 338 Node 338
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [223, 211]
+Child: [459, 499]
+Siblings: None
+
+Node 339 Node 339
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [259, 284]
+Child: [415, 431, 435]
+Siblings: None
+
+Node 340 Node 340
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [255, 290]
+Child: [474]
+Siblings: None
+
+Node 341 Node 341
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [296]
+Child: [436, 458]
+Siblings: None
+
+Node 342 Node 342
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [247, 209]
+Child: [472]
+Siblings: None
+
+Node 343 Node 343
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [219, 297]
+Child: [472, 492]
+Siblings: None
+
+Node 344 Node 344
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [248, 216]
+Child: [477]
+Siblings: None
+
+Node 345 Node 345
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [251]
+Child: [447, 464]
+Siblings: None
+
+Node 346 Node 346
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 1000, 1000, 790, 0, 0, 0, 423, 309, 301, 0, 239, 234, 0, 0]
+Parents: [209, 248]
+Child: None
+Siblings: None
+
+Node 347 Node 347
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [249, 265]
+Child: [405, 428, 496]
+Siblings: None
+
+Node 348 Node 348
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [256]
+Child: [429, 448, 494]
+Siblings: None
+
+Node 349 Node 349
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [225]
+Child: [424, 441, 453]
+Siblings: None
+
+Node 350 Node 350
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [266, 201]
+Child: [453, 471]
+Siblings: None
+
+Node 351 Node 351
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [219, 278]
+Child: [482, 491]
+Siblings: None
+
+Node 352 Node 352
+Computational Power: 6
+Memory: 6
+Eventrates: [1000, 1000, 1000, 0, 571, 0, 0, 0, 309, 301, 0, 0, 234, 215, 0]
+Parents: [283, 259]
+Child: None
+Siblings: None
+
+Node 353 Node 353
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [210]
+Child: [430]
+Siblings: None
+
+Node 354 Node 354
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [295]
+Child: [422, 485]
+Siblings: None
+
+Node 355 Node 355
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 1000, 1000, 790, 571, 0, 440, 0, 0, 0, 253, 239, 234, 0, 0]
+Parents: [288]
+Child: None
+Siblings: None
+
+Node 356 Node 356
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [271]
+Child: [401, 432]
+Siblings: None
+
+Node 357 Node 357
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [225, 263]
+Child: [445]
+Siblings: None
+
+Node 358 Node 358
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [233, 248]
+Child: [404]
+Siblings: None
+
+Node 359 Node 359
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [289, 203]
+Child: [458]
+Siblings: None
+
+Node 360 Node 360
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [294]
+Child: [446, 469]
+Siblings: None
+
+Node 361 Node 361
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [219]
+Child: [417]
+Siblings: None
+
+Node 362 Node 362
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [228]
+Child: [434]
+Siblings: None
+
+Node 363 Node 363
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 1000, 0, 571, 0, 440, 0, 0, 0, 253, 0, 234, 0, 187]
+Parents: [241]
+Child: None
+Siblings: None
+
+Node 364 Node 364
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [257, 218]
+Child: [433, 447]
+Siblings: None
+
+Node 365 Node 365
+Computational Power: 6
+Memory: 6
+Eventrates: [1000, 0, 0, 0, 571, 485, 0, 423, 309, 0, 0, 239, 234, 0, 0]
+Parents: [229]
+Child: None
+Siblings: None
+
+Node 366 Node 366
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [237]
+Child: [440, 497]
+Siblings: None
+
+Node 367 Node 367
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [206]
+Child: [403, 404, 465]
+Siblings: None
+
+Node 368 Node 368
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [234]
+Child: [443, 454, 456]
+Siblings: None
+
+Node 369 Node 369
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [246]
+Child: [410]
+Siblings: None
+
+Node 370 Node 370
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [282, 213]
+Child: [421]
+Siblings: None
+
+Node 371 Node 371
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [275, 283]
+Child: [409, 493]
+Siblings: None
+
+Node 372 Node 372
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [233]
+Child: [420, 437]
+Siblings: None
+
+Node 373 Node 373
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [205, 239]
+Child: [417]
+Siblings: None
+
+Node 374 Node 374
+Computational Power: 6
+Memory: 6
+Eventrates: [1000, 0, 0, 790, 0, 485, 0, 0, 0, 301, 253, 239, 234, 0, 0]
+Parents: [281, 274]
+Child: None
+Siblings: None
+
+Node 375 Node 375
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [208]
+Child: [480]
+Siblings: None
+
+Node 376 Node 376
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [221]
+Child: [418, 466]
+Siblings: None
+
+Node 377 Node 377
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [261]
+Child: [481]
+Siblings: None
+
+Node 378 Node 378
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [225, 219]
+Child: [409, 426]
+Siblings: None
+
+Node 379 Node 379
+Computational Power: 6
+Memory: 6
+Eventrates: [1000, 0, 1000, 0, 0, 485, 440, 423, 309, 301, 253, 239, 234, 215, 0]
+Parents: [228]
+Child: None
+Siblings: None
+
+Node 380 Node 380
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 1000, 0, 790, 571, 485, 440, 423, 309, 0, 0, 0, 234, 215, 0]
+Parents: [227]
+Child: None
+Siblings: None
+
+Node 381 Node 381
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [255]
+Child: [418, 457]
+Siblings: None
+
+Node 382 Node 382
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [294]
+Child: [413, 419]
+Siblings: None
+
+Node 383 Node 383
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [284]
+Child: [413, 422, 427, 439]
+Siblings: None
+
+Node 384 Node 384
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [249, 226]
+Child: [468, 470]
+Siblings: None
+
+Node 385 Node 385
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [287]
+Child: [444, 490]
+Siblings: None
+
+Node 386 Node 386
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [220, 259]
+Child: [443, 479]
+Siblings: None
+
+Node 387 Node 387
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [233]
+Child: [423, 479]
+Siblings: None
+
+Node 388 Node 388
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 1000, 790, 571, 485, 0, 423, 309, 301, 0, 0, 234, 215, 0]
+Parents: [259, 254]
+Child: None
+Siblings: None
+
+Node 389 Node 389
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [219, 203]
+Child: [430, 477]
+Siblings: None
+
+Node 390 Node 390
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [244, 250]
+Child: [470]
+Siblings: None
+
+Node 391 Node 391
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [210]
+Child: [426, 483]
+Siblings: None
+
+Node 392 Node 392
+Computational Power: 6
+Memory: 6
+Eventrates: [1000, 1000, 1000, 0, 571, 485, 440, 423, 309, 301, 253, 0, 0, 0, 0]
+Parents: [284, 288]
+Child: None
+Siblings: None
+
+Node 393 Node 393
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [212]
+Child: [428]
+Siblings: None
+
+Node 394 Node 394
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 1000, 0, 0, 571, 0, 0, 423, 0, 0, 0, 0, 234, 215, 187]
+Parents: [217]
+Child: None
+Siblings: None
+
+Node 395 Node 395
+Computational Power: 6
+Memory: 6
+Eventrates: [1000, 1000, 1000, 790, 571, 485, 440, 0, 0, 0, 253, 0, 234, 215, 187]
+Parents: [228]
+Child: None
+Siblings: None
+
+Node 396 Node 396
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [212]
+Child: [467]
+Siblings: None
+
+Node 397 Node 397
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [217]
+Child: [452]
+Siblings: None
+
+Node 398 Node 398
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [201, 239]
+Child: [402, 484]
+Siblings: None
+
+Node 399 Node 399
+Computational Power: 6
+Memory: 6
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [278, 254]
+Child: [439, 494]
+Siblings: None
+
+Node 400 Node 400
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [310, 326]
+Child: [519, 538]
+Siblings: None
+
+Node 401 Node 401
+Computational Power: 5
+Memory: 5
+Eventrates: [1000, 0, 0, 0, 0, 485, 440, 0, 309, 301, 253, 239, 0, 0, 187]
+Parents: [356, 328]
+Child: None
+Siblings: None
+
+Node 402 Node 402
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [398, 322]
+Child: [541, 559]
+Siblings: None
+
+Node 403 Node 403
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [315, 367]
+Child: [598]
+Siblings: None
+
+Node 404 Node 404
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [367, 358]
+Child: [516]
+Siblings: None
+
+Node 405 Node 405
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [335, 347]
+Child: [537, 580]
+Siblings: None
+
+Node 406 Node 406
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [311]
+Child: [502, 522, 565]
+Siblings: None
+
+Node 407 Node 407
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [337]
+Child: [528, 569, 583, 586]
+Siblings: None
+
+Node 408 Node 408
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [311, 305]
+Child: [565]
+Siblings: None
+
+Node 409 Node 409
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [378, 371]
+Child: [505]
+Siblings: None
+
+Node 410 Node 410
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [369, 334]
+Child: [500]
+Siblings: None
+
+Node 411 Node 411
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [331]
+Child: [526]
+Siblings: None
+
+Node 412 Node 412
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [302]
+Child: [584, 593]
+Siblings: None
+
+Node 413 Node 413
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [383, 382]
+Child: [563]
+Siblings: None
+
+Node 414 Node 414
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [330]
+Child: [579, 585, 592]
+Siblings: None
+
+Node 415 Node 415
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [339, 323]
+Child: [510, 566, 581]
+Siblings: None
+
+Node 416 Node 416
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [311]
+Child: [534]
+Siblings: None
+
+Node 417 Node 417
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [373, 361]
+Child: [525]
+Siblings: None
+
+Node 418 Node 418
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 1000, 0, 0, 571, 485, 0, 0, 0, 301, 253, 239, 0, 215, 0]
+Parents: [376, 381]
+Child: None
+Siblings: None
+
+Node 419 Node 419
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [310, 382]
+Child: [539, 586]
+Siblings: None
+
+Node 420 Node 420
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [320, 372]
+Child: [516, 532, 544, 567]
+Siblings: None
+
+Node 421 Node 421
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [370]
+Child: [505, 549]
+Siblings: None
+
+Node 422 Node 422
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [354, 383]
+Child: [535, 593]
+Siblings: None
+
+Node 423 Node 423
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 1000, 0, 0, 0, 485, 0, 0, 309, 0, 0, 0, 234, 0, 0]
+Parents: [387, 313]
+Child: None
+Siblings: None
+
+Node 424 Node 424
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [349]
+Child: [517, 555]
+Siblings: None
+
+Node 425 Node 425
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 1000, 1000, 0, 571, 0, 0, 0, 309, 301, 0, 0, 0, 215, 0]
+Parents: [324]
+Child: None
+Siblings: None
+
+Node 426 Node 426
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [378, 391]
+Child: [561, 578]
+Siblings: None
+
+Node 427 Node 427
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [383]
+Child: [514, 595]
+Siblings: None
+
+Node 428 Node 428
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [393, 347]
+Child: [539, 549, 584]
+Siblings: None
+
+Node 429 Node 429
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 1000, 0, 790, 0, 485, 0, 423, 309, 301, 0, 239, 0, 0, 0]
+Parents: [348]
+Child: None
+Siblings: None
+
+Node 430 Node 430
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [353, 389]
+Child: [595]
+Siblings: None
+
+Node 431 Node 431
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [339]
+Child: [503, 531]
+Siblings: None
+
+Node 432 Node 432
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [356]
+Child: [553, 590]
+Siblings: None
+
+Node 433 Node 433
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [364, 322]
+Child: [523, 540, 585]
+Siblings: None
+
+Node 434 Node 434
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [362, 308]
+Child: [532, 577]
+Siblings: None
+
+Node 435 Node 435
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [339, 304]
+Child: [548]
+Siblings: None
+
+Node 436 Node 436
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [300, 341]
+Child: [591, 592]
+Siblings: None
+
+Node 437 Node 437
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [372]
+Child: [515, 558, 566]
+Siblings: None
+
+Node 438 Node 438
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [327, 330]
+Child: [515, 524, 557, 580]
+Siblings: None
+
+Node 439 Node 439
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [399, 383]
+Child: [571, 590]
+Siblings: None
+
+Node 440 Node 440
+Computational Power: 5
+Memory: 5
+Eventrates: [1000, 1000, 1000, 790, 571, 485, 0, 423, 0, 301, 0, 239, 0, 0, 187]
+Parents: [310, 366]
+Child: None
+Siblings: None
+
+Node 441 Node 441
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [349, 323]
+Child: [520]
+Siblings: None
+
+Node 442 Node 442
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 440, 0, 309, 301, 253, 0, 234, 0, 0]
+Parents: [334, 333]
+Child: None
+Siblings: None
+
+Node 443 Node 443
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [368, 386]
+Child: [511, 570]
+Siblings: None
+
+Node 444 Node 444
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [385]
+Child: [544, 562, 568]
+Siblings: None
+
+Node 445 Node 445
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [357]
+Child: [512]
+Siblings: None
+
+Node 446 Node 446
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 1000, 0, 0, 571, 0, 0, 423, 309, 0, 253, 0, 234, 0, 187]
+Parents: [303, 360]
+Child: None
+Siblings: None
+
+Node 447 Node 447
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [364, 345]
+Child: [575]
+Siblings: None
+
+Node 448 Node 448
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [348]
+Child: [507, 525, 546, 559]
+Siblings: None
+
+Node 449 Node 449
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 1000, 0, 790, 571, 485, 0, 423, 0, 301, 253, 0, 234, 215, 187]
+Parents: [334, 328]
+Child: None
+Siblings: None
+
+Node 450 Node 450
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [335]
+Child: [597]
+Siblings: None
+
+Node 451 Node 451
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [329]
+Child: [596]
+Siblings: None
+
+Node 452 Node 452
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [397]
+Child: [543]
+Siblings: None
+
+Node 453 Node 453
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [350, 349]
+Child: [554]
+Siblings: None
+
+Node 454 Node 454
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [368]
+Child: [564]
+Siblings: None
+
+Node 455 Node 455
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [322]
+Child: [504]
+Siblings: None
+
+Node 456 Node 456
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [368]
+Child: [582]
+Siblings: None
+
+Node 457 Node 457
+Computational Power: 5
+Memory: 5
+Eventrates: [1000, 1000, 0, 790, 0, 0, 440, 423, 309, 0, 253, 0, 234, 0, 0]
+Parents: [381]
+Child: None
+Siblings: None
+
+Node 458 Node 458
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [359, 341]
+Child: [588]
+Siblings: None
+
+Node 459 Node 459
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [338, 301]
+Child: [517]
+Siblings: None
+
+Node 460 Node 460
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 1000, 1000, 790, 571, 485, 0, 0, 0, 0, 0, 239, 0, 0, 0]
+Parents: [328, 300]
+Child: None
+Siblings: None
+
+Node 461 Node 461
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [322, 337]
+Child: [513, 564]
+Siblings: None
+
+Node 462 Node 462
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [319]
+Child: [574]
+Siblings: None
+
+Node 463 Node 463
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [300]
+Child: [512, 558]
+Siblings: None
+
+Node 464 Node 464
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [345, 326]
+Child: [537, 541, 548, 551]
+Siblings: None
+
+Node 465 Node 465
+Computational Power: 5
+Memory: 5
+Eventrates: [1000, 0, 0, 790, 571, 0, 440, 0, 309, 301, 0, 0, 0, 215, 0]
+Parents: [324, 367]
+Child: None
+Siblings: None
+
+Node 466 Node 466
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [307, 376]
+Child: [521, 540, 543, 551]
+Siblings: None
+
+Node 467 Node 467
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [396]
+Child: [576]
+Siblings: None
+
+Node 468 Node 468
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [384, 300]
+Child: [577]
+Siblings: None
+
+Node 469 Node 469
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [360, 306]
+Child: [571]
+Siblings: None
+
+Node 470 Node 470
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [384, 390]
+Child: [597]
+Siblings: None
+
+Node 471 Node 471
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [350]
+Child: [589]
+Siblings: None
+
+Node 472 Node 472
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 1000, 1000, 790, 571, 485, 440, 0, 309, 301, 253, 0, 234, 215, 187]
+Parents: [342, 343]
+Child: None
+Siblings: None
+
+Node 473 Node 473
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [328]
+Child: [518, 545]
+Siblings: None
+
+Node 474 Node 474
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [314, 340]
+Child: [587, 591]
+Siblings: None
+
+Node 475 Node 475
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [335]
+Child: [508, 555, 594]
+Siblings: None
+
+Node 476 Node 476
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [303, 319]
+Child: [542]
+Siblings: None
+
+Node 477 Node 477
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [344, 389]
+Child: [531, 533]
+Siblings: None
+
+Node 478 Node 478
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [311]
+Child: [520, 523, 572]
+Siblings: None
+
+Node 479 Node 479
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [386, 387]
+Child: [501, 599]
+Siblings: None
+
+Node 480 Node 480
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [375]
+Child: [501, 547]
+Siblings: None
+
+Node 481 Node 481
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [377]
+Child: [513, 547, 573]
+Siblings: None
+
+Node 482 Node 482
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 1000, 790, 571, 485, 440, 423, 309, 301, 0, 239, 0, 0, 187]
+Parents: [351]
+Child: None
+Siblings: None
+
+Node 483 Node 483
+Computational Power: 5
+Memory: 5
+Eventrates: [1000, 0, 0, 0, 571, 0, 0, 0, 0, 301, 0, 239, 0, 215, 187]
+Parents: [391]
+Child: None
+Siblings: None
+
+Node 484 Node 484
+Computational Power: 5
+Memory: 5
+Eventrates: [1000, 1000, 0, 0, 0, 485, 0, 0, 0, 301, 0, 0, 234, 0, 187]
+Parents: [398, 328]
+Child: None
+Siblings: None
+
+Node 485 Node 485
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [354]
+Child: [552, 594]
+Siblings: None
+
+Node 486 Node 486
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [328]
+Child: [550]
+Siblings: None
+
+Node 487 Node 487
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [300]
+Child: [509]
+Siblings: None
+
+Node 488 Node 488
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [314]
+Child: [542]
+Siblings: None
+
+Node 489 Node 489
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 423, 309, 0, 0, 239, 0, 0, 0]
+Parents: [307]
+Child: None
+Siblings: None
+
+Node 490 Node 490
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [385, 311]
+Child: [530]
+Siblings: None
+
+Node 491 Node 491
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [351]
+Child: [550, 562]
+Siblings: None
+
+Node 492 Node 492
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [318, 343]
+Child: [509, 529, 535, 579]
+Siblings: None
+
+Node 493 Node 493
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [371, 329]
+Child: [521, 568, 570]
+Siblings: None
+
+Node 494 Node 494
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [399, 348]
+Child: [527, 557]
+Siblings: None
+
+Node 495 Node 495
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [300, 327]
+Child: [504, 527, 536, 569, 572]
+Siblings: None
+
+Node 496 Node 496
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [347, 305]
+Child: [526, 560]
+Siblings: None
+
+Node 497 Node 497
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [366]
+Child: [556]
+Siblings: None
+
+Node 498 Node 498
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [303]
+Child: [514]
+Siblings: None
+
+Node 499 Node 499
+Computational Power: 5
+Memory: 5
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [338]
+Child: [506]
+Siblings: None
+
+Node 500 Node 500
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [410]
+Child: [650]
+Siblings: None
+
+Node 501 Node 501
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 1000, 790, 571, 485, 440, 0, 309, 0, 253, 239, 0, 0, 187]
+Parents: [479, 480]
+Child: None
+Siblings: None
+
+Node 502 Node 502
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [406]
+Child: [677]
+Siblings: None
+
+Node 503 Node 503
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [431]
+Child: [656]
+Siblings: None
+
+Node 504 Node 504
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [455, 495]
+Child: [638]
+Siblings: None
+
+Node 505 Node 505
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [421, 409]
+Child: [627, 637]
+Siblings: None
+
+Node 506 Node 506
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 1000, 1000, 790, 0, 0, 440, 0, 0, 301, 0, 0, 234, 215, 187]
+Parents: [499]
+Child: None
+Siblings: None
+
+Node 507 Node 507
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [448]
+Child: [604]
+Siblings: None
+
+Node 508 Node 508
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [475]
+Child: [666]
+Siblings: None
+
+Node 509 Node 509
+Computational Power: 4
+Memory: 4
+Eventrates: [1000, 0, 0, 790, 571, 485, 0, 0, 0, 301, 253, 239, 0, 215, 187]
+Parents: [492, 487]
+Child: None
+Siblings: None
+
+Node 510 Node 510
+Computational Power: 4
+Memory: 4
+Eventrates: [1000, 0, 0, 0, 0, 485, 0, 0, 0, 301, 253, 0, 234, 0, 187]
+Parents: [415]
+Child: None
+Siblings: None
+
+Node 511 Node 511
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [443]
+Child: [661, 669, 689]
+Siblings: None
+
+Node 512 Node 512
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 1000, 1000, 0, 0, 485, 0, 423, 0, 301, 253, 239, 0, 0, 187]
+Parents: [445, 463]
+Child: None
+Siblings: None
+
+Node 513 Node 513
+Computational Power: 4
+Memory: 4
+Eventrates: [1000, 1000, 1000, 790, 0, 485, 440, 423, 309, 301, 0, 0, 0, 215, 187]
+Parents: [481, 461]
+Child: None
+Siblings: None
+
+Node 514 Node 514
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [427, 498]
+Child: [671]
+Siblings: None
+
+Node 515 Node 515
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [437, 438]
+Child: [640]
+Siblings: None
+
+Node 516 Node 516
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [404, 420]
+Child: [609, 665]
+Siblings: None
+
+Node 517 Node 517
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [424, 459]
+Child: [645]
+Siblings: None
+
+Node 518 Node 518
+Computational Power: 4
+Memory: 4
+Eventrates: [1000, 0, 0, 0, 571, 485, 440, 0, 309, 0, 0, 239, 0, 0, 0]
+Parents: [473]
+Child: None
+Siblings: None
+
+Node 519 Node 519
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [400]
+Child: [619]
+Siblings: None
+
+Node 520 Node 520
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [441, 478]
+Child: [602, 622]
+Siblings: None
+
+Node 521 Node 521
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [493, 466]
+Child: [629]
+Siblings: None
+
+Node 522 Node 522
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [406]
+Child: [647]
+Siblings: None
+
+Node 523 Node 523
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 1000, 0, 790, 571, 485, 440, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [478, 433]
+Child: None
+Siblings: None
+
+Node 524 Node 524
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [438]
+Child: [608, 644, 698]
+Siblings: None
+
+Node 525 Node 525
+Computational Power: 4
+Memory: 4
+Eventrates: [1000, 1000, 1000, 790, 571, 485, 0, 423, 0, 301, 253, 239, 234, 215, 187]
+Parents: [448, 417]
+Child: None
+Siblings: None
+
+Node 526 Node 526
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [411, 496]
+Child: [653, 690]
+Siblings: None
+
+Node 527 Node 527
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [494, 495]
+Child: [672]
+Siblings: None
+
+Node 528 Node 528
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [407]
+Child: [630, 639, 663]
+Siblings: None
+
+Node 529 Node 529
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [492]
+Child: [608, 641]
+Siblings: None
+
+Node 530 Node 530
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 790, 0, 485, 0, 423, 0, 301, 0, 239, 0, 215, 0]
+Parents: [490]
+Child: None
+Siblings: None
+
+Node 531 Node 531
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [431, 477]
+Child: [658, 660]
+Siblings: None
+
+Node 532 Node 532
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [420, 434]
+Child: [674]
+Siblings: None
+
+Node 533 Node 533
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [477]
+Child: [680]
+Siblings: None
+
+Node 534 Node 534
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [416]
+Child: [659]
+Siblings: None
+
+Node 535 Node 535
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 1000, 790, 0, 485, 0, 423, 0, 0, 253, 239, 234, 215, 0]
+Parents: [422, 492]
+Child: None
+Siblings: None
+
+Node 536 Node 536
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [495]
+Child: [622, 626]
+Siblings: None
+
+Node 537 Node 537
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 1000, 1000, 790, 0, 0, 0, 0, 0, 0, 0, 0, 234, 215, 0]
+Parents: [405, 464]
+Child: None
+Siblings: None
+
+Node 538 Node 538
+Computational Power: 4
+Memory: 4
+Eventrates: [1000, 0, 0, 0, 571, 0, 0, 423, 0, 301, 253, 0, 0, 0, 0]
+Parents: [400]
+Child: None
+Siblings: None
+
+Node 539 Node 539
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 1000, 1000, 790, 0, 485, 440, 423, 309, 301, 253, 239, 234, 0, 0]
+Parents: [419, 428]
+Child: None
+Siblings: None
+
+Node 540 Node 540
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [466, 433]
+Child: [610, 648, 659]
+Siblings: None
+
+Node 541 Node 541
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [402, 464]
+Child: [635, 697]
+Siblings: None
+
+Node 542 Node 542
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [476, 488]
+Child: [671]
+Siblings: None
+
+Node 543 Node 543
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [452, 466]
+Child: [630, 699]
+Siblings: None
+
+Node 544 Node 544
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [420, 444]
+Child: [620, 634]
+Siblings: None
+
+Node 545 Node 545
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [473]
+Child: [635, 675]
+Siblings: None
+
+Node 546 Node 546
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 1000, 790, 571, 0, 440, 423, 309, 301, 253, 0, 0, 0, 187]
+Parents: [448]
+Child: None
+Siblings: None
+
+Node 547 Node 547
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [480, 481]
+Child: [632, 644]
+Siblings: None
+
+Node 548 Node 548
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [464, 435]
+Child: [685]
+Siblings: None
+
+Node 549 Node 549
+Computational Power: 4
+Memory: 4
+Eventrates: [1000, 1000, 1000, 0, 571, 485, 440, 423, 309, 301, 0, 0, 234, 0, 0]
+Parents: [421, 428]
+Child: None
+Siblings: None
+
+Node 550 Node 550
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 571, 485, 0, 423, 0, 301, 0, 0, 234, 215, 187]
+Parents: [491, 486]
+Child: None
+Siblings: None
+
+Node 551 Node 551
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [466, 464]
+Child: [621, 625, 670]
+Siblings: None
+
+Node 552 Node 552
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 1000, 1000, 0, 0, 0, 0, 423, 309, 301, 0, 239, 0, 215, 0]
+Parents: [485]
+Child: None
+Siblings: None
+
+Node 553 Node 553
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [432]
+Child: [664]
+Siblings: None
+
+Node 554 Node 554
+Computational Power: 4
+Memory: 4
+Eventrates: [1000, 1000, 1000, 790, 0, 485, 440, 0, 0, 0, 253, 0, 234, 215, 187]
+Parents: [453]
+Child: None
+Siblings: None
+
+Node 555 Node 555
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [475, 424]
+Child: [687]
+Siblings: None
+
+Node 556 Node 556
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [497]
+Child: [602, 676]
+Siblings: None
+
+Node 557 Node 557
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [438, 494]
+Child: [623]
+Siblings: None
+
+Node 558 Node 558
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 571, 485, 440, 423, 0, 0, 0, 239, 234, 0, 187]
+Parents: [437, 463]
+Child: None
+Siblings: None
+
+Node 559 Node 559
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 1000, 1000, 0, 571, 0, 440, 0, 309, 301, 0, 239, 0, 215, 0]
+Parents: [448, 402]
+Child: None
+Siblings: None
+
+Node 560 Node 560
+Computational Power: 4
+Memory: 4
+Eventrates: [1000, 1000, 1000, 790, 0, 0, 0, 423, 309, 0, 253, 0, 0, 215, 0]
+Parents: [496]
+Child: None
+Siblings: None
+
+Node 561 Node 561
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [426]
+Child: [611, 672]
+Siblings: None
+
+Node 562 Node 562
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [444, 491]
+Child: [633, 662, 693]
+Siblings: None
+
+Node 563 Node 563
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [413]
+Child: [642, 679, 681]
+Siblings: None
+
+Node 564 Node 564
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [454, 461]
+Child: [654]
+Siblings: None
+
+Node 565 Node 565
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [408, 406]
+Child: [600, 614, 617, 653]
+Siblings: None
+
+Node 566 Node 566
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [415, 437]
+Child: [660, 678, 688]
+Siblings: None
+
+Node 567 Node 567
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [420]
+Child: [680]
+Siblings: None
+
+Node 568 Node 568
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [493, 444]
+Child: [654, 673]
+Siblings: None
+
+Node 569 Node 569
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [407, 495]
+Child: [647, 692, 694]
+Siblings: None
+
+Node 570 Node 570
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [443, 493]
+Child: [615, 689]
+Siblings: None
+
+Node 571 Node 571
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [469, 439]
+Child: [656, 662, 683, 685]
+Siblings: None
+
+Node 572 Node 572
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [478, 495]
+Child: [606]
+Siblings: None
+
+Node 573 Node 573
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [481]
+Child: [606, 616]
+Siblings: None
+
+Node 574 Node 574
+Computational Power: 4
+Memory: 4
+Eventrates: [1000, 1000, 0, 0, 571, 485, 440, 0, 309, 301, 253, 0, 234, 0, 0]
+Parents: [462]
+Child: None
+Siblings: None
+
+Node 575 Node 575
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [447]
+Child: [601, 682]
+Siblings: None
+
+Node 576 Node 576
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [467]
+Child: [601]
+Siblings: None
+
+Node 577 Node 577
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [434, 468]
+Child: [620, 643, 667]
+Siblings: None
+
+Node 578 Node 578
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [426]
+Child: [646, 649]
+Siblings: None
+
+Node 579 Node 579
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [492, 414]
+Child: [681]
+Siblings: None
+
+Node 580 Node 580
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [405, 438]
+Child: [624, 658]
+Siblings: None
+
+Node 581 Node 581
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [415]
+Child: [603, 698]
+Siblings: None
+
+Node 582 Node 582
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 1000, 0, 0, 0, 440, 423, 0, 0, 253, 239, 234, 0, 0]
+Parents: [456]
+Child: None
+Siblings: None
+
+Node 583 Node 583
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [407]
+Child: [618, 631]
+Siblings: None
+
+Node 584 Node 584
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [428, 412]
+Child: [695]
+Siblings: None
+
+Node 585 Node 585
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [414, 433]
+Child: [648]
+Siblings: None
+
+Node 586 Node 586
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [419, 407]
+Child: [655, 691]
+Siblings: None
+
+Node 587 Node 587
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 485, 0, 0, 0, 0, 253, 239, 0, 0, 187]
+Parents: [474]
+Child: None
+Siblings: None
+
+Node 588 Node 588
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [458]
+Child: [605, 657]
+Siblings: None
+
+Node 589 Node 589
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [471]
+Child: [645]
+Siblings: None
+
+Node 590 Node 590
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [432, 439]
+Child: [607, 628, 649, 678, 684, 696, 697]
+Siblings: None
+
+Node 591 Node 591
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [436, 474]
+Child: [609, 669]
+Siblings: None
+
+Node 592 Node 592
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [436, 414]
+Child: [686, 692]
+Siblings: None
+
+Node 593 Node 593
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [422, 412]
+Child: [613, 642, 668]
+Siblings: None
+
+Node 594 Node 594
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [475, 485]
+Child: [612, 675]
+Siblings: None
+
+Node 595 Node 595
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [427, 430]
+Child: [604, 637, 664]
+Siblings: None
+
+Node 596 Node 596
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [451]
+Child: [639, 696]
+Siblings: None
+
+Node 597 Node 597
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [470, 450]
+Child: [610]
+Siblings: None
+
+Node 598 Node 598
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [403]
+Child: [617, 636, 652, 667]
+Siblings: None
+
+Node 599 Node 599
+Computational Power: 4
+Memory: 4
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [479]
+Child: [651]
+Siblings: None
+
+Node 600 Node 600
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [565]
+Child: [757, 780]
+Siblings: None
+
+Node 601 Node 601
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [575, 576]
+Child: [710, 759, 766]
+Siblings: None
+
+Node 602 Node 602
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [556, 520]
+Child: [743]
+Siblings: None
+
+Node 603 Node 603
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [581]
+Child: [727, 752]
+Siblings: None
+
+Node 604 Node 604
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [507, 595]
+Child: [702, 754]
+Siblings: None
+
+Node 605 Node 605
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [588]
+Child: [706, 791]
+Siblings: None
+
+Node 606 Node 606
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [573, 572]
+Child: [704, 723, 770]
+Siblings: None
+
+Node 607 Node 607
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [590]
+Child: [711, 762]
+Siblings: None
+
+Node 608 Node 608
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [524, 529]
+Child: [714, 742]
+Siblings: None
+
+Node 609 Node 609
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [516, 591]
+Child: [745]
+Siblings: None
+
+Node 610 Node 610
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [540, 597]
+Child: [780]
+Siblings: None
+
+Node 611 Node 611
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 1000, 0, 571, 485, 0, 423, 309, 301, 0, 0, 0, 0, 0]
+Parents: [561]
+Child: None
+Siblings: None
+
+Node 612 Node 612
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [594]
+Child: [736, 783, 798]
+Siblings: None
+
+Node 613 Node 613
+Computational Power: 3
+Memory: 3
+Eventrates: [1000, 1000, 0, 790, 571, 0, 440, 0, 309, 301, 253, 239, 234, 215, 0]
+Parents: [593]
+Child: None
+Siblings: None
+
+Node 614 Node 614
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [565]
+Child: [739, 764]
+Siblings: None
+
+Node 615 Node 615
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [570]
+Child: [796]
+Siblings: None
+
+Node 616 Node 616
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 1000, 790, 571, 485, 440, 0, 309, 0, 253, 239, 234, 215, 0]
+Parents: [573]
+Child: None
+Siblings: None
+
+Node 617 Node 617
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [598, 565]
+Child: [733, 754]
+Siblings: None
+
+Node 618 Node 618
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [583]
+Child: [760, 761]
+Siblings: None
+
+Node 619 Node 619
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [519]
+Child: [720, 723]
+Siblings: None
+
+Node 620 Node 620
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [544, 577]
+Child: [701, 707, 712]
+Siblings: None
+
+Node 621 Node 621
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [551]
+Child: [700, 725, 774]
+Siblings: None
+
+Node 622 Node 622
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [536, 520]
+Child: [763, 771]
+Siblings: None
+
+Node 623 Node 623
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 1000, 1000, 790, 571, 485, 0, 423, 309, 0, 0, 0, 234, 215, 187]
+Parents: [557]
+Child: None
+Siblings: None
+
+Node 624 Node 624
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [580]
+Child: [749]
+Siblings: None
+
+Node 625 Node 625
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [551]
+Child: [720]
+Siblings: None
+
+Node 626 Node 626
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [536]
+Child: [744]
+Siblings: None
+
+Node 627 Node 627
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [505]
+Child: [728]
+Siblings: None
+
+Node 628 Node 628
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [590]
+Child: [746, 777]
+Siblings: None
+
+Node 629 Node 629
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 1000, 1000, 0, 0, 485, 0, 423, 0, 301, 0, 0, 234, 215, 187]
+Parents: [521]
+Child: None
+Siblings: None
+
+Node 630 Node 630
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 1000, 0, 790, 0, 485, 440, 0, 309, 301, 253, 0, 234, 215, 0]
+Parents: [543, 528]
+Child: None
+Siblings: None
+
+Node 631 Node 631
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [583]
+Child: [708, 796]
+Siblings: None
+
+Node 632 Node 632
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [547]
+Child: [775]
+Siblings: None
+
+Node 633 Node 633
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [562]
+Child: [753, 782, 792]
+Siblings: None
+
+Node 634 Node 634
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [544]
+Child: [719, 765]
+Siblings: None
+
+Node 635 Node 635
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [545, 541]
+Child: [758, 771]
+Siblings: None
+
+Node 636 Node 636
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [598]
+Child: [721, 737, 768, 769]
+Siblings: None
+
+Node 637 Node 637
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [505, 595]
+Child: [732]
+Siblings: None
+
+Node 638 Node 638
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [504]
+Child: [726]
+Siblings: None
+
+Node 639 Node 639
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [596, 528]
+Child: [722, 726, 745, 773]
+Siblings: None
+
+Node 640 Node 640
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 1000, 1000, 0, 571, 485, 0, 423, 309, 301, 0, 239, 234, 215, 187]
+Parents: [515]
+Child: None
+Siblings: None
+
+Node 641 Node 641
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 1000, 0, 0, 571, 485, 440, 423, 0, 301, 0, 0, 0, 0, 187]
+Parents: [529]
+Child: None
+Siblings: None
+
+Node 642 Node 642
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [593, 563]
+Child: [793]
+Siblings: None
+
+Node 643 Node 643
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [577]
+Child: [751, 766, 793]
+Siblings: None
+
+Node 644 Node 644
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [547, 524]
+Child: [737, 776, 799]
+Siblings: None
+
+Node 645 Node 645
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 1000, 0, 0, 0, 0, 0, 0, 309, 301, 0, 0, 0, 215, 0]
+Parents: [589, 517]
+Child: None
+Siblings: None
+
+Node 646 Node 646
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [578]
+Child: [702, 711]
+Siblings: None
+
+Node 647 Node 647
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [522, 569]
+Child: [733]
+Siblings: None
+
+Node 648 Node 648
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [540, 585]
+Child: [770]
+Siblings: None
+
+Node 649 Node 649
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [578, 590]
+Child: [703, 778]
+Siblings: None
+
+Node 650 Node 650
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 571, 0, 440, 0, 309, 0, 0, 239, 0, 215, 187]
+Parents: [500]
+Child: None
+Siblings: None
+
+Node 651 Node 651
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [599]
+Child: [710, 769]
+Siblings: None
+
+Node 652 Node 652
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [598]
+Child: [794]
+Siblings: None
+
+Node 653 Node 653
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [526, 565]
+Child: [746]
+Siblings: None
+
+Node 654 Node 654
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [564, 568]
+Child: [735, 785]
+Siblings: None
+
+Node 655 Node 655
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [586]
+Child: [777, 781, 798]
+Siblings: None
+
+Node 656 Node 656
+Computational Power: 3
+Memory: 3
+Eventrates: [1000, 1000, 0, 0, 571, 0, 440, 423, 309, 0, 253, 239, 234, 0, 187]
+Parents: [503, 571]
+Child: None
+Siblings: None
+
+Node 657 Node 657
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [588]
+Child: [741, 772]
+Siblings: None
+
+Node 658 Node 658
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [531, 580]
+Child: [767]
+Siblings: None
+
+Node 659 Node 659
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [534, 540]
+Child: [725, 735]
+Siblings: None
+
+Node 660 Node 660
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [566, 531]
+Child: [732, 797]
+Siblings: None
+
+Node 661 Node 661
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [511]
+Child: [750, 779]
+Siblings: None
+
+Node 662 Node 662
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [562, 571]
+Child: [747, 789]
+Siblings: None
+
+Node 663 Node 663
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [528]
+Child: [708, 760]
+Siblings: None
+
+Node 664 Node 664
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [553, 595]
+Child: [727]
+Siblings: None
+
+Node 665 Node 665
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 1000, 1000, 0, 0, 485, 440, 0, 309, 0, 253, 0, 234, 0, 0]
+Parents: [516]
+Child: None
+Siblings: None
+
+Node 666 Node 666
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [508]
+Child: [756]
+Siblings: None
+
+Node 667 Node 667
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [598, 577]
+Child: [740]
+Siblings: None
+
+Node 668 Node 668
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [593]
+Child: [751]
+Siblings: None
+
+Node 669 Node 669
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [511, 591]
+Child: [736]
+Siblings: None
+
+Node 670 Node 670
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [551]
+Child: [786]
+Siblings: None
+
+Node 671 Node 671
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [542, 514]
+Child: [755, 775, 784]
+Siblings: None
+
+Node 672 Node 672
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 1000, 0, 571, 0, 440, 423, 0, 301, 253, 239, 0, 215, 187]
+Parents: [527, 561]
+Child: None
+Siblings: None
+
+Node 673 Node 673
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [568]
+Child: [724, 728, 762]
+Siblings: None
+
+Node 674 Node 674
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [532]
+Child: [722]
+Siblings: None
+
+Node 675 Node 675
+Computational Power: 3
+Memory: 3
+Eventrates: [1000, 1000, 0, 790, 0, 485, 440, 0, 309, 0, 0, 0, 234, 0, 0]
+Parents: [545, 594]
+Child: None
+Siblings: None
+
+Node 676 Node 676
+Computational Power: 3
+Memory: 3
+Eventrates: [1000, 0, 1000, 0, 571, 0, 0, 0, 0, 0, 253, 0, 234, 215, 187]
+Parents: [556]
+Child: None
+Siblings: None
+
+Node 677 Node 677
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [502]
+Child: [707, 716, 748, 750, 784, 792]
+Siblings: None
+
+Node 678 Node 678
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [590, 566]
+Child: [729, 738]
+Siblings: None
+
+Node 679 Node 679
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [563]
+Child: [730]
+Siblings: None
+
+Node 680 Node 680
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [533, 567]
+Child: [713]
+Siblings: None
+
+Node 681 Node 681
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [563, 579]
+Child: [704]
+Siblings: None
+
+Node 682 Node 682
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 790, 571, 485, 440, 423, 0, 0, 253, 0, 234, 0, 187]
+Parents: [575]
+Child: None
+Siblings: None
+
+Node 683 Node 683
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [571]
+Child: [721]
+Siblings: None
+
+Node 684 Node 684
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [590]
+Child: [756]
+Siblings: None
+
+Node 685 Node 685
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [548, 571]
+Child: [731, 772]
+Siblings: None
+
+Node 686 Node 686
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [592]
+Child: [709, 795]
+Siblings: None
+
+Node 687 Node 687
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [555]
+Child: [703, 776]
+Siblings: None
+
+Node 688 Node 688
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [566]
+Child: [712, 797]
+Siblings: None
+
+Node 689 Node 689
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [570, 511]
+Child: [718, 795]
+Siblings: None
+
+Node 690 Node 690
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [526]
+Child: [714, 717, 729]
+Siblings: None
+
+Node 691 Node 691
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [586]
+Child: [763]
+Siblings: None
+
+Node 692 Node 692
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [569, 592]
+Child: [744, 749, 778, 788]
+Siblings: None
+
+Node 693 Node 693
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [562]
+Child: [705, 734, 787]
+Siblings: None
+
+Node 694 Node 694
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [569]
+Child: [713, 739, 790]
+Siblings: None
+
+Node 695 Node 695
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [584]
+Child: [718]
+Siblings: None
+
+Node 696 Node 696
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [590, 596]
+Child: [715]
+Siblings: None
+
+Node 697 Node 697
+Computational Power: 3
+Memory: 3
+Eventrates: [1000, 1000, 0, 790, 571, 485, 0, 423, 0, 0, 0, 0, 234, 0, 187]
+Parents: [590, 541]
+Child: None
+Siblings: None
+
+Node 698 Node 698
+Computational Power: 3
+Memory: 3
+Eventrates: [1000, 0, 1000, 790, 571, 485, 440, 423, 309, 301, 0, 0, 0, 0, 0]
+Parents: [581, 524]
+Child: None
+Siblings: None
+
+Node 699 Node 699
+Computational Power: 3
+Memory: 3
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [543]
+Child: [706]
+Siblings: None
+
+Node 700 Node 700
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [621]
+Child: [878, 899]
+Siblings: None
+
+Node 701 Node 701
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [620]
+Child: [813, 881, 949]
+Siblings: None
+
+Node 702 Node 702
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [646, 604]
+Child: [872, 873, 974, 992]
+Siblings: None
+
+Node 703 Node 703
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [687, 649]
+Child: [986]
+Siblings: None
+
+Node 704 Node 704
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [681, 606]
+Child: [802, 810, 827, 849, 868, 897]
+Siblings: None
+
+Node 705 Node 705
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [693]
+Child: [867, 879]
+Siblings: None
+
+Node 706 Node 706
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [699, 605]
+Child: [934]
+Siblings: None
+
+Node 707 Node 707
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [620, 677]
+Child: [859, 896, 969]
+Siblings: None
+
+Node 708 Node 708
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [631, 663]
+Child: [838, 846, 847, 889, 906, 948]
+Siblings: None
+
+Node 709 Node 709
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [686]
+Child: [806, 876]
+Siblings: None
+
+Node 710 Node 710
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [651, 601]
+Child: [818, 822, 825, 933, 976, 989]
+Siblings: None
+
+Node 711 Node 711
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [607, 646]
+Child: [854, 914]
+Siblings: None
+
+Node 712 Node 712
+Computational Power: 2
+Memory: 2
+Eventrates: [1000, 1000, 0, 0, 571, 0, 440, 423, 309, 0, 0, 0, 234, 215, 0]
+Parents: [620, 688]
+Child: None
+Siblings: None
+
+Node 713 Node 713
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [694, 680]
+Child: [919, 940, 983, 987]
+Siblings: None
+
+Node 714 Node 714
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [690, 608]
+Child: [831, 941, 942]
+Siblings: None
+
+Node 715 Node 715
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [696]
+Child: [801, 917, 984, 987]
+Siblings: None
+
+Node 716 Node 716
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [677]
+Child: [915]
+Siblings: None
+
+Node 717 Node 717
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [690]
+Child: [829, 840, 864, 880, 968]
+Siblings: None
+
+Node 718 Node 718
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [689, 695]
+Child: [959, 989]
+Siblings: None
+
+Node 719 Node 719
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [634]
+Child: [981]
+Siblings: None
+
+Node 720 Node 720
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [625, 619]
+Child: [916, 918, 927]
+Siblings: None
+
+Node 721 Node 721
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [636, 683]
+Child: [939]
+Siblings: None
+
+Node 722 Node 722
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [674, 639]
+Child: [869, 936]
+Siblings: None
+
+Node 723 Node 723
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [619, 606]
+Child: [815, 900]
+Siblings: None
+
+Node 724 Node 724
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [673]
+Child: [842, 861, 977]
+Siblings: None
+
+Node 725 Node 725
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [659, 621]
+Child: [817, 855, 860, 866, 974]
+Siblings: None
+
+Node 726 Node 726
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [638, 639]
+Child: [807, 894, 898, 901, 946, 950]
+Siblings: None
+
+Node 727 Node 727
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [603, 664]
+Child: [838, 893, 907]
+Siblings: None
+
+Node 728 Node 728
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [673, 627]
+Child: [955]
+Siblings: None
+
+Node 729 Node 729
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [690, 678]
+Child: [911]
+Siblings: None
+
+Node 730 Node 730
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [679]
+Child: [802, 904]
+Siblings: None
+
+Node 731 Node 731
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [685]
+Child: [813, 816, 863, 925, 956]
+Siblings: None
+
+Node 732 Node 732
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [660, 637]
+Child: [886, 961]
+Siblings: None
+
+Node 733 Node 733
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [647, 617]
+Child: [839, 890, 924]
+Siblings: None
+
+Node 734 Node 734
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [693]
+Child: [865]
+Siblings: None
+
+Node 735 Node 735
+Computational Power: 2
+Memory: 2
+Eventrates: [1000, 1000, 1000, 0, 0, 0, 0, 0, 0, 0, 253, 239, 234, 215, 0]
+Parents: [659, 654]
+Child: None
+Siblings: None
+
+Node 736 Node 736
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [669, 612]
+Child: [814, 847]
+Siblings: None
+
+Node 737 Node 737
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [636, 644]
+Child: [911, 929, 972]
+Siblings: None
+
+Node 738 Node 738
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [678]
+Child: [845, 910, 913, 935, 999]
+Siblings: None
+
+Node 739 Node 739
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [694, 614]
+Child: [856, 922, 993]
+Siblings: None
+
+Node 740 Node 740
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [667]
+Child: [800]
+Siblings: None
+
+Node 741 Node 741
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [657]
+Child: [990]
+Siblings: None
+
+Node 742 Node 742
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [608]
+Child: [832, 966]
+Siblings: None
+
+Node 743 Node 743
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [602]
+Child: [816, 849, 993, 994]
+Siblings: None
+
+Node 744 Node 744
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [626, 692]
+Child: [837, 908, 979]
+Siblings: None
+
+Node 745 Node 745
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [609, 639]
+Child: [859, 875]
+Siblings: None
+
+Node 746 Node 746
+Computational Power: 2
+Memory: 2
+Eventrates: [1000, 1000, 1000, 0, 0, 0, 0, 423, 309, 0, 0, 239, 234, 0, 187]
+Parents: [628, 653]
+Child: None
+Siblings: None
+
+Node 747 Node 747
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [662]
+Child: [848, 927, 975]
+Siblings: None
+
+Node 748 Node 748
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [677]
+Child: [822]
+Siblings: None
+
+Node 749 Node 749
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [692, 624]
+Child: [812, 841, 871, 900, 913, 928]
+Siblings: None
+
+Node 750 Node 750
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [661, 677]
+Child: [807, 811]
+Siblings: None
+
+Node 751 Node 751
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [643, 668]
+Child: [837, 850, 862, 986]
+Siblings: None
+
+Node 752 Node 752
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [603]
+Child: [893, 915, 932]
+Siblings: None
+
+Node 753 Node 753
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [633]
+Child: [840, 841]
+Siblings: None
+
+Node 754 Node 754
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [604, 617]
+Child: [826, 874]
+Siblings: None
+
+Node 755 Node 755
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [671]
+Child: [852, 869, 962, 991]
+Siblings: None
+
+Node 756 Node 756
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [666, 684]
+Child: [851, 901, 905, 947, 964]
+Siblings: None
+
+Node 757 Node 757
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [600]
+Child: [800, 888, 962, 963, 995]
+Siblings: None
+
+Node 758 Node 758
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [635]
+Child: [867]
+Siblings: None
+
+Node 759 Node 759
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [601]
+Child: [853]
+Siblings: None
+
+Node 760 Node 760
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [618, 663]
+Child: [985]
+Siblings: None
+
+Node 761 Node 761
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [618]
+Child: [848, 937]
+Siblings: None
+
+Node 762 Node 762
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [673, 607]
+Child: [978, 979]
+Siblings: None
+
+Node 763 Node 763
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [622, 691]
+Child: [809, 821, 845, 861, 939, 980, 996]
+Siblings: None
+
+Node 764 Node 764
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [614]
+Child: [824, 828, 833, 903, 920, 942, 958, 965]
+Siblings: None
+
+Node 765 Node 765
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [634]
+Child: [834, 899]
+Siblings: None
+
+Node 766 Node 766
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [601, 643]
+Child: [897, 971]
+Siblings: None
+
+Node 767 Node 767
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [658]
+Child: [830]
+Siblings: None
+
+Node 768 Node 768
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [636]
+Child: [884, 943, 966]
+Siblings: None
+
+Node 769 Node 769
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [636, 651]
+Child: [963, 976, 982]
+Siblings: None
+
+Node 770 Node 770
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [648, 606]
+Child: [860, 882, 921, 926]
+Siblings: None
+
+Node 771 Node 771
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [635, 622]
+Child: [953, 960, 967]
+Siblings: None
+
+Node 772 Node 772
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [685, 657]
+Child: [954]
+Siblings: None
+
+Node 773 Node 773
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [639]
+Child: [820, 873, 969, 971]
+Siblings: None
+
+Node 774 Node 774
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [621]
+Child: [809, 889, 922]
+Siblings: None
+
+Node 775 Node 775
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [632, 671]
+Child: [935, 968]
+Siblings: None
+
+Node 776 Node 776
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [687, 644]
+Child: [852, 879, 910, 926, 952]
+Siblings: None
+
+Node 777 Node 777
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [628, 655]
+Child: [819, 826, 906, 941]
+Siblings: None
+
+Node 778 Node 778
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [692, 649]
+Child: [803, 930, 951]
+Siblings: None
+
+Node 779 Node 779
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [661]
+Child: [804, 815, 883]
+Siblings: None
+
+Node 780 Node 780
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [600, 610]
+Child: [828]
+Siblings: None
+
+Node 781 Node 781
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [655]
+Child: [823, 870, 878, 885]
+Siblings: None
+
+Node 782 Node 782
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [633]
+Child: [810, 857, 909, 929, 938]
+Siblings: None
+
+Node 783 Node 783
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [612]
+Child: [891, 945]
+Siblings: None
+
+Node 784 Node 784
+Computational Power: 2
+Memory: 2
+Eventrates: [1000, 0, 1000, 790, 571, 485, 0, 423, 309, 301, 0, 0, 0, 215, 0]
+Parents: [671, 677]
+Child: None
+Siblings: None
+
+Node 785 Node 785
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [654]
+Child: [808, 858, 920, 998]
+Siblings: None
+
+Node 786 Node 786
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [670]
+Child: [851, 905, 918, 936, 997]
+Siblings: None
+
+Node 787 Node 787
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 1000, 1000, 790, 571, 485, 440, 423, 0, 0, 253, 239, 0, 0, 0]
+Parents: [693]
+Child: None
+Siblings: None
+
+Node 788 Node 788
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 1000, 790, 571, 0, 440, 0, 0, 0, 0, 239, 0, 215, 187]
+Parents: [692]
+Child: None
+Siblings: None
+
+Node 789 Node 789
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [662]
+Child: [803, 933]
+Siblings: None
+
+Node 790 Node 790
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [694]
+Child: [812, 823, 892, 912, 923]
+Siblings: None
+
+Node 791 Node 791
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [605]
+Child: [834, 835, 886, 894, 919, 948, 977]
+Siblings: None
+
+Node 792 Node 792
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [633, 677]
+Child: [836, 883, 973, 985]
+Siblings: None
+
+Node 793 Node 793
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [642, 643]
+Child: [844, 902]
+Siblings: None
+
+Node 794 Node 794
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [652]
+Child: [829, 887, 944]
+Siblings: None
+
+Node 795 Node 795
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [686, 689]
+Child: [833, 843, 844, 887, 890, 914, 940]
+Siblings: None
+
+Node 796 Node 796
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [631, 615]
+Child: [825, 876, 904, 973]
+Siblings: None
+
+Node 797 Node 797
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [688, 660]
+Child: [805, 835, 862, 881, 931, 950, 957, 998]
+Siblings: None
+
+Node 798 Node 798
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [612, 655]
+Child: [877, 988]
+Siblings: None
+
+Node 799 Node 799
+Computational Power: 2
+Memory: 2
+Eventrates: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [644]
+Child: [868, 895, 930, 943, 970]
+Siblings: None
+
+Node 800 Node 800
 Computational Power: 1
 Memory: 1
-Eventrates: [1000, 1000, 0, 745, 0, 534, 428, 0, 331, 0, 268, 0, 233, 222, 213]
-Parents: [5, 3]
+Eventrates: [1000, 1000, 1000, 0, 0, 0, 440, 0, 309, 0, 253, 0, 234, 0, 187]
+Parents: [740, 757]
+Child: None
+Siblings: None
+
+Node 801 Node 801
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 0, 485, 440, 423, 0, 0, 0, 0, 0, 0, 0]
+Parents: [715]
+Child: None
+Siblings: None
+
+Node 802 Node 802
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 571, 0, 440, 423, 309, 301, 253, 239, 0, 215, 187]
+Parents: [704, 730]
+Child: None
+Siblings: None
+
+Node 803 Node 803
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 571, 0, 440, 423, 0, 301, 0, 239, 234, 215, 187]
+Parents: [789, 778]
+Child: None
+Siblings: None
+
+Node 804 Node 804
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 571, 0, 440, 0, 309, 0, 0, 239, 0, 215, 0]
+Parents: [779]
+Child: None
+Siblings: None
+
+Node 805 Node 805
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 0, 485, 440, 0, 0, 301, 0, 0, 0, 215, 187]
+Parents: [797]
+Child: None
+Siblings: None
+
+Node 806 Node 806
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 571, 0, 0, 0, 0, 0, 253, 239, 234, 215, 187]
+Parents: [709]
+Child: None
+Siblings: None
+
+Node 807 Node 807
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 790, 0, 0, 440, 423, 0, 0, 0, 239, 0, 0, 187]
+Parents: [726, 750]
+Child: None
+Siblings: None
+
+Node 808 Node 808
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 0, 0, 485, 0, 0, 0, 0, 0, 0, 0, 215, 187]
+Parents: [785]
+Child: None
+Siblings: None
+
+Node 809 Node 809
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 571, 0, 0, 0, 0, 0, 0, 239, 234, 0, 0]
+Parents: [763, 774]
+Child: None
+Siblings: None
+
+Node 810 Node 810
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 571, 0, 0, 0, 309, 301, 0, 239, 0, 0, 187]
+Parents: [704, 782]
+Child: None
+Siblings: None
+
+Node 811 Node 811
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 790, 0, 485, 440, 0, 0, 301, 0, 239, 234, 215, 187]
+Parents: [750]
+Child: None
+Siblings: None
+
+Node 812 Node 812
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 790, 0, 0, 0, 0, 0, 301, 253, 0, 0, 215, 0]
+Parents: [749, 790]
+Child: None
+Siblings: None
+
+Node 813 Node 813
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 0, 485, 440, 0, 0, 301, 0, 0, 234, 0, 0]
+Parents: [701, 731]
+Child: None
+Siblings: None
+
+Node 814 Node 814
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 571, 485, 0, 0, 0, 301, 253, 0, 0, 0, 187]
+Parents: [736]
+Child: None
+Siblings: None
+
+Node 815 Node 815
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 571, 485, 440, 423, 0, 0, 253, 0, 0, 0, 187]
+Parents: [779, 723]
+Child: None
+Siblings: None
+
+Node 816 Node 816
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 0, 571, 485, 0, 423, 309, 301, 0, 239, 0, 215, 0]
+Parents: [731, 743]
+Child: None
+Siblings: None
+
+Node 817 Node 817
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 571, 0, 0, 0, 0, 301, 253, 0, 0, 0, 0]
+Parents: [725]
+Child: None
+Siblings: None
+
+Node 818 Node 818
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 0, 571, 485, 0, 0, 309, 0, 253, 239, 234, 215, 187]
+Parents: [710]
+Child: None
+Siblings: None
+
+Node 819 Node 819
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 0, 485, 440, 0, 309, 0, 0, 0, 234, 215, 0]
+Parents: [777]
+Child: None
+Siblings: None
+
+Node 820 Node 820
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 571, 485, 440, 0, 309, 0, 0, 239, 234, 215, 187]
+Parents: [773]
+Child: None
+Siblings: None
+
+Node 821 Node 821
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 0, 0, 440, 423, 0, 301, 0, 0, 0, 0, 0]
+Parents: [763]
+Child: None
+Siblings: None
+
+Node 822 Node 822
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 790, 0, 0, 440, 423, 309, 0, 253, 239, 234, 0, 0]
+Parents: [748, 710]
+Child: None
+Siblings: None
+
+Node 823 Node 823
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 485, 440, 0, 309, 0, 253, 0, 0, 215, 187]
+Parents: [790, 781]
+Child: None
+Siblings: None
+
+Node 824 Node 824
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 571, 0, 0, 0, 0, 301, 0, 0, 0, 215, 187]
+Parents: [764]
+Child: None
+Siblings: None
+
+Node 825 Node 825
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 571, 485, 440, 423, 0, 301, 253, 0, 234, 0, 0]
+Parents: [796, 710]
+Child: None
+Siblings: None
+
+Node 826 Node 826
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 0, 0, 0, 0, 0, 301, 253, 0, 234, 0, 187]
+Parents: [754, 777]
+Child: None
+Siblings: None
+
+Node 827 Node 827
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 0, 485, 440, 0, 0, 301, 253, 0, 234, 0, 0]
+Parents: [704]
+Child: None
+Siblings: None
+
+Node 828 Node 828
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 571, 0, 440, 0, 309, 301, 253, 239, 234, 215, 187]
+Parents: [764, 780]
+Child: None
+Siblings: None
+
+Node 829 Node 829
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 0, 0, 440, 0, 0, 301, 253, 239, 0, 0, 187]
+Parents: [717, 794]
+Child: None
+Siblings: None
+
+Node 830 Node 830
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 571, 485, 0, 423, 0, 0, 0, 0, 234, 215, 0]
+Parents: [767]
+Child: None
+Siblings: None
+
+Node 831 Node 831
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 0, 485, 440, 0, 0, 0, 253, 0, 234, 0, 187]
+Parents: [714]
+Child: None
+Siblings: None
+
+Node 832 Node 832
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 0, 485, 0, 423, 309, 301, 0, 0, 0, 0, 187]
+Parents: [742]
+Child: None
+Siblings: None
+
+Node 833 Node 833
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 571, 0, 440, 0, 309, 0, 0, 0, 234, 215, 0]
+Parents: [764, 795]
+Child: None
+Siblings: None
+
+Node 834 Node 834
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 0, 485, 0, 0, 0, 301, 0, 0, 234, 215, 187]
+Parents: [765, 791]
+Child: None
+Siblings: None
+
+Node 835 Node 835
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 571, 0, 440, 0, 309, 301, 0, 0, 234, 0, 187]
+Parents: [791, 797]
+Child: None
+Siblings: None
+
+Node 836 Node 836
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 0, 485, 0, 423, 309, 0, 253, 0, 234, 215, 187]
+Parents: [792]
+Child: None
+Siblings: None
+
+Node 837 Node 837
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 0, 0, 440, 0, 309, 0, 0, 239, 234, 215, 187]
+Parents: [751, 744]
+Child: None
+Siblings: None
+
+Node 838 Node 838
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 790, 571, 485, 0, 0, 0, 301, 0, 0, 234, 215, 0]
+Parents: [727, 708]
+Child: None
+Siblings: None
+
+Node 839 Node 839
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 790, 0, 485, 440, 423, 0, 0, 0, 239, 0, 215, 187]
+Parents: [733]
+Child: None
+Siblings: None
+
+Node 840 Node 840
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 571, 485, 0, 423, 0, 301, 253, 239, 0, 215, 0]
+Parents: [753, 717]
+Child: None
+Siblings: None
+
+Node 841 Node 841
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 0, 0, 485, 440, 0, 309, 301, 253, 0, 0, 0, 187]
+Parents: [753, 749]
+Child: None
+Siblings: None
+
+Node 842 Node 842
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 571, 485, 0, 0, 309, 301, 253, 239, 234, 0, 187]
+Parents: [724]
+Child: None
+Siblings: None
+
+Node 843 Node 843
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 0, 0, 0, 423, 309, 301, 253, 0, 234, 0, 187]
+Parents: [795]
+Child: None
+Siblings: None
+
+Node 844 Node 844
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 0, 485, 0, 423, 309, 301, 0, 0, 0, 215, 0]
+Parents: [795, 793]
+Child: None
+Siblings: None
+
+Node 845 Node 845
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 0, 485, 440, 0, 0, 301, 0, 0, 234, 215, 187]
+Parents: [738, 763]
+Child: None
+Siblings: None
+
+Node 846 Node 846
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 571, 0, 440, 0, 0, 301, 0, 239, 234, 0, 187]
+Parents: [708]
+Child: None
+Siblings: None
+
+Node 847 Node 847
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 0, 0, 440, 423, 309, 0, 253, 0, 234, 215, 0]
+Parents: [736, 708]
+Child: None
+Siblings: None
+
+Node 848 Node 848
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 0, 485, 0, 0, 309, 301, 0, 239, 234, 215, 187]
+Parents: [747, 761]
+Child: None
+Siblings: None
+
+Node 849 Node 849
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 790, 0, 485, 440, 423, 309, 0, 253, 0, 0, 0, 0]
+Parents: [743, 704]
+Child: None
+Siblings: None
+
+Node 850 Node 850
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 0, 0, 440, 423, 0, 0, 0, 239, 234, 215, 0]
+Parents: [751]
+Child: None
+Siblings: None
+
+Node 851 Node 851
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 0, 0, 0, 423, 0, 301, 0, 239, 234, 0, 0]
+Parents: [786, 756]
+Child: None
+Siblings: None
+
+Node 852 Node 852
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 485, 0, 0, 309, 301, 0, 239, 0, 215, 187]
+Parents: [776, 755]
+Child: None
+Siblings: None
+
+Node 853 Node 853
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 571, 485, 440, 423, 0, 0, 253, 0, 0, 0, 0]
+Parents: [759]
+Child: None
+Siblings: None
+
+Node 854 Node 854
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 790, 571, 485, 0, 0, 309, 301, 253, 0, 0, 0, 187]
+Parents: [711]
+Child: None
+Siblings: None
+
+Node 855 Node 855
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 571, 485, 440, 0, 0, 0, 0, 0, 234, 215, 0]
+Parents: [725]
+Child: None
+Siblings: None
+
+Node 856 Node 856
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 0, 485, 440, 0, 0, 0, 253, 0, 0, 0, 187]
+Parents: [739]
+Child: None
+Siblings: None
+
+Node 857 Node 857
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 0, 0, 440, 423, 309, 0, 253, 239, 234, 215, 0]
+Parents: [782]
+Child: None
+Siblings: None
+
+Node 858 Node 858
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 0, 485, 0, 423, 309, 0, 0, 0, 0, 215, 187]
+Parents: [785]
+Child: None
+Siblings: None
+
+Node 859 Node 859
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 571, 485, 440, 0, 309, 0, 0, 0, 0, 215, 0]
+Parents: [745, 707]
+Child: None
+Siblings: None
+
+Node 860 Node 860
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 485, 0, 0, 0, 301, 253, 239, 0, 215, 187]
+Parents: [725, 770]
+Child: None
+Siblings: None
+
+Node 861 Node 861
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 571, 485, 440, 423, 309, 301, 0, 239, 234, 0, 187]
+Parents: [724, 763]
+Child: None
+Siblings: None
+
+Node 862 Node 862
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 0, 0, 423, 0, 301, 0, 239, 234, 215, 187]
+Parents: [797, 751]
+Child: None
+Siblings: None
+
+Node 863 Node 863
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 790, 0, 485, 440, 0, 0, 301, 0, 0, 234, 215, 187]
+Parents: [731]
+Child: None
+Siblings: None
+
+Node 864 Node 864
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 0, 0, 423, 309, 0, 253, 239, 234, 215, 187]
+Parents: [717]
+Child: None
+Siblings: None
+
+Node 865 Node 865
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 0, 0, 0, 0, 309, 0, 0, 239, 234, 0, 0]
+Parents: [734]
+Child: None
+Siblings: None
+
+Node 866 Node 866
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 790, 571, 0, 440, 0, 309, 0, 0, 239, 0, 215, 0]
+Parents: [725]
+Child: None
+Siblings: None
+
+Node 867 Node 867
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 571, 0, 0, 423, 0, 0, 253, 239, 234, 215, 187]
+Parents: [705, 758]
+Child: None
+Siblings: None
+
+Node 868 Node 868
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 790, 571, 485, 440, 0, 309, 0, 0, 239, 0, 0, 187]
+Parents: [704, 799]
+Child: None
+Siblings: None
+
+Node 869 Node 869
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 0, 485, 0, 0, 309, 301, 0, 239, 234, 0, 0]
+Parents: [755, 722]
+Child: None
+Siblings: None
+
+Node 870 Node 870
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 571, 485, 440, 0, 0, 301, 253, 0, 0, 0, 187]
+Parents: [781]
+Child: None
+Siblings: None
+
+Node 871 Node 871
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 0, 485, 440, 423, 0, 0, 253, 239, 0, 215, 187]
+Parents: [749]
+Child: None
+Siblings: None
+
+Node 872 Node 872
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 571, 0, 440, 0, 309, 0, 0, 239, 234, 215, 187]
+Parents: [702]
+Child: None
+Siblings: None
+
+Node 873 Node 873
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 571, 485, 440, 0, 309, 301, 0, 239, 234, 215, 0]
+Parents: [702, 773]
+Child: None
+Siblings: None
+
+Node 874 Node 874
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 0, 485, 0, 423, 309, 301, 253, 239, 234, 215, 187]
+Parents: [754]
+Child: None
+Siblings: None
+
+Node 875 Node 875
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 790, 0, 0, 0, 423, 309, 301, 0, 239, 0, 0, 187]
+Parents: [745]
+Child: None
+Siblings: None
+
+Node 876 Node 876
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 485, 0, 0, 309, 0, 0, 0, 0, 215, 187]
+Parents: [709, 796]
+Child: None
+Siblings: None
+
+Node 877 Node 877
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 571, 0, 440, 423, 0, 0, 253, 239, 234, 0, 187]
+Parents: [798]
+Child: None
+Siblings: None
+
+Node 878 Node 878
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 571, 485, 0, 423, 309, 0, 253, 239, 234, 0, 0]
+Parents: [700, 781]
+Child: None
+Siblings: None
+
+Node 879 Node 879
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 571, 485, 0, 423, 309, 0, 0, 239, 234, 215, 187]
+Parents: [776, 705]
+Child: None
+Siblings: None
+
+Node 880 Node 880
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 571, 0, 0, 0, 0, 301, 0, 0, 0, 0, 187]
+Parents: [717]
+Child: None
+Siblings: None
+
+Node 881 Node 881
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 571, 485, 0, 0, 309, 0, 0, 239, 234, 215, 0]
+Parents: [701, 797]
+Child: None
+Siblings: None
+
+Node 882 Node 882
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 0, 571, 485, 0, 423, 0, 301, 253, 239, 0, 215, 187]
+Parents: [770]
+Child: None
+Siblings: None
+
+Node 883 Node 883
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 0, 571, 0, 440, 0, 0, 301, 0, 239, 234, 0, 0]
+Parents: [779, 792]
+Child: None
+Siblings: None
+
+Node 884 Node 884
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 571, 485, 440, 0, 0, 0, 253, 239, 0, 0, 187]
+Parents: [768]
+Child: None
+Siblings: None
+
+Node 885 Node 885
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 571, 485, 440, 0, 0, 301, 0, 0, 234, 215, 187]
+Parents: [781]
+Child: None
+Siblings: None
+
+Node 886 Node 886
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 0, 485, 0, 423, 309, 301, 0, 239, 0, 215, 187]
+Parents: [732, 791]
+Child: None
+Siblings: None
+
+Node 887 Node 887
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 0, 571, 485, 0, 0, 0, 0, 0, 0, 0, 215, 187]
+Parents: [795, 794]
+Child: None
+Siblings: None
+
+Node 888 Node 888
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 571, 485, 440, 0, 0, 301, 0, 239, 234, 215, 187]
+Parents: [757]
+Child: None
+Siblings: None
+
+Node 889 Node 889
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 0, 485, 0, 0, 0, 301, 0, 0, 234, 215, 0]
+Parents: [774, 708]
+Child: None
+Siblings: None
+
+Node 890 Node 890
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 571, 485, 0, 423, 309, 0, 0, 239, 234, 0, 187]
+Parents: [795, 733]
+Child: None
+Siblings: None
+
+Node 891 Node 891
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 571, 485, 0, 423, 0, 301, 0, 0, 0, 215, 187]
+Parents: [783]
+Child: None
+Siblings: None
+
+Node 892 Node 892
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 0, 0, 0, 423, 309, 0, 0, 0, 0, 215, 0]
+Parents: [790]
+Child: None
+Siblings: None
+
+Node 893 Node 893
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 0, 0, 0, 0, 0, 301, 0, 0, 234, 215, 187]
+Parents: [752, 727]
+Child: None
+Siblings: None
+
+Node 894 Node 894
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 0, 0, 0, 423, 0, 301, 253, 0, 0, 0, 0]
+Parents: [791, 726]
+Child: None
+Siblings: None
+
+Node 895 Node 895
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 0, 571, 485, 440, 0, 0, 0, 0, 0, 234, 0, 187]
+Parents: [799]
+Child: None
+Siblings: None
+
+Node 896 Node 896
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 571, 0, 0, 423, 309, 301, 253, 0, 0, 215, 187]
+Parents: [707]
+Child: None
+Siblings: None
+
+Node 897 Node 897
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 571, 485, 440, 0, 0, 0, 253, 239, 0, 0, 187]
+Parents: [766, 704]
+Child: None
+Siblings: None
+
+Node 898 Node 898
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 571, 0, 0, 0, 309, 301, 253, 239, 234, 215, 187]
+Parents: [726]
+Child: None
+Siblings: None
+
+Node 899 Node 899
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 0, 485, 0, 423, 309, 301, 0, 239, 0, 0, 187]
+Parents: [765, 700]
+Child: None
+Siblings: None
+
+Node 900 Node 900
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 571, 485, 0, 0, 0, 0, 0, 239, 234, 0, 0]
+Parents: [749, 723]
+Child: None
+Siblings: None
+
+Node 901 Node 901
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 0, 485, 0, 423, 309, 0, 0, 239, 234, 215, 187]
+Parents: [726, 756]
+Child: None
+Siblings: None
+
+Node 902 Node 902
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 0, 485, 0, 423, 309, 0, 253, 239, 234, 215, 187]
+Parents: [793]
+Child: None
+Siblings: None
+
+Node 903 Node 903
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 571, 485, 0, 423, 309, 301, 253, 0, 0, 0, 187]
+Parents: [764]
+Child: None
+Siblings: None
+
+Node 904 Node 904
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 790, 571, 0, 440, 0, 0, 0, 0, 239, 234, 0, 187]
+Parents: [730, 796]
+Child: None
+Siblings: None
+
+Node 905 Node 905
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 571, 485, 440, 0, 0, 301, 0, 239, 0, 0, 0]
+Parents: [756, 786]
+Child: None
+Siblings: None
+
+Node 906 Node 906
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 0, 485, 440, 423, 309, 0, 0, 239, 234, 215, 0]
+Parents: [777, 708]
+Child: None
+Siblings: None
+
+Node 907 Node 907
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 0, 0, 0, 423, 0, 0, 0, 239, 234, 0, 0]
+Parents: [727]
+Child: None
+Siblings: None
+
+Node 908 Node 908
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 571, 0, 440, 0, 0, 301, 0, 239, 0, 215, 0]
+Parents: [744]
+Child: None
+Siblings: None
+
+Node 909 Node 909
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 571, 485, 0, 423, 0, 301, 253, 239, 234, 0, 187]
+Parents: [782]
+Child: None
+Siblings: None
+
+Node 910 Node 910
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 0, 0, 440, 0, 0, 0, 0, 239, 0, 0, 187]
+Parents: [776, 738]
+Child: None
+Siblings: None
+
+Node 911 Node 911
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 571, 485, 440, 423, 309, 0, 0, 239, 234, 215, 0]
+Parents: [737, 729]
+Child: None
+Siblings: None
+
+Node 912 Node 912
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 571, 0, 440, 0, 0, 0, 0, 0, 0, 0, 0]
+Parents: [790]
+Child: None
+Siblings: None
+
+Node 913 Node 913
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 571, 485, 440, 0, 0, 0, 253, 239, 234, 0, 187]
+Parents: [749, 738]
+Child: None
+Siblings: None
+
+Node 914 Node 914
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 0, 440, 0, 0, 0, 253, 239, 0, 0, 0]
+Parents: [711, 795]
+Child: None
+Siblings: None
+
+Node 915 Node 915
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 0, 571, 485, 0, 423, 309, 0, 253, 239, 234, 215, 187]
+Parents: [716, 752]
+Child: None
+Siblings: None
+
+Node 916 Node 916
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 0, 0, 485, 440, 423, 0, 301, 0, 239, 0, 0, 187]
+Parents: [720]
+Child: None
+Siblings: None
+
+Node 917 Node 917
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 0, 440, 0, 309, 301, 253, 0, 0, 0, 187]
+Parents: [715]
+Child: None
+Siblings: None
+
+Node 918 Node 918
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 0, 485, 440, 423, 0, 0, 253, 0, 0, 215, 0]
+Parents: [786, 720]
+Child: None
+Siblings: None
+
+Node 919 Node 919
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 0, 485, 0, 0, 0, 301, 0, 239, 234, 215, 187]
+Parents: [713, 791]
+Child: None
+Siblings: None
+
+Node 920 Node 920
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 0, 571, 0, 440, 0, 309, 0, 253, 0, 234, 0, 0]
+Parents: [785, 764]
+Child: None
+Siblings: None
+
+Node 921 Node 921
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 571, 0, 0, 0, 309, 0, 253, 239, 234, 0, 187]
+Parents: [770]
+Child: None
+Siblings: None
+
+Node 922 Node 922
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 0, 485, 440, 423, 309, 0, 253, 0, 0, 215, 187]
+Parents: [739, 774]
+Child: None
+Siblings: None
+
+Node 923 Node 923
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 0, 571, 485, 0, 423, 309, 301, 0, 239, 0, 215, 0]
+Parents: [790]
+Child: None
+Siblings: None
+
+Node 924 Node 924
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 571, 485, 0, 423, 0, 0, 253, 239, 234, 0, 0]
+Parents: [733]
+Child: None
+Siblings: None
+
+Node 925 Node 925
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 571, 485, 0, 423, 0, 301, 0, 239, 0, 0, 187]
+Parents: [731]
+Child: None
+Siblings: None
+
+Node 926 Node 926
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 790, 571, 0, 0, 0, 309, 301, 253, 239, 234, 0, 0]
+Parents: [770, 776]
+Child: None
+Siblings: None
+
+Node 927 Node 927
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 790, 571, 0, 0, 423, 0, 0, 0, 239, 234, 0, 0]
+Parents: [747, 720]
+Child: None
+Siblings: None
+
+Node 928 Node 928
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 0, 485, 440, 0, 309, 301, 253, 239, 234, 0, 187]
+Parents: [749]
+Child: None
+Siblings: None
+
+Node 929 Node 929
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 0, 0, 0, 423, 309, 301, 253, 239, 0, 215, 187]
+Parents: [737, 782]
+Child: None
+Siblings: None
+
+Node 930 Node 930
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 790, 571, 485, 0, 0, 0, 301, 0, 0, 0, 215, 187]
+Parents: [778, 799]
+Child: None
+Siblings: None
+
+Node 931 Node 931
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 790, 0, 485, 440, 0, 0, 0, 0, 0, 234, 0, 0]
+Parents: [797]
+Child: None
+Siblings: None
+
+Node 932 Node 932
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 0, 0, 423, 309, 301, 0, 0, 234, 0, 187]
+Parents: [752]
+Child: None
+Siblings: None
+
+Node 933 Node 933
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 0, 571, 0, 440, 423, 0, 0, 0, 239, 234, 215, 187]
+Parents: [789, 710]
+Child: None
+Siblings: None
+
+Node 934 Node 934
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 571, 485, 440, 0, 309, 301, 253, 0, 0, 215, 187]
+Parents: [706]
+Child: None
+Siblings: None
+
+Node 935 Node 935
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 790, 0, 485, 0, 0, 0, 301, 0, 239, 234, 0, 0]
+Parents: [775, 738]
+Child: None
+Siblings: None
+
+Node 936 Node 936
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 571, 485, 440, 423, 0, 0, 253, 0, 234, 0, 0]
+Parents: [722, 786]
+Child: None
+Siblings: None
+
+Node 937 Node 937
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 790, 0, 485, 440, 0, 309, 0, 0, 0, 234, 0, 0]
+Parents: [761]
+Child: None
+Siblings: None
+
+Node 938 Node 938
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 0, 485, 0, 0, 0, 0, 0, 239, 0, 0, 0]
+Parents: [782]
+Child: None
+Siblings: None
+
+Node 939 Node 939
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 571, 485, 440, 423, 309, 0, 253, 239, 234, 0, 187]
+Parents: [721, 763]
+Child: None
+Siblings: None
+
+Node 940 Node 940
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 0, 571, 485, 440, 0, 0, 301, 0, 0, 0, 0, 187]
+Parents: [713, 795]
+Child: None
+Siblings: None
+
+Node 941 Node 941
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 571, 0, 0, 0, 0, 0, 253, 0, 234, 0, 187]
+Parents: [714, 777]
+Child: None
+Siblings: None
+
+Node 942 Node 942
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 790, 571, 0, 0, 423, 309, 301, 0, 0, 234, 0, 0]
+Parents: [764, 714]
+Child: None
+Siblings: None
+
+Node 943 Node 943
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 571, 485, 0, 423, 309, 301, 253, 239, 0, 215, 0]
+Parents: [768, 799]
+Child: None
+Siblings: None
+
+Node 944 Node 944
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 790, 0, 0, 440, 0, 0, 0, 0, 0, 234, 215, 187]
+Parents: [794]
+Child: None
+Siblings: None
+
+Node 945 Node 945
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 790, 0, 485, 0, 423, 0, 301, 0, 0, 0, 215, 187]
+Parents: [783]
+Child: None
+Siblings: None
+
+Node 946 Node 946
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 0, 0, 485, 0, 0, 309, 0, 0, 239, 234, 0, 0]
+Parents: [726]
+Child: None
+Siblings: None
+
+Node 947 Node 947
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 0, 485, 440, 0, 309, 301, 253, 239, 234, 215, 187]
+Parents: [756]
+Child: None
+Siblings: None
+
+Node 948 Node 948
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 0, 485, 440, 0, 0, 0, 0, 239, 0, 215, 187]
+Parents: [708, 791]
+Child: None
+Siblings: None
+
+Node 949 Node 949
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 571, 485, 440, 423, 0, 0, 0, 239, 0, 0, 0]
+Parents: [701]
+Child: None
+Siblings: None
+
+Node 950 Node 950
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 0, 0, 0, 423, 309, 0, 253, 0, 234, 0, 0]
+Parents: [797, 726]
+Child: None
+Siblings: None
+
+Node 951 Node 951
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 571, 485, 0, 423, 0, 0, 0, 0, 0, 0, 187]
+Parents: [778]
+Child: None
+Siblings: None
+
+Node 952 Node 952
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 0, 485, 440, 423, 0, 0, 0, 239, 0, 215, 187]
+Parents: [776]
+Child: None
+Siblings: None
+
+Node 953 Node 953
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 571, 485, 440, 0, 0, 0, 253, 239, 234, 0, 187]
+Parents: [771]
+Child: None
+Siblings: None
+
+Node 954 Node 954
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 571, 485, 0, 0, 0, 301, 0, 0, 0, 0, 187]
+Parents: [772]
+Child: None
+Siblings: None
+
+Node 955 Node 955
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 0, 0, 440, 0, 0, 301, 253, 239, 234, 215, 0]
+Parents: [728]
+Child: None
+Siblings: None
+
+Node 956 Node 956
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 571, 485, 440, 423, 0, 301, 253, 239, 0, 215, 0]
+Parents: [731]
+Child: None
+Siblings: None
+
+Node 957 Node 957
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 571, 485, 0, 423, 0, 301, 0, 0, 0, 0, 187]
+Parents: [797]
+Child: None
+Siblings: None
+
+Node 958 Node 958
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 571, 0, 440, 423, 0, 301, 0, 239, 234, 0, 187]
+Parents: [764]
+Child: None
+Siblings: None
+
+Node 959 Node 959
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 0, 485, 440, 423, 0, 0, 253, 239, 234, 215, 187]
+Parents: [718]
+Child: None
+Siblings: None
+
+Node 960 Node 960
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 0, 485, 0, 423, 309, 301, 253, 239, 234, 215, 0]
+Parents: [771]
+Child: None
+Siblings: None
+
+Node 961 Node 961
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 0, 485, 440, 0, 0, 301, 253, 239, 234, 215, 0]
+Parents: [732]
+Child: None
+Siblings: None
+
+Node 962 Node 962
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 571, 485, 440, 423, 0, 301, 253, 239, 234, 215, 187]
+Parents: [757, 755]
+Child: None
+Siblings: None
+
+Node 963 Node 963
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 0, 485, 0, 423, 309, 301, 0, 239, 234, 0, 187]
+Parents: [757, 769]
+Child: None
+Siblings: None
+
+Node 964 Node 964
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 0, 485, 440, 0, 0, 0, 0, 239, 0, 0, 0]
+Parents: [756]
+Child: None
+Siblings: None
+
+Node 965 Node 965
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 571, 0, 440, 0, 0, 301, 253, 239, 0, 0, 187]
+Parents: [764]
+Child: None
+Siblings: None
+
+Node 966 Node 966
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 790, 571, 0, 0, 0, 0, 301, 0, 239, 234, 215, 187]
+Parents: [742, 768]
+Child: None
+Siblings: None
+
+Node 967 Node 967
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 0, 0, 485, 440, 0, 0, 301, 253, 239, 0, 0, 187]
+Parents: [771]
+Child: None
+Siblings: None
+
+Node 968 Node 968
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 0, 485, 0, 423, 309, 301, 0, 0, 234, 215, 187]
+Parents: [775, 717]
+Child: None
+Siblings: None
+
+Node 969 Node 969
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 0, 485, 0, 0, 309, 301, 253, 0, 0, 215, 0]
+Parents: [773, 707]
+Child: None
+Siblings: None
+
+Node 970 Node 970
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 571, 0, 0, 0, 0, 301, 253, 239, 0, 215, 187]
+Parents: [799]
+Child: None
+Siblings: None
+
+Node 971 Node 971
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 0, 0, 0, 423, 0, 0, 0, 0, 0, 0, 187]
+Parents: [773, 766]
+Child: None
+Siblings: None
+
+Node 972 Node 972
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 0, 571, 0, 440, 423, 0, 301, 0, 239, 234, 215, 187]
+Parents: [737]
+Child: None
+Siblings: None
+
+Node 973 Node 973
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 0, 0, 440, 0, 0, 0, 0, 239, 0, 215, 0]
+Parents: [796, 792]
+Child: None
+Siblings: None
+
+Node 974 Node 974
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 571, 0, 440, 423, 309, 301, 0, 239, 234, 0, 187]
+Parents: [725, 702]
+Child: None
+Siblings: None
+
+Node 975 Node 975
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 0, 0, 0, 423, 0, 0, 253, 239, 234, 0, 0]
+Parents: [747]
+Child: None
+Siblings: None
+
+Node 976 Node 976
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 0, 790, 571, 485, 440, 423, 309, 0, 253, 0, 0, 0, 0]
+Parents: [710, 769]
+Child: None
+Siblings: None
+
+Node 977 Node 977
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 0, 485, 0, 423, 0, 301, 253, 0, 234, 215, 187]
+Parents: [724, 791]
+Child: None
+Siblings: None
+
+Node 978 Node 978
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 571, 485, 440, 423, 0, 301, 253, 239, 0, 0, 0]
+Parents: [762]
+Child: None
+Siblings: None
+
+Node 979 Node 979
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 0, 571, 0, 440, 423, 0, 0, 253, 239, 234, 0, 0]
+Parents: [744, 762]
+Child: None
+Siblings: None
+
+Node 980 Node 980
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 571, 485, 440, 0, 0, 301, 0, 0, 0, 215, 0]
+Parents: [763]
+Child: None
+Siblings: None
+
+Node 981 Node 981
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 0, 0, 0, 0, 309, 0, 0, 0, 0, 0, 187]
+Parents: [719]
+Child: None
+Siblings: None
+
+Node 982 Node 982
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 0, 0, 0, 309, 301, 0, 0, 0, 0, 187]
+Parents: [769]
+Child: None
+Siblings: None
+
+Node 983 Node 983
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 790, 571, 485, 0, 0, 0, 301, 253, 239, 0, 0, 0]
+Parents: [713]
+Child: None
+Siblings: None
+
+Node 984 Node 984
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 571, 485, 440, 0, 309, 301, 253, 239, 0, 0, 0]
+Parents: [715]
+Child: None
+Siblings: None
+
+Node 985 Node 985
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 0, 0, 0, 0, 423, 309, 301, 253, 239, 0, 0, 0]
+Parents: [760, 792]
+Child: None
+Siblings: None
+
+Node 986 Node 986
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 1000, 790, 0, 0, 0, 0, 309, 0, 253, 0, 0, 215, 187]
+Parents: [751, 703]
+Child: None
+Siblings: None
+
+Node 987 Node 987
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 0, 0, 0, 0, 0, 0, 0, 253, 239, 0, 0, 0]
+Parents: [713, 715]
+Child: None
+Siblings: None
+
+Node 988 Node 988
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 0, 0, 0, 0, 0, 309, 301, 253, 0, 0, 215, 0]
+Parents: [798]
+Child: None
+Siblings: None
+
+Node 989 Node 989
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 0, 485, 440, 0, 309, 0, 253, 0, 234, 0, 0]
+Parents: [718, 710]
+Child: None
+Siblings: None
+
+Node 990 Node 990
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 0, 0, 440, 0, 0, 301, 253, 0, 234, 0, 0]
+Parents: [741]
+Child: None
+Siblings: None
+
+Node 991 Node 991
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 1000, 1000, 790, 0, 0, 0, 0, 309, 0, 253, 0, 234, 0, 0]
+Parents: [755]
+Child: None
+Siblings: None
+
+Node 992 Node 992
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 790, 0, 485, 0, 0, 0, 0, 253, 0, 234, 0, 187]
+Parents: [702]
+Child: None
+Siblings: None
+
+Node 993 Node 993
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 0, 790, 0, 485, 0, 423, 0, 0, 0, 0, 0, 215, 187]
+Parents: [743, 739]
+Child: None
+Siblings: None
+
+Node 994 Node 994
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 0, 0, 440, 0, 309, 301, 253, 0, 0, 0, 187]
+Parents: [743]
+Child: None
+Siblings: None
+
+Node 995 Node 995
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 571, 0, 0, 423, 0, 301, 0, 239, 234, 215, 0]
+Parents: [757]
+Child: None
+Siblings: None
+
+Node 996 Node 996
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 1000, 790, 571, 485, 440, 423, 309, 301, 0, 239, 234, 0, 187]
+Parents: [763]
+Child: None
+Siblings: None
+
+Node 997 Node 997
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 1000, 0, 790, 0, 0, 440, 0, 0, 0, 253, 239, 234, 0, 187]
+Parents: [786]
+Child: None
+Siblings: None
+
+Node 998 Node 998
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 0, 0, 485, 440, 423, 0, 0, 0, 239, 0, 0, 0]
+Parents: [785, 797]
+Child: None
+Siblings: None
+
+Node 999 Node 999
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 0, 1000, 790, 0, 0, 440, 423, 309, 0, 0, 0, 234, 215, 0]
+Parents: [738]
 Child: None
 Siblings: None
 
 
 selectivities
-{'JC': 0.028393117240521876, 'CJ': 0.028393117240521876, 'JL': 0.09019073999120976, 'LJ': 0.09019073999120976, 'HJ': 0.09356039760523394, 'JH': 0.09356039760523394, 'NA': 0.013011343462972225, 'AN': 0.013011343462972225, 'EI': 0.09926907976117909, 'IE': 0.09926907976117909, 'OI': 0.07869229148999302, 'IO': 0.07869229148999302, 'EA': 0.028957815271034637, 'AE': 0.028957815271034637, 'ML': 0.0608534380952876, 'LM': 0.0608534380952876, 'FC': 0.011443636796084206, 'CF': 0.011443636796084206, 'KE': 1, 'EK': 1, 'OL': 0.06772720158224806, 'LO': 0.06772720158224806, 'MI': 0.022970384028497298, 'IM': 0.022970384028497298, 'OE': 0.03571758949117111, 'EO': 0.03571758949117111, 'KB': 0.026938029956811466, 'BK': 0.026938029956811466, 'JD': 0.02979456215037464, 'DJ': 0.02979456215037464, 'OG': 1, 'GO': 1, 'NL': 0.014927517547932714, 'LN': 0.014927517547932714, 'AM': 1, 'MA': 1, 'EJ': 0.09967192708228835, 'JE': 0.09967192708228835, 'BC': 0.09200616014148656, 'CB': 0.09200616014148656, 'OA': 0.05806426086469931, 'AO': 0.05806426086469931, 'HG': 0.02122686123892563, 'GH': 0.02122686123892563, 'NC': 0.015951589185505627, 'CN': 0.015951589185505627, 'BG': 0.08913981283578341, 'GB': 0.08913981283578341, 'NG': 1, 'GN': 1, 'KI': 0.026639680888734127, 'IK': 0.026639680888734127, 'KM': 1, 'MK': 1, 'BM': 1, 'MB': 1, 'EH': 0.0591642891266552, 'HE': 0.0591642891266552, 'KO': 1, 'OK': 1, 'AD': 0.025067711401474874, 'DA': 0.025067711401474874, 'ED': 0.057905705031897, 'DE': 0.057905705031897, 'OH': 1, 'HO': 1, 'HC': 0.06109862262277256, 'CH': 0.06109862262277256, 'KA': 0.061080044248167896, 'AK': 0.061080044248167896, 'OM': 0.04300648705392924, 'MO': 0.04300648705392924, 'NJ': 1, 'JN': 1, 'NI': 0.08393605472764956, 'IN': 0.08393605472764956, 'FJ': 0.04029918868421023, 'JF': 0.04029918868421023, 'EL': 0.03434989881162713, 'LE': 0.03434989881162713, 'AF': 0.09086886534815834, 'FA': 0.09086886534815834, 'EN': 0.04684500652956138, 'NE': 0.04684500652956138, 'ND': 0.08641109811913054, 'DN': 0.08641109811913054, 'IC': 0.05362824368443896, 'CI': 0.05362824368443896, 'EF': 0.06321099733734242, 'FE': 0.06321099733734242, 'GJ': 1, 'JG': 1, 'KL': 1, 'LK': 1, 'OB': 1, 'BO': 1, 'MC': 0.044084650344532864, 'CM': 0.044084650344532864, 'ID': 1, 'DI': 1, 'FG': 0.030135285121787286, 'GF': 0.030135285121787286, 'AG': 0.054234757099335736, 'GA': 0.054234757099335736, 'KF': 0.0894474247540074, 'FK': 0.0894474247540074, 'EC': 0.01455000791489125, 'CE': 0.01455000791489125, 'AC': 1, 'CA': 1, 'ON': 0.0730222752909852, 'NO': 0.0730222752909852, 'BN': 1, 'NB': 1, 'LD': 0.060632348098960384, 'DL': 0.060632348098960384, 'MD': 0.026709693362668485, 'DM': 0.026709693362668485, 'BE': 0.0241890195648351, 'EB': 0.0241890195648351, 'LC': 0.045108924811172416, 'CL': 0.045108924811172416, 'KD': 1, 'DK': 1, 'GD': 0.015421679949227426, 'DG': 0.015421679949227426, 'BH': 0.018043529537950714, 'HB': 0.018043529537950714, 'MG': 0.04480387007199813, 'GM': 0.04480387007199813, 'KJ': 0.07367115002724253, 'JK': 0.07367115002724253, 'GL': 0.014598534649511996, 'LG': 0.014598534649511996, 'OF': 0.08035793878325007, 'FO': 0.08035793878325007, 'NH': 0.07457957645722074, 'HN': 0.07457957645722074, 'JI': 1, 'IJ': 1, 'EG': 1, 'GE': 1, 'AI': 0.06826638506453275, 'IA': 0.06826638506453275, 'HD': 1, 'DH': 1, 'NF': 0.08406182192073929, 'FN': 0.08406182192073929, 'FL': 1, 'LF': 1, 'KN': 0.046007616042571954, 'NK': 0.046007616042571954, 'HL': 0.09381174107967384, 'LH': 0.09381174107967384, 'OD': 0.03760315421068747, 'DO': 0.03760315421068747, 'KC': 1, 'CK': 1, 'FD': 0.04121999317863473, 'DF': 0.04121999317863473, 'MF': 0.04213546174605817, 'FM': 0.04213546174605817, 'HI': 1, 'IH': 1, 'GC': 0.09265059469626236, 'CG': 0.09265059469626236, 'CD': 0.01849857377427558, 'DC': 0.01849857377427558, 'IL': 1, 'LI': 1, 'KG': 0.02826605453247688, 'GK': 0.02826605453247688, 'OC': 0.02917345095925683, 'CO': 0.02917345095925683, 'BF': 1, 'FB': 1, 'KH': 0.029509551408897647, 'HK': 0.029509551408897647, 'BJ': 0.09148515106213682, 'JB': 0.09148515106213682, 'AJ': 1, 'JA': 1, 'HF': 0.025729909863168796, 'FH': 0.025729909863168796, 'HM': 1, 'MH': 1, 'BL': 0.016559545727374655, 'LB': 0.016559545727374655, 'FI': 0.09593142550036265, 'IF': 0.09593142550036265, 'BD': 0.04403073272598898, 'DB': 0.04403073272598898, 'EM': 0.06485700583319214, 'ME': 0.06485700583319214, 'BA': 1, 'AB': 1, 'AH': 0.06993883525604237, 'HA': 0.06993883525604237, 'BI': 1, 'IB': 1, 'NM': 1, 'MN': 1, 'AL': 1, 'LA': 1, 'MJ': 1, 'JM': 1, 'GI': 0.0359219102500426, 'IG': 0.0359219102500426, 'OJ': 0.01113097329829553, 'JO': 0.01113097329829553} 
+{'HM': 1, 'MH': 1, 'GA': 0.05780108223053019, 'AG': 0.05780108223053019, 'CJ': 0.06668724789216335, 'JC': 0.06668724789216335, 'DJ': 0.026395270473869484, 'JD': 0.026395270473869484, 'CE': 1, 'EC': 1, 'CA': 0.09954509771491331, 'AC': 0.09954509771491331, 'KJ': 0.06988988899083114, 'JK': 0.06988988899083114, 'KF': 0.09746243798773374, 'FK': 0.09746243798773374, 'MF': 1, 'FM': 1, 'MA': 0.035995127080326345, 'AM': 0.035995127080326345, 'JN': 1, 'NJ': 1, 'EB': 1, 'BE': 1, 'KA': 0.03920302430228722, 'AK': 0.03920302430228722, 'DF': 1, 'FD': 1, 'JM': 1, 'MJ': 1, 'LA': 0.09433308514602413, 'AL': 0.09433308514602413, 'GF': 0.03742042996440095, 'FG': 0.03742042996440095, 'DE': 1, 'ED': 1, 'EN': 0.09233605125746655, 'NE': 0.09233605125746655, 'HA': 1, 'AH': 1, 'EJ': 0.08298888193434792, 'JE': 0.08298888193434792, 'IJ': 0.010466189571356088, 'JI': 0.010466189571356088, 'GL': 0.08230961511093281, 'LG': 0.08230961511093281, 'BN': 0.08588727720640371, 'NB': 0.08588727720640371, 'LN': 1, 'NL': 1, 'HE': 0.0637034596760031, 'EH': 0.0637034596760031, 'IF': 0.059470351194913555, 'FI': 0.059470351194913555, 'HJ': 0.059165214947668424, 'JH': 0.059165214947668424, 'AN': 1, 'NA': 1, 'IH': 0.08768265178809956, 'HI': 0.08768265178809956, 'GC': 0.029231449170860277, 'CG': 0.029231449170860277, 'IC': 0.0973965398207717, 'CI': 0.0973965398207717, 'EA': 1, 'AE': 1, 'GE': 0.06991953831374734, 'EG': 0.06991953831374734, 'KM': 0.054455405186351925, 'MK': 0.054455405186351925, 'JA': 0.03522080669642841, 'AJ': 0.03522080669642841, 'KO': 1, 'OK': 1, 'IM': 0.0955226924588138, 'MI': 0.0955226924588138, 'FN': 0.023715638064455313, 'NF': 0.023715638064455313, 'KE': 0.05894988627237928, 'EK': 0.05894988627237928, 'OA': 0.025273355641223474, 'AO': 0.025273355641223474, 'GM': 0.07122004271236874, 'MG': 0.07122004271236874, 'HN': 0.09797878114656117, 'NH': 0.09797878114656117, 'LE': 0.07053619943325025, 'EL': 0.07053619943325025, 'KH': 1, 'HK': 1, 'CB': 1, 'BC': 1, 'CL': 0.031600377333435015, 'LC': 0.031600377333435015, 'HF': 0.0933592738307854, 'FH': 0.0933592738307854, 'KB': 0.04795686374044748, 'BK': 0.04795686374044748, 'BM': 0.08361498615572785, 'MB': 0.08361498615572785, 'CM': 1, 'MC': 1, 'LB': 1, 'BL': 1, 'GH': 1, 'HG': 1, 'DA': 0.044155684448527216, 'AD': 0.044155684448527216, 'LF': 1, 'FL': 1, 'FA': 0.092924679109004, 'AF': 0.092924679109004, 'GD': 1, 'DG': 1, 'BJ': 0.026577437158790643, 'JB': 0.026577437158790643, 'DK': 0.07515070767105592, 'KD': 0.07515070767105592, 'LH': 0.02166656457986875, 'HL': 0.02166656457986875, 'LM': 1, 'ML': 1, 'DH': 0.08470454801442409, 'HD': 0.08470454801442409, 'OE': 1, 'EO': 1, 'DN': 0.02636261311573518, 'ND': 0.02636261311573518, 'CH': 0.08169739469354534, 'HC': 0.08169739469354534, 'IN': 1, 'NI': 1, 'HB': 1, 'BH': 1, 'CF': 0.03525515899654526, 'FC': 0.03525515899654526, 'EF': 1, 'FE': 1, 'IA': 0.028471355639246118, 'AI': 0.028471355639246118, 'IB': 1, 'BI': 1, 'GB': 0.06290172659338814, 'BG': 0.06290172659338814, 'CO': 0.022780971831279584, 'OC': 0.022780971831279584, 'DC': 1, 'CD': 1, 'DM': 0.04787580385778732, 'MD': 0.04787580385778732, 'KL': 1, 'LK': 1, 'OF': 0.09607313747572237, 'FO': 0.09607313747572237, 'IO': 0.09071301496438283, 'OI': 0.09071301496438283, 'CN': 0.014146833760703734, 'NC': 0.014146833760703734, 'GK': 0.08169938945162587, 'KG': 0.08169938945162587, 'GO': 0.06980264826306534, 'OG': 0.06980264826306534, 'DB': 1, 'BD': 1, 'LJ': 0.07918460311148362, 'JL': 0.07918460311148362, 'ON': 1, 'NO': 1, 'IK': 1, 'KI': 1, 'BF': 1, 'FB': 1, 'IE': 0.0728225921821688, 'EI': 0.0728225921821688, 'OJ': 1, 'JO': 1, 'OL': 1, 'LO': 1, 'JF': 1, 'FJ': 1, 'GJ': 0.06369621327274008, 'JG': 0.06369621327274008, 'IL': 1, 'LI': 1, 'KN': 0.04716733607949312, 'NK': 0.04716733607949312, 'OB': 0.025116577222618702, 'BO': 0.025116577222618702, 'BA': 1, 'AB': 1, 'EM': 0.06856353287333553, 'ME': 0.06856353287333553, 'OH': 0.051511767803394566, 'HO': 0.051511767803394566, 'DL': 0.06719160646148463, 'LD': 0.06719160646148463, 'OM': 0.08198255669023544, 'MO': 0.08198255669023544, 'GI': 0.029110070990337786, 'IG': 0.029110070990337786, 'MN': 1, 'NM': 1, 'CK': 0.09583310965981036, 'KC': 0.09583310965981036, 'GN': 0.027647647688543553, 'NG': 0.027647647688543553, 'ID': 1, 'DI': 1, 'DO': 0.022570608671411294, 'OD': 0.022570608671411294} 
 
 queries
-AND(O, J, I)
-SEQ(L, AND(K, SEQ(E, F, I)))
+AND(G, SEQ(J, E, I))
+SEQ(K, F, B)
 
 muse graph
-SELECT AND(O, J, I) FROM J; I; O ON {1} WITH selectionRate= 0.0008759217953568008
-SELECT SEQ(L, AND(K, SEQ(E, F, I))) FROM L; I; E; K; F ON {1} WITH selectionRate= 4.927082772316915e-08
+SELECT AND(G, SEQ(J, E, I)) FROM E; J; G; I ON {0} WITH selectionRate= 8.200306311356249e-09
+SELECT SEQ(K, F, B) FROM K; B; F ON {0} WITH selectionRate= 0.00467399285838956

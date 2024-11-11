@@ -19,7 +19,7 @@ def main():
     
     if len(myargs.labels) != len(myargs.inputs):
         print("Number of input paths and labels must be the same.")
-        return 
+        return
     
     labels = myargs.labels
     Y_Columns = myargs.yC  # Accept multiple Y columns
@@ -51,28 +51,37 @@ def main():
             return
     
     plt.rcParams.update({'font.size': 17})
-    plt.xlabel(X_Column)
-    plt.ylabel("Transmission Ratio")  # Set Y-axis label as Transmission Ratio
+    plt.xlabel(myargs.x_label if myargs.x_label else X_Column)  # Use custom or default X-axis label
+    plt.ylabel(myargs.y_label if myargs.y_label else "Transmission Ratio")  # Use custom or default Y-axis label
 
     # Arrange X-ticks
     df1 = mydata[0]
     myX_o = sorted(list(set(df1[X_Column].tolist())))
     myX = range(len(myX_o))  # Positions for X-ticks
     
+    # Check for custom legend labels
+    legend_labels = myargs.legend_labels if myargs.legend_labels else [f"{label} - {y_col}" for label in labels for y_col in Y_Columns]
+    
+    if len(legend_labels) != len(labels) * len(Y_Columns):
+        print("The number of legend labels must match the total number of input files and Y columns.")
+        return
+
     # Plot data
+    legend_index = 0
     for i in range(len(mydata)):
         df = mydata[i]
         for y_col in Y_Columns:
             y_data = df.groupby(X_Column)[y_col].median().reindex(myX_o).to_numpy()
-            plt.plot(myX, y_data, marker="x", label=f"{labels[i]} - {y_col}")
+            plt.plot(myX, y_data, marker="x", label=legend_labels[legend_index])
+            legend_index += 1
     
     # Place the legend on top of the plot
-    plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.20), ncol=len(labels), borderaxespad=0., frameon=True)
+    plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.250), ncol=len(labels), borderaxespad=0., frameon=True)
 
-    
     # Rotate X-axis labels to avoid overlap
     plt.xticks(myX, myX_o, rotation=45, ha='right')
     plt.yticks(np.arange(0, 16, 1))
+    
     if myargs.boxplot:
         # Add boxplots for each Y column
         for y_col in Y_Columns:
@@ -92,9 +101,11 @@ def myparse_args(parser):
     parser.add_argument('-l', '--labels', nargs='+', help='Labels for input files', required=True)
     parser.add_argument('-x', '--xC', help='X-axis column name', required=True)
     parser.add_argument('-y', '--yC', nargs='+', help='Y-axis column name(s)', required=True)
-    parser.add_argument('-box', '--boxplot', action='store_true', required=False, default=False,
-                        help='Include boxplots in the graph')
+    parser.add_argument('-box', '--boxplot', action='store_true', required=False, default=False, help='Include boxplots in the graph')
     parser.add_argument('-o', '--outname', required=False, default="plot", help='Output file name')
+    parser.add_argument('--x_label', help="Custom label for the x-axis")
+    parser.add_argument('--y_label', help="Custom label for the y-axis")
+    parser.add_argument('--legend_labels', nargs='+', help="Custom labels for the legend")
     args = parser.parse_args()
     return args
          
