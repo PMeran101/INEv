@@ -1,0 +1,119 @@
+network
+Node 0 Node 0
+Computational Power: inf
+Memory: inf
+Eventrates: [0, 0, 0, 0, 0, 0]
+Parents: None
+Child: [1, 2]
+Siblings: None
+
+Node 1 Node 1
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [3, 4]
+Siblings: None
+
+Node 2 Node 2
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 0, 0]
+Parents: [0]
+Child: [5, 6]
+Siblings: None
+
+Node 3 Node 3
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 0, 0]
+Parents: [1]
+Child: [7, 8]
+Siblings: None
+
+Node 4 Node 4
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 0, 0]
+Parents: [1]
+Child: [9, 10]
+Siblings: None
+
+Node 5 Node 5
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 0, 0, 0]
+Parents: [2]
+Child: [11]
+Siblings: None
+
+Node 6 Node 6
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 1000, 659, 1000]
+Parents: [2]
+Child: None
+Siblings: None
+
+Node 7 Node 7
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 10, 5, 0, 0, 0]
+Parents: [3]
+Child: None
+Siblings: None
+
+Node 8 Node 8
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 10, 5, 0, 0, 0]
+Parents: [3]
+Child: None
+Siblings: None
+
+Node 9 Node 9
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 10, 5, 0, 0, 0]
+Parents: [4]
+Child: None
+Siblings: None
+
+Node 10 Node 10
+Computational Power: 1
+Memory: 1
+Eventrates: [1000, 10, 5, 0, 0, 0]
+Parents: [4]
+Child: None
+Siblings: None
+
+Node 11 Node 11
+Computational Power: 1
+Memory: 1
+Eventrates: [0, 0, 0, 1000, 659, 1000]
+Parents: [5]
+Child: None
+Siblings: None
+
+
+selectivities
+{'EB': 1, 'BE': 1, 'DE': 1, 'ED': 1, 'DA': 1, 'AD': 1, 'EF': 1, 'FE': 1, 'CF': 1, 'FC': 1, 'CA': 0.05896024651216399, 'AC': 0.05896024651216399, 'EC': 0.05491310838499393, 'CE': 0.05491310838499393, 'BF': 0.018934803617215862, 'FB': 0.018934803617215862, 'FA': 0.06384120820924721, 'AF': 0.06384120820924721, 'DF': 0.08518260007915732, 'FD': 0.08518260007915732, 'DB': 0.020792832401562628, 'BD': 0.020792832401562628, 'EA': 0.02165308222395844, 'AE': 0.02165308222395844, 'DC': 0.03398972802508263, 'CD': 0.03398972802508263, 'CB': 0.03117994392519252, 'BC': 0.03117994392519252, 'BA': 0.07746926433302115, 'AB': 0.07746926433302115} 
+
+queries
+SEQ(B, AND(D, E, C))
+AND(F, SEQ(B, A, C))
+SEQ(B, E, AND(F, A, D))
+SEQ(C, D, A, B, F)
+SEQ(B, AND(D, F, C, A))
+
+muse graph
+SELECT SEQ(B, C) FROM C; B ON {1} WITH selectionRate= 0.03117994392519252
+SELECT SEQ(B, E, AND(F, A, D)) FROM B; D; F; A; E ON {0} WITH selectionRate= 3.5914978002450626e-09
+SELECT SEQ(B, AND(D, C)) FROM SEQ(B, C); D ON {0} WITH selectionRate= 0.0007067427182002393
+SELECT SEQ(B, A, C) FROM A; SEQ(B, C) ON {0} WITH selectionRate= 0.004567606922190921
+SELECT SEQ(C, D, B) FROM SEQ(B, C); D ON {0} WITH selectionRate= 2.20361983230216e-05
+SELECT SEQ(B, AND(D, E, C)) FROM E; SEQ(B, AND(D, C)) ON {0} WITH selectionRate= 0.05491310838499393
+SELECT AND(F, SEQ(B, A, C)) FROM C; SEQ(B, A, C); F ON {0} WITH selectionRate= 0.0012088207401278852
+SELECT SEQ(C, D, B, F) FROM SEQ(C, D, B); F ON {0} WITH selectionRate= 0.0016129158041026802
+SELECT SEQ(C, D, A, B, F) FROM A; SEQ(C, D, B, F) ON {0} WITH selectionRate= 0.00029160154453758945
+SELECT SEQ(B, AND(D, F, C, A)) FROM A; SEQ(C, D, B, F) ON {0} WITH selectionRate= 6.425789466729737e-09
