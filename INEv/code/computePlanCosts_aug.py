@@ -138,7 +138,11 @@ def main():
     
     totaltime = str(round(time.time() - start_time, 2))
 
-
+    print("Printing execution times")
+    print(start_time)
+    print(time.time())
+    print("Finished in " + totaltime + " seconds")
+    
             
     #getNetworkParameters, selectivityParameters, combigenParameters
         
@@ -153,9 +157,7 @@ def main():
                       
     ID = int(np.random.uniform(0,10000000))
     hopfactor = processingLatencyParams[2]
-  
-    
-    
+
    
     hoplatency = max([hopLatency[x] for x in hopLatency.keys()])   
     totalLatencyRatio = hoplatency / centralHopLatency
