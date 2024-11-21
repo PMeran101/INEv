@@ -57,57 +57,6 @@ def generate_events(eventrates, n_e_r):
     
     return myevents
 
-def regain_eventrates(nw):
-    eventrates = [0 for i in range(len(nw[0]))]
-    interdict = {}
-    for i in nw:
-        for j in range(len(i)):
-            if i[j] > 0 and not j in interdict.keys():
-                interdict[j] = i[j]
-    for j in sorted(interdict.keys()):
-        eventrates[j] = interdict[j]
-    return eventrates 
-
-def allEvents(nw):
-    for i in range(len(nw[0])) :
-        column = [row[i] for row in nw]
-        if sum(column) == 0:
-            return False
-    return True
-
-def swapRatesMax(eventtype, rates, maxmin):
-    rates = list(rates)
-    if maxmin == 'max':
-        maxRate = max(rates)
-    else: 
-        maxRate = min(rates)
-    maxIndex = rates.index(maxRate)
-    eventTypeIndex = string.ascii_uppercase.index(eventtype)
-    newRates = [x for x in rates]
-    newRates[maxIndex], newRates[eventTypeIndex] =   newRates[eventTypeIndex], newRates[maxIndex]
-    return newRates
-
-def swapRates(numberofswaps,rates):
-    newRates = [x for x in rates]
-    for i in range(numberofswaps):        
-        newRates = [x for x in newRates]
-        index = int(len(newRates)/2)
-        left = index - (i+1) 
-        right = index + i
-        newRates[left], newRates[right] = newRates[right], newRates[left]
-    return newRates
-
-def generate_assignment(nw, eventtypes):
-    assignment = {k: [] for k in range(eventtypes)}
-    for node in range(len(nw)):
-        for eventtype in range(len(nw[node])):
-            if nw[node][eventtype] > 0:
-                assignment[eventtype].append(node)        
-    return assignment
-
-def generateFromAssignment(assignment, rates, nwsize):
-    return [[rates[eventtype]  if x in assignment[eventtype] else 0 for eventtype in assignment.keys()] for x in range(nwsize)]
-
 
 def parse_arguments():
     # Create the argument parser
@@ -154,6 +103,7 @@ def main():
     #eventrates = sorted(generate_eventrates(eventskew,num_eventtypes))
     eventrates =  generate_eventrates(eventskew,num_eventtypes)
     
+    print(f"Eventrates: {eventrates}")
     
     def create_random_tree(nwsize, eventrates, node_event_ratio, max_parents: int = 1):
         if nwsize <= 0:

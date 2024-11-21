@@ -15,7 +15,7 @@ import pickle
 import time
 import os
 
-print(os.getcwd())
+
 with open('graph', 'rb') as graph_file:
     G = pickle.load(graph_file)
 
