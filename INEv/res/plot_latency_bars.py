@@ -52,7 +52,7 @@ def plot_bar(files, x_column, y_columns, labels, output_file, x_label=None, y_la
 
     # Set up the plot
     plt.figure(figsize=(12, 6))
-    plt.rcParams.update({'font.size': 17})
+    plt.rcParams.update({'font.size': 18})
 
     # Colors for the bars
     colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
@@ -83,7 +83,7 @@ def plot_bar(files, x_column, y_columns, labels, output_file, x_label=None, y_la
 
     # Set x-axis labels and ensure alignment
     plt.xticks(positions, x_labels, rotation=45, ha='right',fontsize=23)
-
+    plt.yticks(fontsize=23)
     # Adjust y-axis limits
     max_y = max([y.max() for file_means in data_means for y in file_means]) * 1.1  # Add 10% buffer
     plt.ylim(0, max_y)

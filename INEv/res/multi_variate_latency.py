@@ -161,15 +161,17 @@ def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, 
     if y_max is None:
         y_max = global_max + 0.1 * abs(global_max)  # 10% buffer
     ax.set_ylim(y_min, y_max)
-    ax.set_ylabel(y_label if y_label else 'Computation Time')
+    plt.ylabel(y_label if y_label else 'Computation Time',fontsize=25)
+
     # Customize ticks
     ax.set_yticks(np.linspace(y_min, y_max, 10))
-
+    plt.yticks(fontsize=23)
     # X-axis labels
     ax.set_xticks(positions)
     ax.set_xticklabels([str(x) for x in x_points])
 
-    plt.xlabel(x_label if x_label else x_column)
+    plt.xticks(fontsize=23)
+    plt.xlabel(x_label if x_label else x_column,fontsize=25)
     
     # Custom legend
     from matplotlib.lines import Line2D
@@ -182,7 +184,7 @@ def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, 
         color = colors[idx % len(colors)]
         legend_elements.append(Line2D([0], [0], color=color, lw=10, label=legend_label))
 
-    ax.legend(handles=legend_elements, loc='upper center', bbox_to_anchor=(0.5, 1.2), ncol=2)
+    ax.legend(handles=legend_elements, loc='upper center', bbox_to_anchor=(0.5, 1.16), ncol=2)
 
     plt.savefig(output_file, format='pdf', bbox_inches='tight')
     plt.close()

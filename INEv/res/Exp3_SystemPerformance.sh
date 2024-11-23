@@ -1,9 +1,3 @@
-#First Figure in Experiment in Paper
-python3 plot_Latency.py -i combined_for_latency.csv -x EventTypes -y centralHopLatency MaxPushPullLatency \
-    -l Latency -o Fig_Latency_Network_50.pdf --legend_labels "Operator placement" "Push pull" \
-    --x_label "Event types" --y_label "Latency"
-
-
 #Second Figure in Experiment in Paper
 python3 plot_ComputationTime.py -i combined_for_latency.csv -l Latency -x EventTypes \
     -y PlacementComputationTime PushPullTime -o Fig_Computation_Time_Network_50.pdf \
