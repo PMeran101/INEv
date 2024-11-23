@@ -165,14 +165,14 @@ def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, 
 
     ax.set_ylim(0, 1.05)
     ax.set_yticks(np.linspace(0, 1, 11))
-    ax.set_yticklabels([f"{y:.1f}" for y in np.linspace(0, 1, 11)])
+    ax.set_yticklabels([f"{y:.1f}" for y in np.linspace(0, 1, 11)],fontsize=23)
     ax.set_xticks(positions)
-    ax.set_xticklabels([str(x) for x in x_points])
+    ax.set_xticklabels([str(x) for x in x_points],fontsize=23)
 
     if x_label:
-        plt.xlabel(x_label)
+        plt.xlabel(x_label,fontsize=25)
     if y_label:
-        plt.ylabel(y_label)
+        plt.ylabel(y_label,fontsize=25)
 
     from matplotlib.patches import Patch
     legend_elements = []
@@ -187,7 +187,7 @@ def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, 
     ax.legend(
         handles=legend_elements,
         loc='upper center',
-        bbox_to_anchor=(0.5, 1.4),
+        bbox_to_anchor=(0.5, 1.25),
         ncol=len(legend_names) // 2,
         frameon=True
     )

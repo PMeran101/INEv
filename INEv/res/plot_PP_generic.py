@@ -65,9 +65,16 @@ def main():
             print("Available columns: " + ", ".join(mycolumns))
             return
     
-    plt.rcParams.update({'font.size': 10})
-    plt.xlabel(myargs.x_label if myargs.x_label else X_Column)  # Use custom x-axis label if provided
-    plt.ylabel(myargs.y_label if myargs.y_label else "Transmission Ratio")  # Use custom y-axis label if provided
+    plt.rcParams.update({'font.size': 17})
+    
+        # Create the figure with scaled size
+    fig, ax = plt.subplots(figsize=(12,6))
+
+    # Update font size globally
+    plt.rcParams.update({'font.size': 20})
+    
+    plt.xlabel(myargs.x_label if myargs.x_label else X_Column, fontsize=25)  # Use custom x-axis label if provided
+    plt.ylabel(myargs.y_label if myargs.y_label else "Transmission Ratio",fontsize=25)  # Use custom y-axis label if provided
 
     # Arrange X-ticks
     df1 = mydata[0]
@@ -95,15 +102,15 @@ def main():
     # Place the legend on top of the plot
     plt.legend(
         loc='upper center', 
-        bbox_to_anchor=(0.5, 1.20), 
+        bbox_to_anchor=(0.5, 1.35), 
         ncol=len(labels), 
         borderaxespad=0., 
         frameon=True
     )
 
     # Rotate X-axis labels to avoid overlap
-    plt.xticks(myX, myX_o, rotation=45, ha='right')
-    plt.yticks(np.arange(0, 1.1, 0.1))
+    plt.xticks(myX, myX_o, rotation=45, ha='right',fontsize=23)
+    plt.yticks(np.arange(0, 1.1, 0.1),fontsize=23)
     
     if myargs.boxplot:
         # Add boxplots for each Y column
