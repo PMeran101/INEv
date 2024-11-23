@@ -70,10 +70,10 @@ def main():
     
     plt.figure(figsize=(12, 6))
     plt.rcParams.update({'font.size':17})
-    plt.xlabel(myargs.x_label)
-    plt.ylabel(myargs.y_label)
+    plt.xlabel(myargs.x_label,fontsize=25)
+    plt.ylabel(myargs.y_label,fontsize=25)
     plt.ylim(0, 1.05)
-    plt.yticks(np.linspace(0, 1, 11))
+    plt.yticks(np.linspace(0, 1, 11),fontsize=23)
 
     # Arrange x-ticks
     myX_o = sorted(list(set(df1[X_Column].tolist()))) 
@@ -95,7 +95,7 @@ def main():
             myLists = list(dfBox["Lists"])
             plt.boxplot(myLists, positions=myX, manage_ticks=False)
     
-    plt.xticks(myX, myX_o)    
+    plt.xticks(myX, myX_o,fontsize=23)    
     plt.savefig("figs/" + str(myargs.outname), format='pdf', bbox_inches='tight')
 
 def myparse_args(parser):
