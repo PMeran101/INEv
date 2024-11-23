@@ -77,12 +77,12 @@ def plot_bar(files, x_column, y_columns, labels, output_file, x_label=None, y_la
             plt.bar(bar_positions, y_data, width=bar_width, label=legend_labels[legend_idx], color=colors[(i * n_bars + j) % len(colors)], align='center')
             legend_idx += 1
 
-    plt.xlabel(x_label if x_label else x_column)  # Use custom x-axis label or default
-    plt.ylabel(y_label if y_label else 'Computation Time')  # Use custom y-axis label or default
+    plt.xlabel(x_label if x_label else x_column,fontsize=25)  # Use custom x-axis label or default
+    plt.ylabel(y_label if y_label else 'Computation Time',fontsize=25)  # Use custom y-axis label or default
     #plt.title(f'Computation Time for Different {x_column}')
 
     # Set x-axis labels and ensure alignment
-    plt.xticks(positions, x_labels, rotation=45, ha='right')
+    plt.xticks(positions, x_labels, rotation=45, ha='right',fontsize=23)
 
     # Adjust y-axis limits
     max_y = max([y.max() for file_means in data_means for y in file_means]) * 1.1  # Add 10% buffer
