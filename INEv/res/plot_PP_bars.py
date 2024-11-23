@@ -50,7 +50,7 @@ def plot_bar(files, y_columns, labels, output_file, x_label='Max Parents', y_lab
 
     # Set up the plot
     plt.figure(figsize=(12, 6))
-    plt.rcParams.update({'font.size': 17})
+    plt.rcParams.update({'font.size': 18})
 
     # Colors for the bars
     colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
@@ -67,14 +67,14 @@ def plot_bar(files, y_columns, labels, output_file, x_label='Max Parents', y_lab
         plt.bar(bar_positions, means, width=bar_width, label=legend_label, color=colors[i % len(colors)], align='center')
         plt.plot(bar_positions, means, marker='o', linestyle='-', color='red')
 
-    plt.xlabel(x_label)
-    plt.ylabel(y_label)
+    plt.xlabel(x_label,fontsize=25)
+    plt.ylabel(y_label,fontsize=25)
     
     # Set x-axis labels
-    plt.xticks(positions, x_labels, rotation=45, ha='right')
+    plt.xticks(positions, x_labels, rotation=45, ha='right',fontsize=23)
 
     # Set y-axis ticks
-    plt.yticks(np.linspace(0, 1, num=11))
+    plt.yticks(np.linspace(0, 1, num=11),fontsize=23)
 
     # Add legend with custom tags if provided
     plt.legend()
