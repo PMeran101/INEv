@@ -102,7 +102,7 @@ def main():
     # Place the legend on top of the plot
     plt.legend(
         loc='upper center', 
-        bbox_to_anchor=(0.5, 1.35), 
+        bbox_to_anchor=(0.5, 1.25), 
         ncol=len(labels), 
         borderaxespad=0., 
         frameon=True

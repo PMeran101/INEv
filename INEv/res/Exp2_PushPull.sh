@@ -23,11 +23,13 @@ python3 multi_variate_PP_bar.py -i combined_output.csv -l Ratio -x EventSkew \
 #Third Figure in Experiment in Paper
 python3 plot_PP_bars.py -i PP_MaxParents_3.csv PP_MaxParents_4.csv PP_MaxParents_5.csv PP_MaxParents_6.csv PP_MaxParents_7.csv PP_MaxParents_8.csv  \
     -l 3 4 5 6 7 8 -y TransmissionRatio TransmissionRatioCentral -o PP_MaxParents.pdf \
-    --x_label "Max parents" --y_label "Transmission ratio" --legend_tags "Transmission ratio operator placement" "Transmission ratio push pull"
+    --x_label "Max parents" --y_label "Transmission ratio" --legend_tags "Operator placement" "Push pull"
+
 #Fourth Figure in Experiment in Paper
 python3 plot_PP_generic.py -i PP_NER_Combined.csv -x EventNodeRatio -y TransmissionRatio TransmissionRatioCentral \
-    -l AvgTransmissionRatio -c tab:blue tab:orange -s "-" "-" --x_label "Event node ratio" --y_label "Transmission ratio" \
-    -o Fig_Transmission_Ratio_NER_PP_Combined.pdf -legend_labels "Transmission ratio operator placement" "Transmission ratio push pull"
+    -l AvgTransmissionRatio -c tab:blue tab:orange -s "-" "-" --x_label "Node Event ratio" --y_label "Transmission ratio" \
+    -o Fig_Transmission_Ratio_NER_PP_Combined.pdf -legend_labels "Operator placement" "Push pull"
+
 python3 multi_variate_PP_bar.py -i PP_NER_Combined.csv -y TransmissionRatio TransmissionRatioCentral -x EventNodeRatio \
     -l AvgTransmissionRatio -o Fig_Bar_TransmissionRatio_NER_Combined.pdf -c tab:blue tab:orange \
-    --x_label "Node Event ratio" --y_label "Transmission ratio" -ln "Transmission ratio operator placement" "Transmission ratio push pull"
+    --x_label "Node Event ratio" --y_label "Transmission ratio" -ln "Operator placement" "Push pull"
