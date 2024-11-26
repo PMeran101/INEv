@@ -28,4 +28,3 @@ do
 
           echo "Completed outer loop with k=$k and h=$h at: $(date)"
       done
-      done

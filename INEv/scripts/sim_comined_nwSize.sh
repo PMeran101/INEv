@@ -1,18 +1,18 @@
 
 cd ../code
 
-for k in 15 30 50 75 100 150
+for k in 15 30 50 75 100 150 200 250
 do 
 for p in 5 6 7 8 9 10
-done
-  for k in 5 10 15 20 25
+do
+  for b in 5 10 15 20 25
   do 
 
           a=1
-          while [ "$a" -lt 100 ]
+          while [ "$a" -lt 20 ]
           do
 
-            python3 generate_network.py -nw $k -ner 0.5 -es 1.3 -ne $k -mp $p
+            python3 generate_network.py -nw $k -ner 0.5 -es 1.3 -ne $b -mp $p
             python3 generate_graph.py
             python3 allPairs.py
             python3 generate_qwls.py --length 6 --count 10	
