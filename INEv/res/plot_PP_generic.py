@@ -101,12 +101,13 @@ def main():
     
     # Place the legend on top of the plot
     plt.legend(
-        loc='upper center', 
-        bbox_to_anchor=(0.5, 1.25), 
-        ncol=len(labels), 
-        borderaxespad=0., 
-        frameon=True
-    )
+         loc='upper center', 
+         bbox_to_anchor=(0.5, 1.32), 
+         ncol=len(labels), 
+         borderaxespad=0., 
+         frameon=True
+     )
+    #plt.legend()
 
     # Rotate X-axis labels to avoid overlap
     plt.xticks(myX, myX_o, ha='right',fontsize=23)

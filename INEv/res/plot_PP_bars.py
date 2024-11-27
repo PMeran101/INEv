@@ -65,7 +65,7 @@ def plot_bar(files, y_columns, labels, output_file, x_label='Max Parents', y_lab
         legend_label = legend_tags[i] if legend_tags else y_columns[i]
 
         plt.bar(bar_positions, means, width=bar_width, label=legend_label, color=colors[i % len(colors)], align='center')
-        plt.plot(bar_positions, means, marker='o', linestyle='-', color='red')
+        # plt.plot(bar_positions, means, marker='o', linestyle='-', color='red')
 
     plt.xlabel(x_label,fontsize=25)
     plt.ylabel(y_label,fontsize=25)
