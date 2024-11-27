@@ -85,7 +85,7 @@ def main():
         plt.plot(myX, y_data, marker="x", label=legend_labels[legend_index], color=colors[i], linestyle=styles[i])
         legend_index += 1
 
-    plt.legend()
+    # plt.legend()
     
     if myargs.boxplot:
         # Group values by x value to get list of values for each box plot

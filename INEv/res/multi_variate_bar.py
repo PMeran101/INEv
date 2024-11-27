@@ -197,7 +197,7 @@ def plot_percentile_bars(input_files, y_column, x_column, labels, output_file, c
                     )
 
     # Set y-axis range from 0 to 1 with appropriate steps
-    ax.set_ylim(0, 1)
+    ax.set_ylim(0, 1.05)
     ax.set_yticks(np.linspace(0, 1, 11))  # Set ticks at intervals of 0.1
     ax.set_yticklabels([f"{y:.1f}" for y in np.linspace(0, 1, 11)], fontsize=23)
 
@@ -207,7 +207,7 @@ def plot_percentile_bars(input_files, y_column, x_column, labels, output_file, c
 
     plt.xlabel(x_label if x_label else x_column, fontsize=25)
     plt.ylabel(y_label if y_label else y_column,fontsize=25)
-    plt.legend()
+    # plt.legend()
     plt.tight_layout()
 
     # Save the plot

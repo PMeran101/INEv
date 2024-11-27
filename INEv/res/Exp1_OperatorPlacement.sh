@@ -28,9 +28,9 @@ python3 plot_bars.py -i OP_SweetSpot_MaxParents_2.csv OP_SweetSpot_MaxParents_3.
 #Fourh Figure in Operator Placement Experiment in Paper
 python3 plot_generic.py -i OP_NER_Combined.csv -x EventNodeRatio -y TransmissionRatio -l AvgTransmissionRatio \
     -o Fig_Transmission_Ratio_NER_Combined.pdf -c tab:blue -legend_labels "Transmission ratio operator placement" \
-    --x_label "Event node ratio" --y_label "Transmission ratio"
+    --x_label "Node event ratio" --y_label "Transmission ratio"
     
 python3 multi_variate_bar.py -i OP_NER_Combined.csv -y TransmissionRatio -x EventNodeRatio \
-    -l "Transmission ratio operator placement" -o Fig_Bar_TransmissionRatio_NER_Combined.pdf -c tab:blue \
-    --x_label "Event node ratio" --y_label "Transmission ratio"
+    -l "Transmission ratio operator placement" -o Fig_Bar_TransmissionRatio_NER_Base.pdf -c tab:blue \
+    --x_label "Node event ratio" --y_label "Transmission ratio"
 
