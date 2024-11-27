@@ -78,7 +78,8 @@ def main():
             legend_index += 1
     
     # Place the legend on top of the plot
-    plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.250), ncol=len(labels), borderaxespad=0., frameon=True)
+    # plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.250), ncol=len(labels), borderaxespad=0., frameon=True)
+    plt.legend()
 
     max_y = max(all_y_data)
     # Rotate X-axis labels to avoid overlap

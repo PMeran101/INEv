@@ -184,7 +184,8 @@ def plot_percentile_bars(input_files, y_columns, x_column, labels, output_file, 
         color = colors[idx % len(colors)]
         legend_elements.append(Line2D([0], [0], color=color, lw=10, label=legend_label))
 
-    ax.legend(handles=legend_elements, loc='upper center', bbox_to_anchor=(0.5, 1.16), ncol=2)
+    #ax.legend(handles=legend_elements, loc='upper center', bbox_to_anchor=(0.5, 1.16), ncol=2)
+    ax.legend(handles=legend_elements,ncol=2)
 
     plt.savefig(output_file, format='pdf', bbox_inches='tight')
     plt.close()
