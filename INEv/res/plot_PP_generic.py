@@ -109,7 +109,7 @@ def main():
     )
 
     # Rotate X-axis labels to avoid overlap
-    plt.xticks(myX, myX_o, rotation=45, ha='right',fontsize=23)
+    plt.xticks(myX, myX_o, ha='right',fontsize=23)
     plt.yticks(np.arange(0, 1.1, 0.1),fontsize=23)
     
     if myargs.boxplot:

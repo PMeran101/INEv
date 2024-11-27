@@ -82,7 +82,7 @@ def plot_bar(files, x_column, y_columns, labels, output_file, x_label=None, y_la
     #plt.title(f'Computation Time for Different {x_column}')
 
     # Set x-axis labels and ensure alignment
-    plt.xticks(positions, x_labels, rotation=45, ha='right',fontsize=23)
+    plt.xticks(positions, x_labels, ha='right',fontsize=23)
     plt.yticks(fontsize=23)
     # Adjust y-axis limits
     max_y = max([y.max() for file_means in data_means for y in file_means]) * 1.1  # Add 10% buffer

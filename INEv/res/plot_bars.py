@@ -37,7 +37,7 @@ def plot_bar(files, y_column, labels, output_file, x_label="MaxParents", y_label
     # Plot bars with the positions aligned with labels
     plt.bar(positions, transmission_ratios, align='center', label=legend_title)
     # Plot the trend line connecting the tops of the bars
-    plt.plot(positions, transmission_ratios, marker='o', linestyle='-', color='red')
+    # plt.plot(positions, transmission_ratios, marker='o', linestyle='-', color='red')
 
     # Set axis labels and title
     plt.xlabel(x_label)
@@ -45,7 +45,7 @@ def plot_bar(files, y_column, labels, output_file, x_label="MaxParents", y_label
     #plt.title(f'{y_column} for Different {x_label}')
 
     # Set x-axis labels and ensure alignment
-    plt.xticks(positions, labels, rotation=45, ha='right')
+    plt.xticks(positions, labels, ha='right')
     plt.yticks(np.arange(0, 1.1, 0.1))
 
     #plt.legend(title=legend_title)

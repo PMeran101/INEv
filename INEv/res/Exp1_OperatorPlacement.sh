@@ -18,13 +18,12 @@ python3 multi_variate_bar.py -i OP_Query_Sizes_5.csv OP_Query_Sizes_10.csv OP_Qu
     -y TransmissionRatio -x EventTypes -l "5 queries" "10 queries" "20 queries" \
     -o Fig_Bar_TransmissionRatio_Query_Size_5_10.pdf -c tab:blue tab:orange tab:green \
     --x_label "Event types" --y_label "Transmission ratio"
-
 #Third Figure in Operator Placement Experiment in Paper
 python3 plot_bars.py -i OP_SweetSpot_MaxParents_2.csv OP_SweetSpot_MaxParents_3.csv OP_SweetSpot_MaxParents_4.csv OP_SweetSpot_MaxParents_5.csv OP_SweetSpot_MaxParents_6.csv OP_SweetSpot_MaxParents_7.csv OP_SweetSpot_MaxParents_8.csv OP_SweetSpot_MaxParents_9.csv OP_SweetSpot_MaxParents_10.csv OP_SweetSpot_MaxParents_11.csv OP_SweetSpot_MaxParents_12.csv OP_SweetSpot_MaxParents_13.csv OP_SweetSpot_MaxParents_14.csv OP_SweetSpot_MaxParents_15.csv \
+    -o Fig_Bar_TransmissionRatio_AllMaxParents.pdf \
     -y TransmissionRatio \
     -l MaxParents_2 MaxParents_3 MaxParents_4 MaxParents_5 MaxParents_6 MaxParents_7 MaxParents_8 MaxParents_9 MaxParents_10 MaxParents_11 MaxParents_12 MaxParents_13 MaxParents_14 MaxParents_15 \
-    --x_label "Max Parents" --y_label "Transmission ratio" \
-    -o Fig_Bar_TransmissionRatio_AllMaxParents.pdf
+    --x_label "Max parents" --y_label "Transmission ratio" \
 
 #Fourh Figure in Operator Placement Experiment in Paper
 python3 plot_generic.py -i OP_NER_Combined.csv -x EventNodeRatio -y TransmissionRatio -l AvgTransmissionRatio \

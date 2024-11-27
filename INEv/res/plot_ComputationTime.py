@@ -82,7 +82,7 @@ def main():
 
     max_y = max(all_y_data)
     # Rotate X-axis labels to avoid overlap
-    plt.xticks(myX, myX_o, rotation=45, ha='right',fontsize=23)
+    plt.xticks(myX, myX_o, ha='right',fontsize=23)
     plt.yticks(np.arange(0, max_y, 250),fontsize=23)
     if myargs.boxplot:
         # Add boxplots for each Y column

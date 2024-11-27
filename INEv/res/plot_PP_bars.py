@@ -71,7 +71,7 @@ def plot_bar(files, y_columns, labels, output_file, x_label='Max Parents', y_lab
     plt.ylabel(y_label,fontsize=25)
     
     # Set x-axis labels
-    plt.xticks(positions, x_labels, rotation=45, ha='right',fontsize=23)
+    plt.xticks(positions, x_labels, ha='right',fontsize=23)
 
     # Set y-axis ticks
     plt.yticks(np.linspace(0, 1, num=11),fontsize=23)
