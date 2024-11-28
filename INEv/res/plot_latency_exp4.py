@@ -67,18 +67,18 @@ def main():
     plt.ylabel(myargs.y_label if myargs.y_label else myargs.yC, fontsize=25)
     # Calculate dynamic y-axis limits
     y_min = 0
-    y_max = data[myargs.yC].max()
+    y_max = data[myargs.yC].max() #* 0.6
 
     # Remove outliers based on IQR
-    q1 = data[myargs.yC].quantile(0.25)  # First quartile
-    q3 = data[myargs.yC].quantile(0.75)  # Third quartile
-    iqr = q3 - q1  # Interquartile range
-    upper_bound = q3 + 1.5 * iqr  # Upper bound for outlier detection
+    # q1 = data[myargs.yC].quantile(0.25)  # First quartile
+    # q3 = data[myargs.yC].quantile(0.75)  # Third quartile
+    # iqr = q3 - q1  # Interquartile range
+    # upper_bound = q3 + 1.5 * iqr  # Upper bound for outlier detection
 
-    # Adjust y_max to exclude outliers if necessary
-    if y_max > upper_bound:
-        print(f"Excluding outliers above {upper_bound:.2f}")
-        y_max = upper_bound
+    # # Adjust y_max to exclude outliers if necessary
+    # if y_max > upper_bound:
+    #     print(f"Excluding outliers above {upper_bound:.2f}")
+    #     y_max = upper_bound
 
     # Add a small margin for better visualization
     y_margin = (y_max - y_min) * 0.05  # 5% margin
