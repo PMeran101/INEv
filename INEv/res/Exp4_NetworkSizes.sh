@@ -1,7 +1,31 @@
-#First Plot in Experiment in Paper
-python3 plot_PP_bars.py -i OP_Network_Size_100.csv OP_Network_Size_500.csv OP_Network_Size_1000.csv OP_Network_Size_5000.csv OP_Network_Size_10000.csv \
-    -l "100" "500" "1.000" "5.000" "10.000" -y TransmissionRatio \
-    -o Fig.TransmissionRatio_EventTypes_Scaled.pdf --x_label "Nodes" --legend_tags "Operator placement" --y_label "Transmission ratio"
+python plot_exp4_generic.py -i latency_test.csv -x Nodes -y TransmissionRatio -groupC MaximumParents \
+    -group_values 0.8  1.2 1.8 2.0 -c tab:blue tab:orange tab:green tab:purple\
+    -l "Max parents 0.8" "Max parents 1.2" "Max parents 1.8" "Max parents 2.0" -o Exp4_TransmissionRatioDensity.pdf \
+    --x_label "Nodes" --y_label "Transmission ratio"
 
-#Second Plot in Experiment in Paper
-python3 plot_latency_bars.py -i OP_Network_Size_10000.csv -x MaximumParents -y TransmissionRatio -l NetworkSize10000 -o Fig_Bar_TransmsissionRatio_10000.pdf
+python plot_latency_exp4.py -i latency_test.csv -x Nodes -y PlacementComputationTime -groupC MaximumParents \
+    -group_values 0.8  1.2 1.8 2.0 -c tab:blue tab:orange tab:green tab:purple\
+    -l "Max parents 0.8" "Max parents 1.2" "Max parents 1.8" "Max parents 2.0" -o Exp4_ComputationTimeDensity.pdf \
+    --x_label "Nodes" --y_label "Computation time in s"
+
+python plot_latency_exp4.py -i latency_test.csv -x Nodes -y TransmissionRatioCentral -groupC MaximumParents \
+    -group_values 0.8  1.2 1.8 2.0 -c tab:blue tab:orange tab:green tab:purple\
+    -l "Max parents 0.8" "Max parents 1.2" "Max parents 1.8" "Max parents 2.0" -o Exp4_HybridTransmissionRatioDensity.pdf \
+    --x_label "Nodes" --y_label "Transmission ratio"
+
+
+python plot_latency_exp4.py -i latency_test.csv -x Nodes -y MaxPushPullLatency -groupC MaximumParents \
+    -group_values 0.8  1.2 1.8 2.0 -c tab:blue tab:orange tab:green tab:purple\
+    -l "Max parents 0.8" "Max parents 1.2" "Max parents 1.8" "Max parents 2.0" -o Exp4_LatencyDensity.pdf \
+    --x_label "Nodes" --y_label "Latency"
+
+
+python plot_latency_exp4.py -i latency_test.csv -x Nodes -y PushPullTime -groupC MaximumParents \
+    -group_values 0.8  1.2 1.8 2.0 -c tab:blue tab:orange tab:green tab:purple\
+    -l "Max parents 0.8" "Max parents 1.2" "Max parents 1.8" "Max parents 2.0" -o Exp4_HybridComputationTimeDensity.pdf \
+    --x_label "Nodes" --y_label "Computation time in s"
+
+python plot_bars_new.py -i latency_test.csv -x MaximumParents -y "TransmissionRatio" TransmissionRatioCentral \
+    -c tab:blue tab:orange \
+    -l "Base" "Hybrid" -o Exp4_MaxParents_total.pdf \
+    --x_label "Max parents" --y_label "Transmission ratio"
