@@ -211,7 +211,7 @@ def plot_percentile_bars(input_files, y_column, x_column, labels, output_file, c
     plt.tight_layout()
 
     # Save the plot
-    plt.savefig(output_file, format='pdf', bbox_inches='tight')
+    plt.savefig(output_file, format='svg', bbox_inches='tight')
     plt.close()
     print(f"Plot saved as {output_file}")
 

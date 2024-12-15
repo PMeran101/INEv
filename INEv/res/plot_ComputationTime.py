@@ -96,7 +96,7 @@ def main():
                 list_of_lists.append(data_at_x)
             plt.boxplot(list_of_lists, positions=myX, manage_ticks=False)
     
-    plt.savefig("figs/" + str(myargs.outname), format='pdf', bbox_inches='tight')
+    plt.savefig(str(myargs.outname), format='svg', bbox_inches='tight')
     # plt.show()
 
 def myparse_args(parser):

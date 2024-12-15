@@ -85,7 +85,7 @@ def main():
         plt.plot(myX, y_data, marker="x", label=legend_labels[legend_index], color=colors[i], linestyle=styles[i])
         legend_index += 1
 
-    # plt.legend()
+    plt.legend()
     
     if myargs.boxplot:
         # Group values by x value to get list of values for each box plot
@@ -96,7 +96,7 @@ def main():
             plt.boxplot(myLists, positions=myX, manage_ticks=False)
     
     plt.xticks(myX, myX_o,fontsize=23)    
-    plt.savefig("figs/" + str(myargs.outname), format='pdf', bbox_inches='tight')
+    plt.savefig(str(myargs.outname), format='svg', bbox_inches='tight')
 
 def myparse_args(parser):
     parser.add_argument('-i', '--inputs', nargs='+', help='input files', required=True)

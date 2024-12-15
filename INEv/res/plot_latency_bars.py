@@ -95,7 +95,7 @@ def plot_bar(files, x_column, y_columns, labels, output_file, x_label=None, y_la
     plt.tight_layout()
 
     # Save the figure to a file
-    plt.savefig(output_file)
+    plt.savefig(output_file,format='svg')
     plt.close()
     print(f"Plot saved as {output_file}")
 

@@ -110,7 +110,7 @@ def main():
         fontsize=15
     )
     plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.2), ncol=int(len(labels)/2), borderaxespad=0., frameon=True)
-    plt.savefig(str(myargs.outname), format='pdf', bbox_inches='tight')
+    plt.savefig(str(myargs.outname), format='svg', bbox_inches='tight')
     print(f"Plot saved as {myargs.outname}")
 
 def myparse_args(parser):

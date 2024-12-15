@@ -82,8 +82,8 @@ def plot_bar(files, y_columns, labels, output_file, x_label='Max Parents', y_lab
     # Adjust layout
     plt.tight_layout()
 
-    # Save the figure to a file
-    plt.savefig(output_file)
+    # Save the figure v a file
+    plt.savefig(output_file, format='svg', bbox_inches='tight')
     plt.close()
     print(f"Plot saved as {output_file}")
 

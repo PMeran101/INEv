@@ -52,7 +52,7 @@ def plot_bar(files, y_column, labels, output_file, x_label="MaxParents", y_label
     plt.tight_layout()
 
     # Save the figure to a file
-    plt.savefig(output_file)
+    plt.savefig(output_file,format='svg')
     plt.close()
     print(f"Plot saved as {output_file}")
 

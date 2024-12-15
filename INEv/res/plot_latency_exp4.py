@@ -84,13 +84,18 @@ def main():
     y_margin = (y_max - y_min) * 0.05  # 5% margin
     y_max += y_margin
 
-    # Generate ticks dynamically
-    y_ticks = np.round(np.linspace(0, y_max, num=11),2)  # 11 ticks for consistent spacing
+    # # Generate ticks dynamically
+    # y_ticks = np.round(np.linspace(0, y_max, num=11),2)  # 11 ticks for consistent spacing
 
-    # Set y-axis limits and ticks dynamically
-    plt.ylim(0, y_max)
-    plt.yticks(y_ticks, fontsize=23)
+    # # Set y-axis limits and ticks dynamically
+    # plt.ylim(0, y_max)
+    # plt.yticks(y_ticks, fontsize=23)
 
+
+    plt.ylim(0, 1.05)
+    plt.yticks(np.linspace(0, 1, 11),fontsize=23)
+    
+    
     colors = myargs.colors if myargs.colors else ['b', 'g', 'r', 'c', 'm', 'y', 'k']
     labels = myargs.labels if myargs.labels else [f"{myargs.groupC}={group}" for group in unique_groups]
 
@@ -134,7 +139,7 @@ def main():
         fontsize=15
     )
     plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.2), ncol=int(len(labels)/2), borderaxespad=0., frameon=True)
-    plt.savefig(str(myargs.outname), format='pdf', bbox_inches='tight')
+    plt.savefig(str(myargs.outname), format='svg', bbox_inches='tight')
     print(f"Plot saved as {myargs.outname}")
 
 def myparse_args(parser):
